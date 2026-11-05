@@ -1111,13 +1111,13 @@
     pointer-events: none !important;
   }
   .wrap-visual .swiper-slide.slide01 > .background-visual {
-    background-image: url('../images/main/main-visual-01-full.png?v=20261105_04') !important;
+    background-image: url('../images/main/main-visual-01-full.jpg?v=20261105_04') !important;
   }
   .wrap-visual .swiper-slide.slide02 > .background-visual {
-    background-image: url('../images/main/main-visual-02-full.png?v=20261105_04') !important;
+    background-image: url('../images/main/main-visual-02-full.jpg?v=20261105_04') !important;
   }
   .wrap-visual .swiper-slide.slide03 > .background-visual {
-    background-image: url('../images/main/main-visual-03-full.png?v=20261105_04') !important;
+    background-image: url('../images/main/main-visual-03-full.jpg?v=20261105_04') !important;
   }
 
   /* Panel nội dung nổi trên ảnh để chữ luôn rõ ở mọi vùng sáng/tối */
