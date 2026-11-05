@@ -2562,6 +2562,8 @@
   }
   article.main > section {
     scroll-margin-top: 82px;
+    content-visibility: auto;
+    contain-intrinsic-size: 720px;
   }
   article.main a.button-section,
   .ms-btn-select {
