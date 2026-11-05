@@ -141,7 +141,7 @@
       <li class="contactus"><a href="javascript:void(0);" onclick="openDemoModal('Tư vấn giải pháp quản lý kho bãi');" title="Yêu cầu tư vấn">Yêu cầu <br />tư vấn</a></li>
       <li class="ft"><a href="javascript:void(0);" onclick="openDemoModal('Đăng ký Demo 30 phút');" title="Đăng ký Demo">Đăng ký <br />Demo 30p</a></li>
     </ul>
-    <a class="hamburger" href="javascript:void(0);" title="Menu">
+    <a class="hamburger" href="javascript:void(0);" title="Menu" aria-label="Mở menu" aria-expanded="false" onclick="toggleMobileMenu(event);">
       <ul>
         <li></li>
         <li></li>
@@ -1100,6 +1100,29 @@
     if (modal) {
       modal.classList.remove('active');
     }
+
+    function toggleMobileMenu(event) {
+      if (event) event.preventDefault();
+      var header = document.querySelector('header');
+      var button = document.querySelector('header .hamburger');
+      if (!header || !button) return;
+      var isOpen = header.classList.toggle('mobile-menu-open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      button.setAttribute('aria-label', isOpen ? 'Đóng menu' : 'Mở menu');
+    }
+
+    document.addEventListener('click', function(event) {
+      var header = document.querySelector('header');
+      if (!header || !header.classList.contains('mobile-menu-open')) return;
+      if (!event.target.closest('header')) {
+        header.classList.remove('mobile-menu-open');
+        var button = header.querySelector('.hamburger');
+        if (button) {
+          button.setAttribute('aria-expanded', 'false');
+          button.setAttribute('aria-label', 'Mở menu');
+        }
+      }
+    });
   }
 
   function toggleMaxsoftChat(forceOpen) {
