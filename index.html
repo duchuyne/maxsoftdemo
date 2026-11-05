@@ -47,25 +47,13 @@
     <a class="logo" href="index.html" title="MaxSoft - Phần Mềm Quản Lý Kho Bãi & Vật Tư"></a>
     <nav>
       <ul class="depth1">
-	<li>
+	<li class="menu-features">
 		<a href="#chuc-nang" title="GIAO DIỆN & CHỨC NĂNG">GIAO DIỆN & CHỨC NĂNG</a>
-		<ul class="depth2">
-			<li><a href="#chuc-nang" onclick="goToSlide(0);" title="Bàn Điều Khiển Tổng Quan">Bàn Điều Khiển Tổng Quan</a></li>
-			<li><a href="#chuc-nang" onclick="goToSlide(1);" title="Báo Cáo Tồn Kho & Cần Nhập">Báo Cáo Kho & Cần Nhập</a></li>
-			<li><a href="#chuc-nang" onclick="goToSlide(2);" title="Đơn Mua PO (Gom Mã Thiếu)">Đơn Mua PO (Gom Mã Thiếu)</a></li>
-			<li><a href="#chuc-nang" onclick="goToSlide(3);" title="Định Mức BOM Theo Dự Án">Định Mức BOM Theo Dự Án</a></li>
-			<li><a href="#chuc-nang" onclick="goToSlide(4);" title="Đăng Ký Lấy Hàng Ca Xưởng">Đăng Ký Lấy Hàng Ca Xưởng</a></li>
-			<li><a href="#chuc-nang" onclick="goToSlide(5);" title="Cổng Duyệt Giá Đầu Vào">Cổng Duyệt Giá Đầu Vào</a></li>
-			<li><a href="#chuc-nang" onclick="goToSlide(6);" title="Quản Lý Báo Giá Đơn Hàng">Quản Lý Báo Giá Đơn Hàng</a></li>
-			<li><a href="#chuc-nang" onclick="goToSlide(7);" title="Phân Quyền & Ẩn Giá Vốn">Phân Quyền & Ẩn Giá Vốn</a></li>
-			<li><a href="#chuc-nang" onclick="goToSlide(8);" title="Import Báo Giá Từ Excel">Import Báo Giá Từ Excel</a></li>
-			<li><a href="#chuc-nang" onclick="goToSlide(9);" title="Danh Mục 19.000+ Vật Tư">Danh Mục 19.000+ Vật Tư</a></li>
-		</ul>
 	</li>
-	<li>
+	<li class="menu-customization">
 		<a href="#tuy-bien" title="KHẢ NĂNG TÙY BIẾN">KHẢ NĂNG TÙY BIẾN</a>
 	</li>
-	<li>
+	<li class="menu-main-features">
 		<a href="#tinh-nang" title="TÍNH NĂNG CHÍNH">TÍNH NĂNG CHÍNH</a>
 		<ul class="depth2">
 			<li>
@@ -100,7 +88,7 @@
 			</li>
 		</ul>
 	</li>
-	<li>
+	<li class="menu-process">
 		<a href="#quy-trinh" title="QUY TRÌNH">QUY TRÌNH VẬN HÀNH</a>
 		<ul class="depth2">
 			<li><a href="#step-1-duyet-gia" title="1. Duyệt giá đầu vào">1. Duyệt giá đầu vào</a></li>
@@ -110,7 +98,7 @@
 			<li><a href="#step-5-doanh-thu" title="5. Theo dõi kho & doanh thu">5. Theo dõi kho & doanh thu</a></li>
 		</ul>
 	</li>
-	<li>
+	<li class="menu-pricing">
 		<a href="#bang-gia" title="BẢNG GIÁ">BẢNG GIÁ</a>
 		<ul class="depth2">
 			<li><a href="#bang-gia" title="Gói Cơ bản (2.000.000đ)">Gói Cơ bản (2.000.000đ/tháng)</a></li>
@@ -118,7 +106,7 @@
 			<li><a href="#bang-gia" title="Founding Member (Giảm 40%)">Founding Member (Chỉ 3 suất)</a></li>
 		</ul>
 	</li>
-	<li>
+	<li class="menu-audience">
 		<a href="#doi-tuong" title="ĐỐI TƯỢNG PHÙ HỢP">DOANH NGHIỆP PHÙ HỢP</a>
 		<ul class="depth2">
 			<li><a href="#doi-tuong" title="Doanh nghiệp sản xuất vừa & nhỏ (SMEs)">Doanh nghiệp sản xuất vừa & nhỏ</a></li>
@@ -126,7 +114,7 @@
 			<li><a href="#doi-tuong" title="Chạy song song cạnh phần mềm kế toán">Chạy song song cạnh kế toán</a></li>
 		</ul>
 	</li>
-	<li>
+	<li class="menu-about">
 		<a href="#gioi-thieu" title="GIỚI THIỆU">VỀ MAXSOFT</a>
 		<ul class="depth2">
 			<li><a href="#gioi-thieu" title="Giải pháp quản lý kho bãi thực chiến">Giải pháp kho bãi thực chiến</a></li>
@@ -1061,6 +1049,10 @@
 
     event.preventDefault();
     event.stopImmediatePropagation();
+    closeMobileMenu();
+    if (typeof link.onclick === 'function') {
+      link.onclick.call(link, event);
+    }
     var header = document.querySelector('header');
     var headerOffset = header ? header.getBoundingClientRect().height : 0;
     var targetTop = Math.max(0, target.getBoundingClientRect().top + window.pageYOffset - headerOffset);
@@ -1112,6 +1104,24 @@
     button.setAttribute('aria-label', isOpen ? 'Đóng menu' : 'Mở menu');
   }
 
+  function closeMobileMenu() {
+    var header = document.querySelector('header');
+    var button = header && header.querySelector('.hamburger');
+    if (header) {
+      header.classList.remove('mobile-menu-open', 'is-active');
+      header.querySelectorAll('.wrap-header > nav, .mobile-depth2, .mobile-depth3')
+        .forEach(function (nav) {
+          nav.classList.remove('is-active');
+        });
+    }
+    document.body.classList.remove('is-no-scroll');
+    if (button) {
+      button.classList.remove('is-active');
+      button.setAttribute('aria-expanded', 'false');
+      button.setAttribute('aria-label', 'Mở menu');
+    }
+  }
+
   function updateResponsiveToolbar() {
     var mobileQuery = window.matchMedia('(max-width: 889px)');
     var header = document.querySelector('header');
@@ -1132,14 +1142,9 @@
 
   document.addEventListener('click', function(event) {
     var header = document.querySelector('header');
-    if (!header || !header.classList.contains('mobile-menu-open')) return;
+    if (!header || (!header.classList.contains('mobile-menu-open') && !header.classList.contains('is-active'))) return;
     if (!event.target.closest('header')) {
-      header.classList.remove('mobile-menu-open');
-      var button = header.querySelector('.hamburger');
-      if (button) {
-        button.setAttribute('aria-expanded', 'false');
-        button.setAttribute('aria-label', 'Mở menu');
-      }
+      closeMobileMenu();
     }
   });
 

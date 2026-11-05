@@ -2177,6 +2177,27 @@
     align-items: center;
     text-align: center;
   }
+  header .wrap-header nav > ul.depth1 > li.menu-process {
+    order: 1;
+  }
+  header .wrap-header nav > ul.depth1 > li.menu-features {
+    order: 2;
+  }
+  header .wrap-header nav > ul.depth1 > li.menu-main-features {
+    order: 3;
+  }
+  header .wrap-header nav > ul.depth1 > li.menu-customization {
+    order: 4;
+  }
+  header .wrap-header nav > ul.depth1 > li.menu-audience {
+    order: 5;
+  }
+  header .wrap-header nav > ul.depth1 > li.menu-pricing {
+    order: 6;
+  }
+  header .wrap-header nav > ul.depth1 > li.menu-about {
+    order: 7;
+  }
   header .wrap-header nav > ul.depth1 > li > a {
     max-width: 112px;
     padding: 8px 7px !important;
