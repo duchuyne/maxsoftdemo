@@ -2582,6 +2582,14 @@
     }
   }
 
+  /* Match the toolbar to the detected mobile viewport, including orientation changes. */
+  header.is-mobile-toolbar .wrap-header > nav {
+    display: block !important;
+  }
+  header.is-mobile-toolbar .hamburger {
+    display: grid !important;
+  }
+
   /* Keep the hotline aligned with the header CTA buttons */
   header .wrap-header > ul.button > li.call {
     box-sizing: border-box;
