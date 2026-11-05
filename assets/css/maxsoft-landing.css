@@ -2520,6 +2520,50 @@
       width: 96px !important;
       flex-basis: 96px !important;
     }
+
+    /* Final iPhone header alignment */
+    @media (max-width: 520px) {
+      header .wrap-header {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto 34px;
+        align-items: center;
+        width: 100% !important;
+        box-sizing: border-box;
+      }
+      header .wrap-header > a.logo {
+        min-width: 0;
+        justify-self: start;
+      }
+      header .wrap-header > ul.button {
+        display: flex !important;
+        align-items: center;
+        justify-content: end;
+        gap: 4px !important;
+        width: auto !important;
+        margin: 0 !important;
+      }
+      header .wrap-header > ul.button > li,
+      header .wrap-header > ul.button > li.contactus,
+      header .wrap-header > ul.button > li.ft {
+        margin: 0 !important;
+      }
+      header .wrap-header > ul.button > li.contactus > a,
+      header .wrap-header > ul.button > li.ft > a {
+        margin: 0 !important;
+        transform: none !important;
+        touch-action: manipulation;
+      }
+      header .wrap-header > .hamburger {
+        display: grid !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        inset: auto !important;
+        align-self: center;
+        justify-self: end;
+        z-index: 50 !important;
+      }
+    }
     header .wrap-header > ul.button > li,
     header .wrap-header > ul.button > li.contactus > a,
     header .wrap-header > ul.button > li.ft > a {
@@ -2700,8 +2744,9 @@
       right: 10px;
       bottom: 58px;
       left: 10px;
-      width: auto;
+      width: calc(100vw - 20px);
       box-sizing: border-box;
+      overflow: hidden;
       max-height: calc(100dvh - 76px);
       display: flex;
       flex-direction: column;
@@ -2727,16 +2772,20 @@
       margin: 12px -2px 0;
       padding: 6px 2px 2px;
       background: #ffffff;
+      transform: translateZ(0);
     }
     .ms-chat-input {
       width: 0;
       flex: 1 1 auto;
+      min-width: 0;
       font-size: 16px;
     }
     .ms-chat-send {
       flex: 0 0 62px;
       width: 62px;
       padding: 0 8px;
+      pointer-events: auto;
+      touch-action: manipulation;
     }
   }
   /* Final visual polish */
