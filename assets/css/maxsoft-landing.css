@@ -2521,54 +2521,6 @@
       width: 96px !important;
       flex-basis: 96px !important;
     }
-
-    /* Final iPhone header alignment */
-    @media (max-width: 520px) {
-      header .wrap-header {
-        display: flex !important;
-        align-items: center;
-        width: 100% !important;
-        box-sizing: border-box;
-        gap: 5px !important;
-      }
-      header .wrap-header > a.logo {
-        display: block !important;
-        flex: 1 1 auto !important;
-        min-width: 0;
-        justify-self: start;
-      }
-      header .wrap-header > ul.button {
-        display: flex !important;
-        align-items: center;
-        justify-content: flex-end;
-        flex: 0 0 auto !important;
-        gap: 2px !important;
-        margin: 0 !important;
-      }
-      header .wrap-header > ul.button > li,
-      header .wrap-header > ul.button > li.contactus,
-      header .wrap-header > ul.button > li.ft {
-        margin: 0 !important;
-      }
-      header .wrap-header > ul.button > li.contactus > a,
-      header .wrap-header > ul.button > li.ft > a {
-        margin: 0 !important;
-        transform: none !important;
-        touch-action: manipulation;
-      }
-      header .wrap-header > .hamburger {
-        display: grid !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: relative !important;
-        inset: auto !important;
-        align-self: center;
-        justify-self: end;
-        z-index: 50 !important;
-        flex: 0 0 34px !important;
-        visibility: visible !important;
-      }
-    }
     header .wrap-header > ul.button > li,
     header .wrap-header > ul.button > li.contactus > a,
     header .wrap-header > ul.button > li.ft > a {
@@ -2579,6 +2531,55 @@
     header .hamburger {
       flex-basis: 32px;
       width: 32px;
+    }
+  }
+
+  /* Final mobile header layout for iPhone and Android */
+  @media (max-width: 520px) {
+    header .wrap-header {
+      display: flex !important;
+      align-items: center;
+      width: 100% !important;
+      box-sizing: border-box;
+      gap: 5px !important;
+    }
+    header .wrap-header > a.logo {
+      display: block !important;
+      flex: 1 1 auto !important;
+      min-width: 0;
+    }
+    header .wrap-header > ul.button {
+      display: flex !important;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 0 0 auto !important;
+      gap: 2px !important;
+      width: auto !important;
+      margin: 0 !important;
+    }
+    header .wrap-header > ul.button > li,
+    header .wrap-header > ul.button > li.contactus,
+    header .wrap-header > ul.button > li.ft {
+      margin: 0 !important;
+    }
+    header .wrap-header > ul.button > li.contactus > a,
+    header .wrap-header > ul.button > li.ft > a {
+      margin: 0 !important;
+      transform: none !important;
+      touch-action: manipulation;
+    }
+    header .wrap-header > .hamburger {
+      display: grid !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      position: relative !important;
+      inset: auto !important;
+      align-self: center;
+      justify-self: end;
+      z-index: 50 !important;
+      flex: 0 0 34px !important;
+      width: 34px !important;
+      height: 34px !important;
     }
   }
 
