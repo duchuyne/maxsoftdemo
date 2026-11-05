@@ -2494,13 +2494,14 @@
       height: 34px !important;
       min-height: 34px !important;
       padding: 4px 3px !important;
-      font-size: 10px !important;
-      line-height: 1.1 !important;
-      white-space: nowrap;
+      font-size: 9px !important;
+      line-height: 1.15 !important;
+      white-space: normal;
+      overflow-wrap: anywhere;
     }
     header .wrap-header > ul.button > li.contactus > a br,
     header .wrap-header > ul.button > li.ft > a br {
-      display: none !important;
+      display: block !important;
     }
     header .hamburger {
       flex-basis: 34px;
@@ -2524,22 +2525,24 @@
     /* Final iPhone header alignment */
     @media (max-width: 520px) {
       header .wrap-header {
-        display: grid !important;
-        grid-template-columns: minmax(0, 1fr) auto 34px;
+        display: flex !important;
         align-items: center;
         width: 100% !important;
         box-sizing: border-box;
+        gap: 5px !important;
       }
       header .wrap-header > a.logo {
+        display: block !important;
+        flex: 1 1 auto !important;
         min-width: 0;
         justify-self: start;
       }
       header .wrap-header > ul.button {
         display: flex !important;
         align-items: center;
-        justify-content: end;
-        gap: 4px !important;
-        width: auto !important;
+        justify-content: flex-end;
+        flex: 0 0 auto !important;
+        gap: 2px !important;
         margin: 0 !important;
       }
       header .wrap-header > ul.button > li,
@@ -2562,6 +2565,8 @@
         align-self: center;
         justify-self: end;
         z-index: 50 !important;
+        flex: 0 0 34px !important;
+        visibility: visible !important;
       }
     }
     header .wrap-header > ul.button > li,
@@ -2731,8 +2736,9 @@
   @media (max-width: 520px) {
     #ms-chat-widget {
       right: 10px;
+      left: auto;
+      width: auto;
       bottom: max(10px, env(safe-area-inset-bottom));
-      left: 10px;
       pointer-events: none;
     }
     #ms-chat-toggle,
@@ -2744,9 +2750,8 @@
       right: 10px;
       bottom: 58px;
       left: 10px;
-      width: calc(100vw - 20px);
+      width: auto;
       box-sizing: border-box;
-      overflow: hidden;
       max-height: calc(100dvh - 76px);
       display: flex;
       flex-direction: column;
@@ -2772,20 +2777,16 @@
       margin: 12px -2px 0;
       padding: 6px 2px 2px;
       background: #ffffff;
-      transform: translateZ(0);
     }
     .ms-chat-input {
       width: 0;
       flex: 1 1 auto;
-      min-width: 0;
       font-size: 16px;
     }
     .ms-chat-send {
       flex: 0 0 62px;
       width: 62px;
       padding: 0 8px;
-      pointer-events: auto;
-      touch-action: manipulation;
     }
   }
   /* Final visual polish */
