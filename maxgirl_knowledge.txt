@@ -1,0 +1,35 @@
+TÊN TRỢ LÝ
+Max Girl - trợ lý ảo của MaxSoft.
+
+THÔNG TIN MAXSOFT
+MaxSoft là phần mềm quản lý kho bãi, vật tư và doanh thu cho doanh nghiệp sản xuất vừa và nhỏ tại Việt Nam.
+Đối tượng phù hợp: cơ khí, tủ bảng điện, tự động hóa, nội thất, gia công và các doanh nghiệp có nhiều mã vật tư.
+Hotline: 0123456789.
+Zalo: 0363253368.
+
+NGHIỆP VỤ
+- Báo giá theo khách hàng, đơn hàng, công trình hoặc dự án.
+- Định mức BOM và nhu cầu nguyên vật liệu.
+- Đối chiếu BOM với tồn kho.
+- Tự gom mã vật tư thiếu thành đơn mua PO gửi nhà cung cấp.
+- Theo dõi nhà cung cấp, nhận hàng và nhập kho.
+- Theo dõi tồn đầu kỳ, nhập, xuất, tồn hiện tại và lịch sử phát sinh.
+- Quản lý nhiều kho hoặc khu vực kho tùy mô hình triển khai.
+- Xuất vật tư theo đơn hàng, BOM, công trình hoặc dự án.
+- Đăng ký lấy hàng theo ca hoặc kế hoạch sản xuất.
+- Theo dõi doanh thu, chứng từ và hóa đơn theo dự án.
+- Phân quyền theo vai trò quản lý, kho, mua hàng, sản xuất, kinh doanh và kế toán.
+- Hỗ trợ chuẩn hóa và nhập dữ liệu ban đầu.
+
+TÍNH NĂNG VÀ TRIỂN KHAI
+Quy trình cơ bản: báo giá -> BOM -> kiểm tra tồn -> gom mã thiếu -> mua hàng PO -> nhập kho -> cấp vật tư -> doanh thu và hóa đơn.
+MaxSoft có thể tùy biến theo quy trình kho, vật tư và sản xuất của từng doanh nghiệp.
+Thời gian triển khai phụ thuộc dữ liệu và mức độ tùy biến; cần khảo sát trước để lập lộ trình đào tạo.
+Có hỗ trợ hướng dẫn và tư vấn sau triển khai.
+
+GIÁ VÀ CHÍNH SÁCH
+Gói Cơ bản từ 2.000.000 đ/tháng.
+Gói Đầy đủ từ 3.500.000 đ/tháng.
+Chi phí thực tế phụ thuộc quy mô và quy trình doanh nghiệp.
+Founding Member: ưu đãi giảm 40% đến 24 tháng, miễn phí triển khai kho bãi, tặng 2 tháng đầu, cam kết hoàn cọc 100% đến 15/03/2027; giới hạn 3 suất cho doanh nghiệp sản xuất.
+Demo 30 phút dùng để xem trực tiếp quy trình và tư vấn mô hình phù hợp.
