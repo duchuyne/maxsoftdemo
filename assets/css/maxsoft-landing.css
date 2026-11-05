@@ -1799,6 +1799,176 @@
     }
   }
 
+  /* Final mobile footer layout */
+  @media (max-width: 889px) {
+    footer#gioi-thieu > section.contact {
+      padding: 28px 16px 24px !important;
+    }
+    footer#gioi-thieu .wrap-contact {
+      width: min(100%, 520px) !important;
+      gap: 18px !important;
+    }
+    footer#gioi-thieu .wrap-contact h2 {
+      max-width: 440px;
+      margin: 0 auto !important;
+      font-size: clamp(18px, 5vw, 22px) !important;
+      line-height: 1.3 !important;
+    }
+    footer#gioi-thieu .wrap-contact > ul.contact {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px !important;
+      width: 100% !important;
+    }
+    footer#gioi-thieu .wrap-contact > ul.contact > li {
+      min-width: 0;
+    }
+    footer#gioi-thieu .wrap-contact > ul.contact > li > a,
+    footer#gioi-thieu .wrap-contact > ul.contact .number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 7px 5px;
+      border-radius: 8px;
+      font-size: 11px !important;
+      line-height: 1.2;
+      text-align: center;
+      white-space: normal;
+    }
+    footer#gioi-thieu .wrap-contact > ul.contact .number {
+      background: rgba(255, 255, 255, 0.13);
+      color: #ffffff;
+      font-weight: 700;
+    }
+    footer#gioi-thieu .wrap-contact > ul.contact > li > a {
+      background: #ffffff;
+      color: #155e68 !important;
+      font-weight: 700;
+    }
+    footer#gioi-thieu > section.menu {
+      padding: 26px 16px 22px !important;
+    }
+    .ms-footer-columns {
+      width: min(100%, 520px);
+      gap: 22px 14px;
+    }
+    .ms-footer-column {
+      min-width: 0;
+      padding: 14px 12px;
+      border: 1px solid #dcebed;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+    .ms-footer-column h3,
+    .ms-footer-global h3 {
+      margin-bottom: 9px;
+      font-size: 11px;
+      line-height: 1.25;
+    }
+    .ms-footer-column ul {
+      gap: 7px;
+    }
+    .ms-footer-column a,
+    .ms-footer-global a {
+      display: block;
+      font-size: 11px !important;
+      line-height: 1.4;
+    }
+    .ms-footer-global {
+      width: min(100%, 520px);
+      margin-top: 22px;
+      padding-top: 18px;
+    }
+    .ms-footer-global ul {
+      gap: 8px 14px;
+    }
+    footer#gioi-thieu > section.info {
+      padding: 26px 16px 22px !important;
+    }
+    footer#gioi-thieu > section.info > .wrap-info {
+      width: min(100%, 520px) !important;
+    }
+    footer#gioi-thieu .company > .logo {
+      display: block;
+      margin: 0 auto;
+    }
+    footer#gioi-thieu .company > .wrap-info {
+      margin-top: 16px !important;
+    }
+    footer#gioi-thieu .company > .wrap-info .item {
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    footer#gioi-thieu .company > .wrap-info .title {
+      display: block;
+      margin: 0 0 2px;
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    footer#gioi-thieu .company .copyright {
+      margin-top: 18px !important;
+      padding-top: 14px;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+    footer#gioi-thieu .certification {
+      justify-content: center;
+      margin-top: 18px !important;
+      padding-top: 14px !important;
+    }
+  }
+
+  @media (max-width: 380px) {
+    footer#gioi-thieu .wrap-contact > ul.contact {
+      grid-template-columns: 1fr;
+    }
+    footer#gioi-thieu .wrap-contact > ul.contact > li > a,
+    footer#gioi-thieu .wrap-contact > ul.contact .number {
+      min-height: 38px;
+    }
+    .ms-footer-columns {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Match the mobile menu order with the page sections */
+  @media (max-width: 889px) {
+    header .wrap-header > nav > ul.depth1 {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    header .wrap-header > nav > ul.depth1 > li {
+      display: block !important;
+      flex: 0 0 auto !important;
+    }
+    header .wrap-header > nav > ul.depth1 > li.menu-process {
+      order: 1 !important;
+    }
+    header .wrap-header > nav > ul.depth1 > li.menu-features {
+      order: 2 !important;
+    }
+    header .wrap-header > nav > ul.depth1 > li.menu-main-features {
+      order: 3 !important;
+    }
+    header .wrap-header > nav > ul.depth1 > li.menu-customization {
+      order: 4 !important;
+    }
+    header .wrap-header > nav > ul.depth1 > li.menu-audience {
+      order: 5 !important;
+    }
+    header .wrap-header > nav > ul.depth1 > li.menu-pricing {
+      order: 6 !important;
+    }
+    header .wrap-header > nav > ul.depth1 > li.menu-about {
+      display: none !important;
+    }
+  }
+
   /* Compact support chat */
   #ms-chat-widget {
     position: fixed;
