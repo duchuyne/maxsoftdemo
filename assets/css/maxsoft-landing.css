@@ -2458,15 +2458,78 @@
     }
   }
   @media (max-width: 520px) {
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    header .wrap-header {
+      padding: 0 8px !important;
+      gap: 5px;
+    }
     header .wrap-header > a.logo {
-      width: 132px !important;
-      flex-basis: 132px !important;
+      width: 112px !important;
+      flex-basis: 112px !important;
+    }
+    header .wrap-header > ul.button {
+      min-width: 0;
+      gap: 4px;
+      margin-left: auto !important;
+    }
+    header .wrap-header > ul.button > li {
+      flex: 0 0 76px;
+      width: 76px;
+    }
+    header .wrap-header > ul.button > li.contactus,
+    header .wrap-header > ul.button > li.ft {
+      margin: 0 !important;
+    }
+    header .wrap-header > ul.button > li.contactus > a,
+    header .wrap-header > ul.button > li.ft > a {
+      box-sizing: border-box;
+      display: grid;
+      place-items: center;
+      width: 76px !important;
+      min-width: 76px !important;
+      height: 34px !important;
+      min-height: 34px !important;
+      padding: 4px 3px !important;
+      font-size: 10px !important;
+      line-height: 1.1 !important;
+      white-space: nowrap;
+    }
+    header .wrap-header > ul.button > li.contactus > a br,
+    header .wrap-header > ul.button > li.ft > a br {
+      display: none !important;
+    }
+    header .hamburger {
+      flex-basis: 34px;
+      width: 34px;
+      height: 34px;
+      margin-left: 0;
+    }
+    header .wrap-header > ul.button > li.call {
+      display: none !important;
     }
     header .wrap-header > ul.button {
       gap: 4px;
     }
-    header .wrap-header > ul.button > li.call {
-      display: none !important;
+  }
+  @media (max-width: 360px) {
+    header .wrap-header > a.logo {
+      width: 96px !important;
+      flex-basis: 96px !important;
+    }
+    header .wrap-header > ul.button > li,
+    header .wrap-header > ul.button > li.contactus > a,
+    header .wrap-header > ul.button > li.ft > a {
+      flex-basis: 68px;
+      width: 68px !important;
+      min-width: 68px !important;
+    }
+    header .hamburger {
+      flex-basis: 32px;
+      width: 32px;
     }
   }
 
@@ -2634,16 +2697,22 @@
     }
     #ms-chat-panel {
       position: fixed;
-      right: 0;
+      right: 10px;
       bottom: 58px;
-      left: 0;
-      width: 100%;
+      left: 10px;
+      width: auto;
+      box-sizing: border-box;
       max-height: calc(100dvh - 76px);
       display: flex;
       flex-direction: column;
       border-radius: 16px;
+      z-index: 31;
+    }
+    #ms-chat-panel * {
+      box-sizing: border-box;
     }
     .ms-chat-body {
+      width: 100%;
       min-height: 0;
       max-height: calc(100dvh - 140px);
       overflow-y: auto;
@@ -2654,6 +2723,7 @@
       bottom: 0;
       z-index: 2;
       flex-wrap: nowrap;
+      width: 100%;
       margin: 12px -2px 0;
       padding: 6px 2px 2px;
       background: #ffffff;
