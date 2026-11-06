@@ -1553,7 +1553,7 @@
   var lightboxOffsetX = 0;
   var lightboxOffsetY = 0;
   var lightboxPointers = new Map();
-  var lightboxPinchDistance = null;
+  var lightboxPinchState = null;
   var lightboxDragOrigin = null;
 
   function applyLightboxTransform() {
@@ -1567,6 +1567,8 @@
     lightboxZoom = 1;
     lightboxOffsetX = 0;
     lightboxOffsetY = 0;
+    var img = document.getElementById('msLightboxImg');
+    if (img) img.classList.remove('is-interacting');
     applyLightboxTransform();
   }
 
@@ -1597,8 +1599,14 @@
       adjustLightboxZoom(event.deltaY < 0 ? 0.2 : -0.2);
     }, { passive: false });
     wrap.addEventListener('pointerdown', function (event) {
+      event.preventDefault();
+      var img = document.getElementById('msLightboxImg');
+      if (img) img.classList.add('is-interacting');
       wrap.setPointerCapture(event.pointerId);
-      lightboxPointers.set(event.pointerId, event);
+      lightboxPointers.set(event.pointerId, {
+        clientX: event.clientX,
+        clientY: event.clientY
+      });
       if (lightboxPointers.size === 1) {
         lightboxDragOrigin = {
           x: event.clientX - lightboxOffsetX,
@@ -1606,24 +1614,38 @@
         };
       } else if (lightboxPointers.size === 2) {
         var points = Array.from(lightboxPointers.values());
-        lightboxPinchDistance = lightboxDistance(points[0], points[1]);
+        lightboxPinchState = {
+          distance: lightboxDistance(points[0], points[1]),
+          center: lightboxCenter(points[0], points[1]),
+          zoom: lightboxZoom,
+          offsetX: lightboxOffsetX,
+          offsetY: lightboxOffsetY
+        };
+        lightboxDragOrigin = null;
       }
     });
     wrap.addEventListener('pointermove', function (event) {
       if (!lightboxPointers.has(event.pointerId)) return;
-      lightboxPointers.set(event.pointerId, event);
+      event.preventDefault();
+      lightboxPointers.set(event.pointerId, {
+        clientX: event.clientX,
+        clientY: event.clientY
+      });
       var points = Array.from(lightboxPointers.values());
       if (points.length === 2) {
         var distance = lightboxDistance(points[0], points[1]);
-        if (lightboxPinchDistance) {
-          lightboxZoom = Math.min(4, Math.max(1, lightboxZoom * distance / lightboxPinchDistance));
+        if (lightboxPinchState && lightboxPinchState.distance > 0) {
+          var center = lightboxCenter(points[0], points[1]);
+          lightboxZoom = Math.min(4, Math.max(1, lightboxPinchState.zoom * distance / lightboxPinchState.distance));
+          var scaleRatio = lightboxZoom / lightboxPinchState.zoom;
+          lightboxOffsetX = center.x - (lightboxPinchState.center.x - lightboxPinchState.offsetX) * scaleRatio;
+          lightboxOffsetY = center.y - (lightboxPinchState.center.y - lightboxPinchState.offsetY) * scaleRatio;
           if (lightboxZoom === 1) {
             lightboxOffsetX = 0;
             lightboxOffsetY = 0;
           }
           applyLightboxTransform();
         }
-        lightboxPinchDistance = distance;
       } else if (points.length === 1 && lightboxZoom > 1 && lightboxDragOrigin) {
         lightboxOffsetX = event.clientX - lightboxDragOrigin.x;
         lightboxOffsetY = event.clientY - lightboxDragOrigin.y;
@@ -1632,8 +1654,12 @@
     });
     function endPointer(event) {
       lightboxPointers.delete(event.pointerId);
-      if (lightboxPointers.size < 2) lightboxPinchDistance = null;
-      if (lightboxPointers.size === 0) lightboxDragOrigin = null;
+      if (lightboxPointers.size < 2) lightboxPinchState = null;
+      if (lightboxPointers.size === 0) {
+        lightboxDragOrigin = null;
+        var img = document.getElementById('msLightboxImg');
+        if (img) img.classList.remove('is-interacting');
+      }
     }
     wrap.addEventListener('pointerup', endPointer);
     wrap.addEventListener('pointercancel', endPointer);

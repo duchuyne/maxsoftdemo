@@ -751,7 +751,7 @@
     line-height: 1;
   }
   .ms-lightbox-img-wrap {
-    overflow: auto;
+    overflow: hidden;
     max-height: calc(92vh - 110px);
     background: #0f172a;
     display: flex;
@@ -777,6 +777,9 @@
   }
   .ms-lightbox-img-wrap img.is-zoomed:active {
     cursor: grabbing;
+  }
+  .ms-lightbox-img-wrap img.is-interacting {
+    transition: none;
   }
   .ms-lightbox-caption {
     background: #f8fafc;
