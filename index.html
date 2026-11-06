@@ -1384,6 +1384,11 @@
   <div class="ms-lightbox-box">
     <div class="ms-lightbox-header">
       <div class="ms-lightbox-title" id="msLightboxTitle">Chi tiết chức năng MaxSoft</div>
+      <div class="ms-lightbox-tools" aria-label="Điều khiển ảnh">
+        <button type="button" onclick="adjustLightboxZoom(-0.25);" aria-label="Thu nhỏ ảnh">−</button>
+        <button type="button" onclick="resetLightboxZoom();" aria-label="Đặt lại kích thước ảnh">100%</button>
+        <button type="button" onclick="adjustLightboxZoom(0.25);" aria-label="Phóng to ảnh">+</button>
+      </div>
       <button class="ms-lightbox-close" onclick="closeLightbox();">&times;</button>
     </div>
     <div class="ms-lightbox-img-wrap">
@@ -1544,6 +1549,100 @@
   startTimer();
 
   // Lightbox Handlers
+  var lightboxZoom = 1;
+  var lightboxOffsetX = 0;
+  var lightboxOffsetY = 0;
+  var lightboxPointers = new Map();
+  var lightboxPinchDistance = null;
+  var lightboxDragOrigin = null;
+
+  function applyLightboxTransform() {
+    var img = document.getElementById('msLightboxImg');
+    if (!img) return;
+    img.style.transform = 'translate3d(' + lightboxOffsetX + 'px, ' + lightboxOffsetY + 'px, 0) scale(' + lightboxZoom + ')';
+    img.classList.toggle('is-zoomed', lightboxZoom > 1);
+  }
+
+  function resetLightboxZoom() {
+    lightboxZoom = 1;
+    lightboxOffsetX = 0;
+    lightboxOffsetY = 0;
+    applyLightboxTransform();
+  }
+
+  function adjustLightboxZoom(delta) {
+    lightboxZoom = Math.min(4, Math.max(1, lightboxZoom + delta));
+    if (lightboxZoom === 1) {
+      lightboxOffsetX = 0;
+      lightboxOffsetY = 0;
+    }
+    applyLightboxTransform();
+  }
+
+  function lightboxDistance(a, b) {
+    return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+  }
+
+  function lightboxCenter(a, b) {
+    return { x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2 };
+  }
+
+  function setupLightboxInteractions() {
+    var wrap = document.querySelector('.ms-lightbox-img-wrap');
+    var img = document.getElementById('msLightboxImg');
+    if (!wrap || !img || wrap.dataset.interactive === 'true') return;
+    wrap.dataset.interactive = 'true';
+    wrap.addEventListener('wheel', function (event) {
+      event.preventDefault();
+      adjustLightboxZoom(event.deltaY < 0 ? 0.2 : -0.2);
+    }, { passive: false });
+    wrap.addEventListener('pointerdown', function (event) {
+      wrap.setPointerCapture(event.pointerId);
+      lightboxPointers.set(event.pointerId, event);
+      if (lightboxPointers.size === 1) {
+        lightboxDragOrigin = {
+          x: event.clientX - lightboxOffsetX,
+          y: event.clientY - lightboxOffsetY
+        };
+      } else if (lightboxPointers.size === 2) {
+        var points = Array.from(lightboxPointers.values());
+        lightboxPinchDistance = lightboxDistance(points[0], points[1]);
+      }
+    });
+    wrap.addEventListener('pointermove', function (event) {
+      if (!lightboxPointers.has(event.pointerId)) return;
+      lightboxPointers.set(event.pointerId, event);
+      var points = Array.from(lightboxPointers.values());
+      if (points.length === 2) {
+        var distance = lightboxDistance(points[0], points[1]);
+        if (lightboxPinchDistance) {
+          lightboxZoom = Math.min(4, Math.max(1, lightboxZoom * distance / lightboxPinchDistance));
+          if (lightboxZoom === 1) {
+            lightboxOffsetX = 0;
+            lightboxOffsetY = 0;
+          }
+          applyLightboxTransform();
+        }
+        lightboxPinchDistance = distance;
+      } else if (points.length === 1 && lightboxZoom > 1 && lightboxDragOrigin) {
+        lightboxOffsetX = event.clientX - lightboxDragOrigin.x;
+        lightboxOffsetY = event.clientY - lightboxDragOrigin.y;
+        applyLightboxTransform();
+      }
+    });
+    function endPointer(event) {
+      lightboxPointers.delete(event.pointerId);
+      if (lightboxPointers.size < 2) lightboxPinchDistance = null;
+      if (lightboxPointers.size === 0) lightboxDragOrigin = null;
+    }
+    wrap.addEventListener('pointerup', endPointer);
+    wrap.addEventListener('pointercancel', endPointer);
+    wrap.addEventListener('dblclick', function () {
+      if (lightboxZoom > 1) resetLightboxZoom();
+      else adjustLightboxZoom(1);
+    });
+  }
+
   function openLightbox(imgSrc, title, caption) {
     var modal = document.getElementById('msLightboxModal');
     var img = document.getElementById('msLightboxImg');
@@ -1551,6 +1650,8 @@
     var c = document.getElementById('msLightboxCaption');
     if (modal && img) {
       img.src = imgSrc;
+      setupLightboxInteractions();
+      resetLightboxZoom();
       if (t && title) t.textContent = title;
       if (c && caption) c.textContent = caption;
       modal.classList.add('active');
@@ -1562,6 +1663,7 @@
     var modal = document.getElementById('msLightboxModal');
     if (modal) {
       modal.classList.remove('active');
+      resetLightboxZoom();
       document.body.style.overflow = '';
     }
   }
