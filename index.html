@@ -1061,12 +1061,16 @@
 
   function toggleMobileMenu(event) {
     if (event) event.preventDefault();
+    normalizeMobileMenuOrder();
     var header = document.querySelector('header');
     var button = document.querySelector('header .hamburger');
     if (!header || !button) return;
     var isOpen = header.classList.toggle('mobile-menu-open');
     button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     button.setAttribute('aria-label', isOpen ? 'Đóng menu' : 'Mở menu');
+    if (isOpen) {
+      window.setTimeout(normalizeMobileMenuOrder, 0);
+    }
   }
 
   function closeMobileMenu() {
@@ -1096,7 +1100,7 @@
   }
 
   function normalizeMobileMenuOrder() {
-    if (!window.matchMedia('(max-width: 889px)').matches) return;
+    if (window.innerWidth > 889) return;
     var order = ['#quy-trinh', '#chuc-nang', '#tuy-bien', '#doi-tuong', '#bang-gia'];
     document.querySelectorAll('header ul.main-nav, header .wrap-header > nav > ul.depth1').forEach(function (menu) {
       var items = Array.from(menu.children).filter(function (item) {
