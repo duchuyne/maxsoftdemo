@@ -1555,6 +1555,8 @@
   var lightboxPointers = new Map();
   var lightboxPinchState = null;
   var lightboxDragOrigin = null;
+  var lightboxFramePending = false;
+  var lightboxWrapCenter = { x: 0, y: 0 };
 
   function applyLightboxTransform() {
     var img = document.getElementById('msLightboxImg');
@@ -1589,11 +1591,10 @@
     return { x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2 };
   }
 
-  function lightboxLocalPoint(wrap, point) {
-    var rect = wrap.getBoundingClientRect();
+  function lightboxLocalPoint(point) {
     return {
-      x: point.x - (rect.left + rect.width / 2),
-      y: point.y - (rect.top + rect.height / 2)
+      x: point.x - lightboxWrapCenter.x,
+      y: point.y - lightboxWrapCenter.y
     };
   }
 
@@ -1602,6 +1603,14 @@
     var img = document.getElementById('msLightboxImg');
     if (!wrap || !img || wrap.dataset.interactive === 'true') return;
     wrap.dataset.interactive = 'true';
+    function scheduleTransform() {
+      if (lightboxFramePending) return;
+      lightboxFramePending = true;
+      requestAnimationFrame(function () {
+        lightboxFramePending = false;
+        applyLightboxTransform();
+      });
+    }
     wrap.addEventListener('wheel', function (event) {
       event.preventDefault();
       adjustLightboxZoom(event.deltaY < 0 ? 0.2 : -0.2);
@@ -1611,6 +1620,11 @@
       var img = document.getElementById('msLightboxImg');
       if (img) img.classList.add('is-interacting');
       wrap.setPointerCapture(event.pointerId);
+      var rect = wrap.getBoundingClientRect();
+      lightboxWrapCenter = {
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2
+      };
       lightboxPointers.set(event.pointerId, {
         clientX: event.clientX,
         clientY: event.clientY
@@ -1625,7 +1639,7 @@
         var pinchCenter = lightboxCenter(points[0], points[1]);
         lightboxPinchState = {
           distance: lightboxDistance(points[0], points[1]),
-          center: lightboxLocalPoint(wrap, pinchCenter),
+          center: lightboxLocalPoint(pinchCenter),
           zoom: lightboxZoom,
           offsetX: lightboxOffsetX,
           offsetY: lightboxOffsetY
@@ -1644,7 +1658,7 @@
       if (points.length === 2) {
         var distance = lightboxDistance(points[0], points[1]);
         if (lightboxPinchState && lightboxPinchState.distance > 0) {
-          var center = lightboxLocalPoint(wrap, lightboxCenter(points[0], points[1]));
+          var center = lightboxLocalPoint(lightboxCenter(points[0], points[1]));
           lightboxZoom = Math.min(4, Math.max(1, lightboxPinchState.zoom * distance / lightboxPinchState.distance));
           var scaleRatio = lightboxZoom / lightboxPinchState.zoom;
           lightboxOffsetX = center.x - (lightboxPinchState.center.x - lightboxPinchState.offsetX) * scaleRatio;
@@ -1653,12 +1667,12 @@
             lightboxOffsetX = 0;
             lightboxOffsetY = 0;
           }
-          applyLightboxTransform();
+          scheduleTransform();
         }
       } else if (points.length === 1 && lightboxZoom > 1 && lightboxDragOrigin) {
         lightboxOffsetX = event.clientX - lightboxDragOrigin.x;
         lightboxOffsetY = event.clientY - lightboxDragOrigin.y;
-        applyLightboxTransform();
+        scheduleTransform();
       }
     });
     function endPointer(event) {
