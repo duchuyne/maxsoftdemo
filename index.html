@@ -1589,6 +1589,14 @@
     return { x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2 };
   }
 
+  function lightboxLocalPoint(wrap, point) {
+    var rect = wrap.getBoundingClientRect();
+    return {
+      x: point.x - (rect.left + rect.width / 2),
+      y: point.y - (rect.top + rect.height / 2)
+    };
+  }
+
   function setupLightboxInteractions() {
     var wrap = document.querySelector('.ms-lightbox-img-wrap');
     var img = document.getElementById('msLightboxImg');
@@ -1614,9 +1622,10 @@
         };
       } else if (lightboxPointers.size === 2) {
         var points = Array.from(lightboxPointers.values());
+        var pinchCenter = lightboxCenter(points[0], points[1]);
         lightboxPinchState = {
           distance: lightboxDistance(points[0], points[1]),
-          center: lightboxCenter(points[0], points[1]),
+          center: lightboxLocalPoint(wrap, pinchCenter),
           zoom: lightboxZoom,
           offsetX: lightboxOffsetX,
           offsetY: lightboxOffsetY
@@ -1635,7 +1644,7 @@
       if (points.length === 2) {
         var distance = lightboxDistance(points[0], points[1]);
         if (lightboxPinchState && lightboxPinchState.distance > 0) {
-          var center = lightboxCenter(points[0], points[1]);
+          var center = lightboxLocalPoint(wrap, lightboxCenter(points[0], points[1]));
           lightboxZoom = Math.min(4, Math.max(1, lightboxPinchState.zoom * distance / lightboxPinchState.distance));
           var scaleRatio = lightboxZoom / lightboxPinchState.zoom;
           lightboxOffsetX = center.x - (lightboxPinchState.center.x - lightboxPinchState.offsetX) * scaleRatio;
