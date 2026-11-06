@@ -1095,13 +1095,71 @@
     }
   }
 
+  function normalizeMobileMenuOrder() {
+    if (!window.matchMedia('(max-width: 889px)').matches) return;
+    var order = ['#quy-trinh', '#chuc-nang', '#tuy-bien', '#doi-tuong', '#bang-gia'];
+    document.querySelectorAll('header ul.main-nav, header .wrap-header > nav > ul.depth1').forEach(function (menu) {
+      var items = Array.from(menu.children).filter(function (item) {
+        return item.tagName === 'LI';
+      });
+      if (!items.length) return;
+      var byHref = {};
+      items.forEach(function (item) {
+        var link = item.querySelector(':scope > a');
+        if (link) byHref[link.getAttribute('href')] = item;
+        if (menu.matches('ul.main-nav') && link && link.getAttribute('href') === '#gioi-thieu') {
+          item.remove();
+        }
+      });
+      items = Array.from(menu.children).filter(function (item) {
+        return item.tagName === 'LI';
+      });
+      byHref = {};
+      items.forEach(function (item) {
+        var link = item.querySelector(':scope > a');
+        if (link) byHref[link.getAttribute('href')] = item;
+      });
+      var currentOrder = items.map(function (item) {
+        var link = item.querySelector(':scope > a');
+        return link ? link.getAttribute('href') : '';
+      }).filter(Boolean);
+      var targetOrder = order.filter(function (href) {
+        return Boolean(byHref[href]);
+      });
+      if (currentOrder.join('|') !== targetOrder.join('|')) {
+        targetOrder.forEach(function (href) {
+          menu.appendChild(byHref[href]);
+        });
+      }
+    });
+  }
+
   updateResponsiveToolbar();
+  normalizeMobileMenuOrder();
   if (window.matchMedia) {
     var mobileToolbarQuery = window.matchMedia('(max-width: 889px)');
     if (typeof mobileToolbarQuery.addEventListener === 'function') {
-      mobileToolbarQuery.addEventListener('change', updateResponsiveToolbar);
+      mobileToolbarQuery.addEventListener('change', function () {
+        updateResponsiveToolbar();
+        normalizeMobileMenuOrder();
+      });
     } else if (typeof mobileToolbarQuery.addListener === 'function') {
-      mobileToolbarQuery.addListener(updateResponsiveToolbar);
+      mobileToolbarQuery.addListener(function () {
+        updateResponsiveToolbar();
+        normalizeMobileMenuOrder();
+      });
+    }
+  }
+  window.setTimeout(normalizeMobileMenuOrder, 0);
+  window.setTimeout(normalizeMobileMenuOrder, 250);
+  window.setTimeout(normalizeMobileMenuOrder, 1000);
+  if (window.MutationObserver) {
+    var mobileMenuObserver = new MutationObserver(function () {
+      normalizeMobileMenuOrder();
+    });
+    var mobileMenuNav = document.querySelector('header .wrap-header > nav');
+    if (mobileMenuNav) {
+      mobileMenuObserver.observe(mobileMenuNav, { childList: true });
     }
   }
 

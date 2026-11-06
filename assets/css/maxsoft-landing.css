@@ -2049,6 +2049,9 @@
 
   /* Match the mobile menu order with the page sections */
   @media (max-width: 889px) {
+    header .wrap-header > nav > ul.main-nav > li:last-child {
+      display: block !important;
+    }
     header .wrap-header > nav > ul.depth1 {
       display: flex !important;
       flex-direction: column !important;
