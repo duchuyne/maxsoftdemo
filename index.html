@@ -34,7 +34,10 @@
 <!-- CSS / Fonts -->
 <link type="text/css" rel="stylesheet" href="assets/css/new-main8b3f.css?ver=2026110201" />
 
-<link type="text/css" rel="stylesheet" href="assets/css/maxsoft-landing.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="assets/css/maxsoft-landing.css?ver=20261106_02" />
 <link rel="preload" as="image" href="assets/images/main/main-visual-01-full.jpg?v=20261105_04" fetchpriority="high" />
 
 <script type="text/javascript" src="assets/path-tracking/common.pathTrackingcd4e.js?ver=20261027"></script>
@@ -90,7 +93,7 @@
 </ul>
     </nav>
     <ul class="button">
-      <li class="call"><span>Hotline<br />0123456789</span></li>
+      <li class="call"><a href="tel:0123456789" title="Gọi Hotline 0123456789" aria-label="Gọi Hotline 0123456789"><span>Hotline<br />0123456789</span></a></li>
       <li class="contactus"><a href="javascript:void(0);" onclick="openDemoModal('Tư vấn giải pháp quản lý kho bãi');" title="Yêu cầu tư vấn">Yêu cầu <br />tư vấn</a></li>
       <li class="ft"><a href="javascript:void(0);" onclick="openDemoModal('Đăng ký Demo 30 phút');" title="Đăng ký Demo">Đăng ký <br />Demo 30p</a></li>
     </ul>
@@ -120,7 +123,7 @@
             <li><a href="#step-5-doanh-thu" title="01. Theo dõi kho bãi & doanh thu">01. Quản lý kho & Doanh thu</a></li>
             <li><a href="#step-3-gom-ma-po" title="02. Tự gom mã thiếu tạo đơn mua">02. Tự gom mã thiếu đặt NCC</a></li>
             <li><a href="#step-2-bom" title="03. BOM & Xuất hóa đơn dự án">03. BOM & Hóa đơn theo dự án</a></li>
-            <li><a href="#bang-gia" title="04. Bảng giá cho DN sản xuất">04. Bảng giá & Ưu đãi xưởng</a></li>
+            <li><a href="#bang-gia" title="04. Bảng giá cho mọi doanh nghiệp">04. Bảng giá & Chính sách ưu đãi</a></li>
           </ul>
         </nav>
       </div>
@@ -131,46 +134,36 @@
           <div class="swiper-slide slide01">
             <div class="background-visual"></div>
             <div class="wrap-title">
-              <span class="badge-tag">Tập trung ngành sản xuất · Doanh nghiệp vừa & nhỏ (SMEs)</span>
+              <span class="badge-tag">Phần mềm kho cho mọi loại hình doanh nghiệp</span>
               <h1>
-                Phần Mềm Quản Lý Kho Bãi & Vật Tư<br />
-                <span class="highlight">Theo Dõi Mọi Thông Tin Kể Cả Doanh Thu</span>
+                Kho hết lệch.<br />
+                <span class="highlight">Dự án hết bán lỗ.</span>
               </h1>
               <h3>
-                Khép kín luồng: <strong>Báo giá → Định mức BOM → Tự gom đơn mua PO mã thiếu → Lấy hàng theo ca → Xuất hóa đơn dự án</strong>.
+                Quản lý kho bãi, vật tư và doanh thu trên một màn hình: báo giá, định mức BOM, gom mã thiếu đặt nhà cung cấp, lấy hàng theo ca.
               </h3>
-              <div class="ms-hero-pills">
-                <span class="ms-hero-pill">⚡ Có BOM định mức</span>
-                <span class="ms-hero-pill">🛒 Tự gom mã thiếu NCC</span>
-                <span class="ms-hero-pill">📊 Theo dõi kho & doanh thu</span>
-                <span class="ms-hero-pill">🏢 Tùy biến theo từng xưởng</span>
+              <div class="ms-hero-actions">
+                <a href="javascript:void(0);" onclick="openDemoModal('Đăng ký xem Demo thực tế');" class="button-section" title="Đăng ký Demo 30 phút">Xem demo trên kho của bạn</a>
+                <a href="#bang-gia" class="button-ghost" title="Xem bảng giá">Từ 2 triệu/tháng</a>
               </div>
-              <div style="margin-top: 25px; display: flex; gap: 14px; flex-wrap: wrap;">
-                <a href="#chuc-nang" class="button-section" style="margin: 0; background: #158C99; border-color: #158C99;" title="Khám phá chức năng">Xem 21+ Ảnh Chức Năng</a>
-                <a href="javascript:void(0);" onclick="openDemoModal('Đăng ký xem Demo thực tế');" class="button-section" style="margin: 0; background: #158C99; border-color: #158C99;" title="Đăng ký Demo 30 phút">Đăng Ký Demo 30 Phút</a>
-              </div>
+              <p class="ms-hero-note">Đang chạy tại xưởng Max Electric · Giữ phần mềm kế toán hiện tại</p>
             </div>
           </div>
           <!-- Slide 2: TỰ GOM MÃ THIẾU & BOM -->
           <div class="swiper-slide slide02" data-swiper-autoplay="6000">
             <div class="background-visual"></div>
             <div class="wrap-title">
-              <span class="badge-tag">BOM Định Mức · Tự Động Gom Mã Thiếu</span>
+              <span class="badge-tag">BOM đối chiếu tồn kho</span>
               <h1>
-                Tạo Đơn Xem Ngay Các Mã Còn Thiếu<br />
-                Xuất Hóa Đơn & Chứng Từ Theo Dự Án
+                Thiếu mã nào,<br />
+                <span class="highlight">đơn mua hiện ra luôn.</span>
               </h1>
               <h3>
-                Tự động đối chiếu BOM với tồn kho: phát hiện mã thiếu, 1-click gom đơn mua PO gửi NCC, kiểm soát phiếu xuất và hóa đơn theo từng công trình.
+                Hệ thống so BOM với tồn thật, gom các mã còn thiếu thành một đơn gửi nhà cung cấp, rồi xuất hóa đơn theo từng công trình.
               </h3>
-              <div class="ms-hero-pills">
-                <span class="ms-hero-pill">⚡ Đối soát tồn kho tự động</span>
-                <span class="ms-hero-pill">🛒 1-Click tạo đơn mua PO</span>
-                <span class="ms-hero-pill">📑 Hóa đơn theo công trình</span>
-              </div>
-              <div style="margin-top: 25px; display: flex; gap: 14px; flex-wrap: wrap;">
-                <a href="#step-3-gom-ma-po" class="button-section" style="margin: 0; background: #158C99; border-color: #158C99;" title="Xem cơ chế gom mã thiếu">Xem Cơ Chế Gom Mã PO</a>
-                <a href="javascript:void(0);" onclick="openDemoModal('Đăng ký xem Demo BOM & Đơn mua PO');" class="button-section" style="margin: 0; background: #158C99; border-color: #158C99;" title="Đăng ký Demo 30 phút">Đăng Ký Demo 30 Phút</a>
+              <div class="ms-hero-actions">
+                <a href="javascript:void(0);" onclick="openDemoModal('Đăng ký xem Demo BOM & Đơn mua PO');" class="button-section" title="Đăng ký Demo 30 phút">Xem cách gom đơn mua</a>
+                <a href="#step-3-gom-ma-po" class="button-ghost" title="Xem cơ chế gom mã thiếu">Xem màn hình thật</a>
               </div>
             </div>
           </div>
@@ -178,21 +171,17 @@
           <div class="swiper-slide slide03" data-swiper-autoplay="6000">
             <div class="background-visual"></div>
             <div class="wrap-title">
-              <span class="badge-tag" style="background:#fef3c7; color:#b45309;">Chương trình độc quyền dành cho SMEs</span>
+              <span class="badge-tag badge-tag-warm">Còn 3 suất xưởng đầu tiên</span>
               <h1>
-                Suất Founding Member<br />
-                Ưu Đãi Giảm 40% Đến 24 Tháng
+                Giảm 40%.<br />
+                <span class="highlight">Hoàn cọc nếu không khớp.</span>
               </h1>
               <h3>
-                Miễn phí 100% triển khai kho xưởng · Tặng 2 tháng đầu tiên · Cam kết hoàn cọc 100% đến 15/03/2027 (Giới hạn 3 suất cho doanh nghiệp sản xuất).
+                Miễn phí triển khai tại xưởng, tặng 2 tháng đầu. Đặt cọc 2 triệu giữ suất — hoàn đủ đến 15/03/2027 nếu không dùng được.
               </h3>
-              <div class="ms-hero-pills">
-                <span class="ms-hero-pill" style="border-color:#fef08a; color:#fef08a;">🎁 Tiết kiệm 6 – 12 triệu phí triển khai</span>
-                <span class="ms-hero-pill" style="border-color:#fef08a; color:#fef08a;">🛡️ Hoàn cọc 100% không rủi ro</span>
-              </div>
-              <div style="margin-top: 25px; display: flex; gap: 14px; flex-wrap: wrap;">
-                <a href="#bang-gia" class="button-section" style="margin: 0; background: #158C99; border-color: #158C99; color: #ffffff;" title="Xem chính sách bảng giá">Xem Bảng Giá & Ưu Đãi 40%</a>
-                <a href="javascript:void(0);" onclick="openDemoModal('Nhận suất Founding Member 40%');" class="button-section" style="margin: 0; background: #158C99; border-color: #158C99;" title="Đăng ký giữ suất">Đăng Ký Giữ Suất Ưu Đãi</a>
+              <div class="ms-hero-actions">
+                <a href="javascript:void(0);" onclick="openDemoModal('Nhận suất Founding Member 40%');" class="button-section" title="Đăng ký giữ suất">Giữ suất giảm 40%</a>
+                <a href="#bang-gia" class="button-ghost" title="Xem chính sách bảng giá">Xem 3 gói giá</a>
               </div>
             </div>
           </div>
@@ -201,13 +190,23 @@
       </div>
     </section>
 
+    <section class="ms-proof" aria-label="Lý do thuê">
+      <div class="ms-proof-inner">
+        <div><strong>19.000+</strong><span>mã vật tư trên một danh mục</span></div>
+        <div><strong>5 bước</strong><span>từ giá mua đến doanh thu</span></div>
+        <div><strong>10 giây</strong><span>thấy lãi gộp từng dự án</span></div>
+        <div><strong>2 ca</strong><span>lấy hàng, kho không ùn</span></div>
+        <a href="javascript:void(0);" onclick="openDemoModal('Đăng ký Demo 30 phút');">Đặt lịch 30 phút</a>
+      </div>
+    </section>
+
         <!-- SECTION 2: VIDEO TITLE & 5-STEP WORKFLOW -->
     <section class="video-title" id="quy-trinh">
       <div class="wrap-title-center">
-        <span class="badge-tag">Chuẩn Hóa Dòng Hàng & Dòng Tiền</span>
-        <h2>Quy trình quản lý kho bãi & vật tư khép kín cho xưởng sản xuất</h2>
+        <span class="badge-tag">Một vòng hàng, một vòng tiền</span>
+        <h2>Năm bước. Hết thì kho biết lãi.</h2>
         <p class="ms-proc-subtitle">
-          5 bước tự động hóa khép kín: kiểm soát giá mua, định mức BOM, tự gom mã thiếu đặt NCC đến cấp phát hàng ca xưởng & theo dõi doanh thu theo thời gian thực.
+          Giá mua được duyệt, BOM bóc từ Excel, mã thiếu gom thành đơn nhà cung cấp, thợ lấy hàng đúng ca, chủ xưởng xem doanh thu trên cùng một sổ.
         </p>
       </div>
 
@@ -455,26 +454,26 @@
     <section class="ms-showcase-section" id="chuc-nang">
       <span id="tinh-nang" class="ms-anchor-alias" aria-hidden="true"></span>
       <div class="ms-section-header">
-        <span class="badge-tag">Giao Diện Thực Tế Đang Vận Hành</span>
-        <h2>Ảnh Chụp Chức Năng Hiện Có Của MaxSoft</h2>
+        <span class="badge-tag">Màn hình đang chạy</span>
+        <h2>Bấm vào là thấy phần mềm thật.</h2>
         <p class="subtitle">
-          Khám phá hệ thống quản lý kho bãi, vật tư, định mức BOM và doanh thu được thiết kế chuyên sâu cho các nhà xưởng sản xuất.
+          Không phải ảnh minh họa. Đây là kho, BOM, đơn mua và doanh thu MaxSoft đang dùng trong xưởng.
         </p>
       </div>
 
       <!-- Horizontal Pill Nav -->
       <div class="ms-showcase-nav">
         <div class="ms-nav-scroll" id="msPillNav">
-          <button class="ms-pill-btn active" onclick="goToSlide(0);">📊 Bàn Điều Khiển</button>
-          <button class="ms-pill-btn" onclick="goToSlide(1);">📦 Báo Cáo Kho</button>
-          <button class="ms-pill-btn" onclick="goToSlide(2);">🛒 Đơn Mua PO (Gom Mã Thiếu)</button>
-          <button class="ms-pill-btn" onclick="goToSlide(3);">⚡ Định Mức BOM</button>
-          <button class="ms-pill-btn" onclick="goToSlide(4);">🚚 Lấy Hàng Ca Xưởng</button>
-          <button class="ms-pill-btn" onclick="goToSlide(5);">💰 Duyệt Giá Đầu Vào</button>
-          <button class="ms-pill-btn" onclick="goToSlide(6);">📑 Quản Lý Báo Giá</button>
-          <button class="ms-pill-btn" onclick="goToSlide(7);">🔒 Phân Quyền & Ẩn Giá Vốn</button>
-          <button class="ms-pill-btn" onclick="goToSlide(8);">📥 Import Excel 4 Bước</button>
-          <button class="ms-pill-btn" onclick="goToSlide(9);">📋 Danh Mục 19.000+ Vật Tư</button>
+          <button class="ms-pill-btn active" onclick="goToSlide(0);">Bàn điều khiển</button>
+          <button class="ms-pill-btn" onclick="goToSlide(1);">Báo cáo kho</button>
+          <button class="ms-pill-btn" onclick="goToSlide(2);">Đơn mua mã thiếu</button>
+          <button class="ms-pill-btn" onclick="goToSlide(3);">Định mức BOM</button>
+          <button class="ms-pill-btn" onclick="goToSlide(4);">Lấy hàng theo ca</button>
+          <button class="ms-pill-btn" onclick="goToSlide(5);">Duyệt giá đầu vào</button>
+          <button class="ms-pill-btn" onclick="goToSlide(6);">Báo giá</button>
+          <button class="ms-pill-btn" onclick="goToSlide(7);">Ẩn giá vốn</button>
+          <button class="ms-pill-btn" onclick="goToSlide(8);">Nhập từ Excel</button>
+          <button class="ms-pill-btn" onclick="goToSlide(9);">19.000+ mã vật tư</button>
         </div>
       </div>
 
@@ -482,14 +481,9 @@
       <div class="ms-device-frame">
         <!-- Window Topbar -->
         <div class="ms-device-topbar">
-          <div class="ms-window-dots">
-            <span class="ms-dot dot-red"></span>
-            <span class="ms-dot dot-yellow"></span>
-            <span class="ms-dot dot-green"></span>
-          </div>
           <div class="ms-window-url">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="opacity: 0.6;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-            <span id="msCurrentUrl">https://app.maxsoft.vn/dashboard</span>
+            <span id="msCurrentUrl">Ảnh chụp màn hình thật — app.maxsoft.vn/dashboard</span>
           </div>
           <div class="ms-window-actions">
             <button class="ms-btn-fullscreen" onclick="openActiveLightbox();" title="Xem ảnh gốc phóng to">
@@ -571,7 +565,7 @@
               <span id="msSlideCurrent">01</span> / <span id="msSlideTotal">10</span>
             </div>
             <button class="ms-btn-pause" id="msBtnPlayPause" onclick="toggleAutoPlay();" title="Tạm dừng / Tiếp tục">
-              <span id="msPlayPauseIcon">⏸</span>
+              <svg id="msPlayPauseIcon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" data-state="pause"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
             </button>
           </div>
         </div>
@@ -586,17 +580,17 @@
     <!-- SECTION: KHẢ NĂNG TÙY BIẾN THEO TỪNG MÔ HÌNH DOANH NGHIỆP -->
     <section class="ms-customization" id="tuy-bien">
       <div class="ms-section-header">
-        <span class="badge-tag" style="background:#e0f2fe; color:#0284c7;">Kiến Trúc Mở & Linh Hoạt</span>
-        <h2>Tùy Biến Theo Từng Mô Hình Doanh Nghiệp</h2>
+        <span class="badge-tag">Tùy biến theo ngành, không rập khuôn</span>
+        <h2>Năm ví dụ thực tế. Vẫn là một nền tảng tùy biến được cho mọi doanh nghiệp.</h2>
         <p class="subtitle">
-          MaxSoft hiểu rằng mỗi ngành sản xuất đều có đặc thù quản lý kho và dòng vật tư riêng biệt. Hệ thống được thiết kế để dễ dàng cấu hình và tùy biến thích ứng hoàn hảo với từng quy mô nhà xưởng.
+          Mỗi ngành có đặc thù quản lý kho và dòng vật tư riêng. MaxSoft cấu hình lại danh mục, đơn vị tính, quy trình duyệt và báo cáo để khớp với mô hình của bất kỳ loại hình doanh nghiệp nào — không riêng sản xuất hay nhà xưởng.
         </p>
       </div>
 
       <div class="ms-cust-grid">
         <!-- Ngành 1: Cơ điện & Tủ bảng điện -->
         <div class="ms-cust-card">
-          <div class="ms-cust-icon">⚡</div>
+          <div class="ms-cust-icon" aria-hidden="true">01</div>
           <div class="ms-cust-title">Sản Xuất Cơ Điện & Tủ Bảng Điện</div>
           <div class="ms-cust-desc">
             Quản lý định mức BOM nhiều cấp: Vỏ tủ, thiết bị đóng cắt (ACB, MCCB, MCB), thanh cái đồng, phụ kiện tủ điện. Tự động gom mã thiếu đặt hàng từ các đại lý chính hãng.
@@ -610,7 +604,7 @@
 
         <!-- Ngành 2: Gia công cơ khí -->
         <div class="ms-cust-card">
-          <div class="ms-cust-icon">⚙️</div>
+          <div class="ms-cust-icon" aria-hidden="true">02</div>
           <div class="ms-cust-title">Gia Công Cơ Khí & Kim Loại Tấm</div>
           <div class="ms-cust-desc">
             Theo dõi kho nguyên vật liệu tôn cuộn, thép tấm, inox, que hàn theo Kg/Mét. Quản lý định mức phôi cắt và ca xuất kho lấy vật tư tại xưởng chặt chẽ.
@@ -624,7 +618,7 @@
 
         <!-- Ngành 3: Sản xuất nội thất -->
         <div class="ms-cust-card">
-          <div class="ms-cust-icon">🪑</div>
+          <div class="ms-cust-icon" aria-hidden="true">03</div>
           <div class="ms-cust-title">Sản Xuất Nội Thất & Gỗ Công Nghiệp</div>
           <div class="ms-cust-desc">
             Kiểm soát vật tư ván gỗ MDF, nẹp chỉ, keo dán, phụ kiện ray bản lề theo từng công trình căn hộ. Xuất hóa đơn và chứng từ chi tiết gắn liền với từng dự án.
@@ -638,7 +632,7 @@
 
         <!-- Ngành 4: Nhà thầu M&E -->
         <div class="ms-cust-card">
-          <div class="ms-cust-icon">🏗️</div>
+          <div class="ms-cust-icon" aria-hidden="true">04</div>
           <div class="ms-cust-title">Nhà Thầu M&E & Lắp Đặt Công Trình</div>
           <div class="ms-cust-desc">
             Bóc tách khối lượng vật tư từ file Excel thiết kế trong 2 phút. Quản lý xuất kho theo tiến độ từng gói thầu, kiểm soát giá mua vào sát sườn với ngân sách dự toán.
@@ -652,7 +646,7 @@
 
         <!-- Ngành 5: Thương mại kỹ thuật -->
         <div class="ms-cust-card">
-          <div class="ms-cust-icon">📦</div>
+          <div class="ms-cust-icon" aria-hidden="true">05</div>
           <div class="ms-cust-title">Thương Mại Kỹ Thuật & Vật Tư Kho</div>
           <div class="ms-cust-desc">
             Quản lý hơn 19.000+ danh mục thiết bị, theo dõi đơn giá mua đã duyệt và chiết khấu đại lý. Hệ thống phân quyền ẩn giá vốn để nhân viên kinh doanh tự tin báo giá khách hàng.
@@ -673,38 +667,38 @@
     <!-- SECTION 5: ĐỐI TƯỢNG DOANH NGHIỆP PHÙ HỢP -->
     <section class="industries ms-industries-section" id="doi-tuong">
       <div class="ms-section-header">
-        <span class="badge-tag">Tập Trung Ngành Sản Xuất · Kho Bãi & Vật Tư</span>
-        <h2>Doanh Nghiệp Nào Phù Hợp Nhất Với MaxSoft?</h2>
+        <span class="badge-tag">Tùy biến theo từng mô hình kinh doanh</span>
+        <h2>Một nền tảng, tùy biến cho mọi loại hình doanh nghiệp.</h2>
         <p class="subtitle">
-          Thiết kế may đo cho các nhà xưởng và doanh nghiệp vừa & nhỏ (SMEs) có kho bãi, quản lý nhiều mã vật tư linh kiện và cần kiểm soát kho song hành với doanh thu.
+          Không chỉ nhà xưởng — MaxSoft cấu hình được cho mọi quy mô và ngành nghề cần quản lý kho, vật tư và doanh thu, từ sản xuất, thương mại đến dịch vụ kỹ thuật.
         </p>
       </div>
 
       <!-- 4-Audience Grid -->
       <div class="ms-audience-grid">
         <div class="ms-audience-card">
-          <div class="ms-audience-icon">⚡</div>
+          <div class="ms-audience-icon" aria-hidden="true">01</div>
           <h3>Xưởng Cơ Điện & Tủ Bảng Điện</h3>
           <p>Cần bóc tách định mức BOM linh kiện nhiều cấp, kiểm soát chặt giá vốn thiết bị đóng cắt và gom đơn mua PO kịp tiến độ.</p>
           <span class="ms-audience-tag">Quản lý BOM đa cấp</span>
         </div>
         <div class="ms-audience-card">
-          <div class="ms-audience-icon">⚙️</div>
+          <div class="ms-audience-icon" aria-hidden="true">02</div>
           <h3>Gia Công Cơ Khí & Kim Loại Tấm</h3>
           <p>Quản lý phôi cắt, thép tấm, inox theo Kg/Mét; điều phối cấp phát vật tư theo 2 ca xưởng (sáng/chiều) dẹp bỏ ùn tắc.</p>
           <span class="ms-audience-tag">Xuất kho theo ca</span>
         </div>
         <div class="ms-audience-card">
-          <div class="ms-audience-icon">🪑</div>
+          <div class="ms-audience-icon" aria-hidden="true">03</div>
           <h3>Sản Xuất Nội Thất & Thi Công M&E</h3>
           <p>Bóc tách vật tư từ bản vẽ, đối soát tồn kho tức thì và xuất hóa đơn chứng từ gắn liền với từng công trình, dự án.</p>
           <span class="ms-audience-tag">Hóa đơn theo dự án</span>
         </div>
         <div class="ms-audience-card">
-          <div class="ms-audience-icon">📦</div>
-          <h3>Doanh Nghiệp Vừa & Nhỏ Có Kho</h3>
-          <p>Gọn nhẹ, không cồng kềnh. Vận hành song song cạnh phần mềm kế toán, nắm bắt doanh thu và tồn kho trong 10 giây.</p>
-          <span class="ms-audience-tag">Đồng bộ kế toán</span>
+          <div class="ms-audience-icon" aria-hidden="true">04</div>
+          <h3>Mọi Doanh Nghiệp Cần Quản Lý Kho & Vật Tư</h3>
+          <p>Dù là sản xuất, thương mại hay dịch vụ kỹ thuật — hệ thống tùy biến theo đúng quy trình của bạn, chạy song song cạnh phần mềm kế toán hiện tại.</p>
+          <span class="ms-audience-tag">Tùy biến theo mọi ngành</span>
         </div>
       </div>
 
@@ -721,7 +715,7 @@
     <!-- SECTION 6: 5 TRỤ CỘT SỨC MẠNH CỦA MAXSOFT -->
     <section class="strength">
       <div class="wrap-title-center">
-        <h2>Tại sao các xưởng sản xuất lựa chọn MaxSoft?</h2>
+        <h2>Năm việc chủ xưởng mở phần mềm để làm.</h2>
       </div>
       <ul>
         <!-- Card 1 -->
@@ -784,9 +778,9 @@
 
     <!-- SECTION 7: BẢNG GIÁ PHẦN MỀM KHO BÃI MAXSOFT -->
     <section class="price bg-lazy" id="bang-gia" data-src="assets/images/main/bg-section-13c044.jpg?ver=2023102401" style="padding: 70px 20px;">
-      <h2>Bảng Giá Phần Mềm Quản Lý Kho Bãi MaxSoft<span></span></h2>
-      <p style="color:#e2e8f0; font-size:16px; margin-bottom: 45px; text-align:center;">
-        Chính sách giá minh bạch, tối ưu chi phí cho các doanh nghiệp sản xuất vừa và nhỏ có kho bãi, vật tư.
+      <h2>Thuê theo tháng. Biết số trước khi gọi.<span></span></h2>
+      <p>
+        Một ca lệch hàng thường đắt hơn cả tháng phần mềm. Gói giữa là suất đang mở cho xưởng muốn chạy thật, không chạy thử cho có.
       </p>
 
       <!-- 3 Columns Pricing Grid -->
@@ -812,10 +806,10 @@
 
         <!-- Gói Founding Member (Nổi bật nhất - 3 Suất) -->
         <div class="ms-price-card featured">
-          <div class="ms-ribbon">Chỉ 3 suất cho DN sản xuất</div>
-          <div class="ms-plan-name" style="color: #158C99;">Founding Member</div>
+          <div class="ms-ribbon">Nên bắt đầu ở đây</div>
+          <div class="ms-plan-name">Suất xưởng đầu</div>
           <div class="ms-plan-desc">Dành cho 3 doanh nghiệp sản xuất tiên phong đồng hành triển khai thực tế cùng MaxSoft.</div>
-          <div class="ms-plan-price" style="color: #158C99;">
+          <div class="ms-plan-price">
             2.100.000 <span class="unit">đ / tháng</span>
           </div>
           <div class="ms-plan-discount">Giảm 40% trọn vẹn 24 tháng (Giá gốc 3.5tr)</div>
@@ -827,7 +821,7 @@
             <li><strong>Cam kết hoàn cọc 100%:</strong> Đặt cọc 2 triệu giữ suất, hoàn lại đầy đủ nếu không hài lòng đến 15/03/2027</li>
             <li>Đội ngũ kỹ thuật hỗ trợ trực tiếp tại nhà xưởng</li>
           </ul>
-          <a href="javascript:void(0);" onclick="openDemoModal('Đăng ký Suất Founding Member');" class="ms-btn-select">Giữ Suất Founding Member</a>
+          <a href="javascript:void(0);" onclick="openDemoModal('Đăng ký Suất Founding Member');" class="ms-btn-select">Giữ suất này — còn 3 xưởng</a>
         </div>
 
         <!-- Gói Đầy đủ -->
@@ -862,7 +856,7 @@
 <footer id="gioi-thieu">
 	<section class="contact">
 		<div class="wrap-contact">
-			<h2>Nhận tư vấn giải pháp kho bãi từ chuyên gia sản xuất</h2>
+			<h2>30 phút trên kho của bạn. Hết giờ là biết có thuê hay không.</h2>
 			<ul class="contact">
 				<li class="call"><span class="number">0123456789</span></li>
         <li class="contactus"><a href="javascript:void(0);" onclick="openDemoModal('Yêu cầu tư vấn từ Footer');" title="Yêu cầu tư vấn">Yêu cầu tư vấn</a></li>
@@ -955,8 +949,10 @@
 <!-- COMPACT SUPPORT CHAT -->
 <div id="ms-chat-widget">
   <button class="ms-chat-greeting" type="button" aria-label="Mở chat tư vấn" onclick="toggleMaxsoftChat(true);">
-    <span class="ms-chat-avatar" aria-hidden="true">👩🏻‍💼</span>
-    <span>Xin chào ! Tôi là trợ lý ảo Max Girl</span>
+    <span class="ms-chat-avatar" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
+    </span>
+    <span>Xin chào ! Tôi là trợ lý tư vấn MaxSoft</span>
   </button>
   <div id="ms-chat-panel" role="dialog" aria-label="Tư vấn nhanh MaxSoft">
     <div class="ms-chat-head">
@@ -1003,7 +999,9 @@
       <button class="ms-chat-demo" type="button" onclick="openDemoModal('Đăng ký Demo từ khung chat');">Đăng ký Demo 30 phút</button>
     </div>
   </div>
-  <button id="ms-chat-toggle" type="button" aria-label="Mở chat tư vấn" aria-expanded="false" onclick="toggleMaxsoftChat();"><span aria-hidden="true">👩🏻‍💼</span></button>
+  <button id="ms-chat-toggle" type="button" aria-label="Mở chat tư vấn" aria-expanded="false" onclick="toggleMaxsoftChat();">
+    <span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></span>
+  </button>
 </div>
 
 <!-- INTERACTIVE MODAL DEMO / CONTACT -->
@@ -1590,7 +1588,12 @@
   function toggleAutoPlay() {
     isPlaying = !isPlaying;
     var icon = document.getElementById('msPlayPauseIcon');
-    if (icon) icon.textContent = isPlaying ? '⏸' : '▶';
+    if (icon) {
+      icon.setAttribute('data-state', isPlaying ? 'pause' : 'play');
+      icon.innerHTML = isPlaying
+        ? '<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>'
+        : '<polygon points="6,4 20,12 6,20"></polygon>';
+    }
   }
 
   function openActiveLightbox() {
