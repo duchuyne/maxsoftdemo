@@ -1,0 +1,3385 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaxSoft ERP V2 - Quản Lý Báo Giá & Dự Án Max Electric</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0c4a6e',
+              900: '#0a3651',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Structured Table Styles */
+    .erp-table th, .erp-table td {
+      border-right: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .erp-table th:last-child, .erp-table td:last-child {
+      border-right: none;
+    }
+    .erp-table tr:hover {
+      background-color: #f8fafc;
+    }
+    
+    /* Input Styling */
+    .erp-input {
+      border: 1px solid #cbd5e1;
+      border-radius: 0.375rem;
+      padding: 0.375rem 0.625rem;
+      font-size: 0.875rem;
+      transition: all 0.15s ease;
+    }
+    .erp-input:focus {
+      outline: none;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
+    }
+
+    /* Badge Pulse */
+    .badge-pulse {
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen">
+
+  <div id="app" class="min-h-screen flex flex-col">
+
+    <!-- TOP STICKY HEADER & NAVBAR -->
+    <header class="sticky top-0 z-40 bg-slate-900 text-white shadow-md border-b border-slate-800">
+      <div class="max-w-[1700px] mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between h-16">
+          
+          <!-- BRAND & LOGO -->
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center text-white font-black text-xl shadow-lg border border-sky-400/30">
+              M
+            </div>
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="font-extrabold text-lg tracking-tight text-white">MAXSOFT <span class="text-sky-400">ERP V2</span></span>
+                <span class="bg-sky-500/20 text-sky-300 text-[10px] font-semibold px-2 py-0.5 rounded border border-sky-400/30 uppercase tracking-wide">Báo Giá & Dự Án</span>
+              </div>
+              <p class="text-[11px] text-slate-400 hidden sm:block">Hệ thống Điều phối Lead AI & Quản Lý Thi Công Tủ Điện B2B</p>
+            </div>
+          </div>
+
+          <!-- MODULE TABS -->
+          <nav class="hidden lg:flex items-center space-x-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700/60">
+            <button 
+              @click="activeTab = 'leads'"
+              :class="activeTab === 'leads' ? 'bg-sky-600 text-white shadow-sm font-semibold' : 'text-slate-300 hover:text-white hover:bg-slate-700/50'"
+              class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center space-x-2">
+              <i class="fa-solid fa-filter-circle-dollar"></i>
+              <span>1. Phân Bổ Lead MKT</span>
+              <span class="bg-slate-900/60 text-sky-200 text-[10px] px-1.5 py-0.5 rounded-full font-bold ml-1"
+                    :class="{'bg-emerald-500 text-white': unassignedLeadsCount > 0}">
+                {{ unassignedLeadsCount }}
+              </span>
+            </button>
+
+            <button 
+              @click="activeTab = 'projects'"
+              :class="activeTab === 'projects' ? 'bg-sky-600 text-white shadow-sm font-semibold' : 'text-slate-300 hover:text-white hover:bg-slate-700/50'"
+              class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center space-x-2">
+              <i class="fa-solid fa-diagram-project"></i>
+              <span>2. Quản Lý Báo Giá & Dự Án</span>
+              <span class="bg-slate-900/60 text-sky-200 text-[10px] px-1.5 py-0.5 rounded-full font-bold ml-1">
+                {{ projects.length }}
+              </span>
+            </button>
+
+            <button 
+              @click="activeTab = 'customers'"
+              :class="activeTab === 'customers' ? 'bg-sky-600 text-white shadow-sm font-semibold' : 'text-slate-300 hover:text-white hover:bg-slate-700/50'"
+              class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center space-x-2">
+              <i class="fa-solid fa-building-user"></i>
+              <span>3. Khách Hàng B2B & AI Playbook</span>
+              <span class="bg-slate-900/60 text-sky-200 text-[10px] px-1.5 py-0.5 rounded-full font-bold ml-1">
+                {{ customers.length }}
+              </span>
+            </button>
+
+            <button 
+              @click="activeTab = 'kpi'"
+              :class="activeTab === 'kpi' ? 'bg-sky-600 text-white shadow-sm font-semibold' : 'text-slate-300 hover:text-white hover:bg-slate-700/50'"
+              class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center space-x-2">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>4. Báo Cáo Sales & KPI</span>
+            </button>
+
+            <button 
+              @click="activeTab = 'power'"
+              :class="activeTab === 'power' ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-sm font-bold' : 'text-amber-300 hover:text-white hover:bg-slate-700/50'"
+              class="px-3.5 py-2 rounded-lg text-xs transition-all flex items-center space-x-2 border border-amber-500/30">
+              <i class="fa-solid fa-bolt-lightning"></i>
+              <span>5. Ma Trận Sức Mạnh & Auto Level</span>
+            </button>
+          </nav>
+
+          <!-- HEADER CONTROLS -->
+          <div class="flex items-center space-x-3">
+            <!-- Global Search -->
+            <div class="relative hidden md:block w-48 xl:w-64">
+              <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-xs text-slate-400"></i>
+              <input 
+                v-model="globalSearch" 
+                type="text" 
+                placeholder="Tìm dự án, MST, KH..." 
+                class="w-full bg-slate-800 text-slate-100 placeholder-slate-400 text-xs pl-8 pr-3 py-1.5 rounded-lg border border-slate-700 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+            </div>
+
+            <!-- Quick Create Quotation Button -->
+            <button 
+              @click="activeTab = 'projects'; createNewProject()"
+              class="px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold shadow-xs flex items-center space-x-1.5 transition">
+              <i class="fa-solid fa-plus"></i>
+              <span class="hidden sm:inline">+ Tạo Báo Giá Mới</span>
+            </button>
+
+            <!-- User Badge -->
+            <div class="flex items-center space-x-2 pl-2 border-l border-slate-700">
+              <div class="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center font-bold text-xs text-white ring-2 ring-emerald-400/30">
+                BD
+              </div>
+              <div class="hidden xl:block text-left">
+                <div class="text-xs font-bold leading-none text-slate-100">Ban Giám Đốc</div>
+                <div class="text-[10px] text-slate-400 leading-tight mt-0.5">Admin MaxElectric</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- MOBILE TAB NAVIGATOR BAR -->
+      <div class="lg:hidden flex border-t border-slate-800 bg-slate-900/95 overflow-x-auto px-2 py-1.5 space-x-1 text-xs">
+        <button 
+          @click="activeTab = 'leads'" 
+          :class="activeTab === 'leads' ? 'bg-sky-600 text-white' : 'text-slate-300'"
+          class="px-3 py-1.5 rounded-md whitespace-nowrap flex items-center space-x-1">
+          <i class="fa-solid fa-filter-circle-dollar"></i> <span>1. Leads</span>
+        </button>
+        <button 
+          @click="activeTab = 'projects'" 
+          :class="activeTab === 'projects' ? 'bg-sky-600 text-white' : 'text-slate-300'"
+          class="px-3 py-1.5 rounded-md whitespace-nowrap flex items-center space-x-1">
+          <i class="fa-solid fa-diagram-project"></i> <span>2. Báo Giá & Dự Án</span>
+        </button>
+        <button 
+          @click="activeTab = 'customers'" 
+          :class="activeTab === 'customers' ? 'bg-sky-600 text-white' : 'text-slate-300'"
+          class="px-3 py-1.5 rounded-md whitespace-nowrap flex items-center space-x-1">
+          <i class="fa-solid fa-building-user"></i> <span>3. KH B2B</span>
+        </button>
+        <button 
+          @click="activeTab = 'kpi'" 
+          :class="activeTab === 'kpi' ? 'bg-sky-600 text-white' : 'text-slate-300'"
+          class="px-3 py-1.5 rounded-md whitespace-nowrap flex items-center space-x-1">
+          <i class="fa-solid fa-chart-line"></i> <span>4. Sales KPI</span>
+        </button>
+        <button 
+          @click="activeTab = 'power'" 
+          :class="activeTab === 'power' ? 'bg-amber-600 text-white font-bold' : 'text-amber-300'"
+          class="px-3 py-1.5 rounded-md whitespace-nowrap flex items-center space-x-1">
+          <i class="fa-solid fa-bolt-lightning"></i> <span>5. Sức Mạnh Sales</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- TOAST NOTIFICATION -->
+    <transition enter-active-class="transform ease-out duration-300 transition" enter-from-class="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2" enter-to-class="translate-y-0 opacity-100 sm:translate-x-0" leave-active-class="transition ease-in duration-100" leave-from-class="opacity-100" leave-to-class="opacity-0">
+      <div v-if="toast.show" class="fixed bottom-5 right-5 z-50 flex items-center bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl border border-sky-500/40 space-x-3">
+        <i class="fa-solid text-emerald-400 text-lg" :class="toast.icon || 'fa-circle-check'"></i>
+        <div>
+          <h4 class="text-xs font-bold text-slate-100">{{ toast.title }}</h4>
+          <p class="text-[11px] text-slate-300">{{ toast.message }}</p>
+        </div>
+        <button @click="toast.show = false" class="text-slate-400 hover:text-white pl-2">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </transition>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-1 max-w-[1700px] w-full mx-auto p-3 sm:p-5">
+
+      <!-- ==================================================================================== -->
+      <!-- MODULE 1: PHÂN BỔ LEAD MKT (AI ROUTING & MANUAL OVERRIDE)                            -->
+      <!-- ==================================================================================== -->
+      <section v-if="activeTab === 'leads'" class="space-y-5">
+        
+        <!-- HEADER & DEMO GENERATOR TOOLBAR -->
+        <div class="bg-white rounded-xl p-4 sm:p-5 shadow-sm border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="bg-sky-100 text-sky-800 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">Module 1</span>
+              <h1 class="text-xl font-extrabold text-slate-900">Phân Bổ Lead Marketing AI Auto-Routing</h1>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Điều hướng thông minh Lead thi công tủ điện theo quy mô ngân sách & tải công việc thực tế của Sales.</p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <button 
+              @click="addSampleLead" 
+              class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-plus text-sky-600"></i>
+              <span>+ Thêm 1 Lead Mẫu</span>
+            </button>
+            <button 
+              @click="addFiveSampleLeads" 
+              class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-bolt text-amber-500"></i>
+              <span>+ Bơm 5 Lead Mẫu</span>
+            </button>
+            <button 
+              @click="approveAllAiLeads" 
+              class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg shadow-sm transition flex items-center space-x-2">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>⚡ Duyệt Giao AI Tất Cả</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3-TIER BUDGET RULE BANNER & SALES WORKLOAD CAPACITY BAR -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          
+          <!-- Tier Rules Cards -->
+          <div class="lg:col-span-2 bg-gradient-to-r from-slate-900 via-slate-800 to-brand-900 text-white rounded-xl p-4 shadow-sm border border-slate-700">
+            <div class="flex items-center justify-between mb-3 border-b border-slate-700 pb-2">
+              <span class="text-xs font-bold text-sky-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i class="fa-solid fa-sliders"></i> Quy Tắc Phân Luồng Ngân Sách AI (3-Tier Rule)
+              </span>
+              <span class="text-[11px] text-slate-400">Tự động matching theo năng lực Sales</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <!-- Tier 1 -->
+              <div class="bg-slate-800/80 rounded-lg p-3 border border-slate-700 hover:border-sky-500/50 transition">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[11px] font-bold text-slate-300 uppercase">Tier 1: Nhỏ</span>
+                  <span class="text-[10px] bg-slate-700 text-slate-300 px-1.5 py-0.5 rounded font-mono">&lt; 100M</span>
+                </div>
+                <p class="text-xs font-extrabold text-sky-300 mb-1">&lt; {{ formatVND(100000000) }}</p>
+                <div class="text-[11px] text-slate-400 leading-tight">
+                  <i class="fa-solid fa-user-tag text-sky-400 mr-1"></i> Giao cho Junior Sales / Tele-sales hỗ trợ giải pháp nhanh.
+                </div>
+              </div>
+
+              <!-- Tier 2 -->
+              <div class="bg-slate-800/80 rounded-lg p-3 border border-slate-700 hover:border-amber-500/50 transition">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[11px] font-bold text-slate-300 uppercase">Tier 2: Vừa</span>
+                  <span class="text-[10px] bg-amber-500/20 text-amber-300 px-1.5 py-0.5 rounded font-mono">100M - 200M</span>
+                </div>
+                <p class="text-xs font-extrabold text-amber-300 mb-1">{{ formatVND(100000000) }} - {{ formatVND(200000000) }}</p>
+                <div class="text-[11px] text-slate-400 leading-tight">
+                  <i class="fa-solid fa-user-shield text-amber-400 mr-1"></i> Giao Senior Sales phụ trách bám sát & tư vấn kỹ thuật.
+                </div>
+              </div>
+
+              <!-- Tier 3 -->
+              <div class="bg-slate-800/80 rounded-lg p-3 border border-slate-700 hover:border-emerald-500/50 transition">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[11px] font-bold text-slate-300 uppercase">Tier 3: Lớn</span>
+                  <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded font-mono">&gt;= 200M</span>
+                </div>
+                <p class="text-xs font-extrabold text-emerald-400 mb-1">&gt;= {{ formatVND(200000000) }}</p>
+                <div class="text-[11px] text-slate-400 leading-tight">
+                  <i class="fa-solid fa-crown text-emerald-400 mr-1"></i> Ưu tiên Key Account Manager & Trưởng phòng Kỹ Thuật.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Workload Capacity Bar -->
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wide flex items-center gap-1.5">
+                  <i class="fa-solid fa-chart-pie text-sky-600"></i> Tải Công Việc Sales Hiện Tại
+                </h3>
+                <span class="text-[10px] bg-sky-100 text-sky-700 font-bold px-2 py-0.5 rounded-full">Realtime</span>
+              </div>
+              <p class="text-[11px] text-slate-500 mb-3">Tăng/giảm số Lead tối đa để thử nghiệm tính năng cảnh báo quá tải AI.</p>
+            </div>
+
+            <div class="space-y-2">
+              <div v-for="s in salesList" :key="s.id" class="space-y-1">
+                <div class="flex justify-between text-xs">
+                  <span class="font-bold text-slate-700 flex items-center gap-1">
+                    {{ s.name }} 
+                    <span class="text-[10px] font-normal text-slate-400">({{ s.role }})</span>
+                  </span>
+                  <div class="flex items-center space-x-1 font-mono text-[11px]">
+                    <span :class="s.currentLeads >= s.maxCapacity ? 'text-rose-600 font-bold' : 'text-slate-600'">
+                      {{ s.currentLeads }}/{{ s.maxCapacity }} Lead
+                    </span>
+                    <button @click="adjustCapacity(s, -1)" class="w-4 h-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded flex items-center justify-center font-bold text-[10px] border border-slate-300">-</button>
+                    <button @click="adjustCapacity(s, 1)" class="w-4 h-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded flex items-center justify-center font-bold text-[10px] border border-slate-300">+</button>
+                  </div>
+                </div>
+                <!-- Capacity Bar -->
+                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200">
+                  <div 
+                    class="h-2 rounded-full transition-all duration-300"
+                    :class="s.currentLeads >= s.maxCapacity ? 'bg-rose-500' : (s.currentLeads / s.maxCapacity > 0.7 ? 'bg-amber-500' : 'bg-emerald-500')"
+                    :style="{ width: Math.min(100, (s.currentLeads / s.maxCapacity) * 100) + '%' }">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- LEAD QUEUE TABLE (WITH CRISP BORDERS & ZEBRA STRIPES) -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          
+          <div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-list-check text-sky-600"></i>
+              <h2 class="font-bold text-slate-800 text-sm">Hàng Chờ Phân Bổ Lead Marketing</h2>
+              <span class="bg-sky-600 text-white text-xs font-extrabold px-2 py-0.5 rounded-full">{{ unassignedLeads.length }} Lead chờ giao</span>
+            </div>
+
+            <!-- Status Filter Pills -->
+            <div class="flex items-center space-x-1 text-xs">
+              <button 
+                @click="leadFilter = 'unassigned'" 
+                :class="leadFilter === 'unassigned' ? 'bg-sky-600 text-white font-bold' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" 
+                class="px-2.5 py-1 rounded-md transition">
+                Chờ giao ({{ unassignedLeadsCount }})
+              </button>
+              <button 
+                @click="leadFilter = 'assigned'" 
+                :class="leadFilter === 'assigned' ? 'bg-sky-600 text-white font-bold' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" 
+                class="px-2.5 py-1 rounded-md transition">
+                Đã phân bổ ({{ assignedLeadsCount }})
+              </button>
+              <button 
+                @click="leadFilter = 'all'" 
+                :class="leadFilter === 'all' ? 'bg-sky-600 text-white font-bold' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'" 
+                class="px-2.5 py-1 rounded-md transition">
+                Tất cả ({{ leads.length }})
+              </button>
+            </div>
+          </div>
+
+          <!-- TABLE CONTAINMENT -->
+          <div class="overflow-x-auto">
+            <table class="w-full erp-table text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-100 text-slate-700 font-bold uppercase tracking-wider text-[11px]">
+                  <th class="p-3 text-center w-12 bg-slate-200/60">STT</th>
+                  <th class="p-3 min-w-[220px]">Thông Tin Khách Hàng / Công Ty</th>
+                  <th class="p-3 min-w-[160px]">Nhu Cầu & Hạng Mục</th>
+                  <th class="p-3 min-w-[170px] text-right">Dự Kiến Ngân Sách</th>
+                  <th class="p-3 min-w-[240px]">AI Matching Recommendation</th>
+                  <th class="p-3 min-w-[200px]">Thao Tác Phân Bổ Lead</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr v-if="filteredLeads.length === 0">
+                  <td colspan="6" class="p-8 text-center text-slate-400 bg-slate-50">
+                    <i class="fa-solid fa-inbox text-3xl mb-2 text-slate-300"></i>
+                    <p class="font-medium text-xs">Không có lead nào trong danh sách hiện tại.</p>
+                  </td>
+                </tr>
+
+                <tr v-for="(lead, idx) in filteredLeads" :key="lead.id" 
+                    :class="[
+                      idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/60',
+                      isCompactMode ? 'py-1' : ''
+                    ]"
+                    class="transition hover:bg-sky-50/50">
+                  
+                  <!-- STT Badge -->
+                  <td class="p-3 text-center font-bold font-mono text-slate-500">
+                    #{{ idx + 1 }}
+                  </td>
+
+                  <!-- Customer / Company Info Sub-card -->
+                  <td class="p-3">
+                    <div class="space-y-1">
+                      <div class="font-extrabold text-slate-900 text-sm flex items-center justify-between">
+                        <span>{{ lead.companyName }}</span>
+                        <span class="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-normal border border-slate-200">
+                          {{ lead.source }}
+                        </span>
+                      </div>
+                      <div class="text-[11px] text-slate-600 flex items-center space-x-2">
+                        <span class="font-semibold text-slate-800"><i class="fa-solid fa-user text-slate-400 mr-1"></i>{{ lead.contactName }}</span>
+                        <span>•</span>
+                        <span class="font-mono text-sky-700">{{ lead.phone }}</span>
+                      </div>
+                      <div class="text-[10px] text-slate-400 flex items-center space-x-2">
+                        <span><i class="fa-solid fa-location-dot mr-1"></i>{{ lead.location }}</span>
+                        <span>•</span>
+                        <span>MST: <strong class="font-mono text-slate-600">{{ lead.taxCode }}</strong></span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Requirements -->
+                  <td class="p-3">
+                    <div class="space-y-1">
+                      <span class="inline-block bg-sky-50 text-sky-700 font-bold px-2 py-0.5 rounded text-[11px] border border-sky-200">
+                        {{ lead.category }}
+                      </span>
+                      <p class="text-slate-600 text-[11px] line-clamp-2" :title="lead.note">
+                        {{ lead.note }}
+                      </p>
+                    </div>
+                  </td>
+
+                  <!-- Budget VND -->
+                  <td class="p-3 text-right">
+                    <div class="font-extrabold text-emerald-700 text-sm font-mono">
+                      {{ formatVND(lead.estimatedBudget) }}
+                    </div>
+                    <div class="mt-1">
+                      <span v-if="lead.estimatedBudget < 100000000" class="bg-slate-100 text-slate-700 text-[10px] font-bold px-1.5 py-0.5 rounded border border-slate-300">
+                        Tier 1 (&lt;100M)
+                      </span>
+                      <span v-else-if="lead.estimatedBudget < 200000000" class="bg-amber-100 text-amber-800 text-[10px] font-bold px-1.5 py-0.5 rounded border border-amber-300">
+                        Tier 2 (100M-200M)
+                      </span>
+                      <span v-else class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.5 rounded border border-emerald-300">
+                        Tier 3 (&gt;=200M)
+                      </span>
+                    </div>
+                  </td>
+
+                  <!-- AI Recommendation Sub-card -->
+                  <td class="p-3">
+                    <div class="bg-sky-50/70 border border-sky-200/80 rounded-lg p-2.5 space-y-1">
+                      <div class="flex items-center justify-between">
+                        <span class="font-bold text-sky-900 text-xs flex items-center gap-1">
+                          <i class="fa-solid fa-robot text-sky-600"></i> {{ getSalesName(lead.aiRecommendedSalesId) }}
+                        </span>
+                        <span class="bg-emerald-600 text-white font-black text-[10px] px-1.5 py-0.5 rounded-full font-mono shadow-xs">
+                          Score: {{ lead.aiScore }}/100
+                        </span>
+                      </div>
+                      <p class="text-[11px] text-slate-600 leading-tight">
+                        <i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i>{{ lead.aiReason }}
+                      </p>
+                    </div>
+                  </td>
+
+                  <!-- Actions Column -->
+                  <td class="p-3">
+                    <!-- Status: Assigned -->
+                    <div v-if="lead.assignedSalesId" class="space-y-1.5">
+                      <div class="bg-emerald-50 border border-emerald-300 text-emerald-800 px-2.5 py-1 rounded-md flex items-center justify-between">
+                        <span class="font-bold text-xs"><i class="fa-solid fa-check-circle text-emerald-600 mr-1"></i>Đã giao: {{ getSalesName(lead.assignedSalesId) }}</span>
+                        <span class="text-[10px] text-emerald-600 uppercase font-bold">{{ lead.assignmentType }}</span>
+                      </div>
+                      <button @click="openProjectForLead(lead)" class="w-full py-1 bg-slate-800 hover:bg-slate-900 text-white text-[11px] font-semibold rounded transition flex items-center justify-center gap-1">
+                        <i class="fa-solid fa-eye text-sky-400"></i> Xem Dự Án Tương Ứng
+                      </button>
+                    </div>
+
+                    <!-- Status: Unassigned -->
+                    <div v-else class="space-y-2">
+                      <!-- 1-Click AI Approve -->
+                      <button 
+                        @click="approveAiRouting(lead)"
+                        class="w-full py-1.5 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded shadow-xs transition flex items-center justify-center space-x-1.5">
+                        <i class="fa-solid fa-bolt text-amber-300"></i>
+                        <span>⚡ Duyệt Giao AI ({{ getSalesPowerScore(getSalesById(lead.aiRecommendedSalesId)) }} PWR)</span>
+                      </button>
+
+                      <div class="flex items-center space-x-1">
+                        <!-- Manual Dropdown -->
+                        <select 
+                          v-model="lead.selectedManualSalesId" 
+                          class="erp-input text-[11px] py-1 flex-1 bg-white">
+                          <option value="">-- Chọn Sales --</option>
+                          <option v-for="s in salesList" :key="s.id" :value="s.id">
+                            {{ s.name }} ({{ s.currentLeads }}/{{ s.maxCapacity }})
+                          </option>
+                        </select>
+                        
+                        <button 
+                          @click="manualAssignLead(lead)" 
+                          :disabled="!lead.selectedManualSalesId"
+                          class="px-2 py-1 bg-slate-800 hover:bg-slate-900 disabled:opacity-40 text-white text-[11px] font-bold rounded transition">
+                          ✅ Giao
+                        </button>
+                      </div>
+
+                      <button 
+                        @click="openManualModal(lead)" 
+                        class="w-full text-center text-[11px] text-sky-700 hover:text-sky-900 font-semibold underline underline-offset-2">
+                        🎯 Duyệt Thủ Công & So Sánh
+                      </button>
+                    </div>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==================================================================================== -->
+      <!-- MODULE 2: QUẢN LÝ BÁO GIÁ & DỰ ÁN (SPREADSHEET + KANBAN + MULTI-VERSION BOM)         -->
+      <!-- ==================================================================================== -->
+      <section v-if="activeTab === 'projects'" class="space-y-5">
+        
+        <!-- HEADER & VIEW SWITCHER + FILTERS -->
+        <div class="bg-white rounded-xl p-4 sm:p-5 shadow-sm border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">Module 2</span>
+              <h1 class="text-xl font-extrabold text-slate-900">Quản Lý Báo Giá, Tiến Độ & Multi-Version BOM</h1>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Theo dõi 5 giai đoạn triển khai, lịch chia ca xuất kho & chỉnh sửa BOM đa phiên bản.</p>
+          </div>
+
+          <!-- View Mode & Action Toolbar -->
+          <div class="flex flex-wrap items-center gap-2">
+            <!-- View Mode Switcher -->
+            <div class="bg-slate-100 p-1 rounded-lg border border-slate-300 flex items-center space-x-1">
+              <button 
+                @click="projectViewMode = 'table'" 
+                :class="projectViewMode === 'table' ? 'bg-white text-sky-700 shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900'"
+                class="px-3 py-1.5 rounded-md text-xs transition flex items-center space-x-1.5">
+                <i class="fa-solid fa-table-cells"></i>
+                <span>📋 Bảng Danh Sách</span>
+              </button>
+              <button 
+                @click="projectViewMode = 'kanban'" 
+                :class="projectViewMode === 'kanban' ? 'bg-white text-sky-700 shadow-xs font-bold' : 'text-slate-600 hover:text-slate-900'"
+                class="px-3 py-1.5 rounded-md text-xs transition flex items-center space-x-1.5">
+                <i class="fa-solid fa-kanban"></i>
+                <span>🗂️ Kanban 5 Giai Đoạn</span>
+              </button>
+            </div>
+
+            <button 
+              @click="createNewProject" 
+              class="px-3.5 py-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-lg shadow-sm transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-plus"></i>
+              <span>Tạo Dự Án Mới</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STAGE FILTER PILLS & SALES SELECTOR FILTER -->
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <!-- Stage Pills -->
+          <div class="flex flex-wrap items-center gap-1.5">
+            <span class="font-bold text-slate-500 mr-1"><i class="fa-solid fa-filter mr-1"></i>Lọc Giai Đoạn:</span>
+            <button 
+              @click="stageFilter = 'all'" 
+              :class="stageFilter === 'all' ? 'bg-slate-900 text-white font-bold' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'"
+              class="px-2.5 py-1 rounded-md transition">
+              Tất cả ({{ projects.length }})
+            </button>
+            <button 
+              v-for="stg in stages" :key="stg.id"
+              @click="stageFilter = stg.id"
+              :class="stageFilter === stg.id ? 'bg-sky-600 text-white font-bold' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'"
+              class="px-2.5 py-1 rounded-md transition flex items-center space-x-1">
+              <span>{{ stg.id }}. {{ stg.name }}</span>
+              <span class="bg-slate-200 text-slate-700 text-[10px] px-1.5 py-0.2 rounded-full font-bold" :class="stageFilter === stg.id ? 'bg-sky-800 text-white' : ''">
+                {{ getProjectsInStage(stg.id).length }}
+              </span>
+            </button>
+          </div>
+
+          <!-- Sales Filter -->
+          <div class="flex items-center space-x-2">
+            <span class="font-bold text-slate-500">Phụ trách:</span>
+            <select v-model="projectSalesFilter" class="erp-input text-xs py-1">
+              <option value="all">Tất cả Sales</option>
+              <option v-for="s in salesList" :key="s.id" :value="s.id">{{ s.name }}</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- VIEW 1: STRUCTURED TABLE VIEW (DEFAULT) -->
+        <div v-if="projectViewMode === 'table'" class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full erp-table text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-100 text-slate-700 font-bold uppercase tracking-wider text-[11px]">
+                  <th class="p-3 text-center w-12 bg-slate-200/60">STT</th>
+                  <th class="p-3 min-w-[200px]">Mã DA & Bản Hiện Hành</th>
+                  <th class="p-3 min-w-[220px]">Khách Hàng B2B & MST</th>
+                  <th class="p-3 min-w-[260px]">4 Người Quyết Định (Decision Makers)</th>
+                  <th class="p-3 min-w-[240px]">Tiến Độ 5 Giai Đoạn & Lịch Ca</th>
+                  <th class="p-3 min-w-[200px] text-right">Tổng Quan Tài Chính (VND)</th>
+                  <th class="p-3 min-w-[160px] text-center">Thao Tác Dự Án</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr v-if="filteredProjects.length === 0">
+                  <td colspan="7" class="p-8 text-center text-slate-400 bg-slate-50">
+                    <i class="fa-solid fa-folder-open text-3xl mb-2 text-slate-300"></i>
+                    <p class="font-medium text-xs">Không tìm thấy dự án phù hợp với bộ lọc.</p>
+                  </td>
+                </tr>
+
+                <tr v-for="(p, idx) in filteredProjects" :key="p.id"
+                    :class="[
+                      idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/60',
+                      isCompactMode ? 'py-1' : ''
+                    ]"
+                    class="transition hover:bg-sky-50/50">
+                  
+                  <!-- Index -->
+                  <td class="p-3 text-center font-bold font-mono text-slate-500">
+                    #{{ idx + 1 }}
+                  </td>
+
+                  <!-- Code & Active Version Badge -->
+                  <td class="p-3">
+                    <div class="space-y-1.5">
+                      <div class="flex items-center space-x-2">
+                        <span class="font-extrabold text-sky-900 text-sm font-mono tracking-tight">{{ p.code }}</span>
+                        <span class="bg-emerald-600 text-white font-bold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
+                          Ver {{ p.activeVersionId }} (Hiện hành)
+                        </span>
+                      </div>
+                      <div class="font-bold text-slate-800 text-xs line-clamp-1">{{ p.name }}</div>
+                      
+                      <!-- Version Pills -->
+                      <div class="flex items-center space-x-1 pt-1">
+                        <span class="text-[10px] text-slate-400 font-medium">Lịch sử BOM:</span>
+                        <button 
+                          v-for="v in p.versions" :key="v.id"
+                          @click="openProjectModal(p, v.id)"
+                          :class="v.id === p.activeVersionId ? 'bg-sky-600 text-white font-bold' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'"
+                          class="px-1.5 py-0.5 rounded text-[10px] font-mono transition">
+                          v{{ v.id }}
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Customer Info -->
+                  <td class="p-3">
+                    <div class="space-y-1">
+                      <div class="font-extrabold text-slate-900 text-xs">{{ p.customerName }}</div>
+                      <div class="text-[11px] text-slate-500 flex items-center space-x-2">
+                        <span>MST: <strong class="font-mono text-slate-700">{{ p.taxCode }}</strong></span>
+                      </div>
+                      <div class="text-[10px] text-sky-700 font-semibold bg-sky-50 px-2 py-0.5 rounded inline-block border border-sky-200">
+                        <i class="fa-solid fa-user-check mr-1"></i>Sales: {{ getSalesName(p.salesId) }}
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- 4 Decision Makers (Sub Grid) -->
+                  <td class="p-3">
+                    <div class="grid grid-cols-2 gap-1.5">
+                      <!-- Director -->
+                      <div class="bg-slate-100 p-1.5 rounded border border-slate-200 space-y-0.5">
+                        <div class="text-[9px] font-bold text-slate-500 uppercase">1. Giám đốc (CEO)</div>
+                        <div class="font-bold text-[11px] text-slate-800 truncate">{{ p.decisionMakers.ceo.name || 'N/A' }}</div>
+                        <button @click="copyText(p.decisionMakers.ceo.phone, 'Số điện thoại CEO')" class="text-[10px] text-sky-700 font-mono hover:underline flex items-center gap-1">
+                          <i class="fa-solid fa-phone text-[9px]"></i> {{ p.decisionMakers.ceo.phone || 'Chưa có' }}
+                        </button>
+                      </div>
+                      <!-- Purchasing -->
+                      <div class="bg-slate-100 p-1.5 rounded border border-slate-200 space-y-0.5">
+                        <div class="text-[9px] font-bold text-slate-500 uppercase">2. TP Mua hàng</div>
+                        <div class="font-bold text-[11px] text-slate-800 truncate">{{ p.decisionMakers.purchasing.name || 'N/A' }}</div>
+                        <button @click="copyText(p.decisionMakers.purchasing.phone, 'Số SĐT Mua Hàng')" class="text-[10px] text-sky-700 font-mono hover:underline flex items-center gap-1">
+                          <i class="fa-solid fa-phone text-[9px]"></i> {{ p.decisionMakers.purchasing.phone || 'Chưa có' }}
+                        </button>
+                      </div>
+                      <!-- Technical -->
+                      <div class="bg-slate-100 p-1.5 rounded border border-slate-200 space-y-0.5">
+                        <div class="text-[9px] font-bold text-slate-500 uppercase">3. TP Kỹ Thuật</div>
+                        <div class="font-bold text-[11px] text-slate-800 truncate">{{ p.decisionMakers.technical.name || 'N/A' }}</div>
+                        <button @click="copyText(p.decisionMakers.technical.phone, 'SĐT Kỹ thuật')" class="text-[10px] text-sky-700 font-mono hover:underline flex items-center gap-1">
+                          <i class="fa-solid fa-phone text-[9px]"></i> {{ p.decisionMakers.technical.phone || 'Chưa có' }}
+                        </button>
+                      </div>
+                      <!-- Site Boss -->
+                      <div class="bg-slate-100 p-1.5 rounded border border-slate-200 space-y-0.5">
+                        <div class="text-[9px] font-bold text-slate-500 uppercase">4. CHT Thi công</div>
+                        <div class="font-bold text-[11px] text-slate-800 truncate">{{ p.decisionMakers.site.name || 'N/A' }}</div>
+                        <button @click="copyText(p.decisionMakers.site.phone, 'SĐT Chỉ huy trưởng')" class="text-[10px] text-sky-700 font-mono hover:underline flex items-center gap-1">
+                          <i class="fa-solid fa-phone text-[9px]"></i> {{ p.decisionMakers.site.phone || 'Chưa có' }}
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- 5 Stage Stepper & Shift Info -->
+                  <td class="p-3">
+                    <div class="space-y-2">
+                      <!-- Stage Title -->
+                      <div class="flex items-center justify-between">
+                        <span class="font-bold text-sky-900 text-xs">
+                          GĐ {{ p.currentStage }}: {{ getStageName(p.currentStage) }}
+                        </span>
+                        <span class="text-[10px] bg-sky-100 text-sky-800 font-bold px-1.5 py-0.5 rounded">
+                          {{ p.currentStage }}/5
+                        </span>
+                      </div>
+
+                      <!-- Stepper Bar -->
+                      <div class="grid grid-cols-5 gap-1">
+                        <div 
+                          v-for="stgId in 5" :key="stgId"
+                          :class="stgId <= p.currentStage ? 'bg-sky-600 text-white' : 'bg-slate-200 text-slate-400'"
+                          class="h-2 rounded-full transition-all">
+                        </div>
+                      </div>
+
+                      <!-- Shift Info -->
+                      <div class="bg-amber-50 border border-amber-200/80 rounded p-1.5 text-[10px] text-amber-900 flex items-center justify-between">
+                        <span class="font-bold"><i class="fa-solid fa-truck-ramp-box mr-1"></i>Lịch Kho PO:</span>
+                        <span class="font-semibold">{{ p.deliveryShift || 'Ca Sáng (09:00 - 11:00)' }}</span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Financial Box -->
+                  <td class="p-3 text-right">
+                    <div class="bg-slate-50 p-2 rounded border border-slate-200 space-y-1">
+                      <div>
+                        <div class="text-[10px] text-slate-500 uppercase font-semibold">Doanh Thu Báo Giá</div>
+                        <div class="font-extrabold text-sky-700 text-sm font-mono">
+                          {{ formatVND(getActiveVersion(p).totalRevenue) }}
+                        </div>
+                      </div>
+                      <div class="flex items-center justify-end space-x-3 text-[11px] pt-1 border-t border-slate-200">
+                        <div>
+                          <span class="text-slate-400 text-[9px]">Lãi gộp:</span>
+                          <span class="font-bold text-emerald-700 ml-1">{{ formatVND(getActiveVersion(p).grossProfit) }}</span>
+                        </div>
+                        <div>
+                          <span class="text-slate-400 text-[9px]">Margin:</span>
+                          <span class="bg-emerald-100 text-emerald-800 font-bold text-[10px] px-1.5 py-0.2 rounded ml-1 font-mono">
+                            {{ getActiveVersion(p).marginPercent }}%
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Action Buttons -->
+                  <td class="p-3 text-center">
+                    <div class="space-y-1.5">
+                      <button 
+                        @click="openProjectModal(p, p.activeVersionId)"
+                        class="w-full py-1.5 bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs rounded shadow-xs transition flex items-center justify-center space-x-1">
+                        <i class="fa-solid fa-sliders text-xs"></i>
+                        <span>🛠️ Trung Tâm DA & BOM</span>
+                      </button>
+
+                      <button 
+                        @click="duplicateVersion(p, getActiveVersion(p))"
+                        class="w-full py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-[11px] rounded border border-slate-300 transition flex items-center justify-center space-x-1">
+                        <i class="fa-solid fa-copy text-sky-600"></i>
+                        <span>+ Tạo Ver Mới</span>
+                      </button>
+                    </div>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- VIEW 2: KANBAN BOARD VIEW -->
+        <div v-else class="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div v-for="stg in stages" :key="stg.id" class="bg-slate-200/70 p-3 rounded-xl border border-slate-300 flex flex-col h-[700px]">
+            <!-- Column Header -->
+            <div class="flex items-center justify-between mb-3 bg-white p-2.5 rounded-lg border border-slate-300 shadow-xs">
+              <div>
+                <span class="text-[10px] font-bold bg-sky-100 text-sky-800 px-1.5 py-0.5 rounded uppercase">Giai Đoạn {{ stg.id }}</span>
+                <h3 class="font-extrabold text-xs text-slate-900 mt-0.5">{{ stg.name }}</h3>
+              </div>
+              <span class="bg-slate-800 text-white font-mono text-xs font-bold px-2 py-0.5 rounded-full">
+                {{ getProjectsInStage(stg.id).length }}
+              </span>
+            </div>
+
+            <!-- Kanban Column Cards Container -->
+            <div class="flex-1 overflow-y-auto space-y-3 pr-1">
+              <div v-for="p in getProjectsInStage(stg.id)" :key="p.id"
+                   class="bg-white p-3 rounded-lg shadow-sm border border-slate-300 hover:shadow-md transition space-y-2.5">
+                
+                <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                  <span class="font-extrabold text-sky-900 font-mono text-xs">{{ p.code }}</span>
+                  <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.5 rounded">
+                    Ver {{ p.activeVersionId }}
+                  </span>
+                </div>
+
+                <div>
+                  <h4 class="font-bold text-slate-900 text-xs line-clamp-1">{{ p.name }}</h4>
+                  <p class="text-[11px] text-slate-500">{{ p.customerName }}</p>
+                </div>
+
+                <!-- Financial -->
+                <div class="bg-slate-50 p-2 rounded border border-slate-200 flex items-center justify-between font-mono text-xs">
+                  <span class="text-slate-500 text-[10px]">Doanh Thu:</span>
+                  <strong class="text-sky-700 font-extrabold">{{ formatVND(getActiveVersion(p).totalRevenue) }}</strong>
+                </div>
+
+                <!-- Shift info -->
+                <div class="text-[10px] text-slate-500 bg-amber-50 p-1.5 rounded border border-amber-200">
+                  <i class="fa-solid fa-truck text-amber-600 mr-1"></i>{{ p.deliveryShift || 'Ca Sáng (09:00 - 11:00)' }}
+                </div>
+
+                <!-- Next/Prev Stage buttons -->
+                <div class="flex items-center justify-between pt-1">
+                  <button 
+                    @click="moveProjectStage(p, -1)" 
+                    :disabled="p.currentStage <= 1"
+                    class="px-2 py-1 bg-slate-100 disabled:opacity-30 hover:bg-slate-200 text-slate-700 rounded text-[10px] font-bold border border-slate-300">
+                    &larr; Lùi
+                  </button>
+
+                  <button 
+                    @click="openProjectModal(p, p.activeVersionId)"
+                    class="px-2.5 py-1 bg-sky-600 hover:bg-sky-700 text-white rounded text-[10px] font-bold shadow-xs">
+                    Chi Tiết
+                  </button>
+
+                  <button 
+                    @click="moveProjectStage(p, 1)" 
+                    :disabled="p.currentStage >= 5"
+                    class="px-2 py-1 bg-slate-100 disabled:opacity-30 hover:bg-slate-200 text-slate-700 rounded text-[10px] font-bold border border-slate-300">
+                    Tiến &rarr;
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==================================================================================== -->
+      <!-- MODULE 3: CHÂN DUNG KHÁCH HÀNG B2B & AI PLAYBOOK 360°                                 -->
+      <!-- ==================================================================================== -->
+      <section v-if="activeTab === 'customers'" class="space-y-5">
+        
+        <!-- HEADER TOOLBAR -->
+        <div class="bg-white rounded-xl p-4 sm:p-5 shadow-sm border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="bg-purple-100 text-purple-800 text-xs font-bold px-2.5 py-0.5 rounded-full uppercase">Module 3</span>
+              <h1 class="text-xl font-extrabold text-slate-900">Danh Mục Khách Hàng B2B & AI Sales Playbook</h1>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Quản lý ma trận 4 Người quyết định, hạn mức tín dụng công nợ và kịch bản chốt hợp đồng AI.</p>
+          </div>
+
+          <button 
+            @click="showAddCustomerModal = true" 
+            class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-lg shadow-sm transition flex items-center space-x-1.5">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>+ Thêm Khách Hàng B2B Mới</span>
+          </button>
+        </div>
+
+        <!-- B2B CLIENT DIRECTORY CARDS GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <div v-for="c in customers" :key="c.id" class="bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-4 hover:border-sky-400 transition">
+            
+            <!-- Company Header & Credit Limit -->
+            <div class="flex items-start justify-between border-b border-slate-100 pb-3">
+              <div>
+                <span class="text-[10px] font-bold bg-slate-100 text-slate-600 px-2 py-0.5 rounded border border-slate-200">
+                  Mã KH: {{ c.code }}
+                </span>
+                <h3 class="text-base font-extrabold text-slate-900 mt-1">{{ c.name }}</h3>
+                <p class="text-xs text-slate-500"><i class="fa-solid fa-location-dot mr-1"></i>{{ c.address }} | MST: <strong class="font-mono text-slate-700">{{ c.taxCode }}</strong></p>
+              </div>
+
+              <!-- Contract Total -->
+              <div class="text-right">
+                <span class="text-[10px] text-slate-400 font-semibold uppercase block">Tổng Giá Trị HD</span>
+                <span class="text-sm font-extrabold text-sky-700 font-mono">{{ formatVND(c.totalContractValue) }}</span>
+              </div>
+            </div>
+
+            <!-- Facility Scale & Financial Credit Limit -->
+            <div class="grid grid-cols-3 gap-2 text-xs bg-slate-50 p-3 rounded-lg border border-slate-200">
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase font-semibold block">Quy Mô Nhà Máy</span>
+                <strong class="text-slate-800 text-xs">{{ c.scale }}</strong>
+              </div>
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase font-semibold block">Hạn Mức Tín Dụng</span>
+                <strong class="text-emerald-700 font-mono text-xs">{{ formatVND(c.creditLimit) }}</strong>
+              </div>
+              <div>
+                <span class="text-[10px] text-slate-400 uppercase font-semibold block">Công Nợ Hiện Tại</span>
+                <strong class="text-amber-700 font-mono text-xs">{{ formatVND(c.currentDebt) }}</strong>
+              </div>
+            </div>
+
+            <!-- 4 Decision Makers Matrix -->
+            <div>
+              <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wide mb-2 flex items-center justify-between">
+                <span>Ma Trận 4 Người Quyết Định (Decision Makers)</span>
+                <span class="text-[10px] font-normal text-sky-700 cursor-pointer hover:underline" @click="openAiPlaybook(c)">
+                  <i class="fa-solid fa-brain mr-1"></i>Phân tích tâm lý DISC
+                </span>
+              </h4>
+
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <!-- CEO -->
+                <div class="bg-white p-2.5 rounded-lg border border-slate-200 space-y-1">
+                  <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+                    <span>1. Giám đốc</span>
+                    <span class="bg-purple-100 text-purple-800 px-1 rounded font-mono">DISC: {{ c.decisionMakers.ceo.disc || 'D' }}</span>
+                  </div>
+                  <div class="font-extrabold text-slate-900">{{ c.decisionMakers.ceo.name }}</div>
+                  <div class="text-[11px] text-slate-600 flex items-center justify-between">
+                    <span class="font-mono text-sky-700">{{ c.decisionMakers.ceo.phone }}</span>
+                    <button @click="copyText(c.decisionMakers.ceo.phone, 'SĐT CEO')" class="text-slate-400 hover:text-sky-600"><i class="fa-solid fa-copy"></i></button>
+                  </div>
+                </div>
+
+                <!-- Purchasing -->
+                <div class="bg-white p-2.5 rounded-lg border border-slate-200 space-y-1">
+                  <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+                    <span>2. TP Mua Hàng</span>
+                    <span class="bg-blue-100 text-blue-800 px-1 rounded font-mono">DISC: {{ c.decisionMakers.purchasing.disc || 'C' }}</span>
+                  </div>
+                  <div class="font-extrabold text-slate-900">{{ c.decisionMakers.purchasing.name }}</div>
+                  <div class="text-[11px] text-slate-600 flex items-center justify-between">
+                    <span class="font-mono text-sky-700">{{ c.decisionMakers.purchasing.phone }}</span>
+                    <button @click="copyText(c.decisionMakers.purchasing.phone, 'SĐT Mua hàng')" class="text-slate-400 hover:text-sky-600"><i class="fa-solid fa-copy"></i></button>
+                  </div>
+                </div>
+
+                <!-- Technical -->
+                <div class="bg-white p-2.5 rounded-lg border border-slate-200 space-y-1">
+                  <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+                    <span>3. TP Kỹ Thuật</span>
+                    <span class="bg-emerald-100 text-emerald-800 px-1 rounded font-mono">DISC: {{ c.decisionMakers.technical.disc || 'S' }}</span>
+                  </div>
+                  <div class="font-extrabold text-slate-900">{{ c.decisionMakers.technical.name }}</div>
+                  <div class="text-[11px] text-slate-600 flex items-center justify-between">
+                    <span class="font-mono text-sky-700">{{ c.decisionMakers.technical.phone }}</span>
+                    <button @click="copyText(c.decisionMakers.technical.phone, 'SĐT Kỹ Thuật')" class="text-slate-400 hover:text-sky-600"><i class="fa-solid fa-copy"></i></button>
+                  </div>
+                </div>
+
+                <!-- Site Boss -->
+                <div class="bg-white p-2.5 rounded-lg border border-slate-200 space-y-1">
+                  <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+                    <span>4. CHT Thi Công</span>
+                    <span class="bg-amber-100 text-amber-800 px-1 rounded font-mono">DISC: {{ c.decisionMakers.site.disc || 'I' }}</span>
+                  </div>
+                  <div class="font-extrabold text-slate-900">{{ c.decisionMakers.site.name }}</div>
+                  <div class="text-[11px] text-slate-600 flex items-center justify-between">
+                    <span class="font-mono text-sky-700">{{ c.decisionMakers.site.phone }}</span>
+                    <button @click="copyText(c.decisionMakers.site.phone, 'SĐT Thi công')" class="text-slate-400 hover:text-sky-600"><i class="fa-solid fa-copy"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AI Playbook Trigger Footer Button -->
+            <div class="pt-2">
+              <button 
+                @click="openAiPlaybook(c)"
+                class="w-full py-2 bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-800 hover:to-indigo-800 text-white text-xs font-extrabold rounded-lg shadow-sm transition flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-wand-magic-sparkles text-amber-300"></i>
+                <span>🧠 Mở Playbook 360° & Kịch Bản Chốt Hợp Đồng AI</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==================================================================================== -->
+      <!-- MODULE 4: BÁO CÁO SALES & KPI (THEO THÁNG & THEO NĂM + BẢNG XẾP HẠNG 360°)            -->
+      <!-- ==================================================================================== -->
+      <section v-if="activeTab === 'kpi'" class="space-y-5">
+
+        <!-- HEADER & PERIOD FILTER SWITCHER -->
+        <div class="bg-white rounded-xl p-4 sm:p-5 shadow-sm border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="bg-rose-100 text-rose-800 text-xs font-extrabold px-2.5 py-0.5 rounded-full uppercase border border-rose-200">Module 4</span>
+              <h1 class="text-xl font-extrabold text-slate-900">Báo Cáo Doanh Số, Lãi Gộp & Bảng Xếp Hạng KPI Sales</h1>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Đánh giá hiệu suất chuyển đổi Lead MKT, theo dõi tiến độ hoàn thành KPI theo Tháng/Năm và kiểm tra 360° từng nhân sự.</p>
+          </div>
+
+          <!-- Dual-Criteria Period Switcher -->
+          <div class="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-300 space-x-1">
+            <button 
+              @click="kpiViewCriteria = 'month'"
+              :class="kpiViewCriteria === 'month' ? 'bg-sky-600 text-white font-bold shadow-xs' : 'text-slate-600 hover:text-slate-900'"
+              class="px-3.5 py-2 rounded-lg text-xs transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-calendar-day"></i>
+              <span>📅 Theo Tháng (T11/2026)</span>
+            </button>
+            <button 
+              @click="kpiViewCriteria = 'year'"
+              :class="kpiViewCriteria === 'year' ? 'bg-sky-600 text-white font-bold shadow-xs' : 'text-slate-600 hover:text-slate-900'"
+              class="px-3.5 py-2 rounded-lg text-xs transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>📊 Theo Năm (Lũy kế 2026)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 EXECUTIVE SUMMARY KPI CARDS (EXACT VND) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <!-- Card 1: Total Revenue vs Target -->
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-slate-500 uppercase">Tổng Doanh Số Thực Đạt</span>
+              <span class="w-8 h-8 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-sack-dollar"></i>
+              </span>
+            </div>
+            <div class="text-lg font-black text-slate-900 font-mono">
+              {{ formatVND(totalSummaryRevenue) }}
+            </div>
+            <div class="text-[11px] text-slate-500 flex items-center justify-between pt-1 border-t border-slate-100">
+              <span>Mục tiêu: <strong class="font-mono text-slate-700">{{ formatVND(totalSummaryTarget) }}</strong></span>
+              <span class="bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded text-[10px] font-mono">
+                {{ totalSummaryTarget > 0 ? Math.round((totalSummaryRevenue / totalSummaryTarget) * 100) : 0 }}%
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 2: Total Gross Profit & Margin -->
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-slate-500 uppercase">Tổng Lãi Gộp Thực Tế</span>
+              <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-chart-pie"></i>
+              </span>
+            </div>
+            <div class="text-lg font-black text-emerald-700 font-mono">
+              {{ formatVND(totalSummaryGrossProfit) }}
+            </div>
+            <div class="text-[11px] text-slate-500 flex items-center justify-between pt-1 border-t border-slate-100">
+              <span>Tỷ suất Margin TB:</span>
+              <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 font-extrabold px-2 py-0.5 rounded text-[10px] font-mono">
+                {{ totalSummaryMargin }}% Margin
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 3: Conversion Rate & Won Deals -->
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-slate-500 uppercase">Tỷ Lệ Thắng Thầu (Win Rate)</span>
+              <span class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-trophy"></i>
+              </span>
+            </div>
+            <div class="text-lg font-black text-amber-600 font-mono">
+              {{ wonProjectsCount }} Đơn Won <span class="text-xs font-sans font-normal text-slate-500">/ {{ salesList.reduce((a, b) => a + b.assignedLeadsCount, 0) }} Lead</span>
+            </div>
+            <div class="text-[11px] text-slate-500 flex items-center justify-between pt-1 border-t border-slate-100">
+              <span>Đang chạy: <strong>{{ projects.length }} Dự án</strong></span>
+              <span class="bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded text-[10px]">
+                Win Rate TB: ~52%
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 4: Avg Revenue Per MKT Lead -->
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-slate-500 uppercase">Doanh Số TB / 1 Lead MKT</span>
+              <span class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-bullseye"></i>
+              </span>
+            </div>
+            <div class="text-lg font-black text-purple-700 font-mono">
+              {{ formatVND(avgRevenuePerLead) }}
+            </div>
+            <div class="text-[11px] text-slate-500 flex items-center justify-between pt-1 border-t border-slate-100">
+              <span>Hiệu quả khai thác MKT:</span>
+              <span class="text-purple-700 font-bold">Cao (Chuẩn B2B)</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- BORDERED SALES LEADERBOARD & KPI TABLE -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-ranking-star text-amber-500"></i>
+              <h2 class="font-bold text-slate-800 text-sm">
+                Bảng Xếp Hạng Hiệu Suất Sales Engineers ({{ kpiViewCriteria === 'month' ? 'Tháng 11/2026' : 'Lũy Kế Năm 2026' }})
+              </h2>
+            </div>
+            <span class="text-xs text-slate-500">Bấm vào <strong>"Xem KPI Sales 360°"</strong> để xem biểu đồ 12 tháng, phễu chuyển đổi và điều chuyển dự án</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full erp-table text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-100 text-slate-700 font-bold uppercase tracking-wider text-[11px]">
+                  <th class="p-3 text-center w-14 bg-slate-200/60">Hạng</th>
+                  <th class="p-3 min-w-[210px]">Sales Engineer & Cấp Bậc</th>
+                  <th class="p-3 text-center min-w-[130px]">Sức Mạnh & Tải</th>
+                  <th class="p-3 text-center min-w-[150px]">Phễu Chuyển Đổi Lead</th>
+                  <th class="p-3 text-right min-w-[160px]">Doanh Số TB / 1 Lead</th>
+                  <th class="p-3 text-right min-w-[220px]">Doanh Số Thực Đạt vs Target</th>
+                  <th class="p-3 text-right min-w-[160px]">Lãi Gộp (Gross Profit)</th>
+                  <th class="p-3 text-center min-w-[150px]">Kiểm Tra 360°</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr v-for="(s, idx) in sortedSalesKPI" :key="s.id"
+                    :class="[
+                      idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/60',
+                      isCompactMode ? 'py-1' : ''
+                    ]"
+                    class="transition hover:bg-sky-50/50">
+                  
+                  <!-- Rank Badge -->
+                  <td class="p-3 text-center">
+                    <span v-if="idx === 0" class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-400 text-slate-950 font-black text-xs shadow-xs">
+                      <i class="fa-solid fa-crown"></i>
+                    </span>
+                    <span v-else-if="idx === 1" class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-300 text-slate-900 font-extrabold text-xs">
+                      #2
+                    </span>
+                    <span v-else-if="idx === 2" class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-700/20 text-amber-900 font-extrabold text-xs border border-amber-600/30">
+                      #3
+                    </span>
+                    <span v-else class="font-mono font-bold text-slate-500">
+                      #{{ idx + 1 }}
+                    </span>
+                  </td>
+
+                  <!-- Sales Info -->
+                  <td class="p-3">
+                    <div class="flex items-center space-x-2.5">
+                      <div class="w-9 h-9 rounded-full bg-sky-700 text-white font-extrabold flex items-center justify-center text-xs shrink-0">
+                        {{ getInitials(s.name) }}
+                      </div>
+                      <div>
+                        <div class="font-extrabold text-slate-900 text-sm">{{ s.name }}</div>
+                        <div class="text-[11px] text-slate-500">{{ s.role }}</div>
+                        <div class="mt-0.5">
+                          <span :class="getSalesTierBadgeClass(s)" class="px-1.5 py-0.2 rounded text-[9px] font-bold uppercase border">
+                            {{ getSalesComputedTierLabel(s) }}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Power Score & Workload -->
+                  <td class="p-3 text-center">
+                    <div class="bg-slate-900 text-amber-400 font-mono font-black text-xs px-2 py-1 rounded inline-block mb-1">
+                      ⚡ {{ getSalesPowerScore(s) }} PWR
+                    </div>
+                    <div class="text-[11px] font-semibold" :class="s.currentLeads >= s.maxCapacity ? 'text-rose-600' : 'text-slate-600'">
+                      Tải: {{ s.currentLeads }}/{{ s.maxCapacity }} Lead
+                    </div>
+                  </td>
+
+                  <!-- Funnel Stats -->
+                  <td class="p-3 text-center">
+                    <div class="inline-flex items-center space-x-1 bg-slate-100 px-2 py-1 rounded-lg border border-slate-200 text-[11px]">
+                      <span class="font-bold text-slate-700" title="KH MKT Cấp">{{ s.assignedLeadsCount }} Cấp</span>
+                      <span class="text-slate-400">&rarr;</span>
+                      <span class="font-bold text-sky-700" title="Đã Báo Giá">{{ s.quotedCount }} BG</span>
+                      <span class="text-slate-400">&rarr;</span>
+                      <span class="font-extrabold text-emerald-700" title="Đơn Thắng Thầu">{{ s.wonCount }} Won</span>
+                    </div>
+                    <div class="mt-1 text-[10px] text-slate-500">
+                      Tỷ lệ chốt: <strong class="text-emerald-700">{{ s.assignedLeadsCount > 0 ? Math.round((s.wonCount / s.assignedLeadsCount) * 100) : 0 }}%</strong>
+                    </div>
+                  </td>
+
+                  <!-- Avg Revenue per Lead -->
+                  <td class="p-3 text-right font-mono">
+                    <div class="font-bold text-purple-700 text-xs">
+                      {{ formatVND(getSalesRevPerLead(s)) }}
+                    </div>
+                    <span class="text-[10px] text-slate-400 font-sans">trên 1 Lead MKT</span>
+                  </td>
+
+                  <!-- Actual vs Target Revenue + Progress Bar -->
+                  <td class="p-3 text-right">
+                    <div class="space-y-1">
+                      <div class="font-extrabold text-sky-900 text-sm font-mono">
+                        {{ formatVND(kpiViewCriteria === 'month' ? s.monthlyRev : s.yearlyRev) }}
+                      </div>
+                      <div class="text-[10px] text-slate-500 flex items-center justify-end space-x-1">
+                        <span>Target:</span>
+                        <span class="font-mono font-semibold text-slate-700">{{ formatVND(kpiViewCriteria === 'month' ? s.monthlyTarget : s.yearlyTarget) }}</span>
+                        <span class="font-bold px-1 rounded text-[9px]"
+                              :class="getSalesKpiPercent(s) >= 100 ? 'bg-emerald-100 text-emerald-800' : 'bg-sky-100 text-sky-800'">
+                          ({{ getSalesKpiPercent(s) }}%)
+                        </span>
+                      </div>
+                      <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div class="h-1.5 rounded-full transition-all duration-300"
+                             :class="getSalesKpiPercent(s) >= 100 ? 'bg-emerald-500' : 'bg-sky-600'"
+                             :style="{ width: Math.min(100, getSalesKpiPercent(s)) + '%' }"></div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Gross Profit -->
+                  <td class="p-3 text-right font-mono">
+                    <div class="font-extrabold text-emerald-700 text-xs">
+                      +{{ formatVND(kpiViewCriteria === 'month' ? s.monthlyGrossProfit : s.yearlyGrossProfit) }}
+                    </div>
+                    <span class="inline-block mt-0.5 bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-bold px-1.5 py-0.2 rounded">
+                      Margin: {{ s.avgMargin }}%
+                    </span>
+                  </td>
+
+                  <!-- Open 360 Modal Button -->
+                  <td class="p-3 text-center">
+                    <button 
+                      @click="openSales360Modal(s)"
+                      class="px-3 py-1.5 bg-slate-900 hover:bg-sky-700 text-white font-bold text-xs rounded-lg shadow-xs transition inline-flex items-center space-x-1.5">
+                      <i class="fa-solid fa-eye text-amber-400"></i>
+                      <span>Xem KPI Sales 360°</span>
+                    </button>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==================================================================================== -->
+      <!-- MODULE 5: MA TRẬN SỨC MẠNH & TỰ ĐỘNG HÓA LEVEL SALES (SALES POWER & AUTOMATION ENGINE) -->
+      <!-- ==================================================================================== -->
+      <section v-if="activeTab === 'power'" class="space-y-5">
+
+        <!-- HEADER & QUICK ACTIONS -->
+        <div class="bg-white rounded-xl p-4 sm:p-5 shadow-sm border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="bg-amber-100 text-amber-800 text-xs font-extrabold px-2.5 py-0.5 rounded-full uppercase border border-amber-300">Module 5 • Automation Engine</span>
+              <h1 class="text-xl font-extrabold text-slate-900">Ma Trận Sức Mạnh Sales & Hàm Tự Động Hóa Tăng Cấp (Dynamic Scaling)</h1>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Tự động tính điểm Sức Mạnh (Power Score) theo Số dự án, Đơn chốt Won, Doanh số thực đạt và tự động mở khóa hạn mức nhận Lead ngân sách lớn.</p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <button 
+              @click="resetPowerFormulaDefaults"
+              class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-rotate-left text-slate-500"></i>
+              <span>Khôi Phục Hệ Số Chuẩn</span>
+            </button>
+            <button 
+              @click="recalculateAllAiRoutingWithPower"
+              class="px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white text-xs font-extrabold rounded-lg shadow-sm transition flex items-center space-x-2">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>🔄 Đồng Bộ Sức Mạnh Sang AI Phân Bổ Lead (Tab 1)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- AUTOMATION FORMULA BUILDER PANEL -->
+        <div class="bg-slate-900 text-white rounded-xl p-5 shadow-md border border-slate-800 space-y-4">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+            <div class="flex items-center space-x-2.5">
+              <div class="w-9 h-9 rounded-lg bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-400">
+                <i class="fa-solid fa-microchip text-lg"></i>
+              </div>
+              <div>
+                <h2 class="text-sm font-extrabold text-white uppercase tracking-wide flex items-center gap-2">
+                  Cấu Hình Hàm Tự Động Hóa Tăng Sức Mạnh (Automation Formula Builder)
+                  <span v-if="powerConfig.autoScaleEnabled" class="bg-emerald-500 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full">AUTO-SCALING ON</span>
+                  <span v-else class="bg-rose-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full">MANUAL ONLY</span>
+                </h2>
+                <p class="text-[11px] text-slate-400">Tuỳ chỉnh trọng số nhân tự động khi Sales có thêm dự án mới, chốt đơn thành công hoặc tăng trưởng doanh số.</p>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-4 text-xs">
+              <label class="flex items-center space-x-2 cursor-pointer bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">
+                <input type="checkbox" v-model="powerConfig.autoScaleEnabled" class="w-4 h-4 accent-emerald-500 rounded">
+                <span class="font-bold text-slate-200">Bật Hàm Cộng Điểm Tự Động</span>
+              </label>
+
+              <label class="flex items-center space-x-2 cursor-pointer bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">
+                <input type="checkbox" v-model="powerConfig.autoPromoteTier" @change="checkAndRunAutoPromotions" class="w-4 h-4 accent-amber-500 rounded">
+                <span class="font-bold text-amber-300">Tự Động Thăng Cấp Tier & Hạn Mức Lead</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- LIVE FORMULA DISPLAY BOX -->
+          <div class="bg-slate-950/90 border border-sky-500/30 rounded-xl p-3.5 font-mono text-xs flex flex-col xl:flex-row xl:items-center justify-between gap-3">
+            <div class="space-y-1">
+              <div class="text-[10px] text-sky-400 uppercase font-sans font-bold">Biểu Thức Toán Học Đang Vận Hành Thời Gian Thực:</div>
+              <div class="text-slate-200 leading-relaxed">
+                <strong class="text-amber-400">Tổng Sức Mạnh (PWR)</strong> = 
+                <span class="text-sky-300">Điểm Gốc (Base EXP)</span> + 
+                <span class="text-emerald-300">(Kỹ Thuật × {{ powerConfig.techWeight }} + Đàm Phán × {{ powerConfig.negoWeight }})</span> + 
+                <span class="text-purple-300">(Số Dự Án × <strong>{{ powerConfig.weightPerProject }}</strong>)</span> + 
+                <span class="text-amber-300">(Đơn Chốt Won × <strong>{{ powerConfig.weightPerWonDeal }}</strong>)</span> + 
+                <span class="text-pink-300">((Doanh Số Tháng / {{ formatVND(100000000) }}) × <strong>{{ powerConfig.weightPerRevenueUnit }}</strong>)</span>
+              </div>
+            </div>
+            <div class="bg-slate-900 px-3 py-2 rounded-lg border border-slate-800 text-right shrink-0">
+              <div class="text-[10px] text-slate-400 font-sans">Ngưỡng Tự Động Thăng Hạng:</div>
+              <div class="text-[11px] text-amber-300 font-bold">Mid-Level: &ge; {{ powerConfig.midTierThreshold }} PWR | Senior KAM: &ge; {{ powerConfig.seniorTierThreshold }} PWR</div>
+            </div>
+          </div>
+
+          <!-- WEIGHT SLIDERS & INPUTS GRID -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
+            <!-- W_Project -->
+            <div class="bg-slate-800/90 p-3 rounded-lg border border-slate-700 space-y-1.5">
+              <div class="flex justify-between items-center">
+                <span class="text-slate-300 font-semibold">1. Hệ số / 1 Dự Án (W_DA)</span>
+                <span class="bg-purple-500/20 text-purple-300 font-mono font-bold px-2 py-0.5 rounded border border-purple-500/30">+{{ powerConfig.weightPerProject }} đ/DA</span>
+              </div>
+              <input type="range" min="0" max="15" step="0.5" v-model.number="powerConfig.weightPerProject" @input="checkAndRunAutoPromotions" class="w-full accent-purple-500 cursor-pointer">
+              <p class="text-[10px] text-slate-400">Cộng điểm mỗi khi nhận hoặc hoàn thành 1 dự án.</p>
+            </div>
+
+            <!-- W_Won -->
+            <div class="bg-slate-800/90 p-3 rounded-lg border border-slate-700 space-y-1.5">
+              <div class="flex justify-between items-center">
+                <span class="text-slate-300 font-semibold">2. Hệ số / 1 Đơn Chốt (W_Won)</span>
+                <span class="bg-amber-500/20 text-amber-300 font-mono font-bold px-2 py-0.5 rounded border border-amber-500/30">+{{ powerConfig.weightPerWonDeal }} đ/Won</span>
+              </div>
+              <input type="range" min="0" max="25" step="1" v-model.number="powerConfig.weightPerWonDeal" @input="checkAndRunAutoPromotions" class="w-full accent-amber-500 cursor-pointer">
+              <p class="text-[10px] text-slate-400">Thưởng điểm sức mạnh lớn khi chốt thắng thầu B2B.</p>
+            </div>
+
+            <!-- W_Revenue -->
+            <div class="bg-slate-800/90 p-3 rounded-lg border border-slate-700 space-y-1.5">
+              <div class="flex justify-between items-center">
+                <span class="text-slate-300 font-semibold">3. Hệ số / 100.000.000 đ</span>
+                <span class="bg-pink-500/20 text-pink-300 font-mono font-bold px-2 py-0.5 rounded border border-pink-500/30">+{{ powerConfig.weightPerRevenueUnit }} đ</span>
+              </div>
+              <input type="range" min="0" max="10" step="0.5" v-model.number="powerConfig.weightPerRevenueUnit" @input="checkAndRunAutoPromotions" class="w-full accent-pink-500 cursor-pointer">
+              <p class="text-[10px] text-slate-400">Tự động tăng sức mạnh theo mỗi {{ formatVND(100000000) }} doanh số.</p>
+            </div>
+
+            <!-- Threshold Mid -->
+            <div class="bg-slate-800/90 p-3 rounded-lg border border-slate-700 space-y-1.5">
+              <div class="flex justify-between items-center">
+                <span class="text-slate-300 font-semibold">4. Mốc Lên Mid-Level</span>
+                <span class="bg-sky-500/20 text-sky-300 font-mono font-bold px-2 py-0.5 rounded border border-sky-500/30">{{ powerConfig.midTierThreshold }} PWR</span>
+              </div>
+              <input type="range" min="80" max="180" step="5" v-model.number="powerConfig.midTierThreshold" @input="checkAndRunAutoPromotions" class="w-full accent-sky-500 cursor-pointer">
+              <p class="text-[10px] text-slate-400">Mở khóa nhận Lead Tier 2 (đến {{ formatVND(250000000) }}).</p>
+            </div>
+
+            <!-- Threshold Senior -->
+            <div class="bg-slate-800/90 p-3 rounded-lg border border-slate-700 space-y-1.5">
+              <div class="flex justify-between items-center">
+                <span class="text-slate-300 font-semibold">5. Mốc Lên Senior KAM</span>
+                <span class="bg-emerald-500/20 text-emerald-300 font-mono font-bold px-2 py-0.5 rounded border border-emerald-500/30">{{ powerConfig.seniorTierThreshold }} PWR</span>
+              </div>
+              <input type="range" min="150" max="280" step="5" v-model.number="powerConfig.seniorTierThreshold" @input="checkAndRunAutoPromotions" class="w-full accent-emerald-500 cursor-pointer">
+              <p class="text-[10px] text-slate-400">Mở khóa nhận Lead Tier 3 (&ge; {{ formatVND(200000000) }} không giới hạn).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE SALES POWER MATRIX TABLE (CRISP BORDERS) -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+          <div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-Bolt text-amber-500"></i>
+              <h2 class="font-bold text-slate-800 text-sm">Bảng Điều Khiển Sức Mạnh Cá Nhân & Giả Lập Thăng Cấp Tự Động</h2>
+            </div>
+            <span class="text-xs text-slate-500">Điều chỉnh trực tiếp thanh kéo Kinh nghiệm hoặc bấm nút Giả lập chốt đơn để kiểm nghiệm hệ thống Automation</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full erp-table text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-slate-100 text-slate-700 font-bold uppercase tracking-wider text-[11px]">
+                  <th class="p-3 text-center w-12 bg-slate-200/60">STT</th>
+                  <th class="p-3 min-w-[220px]">Sales Engineer & Hạng Tier</th>
+                  <th class="p-3 min-w-[250px]">Điều Chỉnh Chỉ Số Gốc (Manual Buff)</th>
+                  <th class="p-3 min-w-[250px]">Điểm Cộng Tự Động Từ Thành Tích</th>
+                  <th class="p-3 min-w-[180px] text-center">Tổng Sức Mạnh (PWR) & Hạn Mức Lead</th>
+                  <th class="p-3 min-w-[220px] text-center">Giả Lập Tăng Trưởng Nhanh (Sandbox)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr v-for="(s, idx) in salesList" :key="s.id"
+                    :class="idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/60'"
+                    class="transition hover:bg-amber-50/30">
+                  
+                  <!-- Index -->
+                  <td class="p-3 text-center font-bold font-mono text-slate-500">
+                    #{{ idx + 1 }}
+                  </td>
+
+                  <!-- Sales Info & Dynamic Tier Badge -->
+                  <td class="p-3">
+                    <div class="space-y-2">
+                      <div class="flex items-center space-x-2.5">
+                        <div class="w-9 h-9 rounded-full bg-slate-900 text-amber-400 font-extrabold flex items-center justify-center text-xs border border-amber-400/50 shadow-xs">
+                          {{ getInitials(s.name) }}
+                        </div>
+                        <div>
+                          <div class="font-extrabold text-slate-900 text-sm">{{ s.name }}</div>
+                          <div class="text-[11px] text-slate-500">{{ s.role }}</div>
+                        </div>
+                      </div>
+
+                      <!-- Tier Status Badge -->
+                      <div class="flex items-center space-x-1.5">
+                        <span :class="getSalesTierBadgeClass(s)" class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase border">
+                          <i class="fa-solid fa-medal mr-1"></i>{{ getSalesComputedTierLabel(s) }}
+                        </span>
+                        <span class="text-[10px] font-mono bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded border border-slate-200">
+                          Tải: {{ s.currentLeads }}/{{ s.maxCapacity }} Lead
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Manual Sliders for Base EXP, Tech Skill, Negotiation Skill -->
+                  <td class="p-3">
+                    <div class="space-y-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+                      <!-- Base EXP -->
+                      <div>
+                        <div class="flex justify-between text-[11px] mb-0.5">
+                          <span class="font-semibold text-slate-700">1. Kinh nghiệm gốc (Base EXP):</span>
+                          <div class="flex items-center space-x-1">
+                            <button @click="adjustBaseStat(s, 'baseExpScore', -5)" class="w-4 h-4 bg-white border border-slate-300 rounded text-[10px] font-bold">-</button>
+                            <span class="font-mono font-bold text-sky-700 w-8 text-center">{{ s.baseExpScore }}</span>
+                            <button @click="adjustBaseStat(s, 'baseExpScore', 5)" class="w-4 h-4 bg-white border border-slate-300 rounded text-[10px] font-bold">+</button>
+                          </div>
+                        </div>
+                        <input type="range" min="10" max="150" step="1" v-model.number="s.baseExpScore" @change="onManualStatChange(s)" class="w-full accent-sky-600 h-1.5 cursor-pointer">
+                      </div>
+
+                      <!-- Tech Skill -->
+                      <div>
+                        <div class="flex justify-between text-[11px] mb-0.5">
+                          <span class="font-semibold text-slate-700">2. Kỹ thuật Tủ Điện & PLC:</span>
+                          <span class="font-mono font-bold text-emerald-700">{{ s.techSkill }}/100</span>
+                        </div>
+                        <input type="range" min="10" max="100" step="5" v-model.number="s.techSkill" @change="onManualStatChange(s)" class="w-full accent-emerald-600 h-1.5 cursor-pointer">
+                      </div>
+
+                      <!-- Negotiation Skill -->
+                      <div>
+                        <div class="flex justify-between text-[11px] mb-0.5">
+                          <span class="font-semibold text-slate-700">3. Đàm phán Chốt B2B:</span>
+                          <span class="font-mono font-bold text-purple-700">{{ s.negotiationSkill }}/100</span>
+                        </div>
+                        <input type="range" min="10" max="100" step="5" v-model.number="s.negotiationSkill" @change="onManualStatChange(s)" class="w-full accent-purple-600 h-1.5 cursor-pointer">
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Automated Bonus Breakdown -->
+                  <td class="p-3">
+                    <div class="bg-amber-50/60 p-2.5 rounded-lg border border-amber-200/80 space-y-1.5 font-mono text-[11px]">
+                      <div class="flex justify-between items-center">
+                        <span class="font-sans text-slate-600">• Điểm Kỹ năng (KT + ĐP):</span>
+                        <strong class="text-emerald-700">+{{ getSalesPowerBreakdown(s).skillBonus }} PWR</strong>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="font-sans text-slate-600">• Từ {{ s.assignedLeadsCount }} Dự án (×{{ powerConfig.weightPerProject }}):</span>
+                        <strong class="text-purple-700">+{{ getSalesPowerBreakdown(s).projectBonus }} PWR</strong>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="font-sans text-slate-600">• Từ {{ s.wonCount }} Đơn chốt (×{{ powerConfig.weightPerWonDeal }}):</span>
+                        <strong class="text-amber-700">+{{ getSalesPowerBreakdown(s).wonBonus }} PWR</strong>
+                      </div>
+                      <div class="flex justify-between items-center border-t border-amber-200 pt-1">
+                        <span class="font-sans text-slate-600">• Từ Doanh số ({{ formatVND(s.monthlyRev) }}):</span>
+                        <strong class="text-pink-700">+{{ getSalesPowerBreakdown(s).revBonus }} PWR</strong>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Total Power Score & Unlocked Budget Limit -->
+                  <td class="p-3 text-center">
+                    <div class="bg-slate-900 text-white p-3 rounded-xl border border-slate-700 space-y-2 shadow-xs">
+                      <div>
+                        <span class="text-[10px] text-slate-400 uppercase block">Tổng Điểm Sức Mạnh</span>
+                        <span class="text-2xl font-black text-amber-400 font-mono">{{ getSalesPowerScore(s) }} <small class="text-xs font-normal text-slate-300">PWR</small></span>
+                      </div>
+
+                      <!-- Level Progress Bar -->
+                      <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700">
+                        <div class="bg-gradient-to-r from-sky-400 via-amber-400 to-emerald-400 h-2 rounded-full transition-all duration-300"
+                             :style="{ width: Math.min(100, (getSalesPowerScore(s) / 260) * 100) + '%' }"></div>
+                      </div>
+
+                      <!-- Max Allowed Lead Budget -->
+                      <div class="pt-1 border-t border-slate-800">
+                        <span class="text-[9px] text-slate-400 uppercase block">Hạn mức nhận Lead tối đa:</span>
+                        <strong class="text-[11px] font-mono text-emerald-300">
+                          {{ getSalesMaxLeadBudgetText(s) }}
+                        </strong>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Simulation Sandbox Buttons -->
+                  <td class="p-3">
+                    <div class="space-y-1.5">
+                      <button 
+                        @click="simulateSalesGrowth(s, 'wonDeal')"
+                        class="w-full py-1.5 px-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] rounded-lg shadow-xs transition flex items-center justify-center space-x-1">
+                        <i class="fa-solid fa-trophy text-amber-300"></i>
+                        <span>⚡ Giả Lập Chốt +1 Đơn (+{{ formatVND(250000000) }})</span>
+                      </button>
+
+                      <button 
+                        @click="simulateSalesGrowth(s, 'addProject')"
+                        class="w-full py-1.5 px-2.5 bg-sky-600 hover:bg-sky-700 text-white font-bold text-[11px] rounded-lg shadow-xs transition flex items-center justify-center space-x-1">
+                        <i class="fa-solid fa-folder-plus"></i>
+                        <span>+ Nhận Thêm 1 Dự Án Mới</span>
+                      </button>
+
+                      <button 
+                        @click="simulateSalesGrowth(s, 'trainingExp')"
+                        class="w-full py-1.5 px-2.5 bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-[11px] rounded-lg border border-amber-300 transition flex items-center justify-center space-x-1">
+                        <i class="fa-solid fa-graduation-cap text-amber-700"></i>
+                        <span>🎓 Hoàn Thành Đào Tạo (+15 EXP)</span>
+                      </button>
+                    </div>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- AUTOMATION LEVEL-UP & SCALING EVENT LOG -->
+        <div class="bg-white rounded-xl p-4 shadow-sm border border-slate-200 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <h3 class="text-xs font-extrabold text-slate-800 uppercase tracking-wide flex items-center gap-2">
+              <i class="fa-solid fa-clock-rotate-left text-sky-600"></i>
+              Nhật Ký Tự Động Hóa Nâng Cấp Sức Mạnh & Mở Khóa Hạn Mức (Automation Audit Log)
+            </h3>
+            <span class="text-[11px] text-slate-400">{{ powerAutomationLogs.length }} sự kiện đã ghi nhận</span>
+          </div>
+
+          <div class="max-h-48 overflow-y-auto space-y-1.5 pr-1">
+            <div v-for="(log, lIdx) in powerAutomationLogs" :key="lIdx" 
+                 class="p-2.5 rounded-lg border text-xs flex items-center justify-between"
+                 :class="log.type === 'levelup' ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-slate-50 border-slate-200 text-slate-700'">
+              <div class="flex items-center space-x-2">
+                <i class="fa-solid" :class="log.type === 'levelup' ? 'fa-crown text-amber-500 text-sm' : 'fa-bolt text-sky-600'"></i>
+                <div>
+                  <span class="font-bold">{{ log.title }}:</span>
+                  <span class="ml-1">{{ log.detail }}</span>
+                </div>
+              </div>
+              <span class="font-mono text-[10px] text-slate-400 shrink-0 ml-2">{{ log.time }}</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 py-4 mt-auto">
+      <div class="max-w-[1700px] mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
+        <div>
+          <strong>MaxSoft ERP V2</strong> © 2026 Max Electric Co., Ltd. Tất cả quyền được bảo lưu.
+        </div>
+        <div class="flex items-center space-x-4 font-mono text-[11px]">
+          <span>Phiên bản: <strong class="text-slate-700">V2.4.0-PROD</strong></span>
+          <span>•</span>
+          <span>Tỷ giá chuẩn: <strong class="text-slate-700">VND (Dot Separator)</strong></span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================================================================================== -->
+    <!-- MODAL 1: DUYỆT THỦ CÔNG LEAD & SO SÁNH NĂNG LỰC SALES                                -->
+    <!-- ==================================================================================== -->
+    <div v-if="showManualModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-xs p-4">
+      <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full border border-slate-300 overflow-hidden space-y-4 p-6">
+        
+        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+          <div class="flex items-center space-x-2">
+            <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+            <h3 class="font-extrabold text-slate-900 text-base">Duyệt Thủ Công Lead & So Sánh Năng Lực Sales</h3>
+          </div>
+          <button @click="showManualModal = false" class="text-slate-400 hover:text-slate-600 text-lg">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div v-if="selectedLeadForModal" class="space-y-4 text-xs">
+          <!-- Lead Info Summary Card -->
+          <div class="bg-slate-50 p-3.5 rounded-lg border border-slate-200 space-y-1">
+            <div class="font-bold text-slate-900 text-sm">{{ selectedLeadForModal.companyName }}</div>
+            <div class="text-slate-600 flex items-center space-x-3">
+              <span>Hạng mục: <strong>{{ selectedLeadForModal.category }}</strong></span>
+              <span>•</span>
+              <span>Dự toán: <strong class="text-emerald-700 font-mono">{{ formatVND(selectedLeadForModal.estimatedBudget) }}</strong></span>
+            </div>
+            <div class="text-slate-500 italic mt-1 font-sans">
+              "{{ selectedLeadForModal.note }}"
+            </div>
+          </div>
+
+          <!-- Sales Comparison Table -->
+          <div>
+            <h4 class="font-bold text-slate-800 uppercase tracking-wide mb-2">So Sánh Năng Lực Tất Cả Sales Hiện Tại:</h4>
+            <div class="overflow-x-auto border border-slate-200 rounded-lg">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-slate-100 text-slate-700 font-bold text-[11px]">
+                    <th class="p-2 border-b">Sales</th>
+                    <th class="p-2 border-b">Vai Trò</th>
+                    <th class="p-2 border-b">Tải Công Việc</th>
+                    <th class="p-2 border-b text-right">Doanh Số Tháng</th>
+                    <th class="p-2 border-b text-center">Giao Cho Sales</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr v-for="s in salesList" :key="s.id" :class="s.id === selectedLeadForModal.aiRecommendedSalesId ? 'bg-sky-50/70' : ''">
+                    <td class="p-2 font-bold text-slate-800 flex items-center gap-1.5">
+                      {{ s.name }}
+                      <span v-if="s.id === selectedLeadForModal.aiRecommendedSalesId" class="bg-sky-600 text-white text-[9px] px-1 rounded font-normal">AI Match</span>
+                    </td>
+                    <td class="p-2 text-slate-600">{{ s.role }}</td>
+                    <td class="p-2">
+                      <span :class="s.currentLeads >= s.maxCapacity ? 'text-rose-600 font-bold' : 'text-slate-700'">
+                        {{ s.currentLeads }}/{{ s.maxCapacity }} Lead
+                      </span>
+                    </td>
+                    <td class="p-2 text-right font-mono font-bold text-emerald-700">
+                      {{ formatVND(s.monthlyRev) }}
+                    </td>
+                    <td class="p-2 text-center">
+                      <button 
+                        @click="confirmManualAssign(selectedLeadForModal, s.id)"
+                        class="px-3 py-1 bg-sky-600 hover:bg-sky-700 text-white rounded font-bold text-[11px] shadow-xs">
+                        ✅ Giao Lead Này
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Directives & Priority Inputs -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Mức Độ Ưu Tiên Xử Lý:</label>
+              <select v-model="modalPriority" class="erp-input w-full">
+                <option value="Cao">🔴 Cao (Phải gọi trong 15 phút)</option>
+                <option value="Bình thường">🟡 Bình thường (Trong 2 giờ)</option>
+                <option value="Rất gấp">⚡ Rất gấp (Key Account Boss chỉ đạo)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Chỉ Đạo Từ Ban Giám Đốc (Boss Directive):</label>
+              <input v-model="modalDirective" type="text" placeholder="Ví dụ: Ưu tiên báo giá gấp tủ MSB trong 24h..." class="erp-input w-full">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================================================================================== -->
+    <!-- MODAL 2: TRUNG TÂM DỰ ÁN & CHỈNH SỬA BOM ĐA PHIÊN BẢN (MASTER COMMAND CENTER)         -->
+    <!-- ==================================================================================== -->
+    <div v-if="showProjectModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/70 backdrop-blur-xs p-2 sm:p-4">
+      <div class="bg-white rounded-xl shadow-2xl max-w-6xl w-full border border-slate-300 overflow-hidden flex flex-col max-h-[92vh]">
+        
+        <!-- Modal Top Bar -->
+        <div class="bg-slate-900 text-white px-5 py-3.5 flex items-center justify-between border-b border-slate-800">
+          <div class="flex items-center space-x-3">
+            <span class="bg-sky-500 text-white font-mono font-extrabold text-xs px-2.5 py-1 rounded">
+              {{ currentProjectModal.code }}
+            </span>
+            <div>
+              <h3 class="font-extrabold text-slate-100 text-sm sm:text-base leading-tight">{{ currentProjectModal.name }}</h3>
+              <p class="text-[11px] text-slate-400">Khách hàng: <strong>{{ currentProjectModal.customerName }}</strong> | MST: <strong class="font-mono text-slate-300">{{ currentProjectModal.taxCode }}</strong></p>
+            </div>
+          </div>
+
+          <button @click="showProjectModal = false" class="text-slate-400 hover:text-white text-xl">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Scrollable Modal Body -->
+        <div class="p-4 sm:p-6 overflow-y-auto space-y-6 flex-1 text-xs">
+          
+          <!-- STAGE STEPPER BAR & SHIFT SELECTION -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-2">
+              <span class="font-bold text-slate-800 uppercase tracking-wide text-xs">
+                <i class="fa-solid fa-bars-progress text-sky-600 mr-1.5"></i> Cập Nhật Giai Đoạn Dự Án & Ca Xuất Kho PO:
+              </span>
+              <div class="flex items-center space-x-2">
+                <span class="text-slate-500">Ca giao nhận vật tư:</span>
+                <select v-model="currentProjectModal.deliveryShift" class="erp-input font-bold text-sky-800 py-0.5 text-xs">
+                  <option value="Ca Sáng (09:00 - 11:00)">Ca Sáng (09:00 - 11:00)</option>
+                  <option value="Ca Chiều (15:00 - 16:30)">Ca Chiều (15:00 - 16:30)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Stepper Buttons -->
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-2">
+              <button 
+                v-for="stg in stages" :key="stg.id"
+                @click="currentProjectModal.currentStage = stg.id"
+                :class="stg.id <= currentProjectModal.currentStage ? 'bg-sky-600 text-white shadow-xs' : 'bg-slate-200 text-slate-600 hover:bg-slate-300'"
+                class="p-2 rounded-lg text-left transition font-semibold flex items-center space-x-2">
+                <span class="w-5 h-5 rounded-full bg-slate-900/30 inline-flex items-center justify-center text-[10px] font-bold">
+                  {{ stg.id }}
+                </span>
+                <span class="text-[11px] truncate">{{ stg.name }}</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- EDITABLE 4 DECISION MAKERS CARDS -->
+          <div class="space-y-2">
+            <h4 class="font-bold text-slate-800 uppercase tracking-wide text-xs">Chỉnh Sửa Thông Tin 4 Người Quyết Định (Decision Makers):</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <!-- CEO -->
+              <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1.5">
+                <div class="font-bold text-slate-500 uppercase text-[10px]">1. Giám đốc (CEO)</div>
+                <input v-model="currentProjectModal.decisionMakers.ceo.name" placeholder="Tên CEO" class="erp-input w-full text-xs">
+                <input v-model="currentProjectModal.decisionMakers.ceo.phone" placeholder="Số điện thoại" class="erp-input w-full text-xs font-mono">
+              </div>
+
+              <!-- Purchasing -->
+              <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1.5">
+                <div class="font-bold text-slate-500 uppercase text-[10px]">2. TP Mua Hàng</div>
+                <input v-model="currentProjectModal.decisionMakers.purchasing.name" placeholder="Tên TP Mua Hàng" class="erp-input w-full text-xs">
+                <input v-model="currentProjectModal.decisionMakers.purchasing.phone" placeholder="Số điện thoại" class="erp-input w-full text-xs font-mono">
+              </div>
+
+              <!-- Technical -->
+              <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1.5">
+                <div class="font-bold text-slate-500 uppercase text-[10px]">3. TP Kỹ Thuật</div>
+                <input v-model="currentProjectModal.decisionMakers.technical.name" placeholder="Tên TP Kỹ Thuật" class="erp-input w-full text-xs">
+                <input v-model="currentProjectModal.decisionMakers.technical.phone" placeholder="Số điện thoại" class="erp-input w-full text-xs font-mono">
+              </div>
+
+              <!-- Site Boss -->
+              <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 space-y-1.5">
+                <div class="font-bold text-slate-500 uppercase text-[10px]">4. CHT Thi Công</div>
+                <input v-model="currentProjectModal.decisionMakers.site.name" placeholder="Tên CHT Thi Công" class="erp-input w-full text-xs">
+                <input v-model="currentProjectModal.decisionMakers.site.phone" placeholder="Số điện thoại" class="erp-input w-full text-xs font-mono">
+              </div>
+            </div>
+          </div>
+
+          <!-- MULTI-VERSION BOM TAB CONTROLS & DIFF COMPARISON TOGGLE -->
+          <div class="border-t border-slate-200 pt-4 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-100 p-2.5 rounded-xl border border-slate-300">
+              
+              <!-- Version Pills -->
+              <div class="flex items-center space-x-1 overflow-x-auto">
+                <span class="font-bold text-slate-700 mr-2 flex items-center gap-1">
+                  <i class="fa-solid fa-code-branch text-sky-600"></i> Phiên Bản BOM:
+                </span>
+                
+                <button 
+                  v-for="ver in currentProjectModal.versions" :key="ver.id"
+                  @click="activeVersionModalId = ver.id"
+                  :class="activeVersionModalId === ver.id ? 'bg-sky-600 text-white shadow-sm font-extrabold' : 'bg-white text-slate-700 hover:bg-slate-200'"
+                  class="px-3 py-1.5 rounded-lg text-xs font-mono transition flex items-center space-x-1.5">
+                  <span>Ver {{ ver.id }}</span>
+                  <span v-if="ver.id === currentProjectModal.activeVersionId" class="bg-emerald-500 text-white text-[9px] px-1.5 rounded-full font-sans uppercase">
+                    Hiện hành
+                  </span>
+                </button>
+              </div>
+
+              <!-- Action Toolbar for Versions -->
+              <div class="flex items-center space-x-2">
+                <button 
+                  @click="duplicateVersion(currentProjectModal, currentModalVersion)"
+                  class="px-3 py-1.5 bg-white hover:bg-slate-50 text-slate-800 text-xs font-bold rounded-lg border border-slate-300 transition flex items-center space-x-1">
+                  <i class="fa-solid fa-copy text-sky-600"></i>
+                  <span>+ Nhân Bản Ver Mới</span>
+                </button>
+
+                <button 
+                  v-if="activeVersionModalId !== currentProjectModal.activeVersionId"
+                  @click="setAsActiveVersion(currentProjectModal, activeVersionModalId)"
+                  class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg shadow-xs transition">
+                  ⚡ Đặt Làm Bản Hiện Hành
+                </button>
+
+                <button 
+                  v-if="currentProjectModal.versions.length > 1 && activeVersionModalId !== currentProjectModal.activeVersionId"
+                  @click="deleteVersion(currentProjectModal, activeVersionModalId)"
+                  class="px-2.5 py-1.5 bg-rose-100 hover:bg-rose-200 text-rose-700 text-xs font-bold rounded-lg transition">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- DIFF COMPARISON TOGGLE & TOOLBAR -->
+            <div class="flex items-center justify-between bg-sky-50 p-3 rounded-lg border border-sky-200">
+              <div class="flex items-center space-x-3">
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" v-model="showDiffComparison" class="w-4 h-4 text-sky-600 rounded">
+                  <span class="font-bold text-sky-900 text-xs">Bật So Sánh Chênh Lệch Với Ver 1 (Deep Diff Comparison)</span>
+                </label>
+              </div>
+
+              <!-- Bulk Pricing Adjustment Buttons -->
+              <div class="flex items-center space-x-2">
+                <span class="text-[11px] text-slate-500 font-medium">Điều chỉnh hàng loạt giá bán Ver {{ activeVersionModalId }}:</span>
+                <button @click="adjustBulkPrices(-5)" class="px-2 py-1 bg-amber-100 hover:bg-amber-200 text-amber-800 font-bold text-[11px] rounded border border-amber-300">
+                  -5% Giá Bán
+                </button>
+                <button @click="adjustBulkPrices(5)" class="px-2 py-1 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 font-bold text-[11px] rounded border border-emerald-300">
+                  +5% Giá Bán
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 100% INLINE EDITABLE BOM TABLE GRID -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wide">
+                Bảng Chi Tiết Vật Tư Tủ Điện (BOM Ver {{ activeVersionModalId }}):
+              </h4>
+              <button @click="addBomRow" class="px-3 py-1 bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs rounded transition flex items-center space-x-1">
+                <i class="fa-solid fa-plus"></i>
+                <span>+ Thêm Dòng Vật Tư</span>
+              </button>
+            </div>
+
+            <div class="overflow-x-auto border border-slate-300 rounded-lg">
+              <table class="w-full erp-table text-left border-collapse text-xs">
+                <thead>
+                  <tr class="bg-slate-100 text-slate-700 font-bold uppercase tracking-wider text-[10px]">
+                    <th class="p-2 text-center w-10">STT</th>
+                    <th class="p-2 w-28">Mã Mã VT</th>
+                    <th class="p-2 min-w-[180px]">Tên Tủ / Vật Tư Thiết Bị</th>
+                    <th class="p-2 w-24">Hãng SX</th>
+                    <th class="p-2 w-16 text-center">ĐVT</th>
+                    <th class="p-2 w-16 text-right">SL</th>
+                    <th class="p-2 w-28 text-right">Giá Vốn COGS (đ)</th>
+                    <th class="p-2 w-32 text-right">Đơn Giá Bán (đ)</th>
+                    <th class="p-2 w-16 text-right">CK %</th>
+                    <th class="p-2 w-36 text-right bg-sky-50">Thành Tiền Bán (đ)</th>
+                    <th class="p-2 text-center w-12">Xóa</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 font-sans">
+                  <tr v-for="(item, idx) in currentModalVersion.items" :key="idx" class="hover:bg-sky-50/40">
+                    <td class="p-2 text-center font-bold font-mono text-slate-400">#{{ idx + 1 }}</td>
+                    
+                    <!-- Code -->
+                    <td class="p-1">
+                      <input v-model="item.code" class="erp-input w-full font-mono text-xs py-1">
+                    </td>
+                    
+                    <!-- Name & Specs -->
+                    <td class="p-1">
+                      <input v-model="item.name" class="erp-input w-full text-xs py-1 font-medium">
+                    </td>
+                    
+                    <!-- Brand -->
+                    <td class="p-1">
+                      <input v-model="item.brand" class="erp-input w-full text-xs py-1">
+                    </td>
+
+                    <!-- Unit -->
+                    <td class="p-1">
+                      <input v-model="item.unit" class="erp-input w-full text-xs py-1 text-center">
+                    </td>
+
+                    <!-- Qty -->
+                    <td class="p-1">
+                      <input v-model.number="item.qty" type="number" min="1" class="erp-input w-full text-xs py-1 text-right font-mono font-bold">
+                    </td>
+
+                    <!-- Cost Price -->
+                    <td class="p-1">
+                      <input v-model.number="item.costPrice" type="number" step="100000" class="erp-input w-full text-xs py-1 text-right font-mono text-slate-600">
+                    </td>
+
+                    <!-- Unit Selling Price -->
+                    <td class="p-1">
+                      <input v-model.number="item.unitPrice" type="number" step="100000" class="erp-input w-full text-xs py-1 text-right font-mono font-bold text-sky-800">
+                    </td>
+
+                    <!-- Discount -->
+                    <td class="p-1">
+                      <input v-model.number="item.discount" type="number" min="0" max="100" class="erp-input w-full text-xs py-1 text-right font-mono text-amber-700">
+                    </td>
+
+                    <!-- Total Line Item Price -->
+                    <td class="p-2 text-right font-mono font-extrabold text-sky-900 bg-sky-50/60">
+                      {{ formatVND(calculateLineTotal(item)) }}
+                    </td>
+
+                    <!-- Remove -->
+                    <td class="p-2 text-center">
+                      <button @click="removeBomRow(idx)" class="text-rose-500 hover:text-rose-700 p-1">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- DEEP DIFF COMPARISON TABLE (AGAINST VER 1) -->
+          <div v-if="showDiffComparison" class="bg-amber-50/80 p-4 rounded-xl border border-amber-300 space-y-3">
+            <h4 class="font-extrabold text-amber-900 text-xs uppercase tracking-wide flex items-center gap-1.5">
+              <i class="fa-solid fa-code-compare text-amber-600"></i> Bảng So Sánh Deep Diff So Với Bản Ver 1:
+            </h4>
+
+            <div class="grid grid-cols-3 gap-3 text-xs bg-white p-3 rounded-lg border border-amber-200">
+              <div>
+                <span class="text-slate-400 text-[10px] uppercase block">Doanh Thu Ver 1:</span>
+                <strong class="font-mono text-slate-700">{{ formatVND(getVer1Revenue(currentProjectModal)) }}</strong>
+              </div>
+              <div>
+                <span class="text-slate-400 text-[10px] uppercase block">Doanh Thu Ver {{ activeVersionModalId }}:</span>
+                <strong class="font-mono text-sky-700">{{ formatVND(currentModalVersion.totalRevenue) }}</strong>
+              </div>
+              <div>
+                <span class="text-slate-400 text-[10px] uppercase block">Chênh Lệch Delta (VND):</span>
+                <strong class="font-mono text-sm" :class="getDeltaRevenue >= 0 ? 'text-emerald-600' : 'text-rose-600'">
+                  {{ getDeltaRevenue >= 0 ? '+' : '' }}{{ formatVND(getDeltaRevenue) }}
+                </strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUMMARY FINANCIAL BAR IN MODAL -->
+          <div class="bg-slate-900 text-white p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 font-mono shadow-md">
+            <div>
+              <div class="text-[10px] text-slate-400 uppercase font-sans">Tổng Doanh Thu Báo Giá Ver {{ activeVersionModalId }}</div>
+              <div class="text-xl font-black text-sky-300">{{ formatVND(currentModalVersion.totalRevenue) }}</div>
+            </div>
+
+            <div class="flex items-center space-x-6 text-xs">
+              <div>
+                <div class="text-[10px] text-slate-400 uppercase font-sans">Giá Vốn COGS</div>
+                <div class="font-bold text-slate-200">{{ formatVND(currentModalVersion.cogs) }}</div>
+              </div>
+              <div class="border-l border-slate-700 pl-6">
+                <div class="text-[10px] text-slate-400 uppercase font-sans">Lãi Gộp (Profit)</div>
+                <div class="font-bold text-emerald-400">{{ formatVND(currentModalVersion.grossProfit) }}</div>
+              </div>
+              <div class="border-l border-slate-700 pl-6">
+                <div class="text-[10px] text-slate-400 uppercase font-sans">Margin %</div>
+                <div class="font-bold text-emerald-300 font-sans text-sm">{{ currentModalVersion.marginPercent }}%</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Modal Footer Buttons -->
+        <div class="bg-slate-100 px-6 py-3 border-t border-slate-200 flex items-center justify-end space-x-3">
+          <button @click="showProjectModal = false" class="px-4 py-2 bg-white hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg border border-slate-300">
+            Đóng
+          </button>
+          <button @click="saveProjectChanges" class="px-5 py-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-lg shadow-sm">
+            💾 Lưu Thay Đổi Dự Án
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================================================================================== -->
+    <!-- MODAL 3: KỊCH BẢN AI SALES PLAYBOOK 360° & NĂNG LỰC KHÁCH HÀNG                       -->
+    <!-- ==================================================================================== -->
+    <div v-if="showAiPlaybookModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/70 backdrop-blur-xs p-4">
+      <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full border border-slate-300 overflow-hidden flex flex-col max-h-[90vh]">
+        
+        <div class="bg-gradient-to-r from-purple-900 to-indigo-900 text-white px-5 py-4 flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <i class="fa-solid fa-brain text-amber-300 text-xl"></i>
+            <div>
+              <h3 class="font-extrabold text-base">AI Sales Playbook 360° & Kịch Bản Đàm Phán B2B</h3>
+              <p class="text-[11px] text-purple-200">Khách hàng: <strong>{{ selectedCustomerForPlaybook?.name }}</strong></p>
+            </div>
+          </div>
+          <button @click="showAiPlaybookModal = false" class="text-purple-300 hover:text-white text-xl">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div v-if="selectedCustomerForPlaybook" class="p-6 overflow-y-auto space-y-6 text-xs flex-1">
+          
+          <!-- 5-STEP STRATEGY -->
+          <div class="space-y-3">
+            <h4 class="font-extrabold text-purple-900 text-xs uppercase tracking-wide flex items-center gap-1.5">
+              <i class="fa-solid fa-route"></i> Quy Trình 5 Bước Tiếp Cận Chuyên Sâu:
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-2">
+              <div v-for="(step, sIdx) in playbookSteps" :key="sIdx" class="bg-purple-50 p-2.5 rounded-lg border border-purple-200 space-y-1">
+                <div class="font-bold text-purple-800 text-[10px]">Bước {{ sIdx + 1 }}: {{ step.title }}</div>
+                <p class="text-[11px] text-slate-600 leading-tight">{{ step.desc }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- DISC & DECISION MAKER SCRIPTS -->
+          <div class="space-y-3">
+            <h4 class="font-extrabold text-purple-900 text-xs uppercase tracking-wide">
+              Kịch Bản Đàm Phán Theo 4 Người Quyết Định:
+            </h4>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- CEO Script -->
+              <div class="bg-slate-50 p-3.5 rounded-lg border border-slate-200 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-slate-900 text-xs">1. Giám đốc (CEO) - {{ selectedCustomerForPlaybook.decisionMakers.ceo.name }}</span>
+                  <span class="bg-purple-100 text-purple-800 font-bold px-1.5 rounded text-[10px]">Tiêu chuẩn: ROI & Tiến độ</span>
+                </div>
+                <p class="text-[11px] text-slate-600 bg-white p-2.5 rounded border border-slate-200 leading-relaxed font-sans">
+                  "Thưa Anh/Chị, MaxElectric cam kết bàn giao hệ thống tủ MSB chuẩn IEC 61439 đúng hạn 100%, bảo đảm không gây đứt gãy tiến độ nhà máy, giúp tối ưu 12% chi phí vận hành."
+                </p>
+                <button @click="copyText('Thưa Anh/Chị, MaxElectric cam kết bàn giao hệ thống tủ MSB chuẩn IEC 61439 đúng hạn 100%...', 'Kịch bản trao đổi CEO')" class="text-sky-700 font-semibold text-[11px] hover:underline flex items-center gap-1">
+                  <i class="fa-solid fa-copy"></i> Sao chép tin nhắn Zalo cho CEO
+                </button>
+              </div>
+
+              <!-- Technical Script -->
+              <div class="bg-slate-50 p-3.5 rounded-lg border border-slate-200 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-slate-900 text-xs">3. TP Kỹ Thuật - {{ selectedCustomerForPlaybook.decisionMakers.technical.name }}</span>
+                  <span class="bg-emerald-100 text-emerald-800 font-bold px-1.5 rounded text-[10px]">Tiêu chuẩn: Thiết bị Schneider/ABB</span>
+                </div>
+                <p class="text-[11px] text-slate-600 bg-white p-2.5 rounded border border-slate-200 leading-relaxed font-sans">
+                  "Chào Anh, toàn bộ thiết bị đóng cắt trong tủ đều sử dụng Schneider Masterpact/NSX chính hãng, đầy đủ CO/CQ và test report tổn thất điện năng trước khi xuất xưởng."
+                </p>
+                <button @click="copyText('Chào Anh, toàn bộ thiết bị đóng cắt trong tủ đều sử dụng Schneider...', 'Kịch bản trao đổi Kỹ Thuật')" class="text-sky-700 font-semibold text-[11px] hover:underline flex items-center gap-1">
+                  <i class="fa-solid fa-copy"></i> Sao chép tin nhắn Zalo cho Kỹ Thuật
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="bg-slate-100 px-6 py-3 border-t border-slate-200 flex justify-end">
+          <button @click="showAiPlaybookModal = false" class="px-4 py-2 bg-purple-800 text-white text-xs font-bold rounded-lg shadow-sm">
+            Đóng Playbook
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================================================================================== -->
+    <!-- MODAL 4: SALES PERFORMANCE 360° INSPECTOR (INSPECTOR CHI TIẾT SALES)                -->
+    <!-- ==================================================================================== -->
+    <div v-if="showSales360Modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/70 backdrop-blur-xs p-4">
+      <div class="bg-white rounded-xl shadow-2xl max-w-5xl w-full border border-slate-300 overflow-hidden flex flex-col max-h-[90vh]">
+        
+        <!-- Top Banner -->
+        <div class="bg-slate-900 text-white px-5 py-4 flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full bg-sky-600 text-white font-extrabold flex items-center justify-center text-sm shadow-md">
+              {{ getInitials(selectedSales360?.name || '') }}
+            </div>
+            <div>
+              <h3 class="font-extrabold text-base text-slate-100">{{ selectedSales360?.name }}</h3>
+              <p class="text-[11px] text-slate-400">{{ selectedSales360?.role }} • {{ selectedSales360?.phone }}</p>
+            </div>
+          </div>
+          <button @click="showSales360Modal = false" class="text-slate-400 hover:text-white text-xl">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Scroll Content -->
+        <div v-if="selectedSales360" class="p-6 overflow-y-auto space-y-6 text-xs flex-1">
+          
+          <!-- SIDE BY SIDE MONTHLY VS YEARLY KPI CARDS -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Monthly Card -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+              <div class="flex justify-between items-center text-slate-500 font-bold uppercase text-[10px]">
+                <span>📅 Chỉ Tiêu Tháng (11/2026)</span>
+                <span class="text-sky-700 font-mono text-xs">{{ getSalesKpiPercent(selectedSales360) }}%</span>
+              </div>
+              <div class="text-lg font-black text-slate-900 font-mono">
+                {{ formatVND(selectedSales360.monthlyRev) }}
+              </div>
+              <div class="text-[11px] text-slate-500 flex justify-between">
+                <span>Target Tháng:</span>
+                <span class="font-mono font-bold text-slate-700">{{ formatVND(selectedSales360.monthlyTarget) }}</span>
+              </div>
+            </div>
+
+            <!-- Yearly Card -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+              <div class="flex justify-between items-center text-slate-500 font-bold uppercase text-[10px]">
+                <span>📊 Chỉ Tiêu Lũy Kế Năm (2026)</span>
+                <span class="text-emerald-700 font-mono text-xs">88%</span>
+              </div>
+              <div class="text-lg font-black text-emerald-700 font-mono">
+                {{ formatVND(selectedSales360.yearlyRev) }}
+              </div>
+              <div class="text-[11px] text-slate-500 flex justify-between">
+                <span>Target Cả Năm:</span>
+                <span class="font-mono font-bold text-slate-700">{{ formatVND(selectedSales360.yearlyTarget) }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12-MONTH VISUAL REVENUE BAR CHART SIMULATION -->
+          <div class="bg-slate-900 text-white p-4 sm:p-5 rounded-xl space-y-3 shadow-sm overflow-hidden">
+            <div class="flex flex-wrap justify-between items-center border-b border-slate-800 pb-2 gap-2">
+              <h4 class="font-extrabold text-xs text-sky-400 uppercase tracking-wide flex items-center gap-1.5">
+                <i class="fa-solid fa-chart-column"></i> Biểu Đồ Doanh Số Năm 2026 (Lũy Kế T1 - T11 • T12 Chưa Phát Sinh):
+              </h4>
+              <span class="text-[10px] text-slate-400">Kỳ hiện tại: <strong class="text-amber-400">Tháng 11/2026</strong> • Di chuột vào cột để xem số tiền đầy đủ</span>
+            </div>
+
+            <div class="h-56 grid grid-cols-12 items-end gap-1.5 sm:gap-2.5 pt-10 px-2 border-b border-slate-800 pb-2">
+              <div v-for="(mRev, mIdx) in (selectedSales360.monthlyHistory || monthlyHistory)" :key="mIdx" class="h-full flex flex-col justify-end items-center group relative min-w-0">
+                <!-- Tooltip nổi khi rê chuột (Tự động căn phải ở các tháng cuối để không bị lem ra ngoài) -->
+                <div :class="[
+                       'opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 absolute -top-8 z-20 font-mono font-extrabold text-[10px] px-2 py-1 rounded shadow-lg whitespace-nowrap',
+                       mRev > 0 ? 'bg-amber-400 text-slate-950' : 'bg-slate-700 text-slate-200 border border-slate-600',
+                       mIdx >= 8 ? 'right-0' : (mIdx <= 1 ? 'left-0' : 'left-1/2 -translate-x-1/2')
+                     ]">
+                  Tháng {{ mIdx + 1 }}/2026: {{ mRev > 0 ? formatVND(mRev) : '0 đ (Chưa phát sinh)' }}
+                </div>
+
+                <!-- Nhãn giá trị tiền gọn gàng phía trên đầu cột, không bị tràn khung -->
+                <div class="w-full text-center mb-1 overflow-hidden px-0.5">
+                  <span v-if="mRev > 0"
+                        :class="[
+                          'block text-[8px] sm:text-[9px] font-mono font-bold transition leading-tight truncate',
+                          mIdx === 10 ? 'text-amber-300 font-extrabold' : 'text-sky-300 group-hover:text-amber-300'
+                        ]"
+                        :title="formatVND(mRev)">
+                    {{ formatVND(mRev) }}
+                  </span>
+                  <span v-else class="block text-[8px] sm:text-[9px] text-slate-500 font-mono italic leading-tight">
+                    Chờ T12
+                  </span>
+                </div>
+
+                <!-- Thân cột biểu đồ: Cột T1-T11 có dữ liệu, Cột T12=0 hiển thị khung nét đứt -->
+                <div v-if="mRev > 0"
+                     :class="[
+                       'w-full max-w-[34px] rounded-t-md shadow-md transition-all duration-300 cursor-pointer border-t',
+                       mIdx === 10 
+                         ? 'bg-gradient-to-t from-emerald-600 to-teal-300 border-emerald-200/60 ring-2 ring-amber-400/50' 
+                         : 'bg-gradient-to-t from-sky-600 to-cyan-400 group-hover:from-amber-500 group-hover:to-yellow-300 border-sky-200/40'
+                     ]"
+                     :style="{ height: Math.max(18, Math.round((mRev / 2300000000) * 125)) + 'px' }"
+                     :title="'Tháng ' + (mIdx + 1) + '/2026: ' + formatVND(mRev)">
+                </div>
+                <div v-else
+                     class="w-full max-w-[34px] h-4 rounded-t-md border border-dashed border-slate-600 bg-slate-800/40 flex items-center justify-center"
+                     title="Tháng 12/2026: Chưa đến kỳ ghi nhận (0 đ)">
+                </div>
+
+                <!-- Nhãn tháng T1 -> T12 -->
+                <span :class="[
+                        'text-[10px] font-mono font-bold mt-1.5',
+                        mIdx === 10 ? 'text-amber-400 underline underline-offset-4' : (mRev === 0 ? 'text-slate-500' : 'text-slate-300 group-hover:text-white')
+                      ]">
+                  T{{ mIdx + 1 }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ASSIGNED PROJECTS LIST & QUICK REASSIGNMENT -->
+          <div class="space-y-3">
+            <h4 class="font-extrabold text-slate-800 text-xs uppercase tracking-wide">
+              Danh Sách Các Dự Án Đang Phụ Trách:
+            </h4>
+
+            <div class="border border-slate-200 rounded-lg overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="bg-slate-100 text-slate-700 font-bold text-[10px] uppercase">
+                    <th class="p-2">Mã DA</th>
+                    <th class="p-2">Tên Dự Án</th>
+                    <th class="p-2">Khách Hàng</th>
+                    <th class="p-2 text-right">Doanh Thu</th>
+                    <th class="p-2 text-center">Giai Đoạn</th>
+                    <th class="p-2 text-center">Chuyển Giao Lead</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 font-sans">
+                  <tr v-for="p in getProjectsOfSales(selectedSales360.id)" :key="p.id">
+                    <td class="p-2 font-mono font-bold text-sky-900">{{ p.code }}</td>
+                    <td class="p-2 font-semibold text-slate-800">{{ p.name }}</td>
+                    <td class="p-2 text-slate-600">{{ p.customerName }}</td>
+                    <td class="p-2 text-right font-mono font-bold text-emerald-700">
+                      {{ formatVND(getActiveVersion(p).totalRevenue) }}
+                    </td>
+                    <td class="p-2 text-center">
+                      <span class="bg-sky-100 text-sky-800 font-bold px-1.5 py-0.5 rounded text-[10px]">
+                        GĐ {{ p.currentStage }}
+                      </span>
+                    </td>
+                    <td class="p-2 text-center">
+                      <select @change="reassignProject(p, $event.target.value)" class="erp-input text-[10px] py-0.5">
+                        <option value="">-- Điều chuyển --</option>
+                        <option v-for="otherS in salesList" :key="otherS.id" :value="otherS.id" :disabled="otherS.id === selectedSales360.id">
+                          {{ otherS.name }}
+                        </option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- MANAGER COACHING DIRECTIVES -->
+          <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 space-y-2">
+            <h4 class="font-bold text-amber-900 text-xs uppercase">Chỉ Đạo Nhắc Nhở Sales (Coaching Directives):</h4>
+            <textarea v-model="selectedSales360.coachingNote" rows="2" placeholder="Nhập chỉ đạo giao việc hoặc nhắc nhở tiến độ..." class="erp-input w-full text-xs"></textarea>
+          </div>
+
+        </div>
+
+        <div class="bg-slate-100 px-6 py-3 border-t border-slate-200 flex justify-end">
+          <button @click="showSales360Modal = false" class="px-4 py-2 bg-slate-800 text-white text-xs font-bold rounded-lg shadow-sm">
+            Đóng Inspector
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MODAL 5: ADD NEW B2B CUSTOMER -->
+    <div v-if="showAddCustomerModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-xs p-4">
+      <div class="bg-white rounded-xl shadow-2xl max-w-lg w-full border border-slate-300 overflow-hidden space-y-4 p-6">
+        <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+          <h3 class="font-extrabold text-slate-900 text-base">Thêm Khách Hàng B2B Mới</h3>
+          <button @click="showAddCustomerModal = false" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="space-y-3 text-xs">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Tên Công Ty / Tập Đoàn B2B:</label>
+            <input v-model="newCustomerForm.name" placeholder="Ví dụ: Công ty Cổ phần Thép Hòa Phát..." class="erp-input w-full">
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Mã Số Thủy (MST):</label>
+              <input v-model="newCustomerForm.taxCode" placeholder="0101234567" class="erp-input w-full font-mono">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Quy Mô Nhà Máy:</label>
+              <input v-model="newCustomerForm.scale" placeholder="Ví dụ: 15.000 m2 / 500 CN" class="erp-input w-full">
+            </div>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">Địa Chỉ Khu Công Nghiệp:</label>
+            <input v-model="newCustomerForm.address" placeholder="KCN Yên Phong, Bắc Ninh..." class="erp-input w-full">
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Hạn Mức Tín Dụng (VND):</label>
+              <input v-model.number="newCustomerForm.creditLimit" type="number" step="100000000" class="erp-input w-full font-mono">
+            </div>
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">Tên Người Đại Diện (CEO):</label>
+              <input v-model="newCustomerForm.ceoName" placeholder="Nguyễn Văn A" class="erp-input w-full">
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-end space-x-2 pt-2 border-t border-slate-200">
+          <button @click="showAddCustomerModal = false" class="px-4 py-2 bg-slate-100 text-slate-700 font-bold rounded-lg text-xs">Hủy</button>
+          <button @click="saveNewCustomer" class="px-4 py-2 bg-sky-600 text-white font-bold rounded-lg text-xs shadow-xs">Lưu Khách Hàng</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- VUE 3 LOGIC APP -->
+  <script>
+    const { createApp, ref, computed } = Vue;
+
+    createApp({
+      setup() {
+        // --- NAVIGATION & GLOBAL STATE ---
+        const activeTab = ref('leads');
+        const globalSearch = ref('');
+        const isCompactMode = ref(false);
+        const projectViewMode = ref('table'); // 'table' or 'kanban'
+        const kpiViewCriteria = ref('month'); // 'month' or 'year'
+
+        // --- TOAST NOTIFICATIONS ---
+        const toast = ref({ show: false, title: '', message: '', icon: '' });
+        const showToast = (title, message, icon = 'fa-circle-check') => {
+          toast.value = { show: true, title, message, icon };
+          setTimeout(() => { toast.value.show = false; }, 3500);
+        };
+
+        // --- STAGES CONFIGURATION ---
+        const stages = [
+          { id: 1, name: '1. Đưa giải pháp' },
+          { id: 2, name: '2. Khảo giá' },
+          { id: 3, name: '3. Xây dựng' },
+          { id: 4, name: '4. Mua vật tư' },
+          { id: 5, name: '5. Nhập vật tư' }
+        ];
+
+        // --- SALES TEAM SAMPLE DATA ---
+        const salesList = ref([
+          { id: 'S1', name: 'Nguyễn Văn Minh', role: 'Key Account Manager', phone: '0988.123.456', currentLeads: 4, maxCapacity: 5, monthlyRev: 1850000000, monthlyTarget: 2000000000, yearlyRev: 18500000000, yearlyTarget: 20000000000, assignedLeadsCount: 12, quotedCount: 10, wonCount: 6, runningCount: 4, lostCount: 2, monthlyGrossProfit: 425000000, yearlyGrossProfit: 4100000000, avgMargin: 23, coachingNote: '', baseExpScore: 85, techSkill: 90, negotiationSkill: 95, tierLevel: 3, maxBudgetLimit: 10000000000, monthlyHistory: [1450000000, 1600000000, 1380000000, 1720000000, 1650000000, 1800000000, 1550000000, 1900000000, 1780000000, 1820000000, 1850000000, 0] },
+          { id: 'S2', name: 'Trần Thị Hương', role: 'Senior Sales Engineer', phone: '0977.654.321', currentLeads: 2, maxCapacity: 5, monthlyRev: 1200000000, monthlyTarget: 1500000000, yearlyRev: 13500000000, yearlyTarget: 15000000000, assignedLeadsCount: 9, quotedCount: 8, wonCount: 4, runningCount: 3, lostCount: 1, monthlyGrossProfit: 276000000, yearlyGrossProfit: 3100000000, avgMargin: 23, coachingNote: '', baseExpScore: 65, techSkill: 80, negotiationSkill: 80, tierLevel: 2, maxBudgetLimit: 250000000, monthlyHistory: [1100000000, 1150000000, 980000000, 1250000000, 1300000000, 1180000000, 1220000000, 1350000000, 1400000000, 1370000000, 1200000000, 0] },
+          { id: 'S3', name: 'Lê Hoàng Nam', role: 'Technical Sales Specialist', phone: '0912.888.999', currentLeads: 5, maxCapacity: 5, monthlyRev: 2100000000, monthlyTarget: 1800000000, yearlyRev: 21000000000, yearlyTarget: 18000000000, assignedLeadsCount: 15, quotedCount: 14, wonCount: 8, runningCount: 5, lostCount: 2, monthlyGrossProfit: 504000000, yearlyGrossProfit: 4800000000, avgMargin: 24, coachingNote: '', baseExpScore: 80, techSkill: 95, negotiationSkill: 85, tierLevel: 3, maxBudgetLimit: 10000000000, monthlyHistory: [1700000000, 1850000000, 1650000000, 1900000000, 2000000000, 1850000000, 1950000000, 2050000000, 1920000000, 2030000000, 2100000000, 0] },
+          { id: 'S4', name: 'Phạm Đức Anh', role: 'Junior Sales Executive', phone: '0904.333.222', currentLeads: 1, maxCapacity: 4, monthlyRev: 445000000, monthlyTarget: 800000000, yearlyRev: 4800000000, yearlyTarget: 8000000000, assignedLeadsCount: 6, quotedCount: 5, wonCount: 2, runningCount: 3, lostCount: 1, monthlyGrossProfit: 97900000, yearlyGrossProfit: 1050000000, avgMargin: 22, coachingNote: '', baseExpScore: 35, techSkill: 55, negotiationSkill: 50, tierLevel: 1, maxBudgetLimit: 100000000, monthlyHistory: [320000000, 380000000, 410000000, 390000000, 450000000, 480000000, 420000000, 510000000, 490000000, 505000000, 445000000, 0] }
+        ]);
+
+        // --- MODULE 5: DYNAMIC POWER & AUTOMATION FORMULA CONFIG ---
+        const powerConfig = ref({
+          autoScaleEnabled: true,
+          autoPromoteTier: true,
+          techWeight: 0.25,
+          negoWeight: 0.25,
+          weightPerProject: 2.5,
+          weightPerWonDeal: 8.0,
+          weightPerRevenueUnit: 1.5, // per 100.000.000 đ
+          midTierThreshold: 120,
+          seniorTierThreshold: 185
+        });
+
+        const powerAutomationLogs = ref([
+          { title: 'Khởi động Automation Engine', detail: 'Đã nạp công thức tính Sức mạnh Sales theo Số dự án, Đơn chốt Won và Doanh số thực đạt.', time: '08:00 Hôm nay', type: 'info' },
+          { title: 'Xác nhận Hạn mức KAM', detail: 'Nguyễn Văn Minh & Lê Hoàng Nam đạt trên 185 PWR -> Mở khóa nhận dự án Tier 3 (>= 200.000.000 đ).', time: '08:05 Hôm nay', type: 'levelup' }
+        ]);
+
+        const getSalesById = (id) => salesList.value.find(s => s.id === id) || salesList.value[0];
+
+        const getSalesPowerBreakdown = (s) => {
+          if (!s) return { skillBonus: 0, projectBonus: 0, wonBonus: 0, revBonus: 0 };
+          const skillBonus = Math.round((s.techSkill * powerConfig.value.techWeight) + (s.negotiationSkill * powerConfig.value.negoWeight));
+          if (!powerConfig.value.autoScaleEnabled) {
+            return { skillBonus, projectBonus: 0, wonBonus: 0, revBonus: 0 };
+          }
+          const projectBonus = Math.round((s.assignedLeadsCount || 0) * powerConfig.value.weightPerProject);
+          const wonBonus = Math.round((s.wonCount || 0) * powerConfig.value.weightPerWonDeal);
+          const revUnits = (s.monthlyRev || 0) / 100000000;
+          const revBonus = Math.round(revUnits * powerConfig.value.weightPerRevenueUnit);
+          return { skillBonus, projectBonus, wonBonus, revBonus };
+        };
+
+        const getSalesPowerScore = (s) => {
+          if (!s) return 0;
+          const b = getSalesPowerBreakdown(s);
+          return Math.round((s.baseExpScore || 0) + b.skillBonus + b.projectBonus + b.wonBonus + b.revBonus);
+        };
+
+        const getSalesComputedTierLabel = (s) => {
+          const pwr = getSalesPowerScore(s);
+          if (pwr >= powerConfig.value.seniorTierThreshold) return 'Tier 3 • Senior KAM';
+          if (pwr >= powerConfig.value.midTierThreshold) return 'Tier 2 • Senior/Mid';
+          return 'Tier 1 • Junior Sales';
+        };
+
+        const getSalesTierBadgeClass = (s) => {
+          const pwr = getSalesPowerScore(s);
+          if (pwr >= powerConfig.value.seniorTierThreshold) return 'bg-emerald-100 text-emerald-800 border-emerald-300';
+          if (pwr >= powerConfig.value.midTierThreshold) return 'bg-amber-100 text-amber-800 border-amber-300';
+          return 'bg-slate-100 text-slate-700 border-slate-300';
+        };
+
+        const getSalesMaxLeadBudgetText = (s) => {
+          const pwr = getSalesPowerScore(s);
+          if (pwr >= powerConfig.value.seniorTierThreshold) return 'Không giới hạn (>= ' + formatVND(200000000) + ')';
+          if (pwr >= powerConfig.value.midTierThreshold) return 'Tối đa ' + formatVND(250000000);
+          return 'Tối đa ' + formatVND(100000000);
+        };
+
+        const checkAndRunAutoPromotions = () => {
+          if (!powerConfig.value.autoPromoteTier) return;
+          salesList.value.forEach(s => {
+            const pwr = getSalesPowerScore(s);
+            let newTier = 1;
+            if (pwr >= powerConfig.value.seniorTierThreshold) newTier = 3;
+            else if (pwr >= powerConfig.value.midTierThreshold) newTier = 2;
+
+            if (newTier > (s.tierLevel || 1)) {
+              const oldTier = s.tierLevel || 1;
+              s.tierLevel = newTier;
+              s.maxCapacity = Math.min(8, s.maxCapacity + 1);
+              s.role = newTier === 3 ? 'Key Account Manager (Auto-Promoted)' : 'Senior Sales Engineer (Auto-Promoted)';
+              const msg = `${s.name} đạt ${pwr} PWR -> Tự động thăng cấp từ Tier ${oldTier} lên Tier ${newTier}, mở khóa hạn mức nhận Lead (${getSalesMaxLeadBudgetText(s)}) & tăng tải tối đa lên ${s.maxCapacity} Lead!`;
+              powerAutomationLogs.value.unshift({
+                title: '🎉 THĂNG CẤP SỨC MẠNH TỰ ĐỘNG',
+                detail: msg,
+                time: 'Vừa xong',
+                type: 'levelup'
+              });
+              showToast('🎉 Tự Động Thăng Cấp Sales!', msg, 'fa-crown');
+            } else {
+              s.tierLevel = newTier;
+            }
+          });
+          recalculateAllAiRoutingWithPower(false);
+        };
+
+        const adjustBaseStat = (s, field, delta) => {
+          s[field] = Math.max(10, Math.min(200, (s[field] || 0) + delta));
+          onManualStatChange(s);
+        };
+
+        const onManualStatChange = (s) => {
+          const pwr = getSalesPowerScore(s);
+          powerAutomationLogs.value.unshift({
+            title: `Cập nhật chỉ số gốc (${s.name})`,
+            detail: `Điểm sức mạnh tổng hợp mới: ${pwr} PWR (${getSalesComputedTierLabel(s)})`,
+            time: 'Vừa xong',
+            type: 'info'
+          });
+          checkAndRunAutoPromotions();
+        };
+
+        const simulateSalesGrowth = (s, actionType) => {
+          if (actionType === 'wonDeal') {
+            const dealVal = 250000000;
+            s.wonCount += 1;
+            s.assignedLeadsCount += 1;
+            s.monthlyRev += dealVal;
+            s.yearlyRev += dealVal;
+            s.monthlyGrossProfit += Math.round(dealVal * 0.23);
+            s.yearlyGrossProfit += Math.round(dealVal * 0.23);
+            if (s.monthlyHistory && s.monthlyHistory.length >= 11) {
+              s.monthlyHistory[10] += dealVal;
+            }
+            powerAutomationLogs.value.unshift({
+              title: `⚡ Chốt thắng thầu mới (${s.name})`,
+              detail: `+1 Đơn Won (+${formatVND(dealVal)}) -> Tổng sức mạnh tăng lên ${getSalesPowerScore(s)} PWR`,
+              time: 'Vừa xong',
+              type: 'info'
+            });
+            showToast('⚡ Giả Lập Chốt Đơn Thành Công', `${s.name} vừa cộng +${formatVND(dealVal)} doanh số & tăng sức mạnh lên ${getSalesPowerScore(s)} PWR!`);
+          } else if (actionType === 'addProject') {
+            s.assignedLeadsCount += 1;
+            s.runningCount += 1;
+            powerAutomationLogs.value.unshift({
+              title: `Nhận thêm dự án (${s.name})`,
+              detail: `Tổng số dự án tham gia: ${s.assignedLeadsCount} DA -> Sức mạnh: ${getSalesPowerScore(s)} PWR`,
+              time: 'Vừa xong',
+              type: 'info'
+            });
+            showToast('Cộng Kinh Nghiệm Dự Án', `${s.name} vừa nhận thêm 1 dự án, điểm sức mạnh đạt ${getSalesPowerScore(s)} PWR`);
+          } else if (actionType === 'trainingExp') {
+            s.baseExpScore += 15;
+            s.techSkill = Math.min(100, s.techSkill + 5);
+            powerAutomationLogs.value.unshift({
+              title: `🎓 Đào tạo nâng cao (${s.name})`,
+              detail: `+15 Base EXP & +5 Kỹ thuật -> Tổng sức mạnh vọt lên ${getSalesPowerScore(s)} PWR`,
+              time: 'Vừa xong',
+              type: 'info'
+            });
+            showToast('🎓 Tăng Điểm Kinh Nghiệm', `${s.name} được cộng +15 EXP, tổng sức mạnh đạt ${getSalesPowerScore(s)} PWR`);
+          }
+          checkAndRunAutoPromotions();
+        };
+
+        const resetPowerFormulaDefaults = () => {
+          powerConfig.value = {
+            autoScaleEnabled: true,
+            autoPromoteTier: true,
+            techWeight: 0.25,
+            negoWeight: 0.25,
+            weightPerProject: 2.5,
+            weightPerWonDeal: 8.0,
+            weightPerRevenueUnit: 1.5,
+            midTierThreshold: 120,
+            seniorTierThreshold: 185
+          };
+          showToast('Khôi Phục Mặc Định', 'Đã đặt lại hệ số công thức tự động hóa về chuẩn gốc.');
+        };
+
+        const recalculateAllAiRoutingWithPower = (notify = true) => {
+          leads.value.forEach(lead => {
+            if (lead.assignedSalesId) return;
+            const budget = lead.estimatedBudget;
+            let requiredTier = 1;
+            if (budget >= 200000000) requiredTier = 3;
+            else if (budget >= 100000000) requiredTier = 2;
+
+            // Find best candidate based on Power Score, Tier compatibility & available workload
+            let bestCandidate = null;
+            let highestFit = -999;
+
+            salesList.value.forEach(s => {
+              const pwr = getSalesPowerScore(s);
+              let sTier = 1;
+              if (pwr >= powerConfig.value.seniorTierThreshold) sTier = 3;
+              else if (pwr >= powerConfig.value.midTierThreshold) sTier = 2;
+
+              const loadRatio = s.currentLeads / s.maxCapacity;
+              const tierMatchBonus = (sTier === requiredTier) ? 35 : (sTier > requiredTier ? 20 : -30);
+              const capacityPenalty = loadRatio >= 1 ? -45 : Math.round((1 - loadRatio) * 20);
+              const powerFactor = Math.min(45, Math.round(pwr / 5));
+
+              const totalFit = Math.min(99, Math.max(50, 40 + tierMatchBonus + capacityPenalty + Math.round(powerFactor * 0.4)));
+              if (totalFit > highestFit) {
+                highestFit = totalFit;
+                bestCandidate = s;
+              }
+            });
+
+            if (bestCandidate) {
+              lead.aiRecommendedSalesId = bestCandidate.id;
+              lead.aiScore = highestFit;
+              lead.aiReason = `Đề xuất tự động bởi Power Engine: ${bestCandidate.name} đạt ${getSalesPowerScore(bestCandidate)} PWR (${getSalesComputedTierLabel(bestCandidate)}), tải ${bestCandidate.currentLeads}/${bestCandidate.maxCapacity}.`;
+            }
+          });
+
+          if (notify) {
+            showToast('Đồng Bộ AI Routing Thành Công', 'Đã cập nhật lại gợi ý phân bổ Lead ở Tab 1 theo bảng Sức Mạnh Sales mới nhất!');
+          }
+        };
+
+        // Helper get sales name
+        const getSalesName = (id) => {
+          const found = salesList.value.find(s => s.id === id);
+          return found ? found.name : 'Chưa giao';
+        };
+
+        // Capacity Adjustment
+        const adjustCapacity = (salesObj, delta) => {
+          salesObj.maxCapacity = Math.max(1, salesObj.maxCapacity + delta);
+          showToast('Cập Nhật Tải Công Việc', `Đã chỉnh giới hạn Lead của ${salesObj.name} thành ${salesObj.maxCapacity}`);
+        };
+
+        // --- MODULE 1: LEADS DATA ---
+        const leadFilter = ref('unassigned');
+        const leads = ref([
+          { id: 'L101', companyName: 'Công ty Cổ phần Sữa TH True Milk', contactName: 'Anh Phạm Hoàng', phone: '0989.111.222', location: 'Nghệ An', taxCode: '2901234567', category: 'Thi công Tủ MSB 3200A & Tủ ATS', estimatedBudget: 445000000, source: 'Website Google Ads', note: 'Cần hạ trạm biến áp và lắp mới 02 tủ MSB cho dây chuyền đóng gói số 3.', aiRecommendedSalesId: 'S4', aiScore: 92, aiReason: 'Ngân sách Tier 1 (<100M-500M) phù hợp Junior Sales xử lý nhanh.', assignedSalesId: '', assignmentType: '', selectedManualSalesId: '' },
+          { id: 'L102', companyName: 'Tập đoàn Dệt May Hòa Thọ', contactName: 'Chị Lê Thị Mai', phone: '0905.444.555', location: 'Đà Nẵng', taxCode: '0400123890', category: 'Trọn gói Hệ thống Tủ Động Lực DB & Tụ Bù', estimatedBudget: 1850000000, source: 'Triển lãm Vietbuild', note: 'Nâng cấp toàn bộ xưởng may xuất khẩu số 2, yêu cầu vỏ tủ sơn tĩnh điện 2mm.', aiRecommendedSalesId: 'S1', aiScore: 96, aiReason: 'Dự án lớn Tier 3 (>200M), cần Key Account Manager đàm phán hợp đồng tổng thầu.', assignedSalesId: '', assignmentType: '', selectedManualSalesId: '' },
+          { id: 'L103', companyName: 'Công ty TNHH Linh Kiện Điện Tử Sumitomo', contactName: 'Mr. Tanaka / Anh Hùng', phone: '0913.777.888', location: 'KCN Thăng Long II, Hưng Yên', taxCode: '0900987654', category: 'Tủ Điều Khiển PLC & Scada Schneider', estimatedBudget: 145000000, source: 'Đối tác giới thiệu', note: 'Yêu cầu tích hợp PLC M241 và màn hình HMI Magelis cho hệ thống xử lý nước thải.', aiRecommendedSalesId: 'S2', aiScore: 89, aiReason: 'Hạng mục Tier 2 (100M-200M), yêu cầu Senior Sales vững kỹ thuật tự động hóa.', assignedSalesId: '', assignmentType: '', selectedManualSalesId: '' },
+          { id: 'L104', companyName: 'Công ty Dược Phẩm DHG Cần Thơ', contactName: 'Anh Trần Quốc Bảo', phone: '0939.222.111', location: 'Cần Thơ', taxCode: '1800112233', category: 'Tủ Điện Inox 304 Chuẩn Phòng Sạch GMP', estimatedBudget: 320000000, source: 'Inbound Hotline', note: 'Tủ điện tiêu chuẩn Inox 304 chống ăn mòn cho nhà máy thuốc tiêm.', aiRecommendedSalesId: 'S3', aiScore: 94, aiReason: 'Technical Sales Specialist có kinh nghiệm thi công tiêu chuẩn GMP dược phẩm.', assignedSalesId: '', assignmentType: '', selectedManualSalesId: '' }
+        ]);
+
+        const unassignedLeads = computed(() => leads.value.filter(l => !l.assignedSalesId));
+        const unassignedLeadsCount = computed(() => unassignedLeads.value.length);
+        const assignedLeadsCount = computed(() => leads.value.filter(l => l.assignedSalesId).length);
+
+        const filteredLeads = computed(() => {
+          let list = leads.value;
+          if (leadFilter.value === 'unassigned') list = list.filter(l => !l.assignedSalesId);
+          else if (leadFilter.value === 'assigned') list = list.filter(l => l.assignedSalesId);
+
+          if (globalSearch.value.trim()) {
+            const q = globalSearch.value.toLowerCase();
+            list = list.filter(l => l.companyName.toLowerCase().includes(q) || l.taxCode.includes(q) || l.contactName.toLowerCase().includes(q));
+          }
+          return list;
+        });
+
+        // Single Lead Sample Generator
+        const addSampleLead = () => {
+          const newId = 'L' + Math.floor(100 + Math.random() * 900);
+          const sampleBudgets = [85000000, 160000000, 450000000, 890000000];
+          const b = sampleBudgets[Math.floor(Math.random() * sampleBudgets.length)];
+          const newLead = {
+            id: newId,
+            companyName: `Công ty TNHH Chế Tạo Máy Max-Tech #${newId}`,
+            contactName: 'Anh Ngô Văn Tuấn',
+            phone: '0982.' + Math.floor(100000 + Math.random() * 900000),
+            location: 'Bắc Ninh',
+            taxCode: '2300' + Math.floor(100000 + Math.random() * 900000),
+            category: 'Thi công Tủ Điều Khiển MSB & MCC',
+            estimatedBudget: b,
+            source: 'Facebook Ads',
+            note: 'Lead mới phát sinh cần tư vấn báo giá trong ngày.',
+            aiRecommendedSalesId: b > 200000000 ? 'S1' : (b > 100000000 ? 'S2' : 'S4'),
+            aiScore: 90,
+            aiReason: 'Phân bổ tự động AI matching theo quy mô ngân sách.',
+            assignedSalesId: '',
+            assignmentType: '',
+            selectedManualSalesId: ''
+          };
+          leads.value.unshift(newLead);
+          showToast('Đã Bơm 1 Lead Mẫu', `Đã thêm lead ${newLead.companyName} vào hàng chờ AI.`);
+        };
+
+        const addFiveSampleLeads = () => {
+          for (let i = 0; i < 5; i++) addSampleLead();
+        };
+
+        // Approve AI Lead Routing Logic
+        const approveAiRouting = (leadObj) => {
+          const targetSalesId = leadObj.aiRecommendedSalesId;
+          const salesObj = salesList.value.find(s => s.id === targetSalesId);
+
+          // Check capacity overload
+          if (salesObj && salesObj.currentLeads >= salesObj.maxCapacity) {
+            showToast('Cảnh Báo Quá Tải', `Sales ${salesObj.name} đã đầy tải (${salesObj.currentLeads}/${salesObj.maxCapacity} Lead). AI sẽ chuyển tiếp!`, 'fa-triangle-exclamation');
+          }
+
+          leadObj.assignedSalesId = targetSalesId;
+          leadObj.assignmentType = 'AI Auto';
+          if (salesObj) salesObj.currentLeads++;
+
+          // Auto Sync: Create Project in Module 2 & Sync Customer Module 3
+          syncLeadToProjectAndCustomer(leadObj);
+
+          showToast('Phân Bổ AI Thành Công', `Đã giao lead ${leadObj.companyName} cho ${getSalesName(targetSalesId)}`);
+        };
+
+        const approveAllAiLeads = () => {
+          unassignedLeads.value.forEach(l => approveAiRouting(l));
+        };
+
+        const manualAssignLead = (leadObj) => {
+          if (!leadObj.selectedManualSalesId) return;
+          const targetSalesId = leadObj.selectedManualSalesId;
+          const salesObj = salesList.value.find(s => s.id === targetSalesId);
+
+          leadObj.assignedSalesId = targetSalesId;
+          leadObj.assignmentType = 'Thủ Công';
+          if (salesObj) salesObj.currentLeads++;
+
+          syncLeadToProjectAndCustomer(leadObj);
+          showToast('Duyệt Thủ Công Thành Công', `Đã chỉ định ${leadObj.companyName} cho ${getSalesName(targetSalesId)}`);
+        };
+
+        // Manual Modal State
+        const showManualModal = ref(false);
+        const selectedLeadForModal = ref(null);
+        const modalPriority = ref('Bình thường');
+        const modalDirective = ref('');
+
+        const openManualModal = (leadObj) => {
+          selectedLeadForModal.value = leadObj;
+          showManualModal.value = true;
+        };
+
+        const confirmManualAssign = (leadObj, salesId) => {
+          leadObj.selectedManualSalesId = salesId;
+          manualAssignLead(leadObj);
+          showManualModal.value = false;
+        };
+
+        // --- MODULE 2: PROJECTS & BOM MULTI-VERSION DATA ---
+        const stageFilter = ref('all');
+        const projectSalesFilter = ref('all');
+
+        const projects = ref([
+          {
+            id: 'P101',
+            code: 'DA-2026-001',
+            name: 'Thi công Tủ Điện MSB 3200A & Tụ Bù TH True Milk',
+            customerName: 'Công ty Cổ phần Sữa TH True Milk',
+            taxCode: '2901234567',
+            salesId: 'S4',
+            currentStage: 2,
+            deliveryShift: 'Ca Sáng (09:00 - 11:00)',
+            decisionMakers: {
+              ceo: { name: 'Phạm Hoàng', phone: '0989.111.222' },
+              purchasing: { name: 'Nguyễn Thu Trang', phone: '0989.333.444' },
+              technical: { name: 'Đỗ Tiến Dũng', phone: '0989.555.666' },
+              site: { name: 'Vũ Quốc Huy', phone: '0989.777.888' }
+            },
+            activeVersionId: 2,
+            versions: [
+              {
+                id: 1,
+                totalRevenue: 445000000,
+                cogs: 342000000,
+                grossProfit: 103000000,
+                marginPercent: 23.1,
+                items: [
+                  { code: 'VT-MSB-01', name: 'Vỏ tủ điện MSB 3200A 2000x1200x800mm sơn tĩnh điện 2mm', brand: 'MaxElectric', unit: 'Bộ', qty: 1, costPrice: 42000000, unitPrice: 55000000, discount: 0 },
+                  { code: 'VT-ACB-3200', name: 'Máy cắt không khí ACB 3200A 3P 65kA Fixed', brand: 'Schneider', unit: 'Cái', qty: 1, costPrice: 180000000, unitPrice: 235000000, discount: 0 },
+                  { code: 'VT-MCCB-400', name: 'Aptomat MCCB 400A 3P 36kA', brand: 'Schneider', unit: 'Cái', qty: 4, costPrice: 22000000, unitPrice: 28750000, discount: 0 },
+                  { code: 'VT-CAP-CU', name: 'Thanh cái đồng đỏ Cu 100x10mm', brand: 'Việt Nam', unit: 'Kg', qty: 250, costPrice: 128000, unitPrice: 160000, discount: 0 }
+                ]
+              },
+              {
+                id: 2,
+                totalRevenue: 485000000,
+                cogs: 368000000,
+                grossProfit: 117000000,
+                marginPercent: 24.1,
+                items: [
+                  { code: 'VT-MSB-01', name: 'Vỏ tủ điện MSB 3200A 2000x1200x800mm sơn tĩnh điện 2mm', brand: 'MaxElectric', unit: 'Bộ', qty: 1, costPrice: 42000000, unitPrice: 55000000, discount: 0 },
+                  { code: 'VT-ACB-3200', name: 'Máy cắt không khí ACB 3200A 3P 65kA Drawout (Kéo ra)', brand: 'Schneider', unit: 'Cái', qty: 1, costPrice: 205000000, unitPrice: 268000000, discount: 0 },
+                  { code: 'VT-MCCB-400', name: 'Aptomat MCCB 400A 3P 36kA', brand: 'Schneider', unit: 'Cái', qty: 4, costPrice: 22000000, unitPrice: 28750000, discount: 0 },
+                  { code: 'VT-CAP-CU', name: 'Thanh cái đồng đỏ Cu 100x10mm', brand: 'Việt Nam', unit: 'Kg', qty: 280, costPrice: 128000, unitPrice: 160000, discount: 0 }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'P102',
+            code: 'DA-2026-002',
+            name: 'Trọn gói Hệ thống Tủ Động Lực DB Hòa Thọ',
+            customerName: 'Tập đoàn Dệt May Hòa Thọ',
+            taxCode: '0400123890',
+            salesId: 'S1',
+            currentStage: 3,
+            deliveryShift: 'Ca Chiều (15:00 - 16:30)',
+            decisionMakers: {
+              ceo: { name: 'Lê Thị Mai', phone: '0905.444.555' },
+              purchasing: { name: 'Hoàng Văn Vinh', phone: '0905.111.333' },
+              technical: { name: 'Bùi Anh Tuấn', phone: '0905.222.444' },
+              site: { name: 'Đặng Ngọc Sơn', phone: '0905.555.777' }
+            },
+            activeVersionId: 1,
+            versions: [
+              {
+                id: 1,
+                totalRevenue: 1850000000,
+                cogs: 1425000000,
+                grossProfit: 425000000,
+                marginPercent: 23.0,
+                items: [
+                  { code: 'VT-DB-MAIN', name: 'Hệ thống Tủ Phân Phối DB 1200A 6 nhánh', brand: 'MaxElectric', unit: 'Hệ', qty: 1, costPrice: 950000000, unitPrice: 1230000000, discount: 0 },
+                  { code: 'VT-CAP-CADIVI', name: 'Cáp điện lực hạ thế Cadivi 3x240+1x150mm2', brand: 'Cadivi', unit: 'Mét', qty: 500, costPrice: 950000, unitPrice: 1240000, discount: 0 }
+                ]
+              }
+            ]
+          }
+        ]);
+
+        const getActiveVersion = (projectObj) => {
+          return projectObj.versions.find(v => v.id === projectObj.activeVersionId) || projectObj.versions[0];
+        };
+
+        const getStageName = (stgId) => {
+          const stg = stages.find(s => s.id === stgId);
+          return stg ? stg.name : `Giai đoạn ${stgId}`;
+        };
+
+        const getProjectsInStage = (stgId) => {
+          return projects.value.filter(p => p.currentStage === stgId);
+        };
+
+        const moveProjectStage = (projectObj, delta) => {
+          const next = projectObj.currentStage + delta;
+          if (next >= 1 && next <= 5) {
+            projectObj.currentStage = next;
+            // If project reaches Stage 4 (Mua vật tư / Chốt đơn), automatically trigger Power Engine bonus
+            if (next === 4) {
+              const s = salesList.value.find(item => item.id === projectObj.salesId);
+              if (s) {
+                const activeVer = getActiveVersion(projectObj);
+                s.wonCount += 1;
+                s.monthlyRev += activeVer.totalRevenue;
+                s.yearlyRev += activeVer.totalRevenue;
+                checkAndRunAutoPromotions();
+              }
+            }
+            showToast('Cập Nhật Giai Đoạn', `Dự án ${projectObj.code} đã chuyển sang ${getStageName(next)}`);
+          }
+        };
+
+        const filteredProjects = computed(() => {
+          let list = projects.value;
+          if (stageFilter.value !== 'all') list = list.filter(p => p.currentStage === Number(stageFilter.value));
+          if (projectSalesFilter.value !== 'all') list = list.filter(p => p.salesId === projectSalesFilter.value);
+
+          if (globalSearch.value.trim()) {
+            const q = globalSearch.value.toLowerCase();
+            list = list.filter(p => p.code.toLowerCase().includes(q) || p.name.toLowerCase().includes(q) || p.customerName.toLowerCase().includes(q) || p.taxCode.includes(q));
+          }
+          return list;
+        });
+
+        // Sync lead to project & customer
+        const syncLeadToProjectAndCustomer = (leadObj) => {
+          const pCode = 'DA-2026-00' + (projects.value.length + 1);
+          const newProject = {
+            id: 'P' + Date.now(),
+            code: pCode,
+            name: leadObj.category + ' - ' + leadObj.companyName,
+            customerName: leadObj.companyName,
+            taxCode: leadObj.taxCode,
+            salesId: leadObj.assignedSalesId,
+            currentStage: 1,
+            deliveryShift: 'Ca Sáng (09:00 - 11:00)',
+            decisionMakers: {
+              ceo: { name: leadObj.contactName, phone: leadObj.phone },
+              purchasing: { name: 'Chưa cập nhật', phone: '' },
+              technical: { name: 'Chưa cập nhật', phone: '' },
+              site: { name: 'Chưa cập nhật', phone: '' }
+            },
+            activeVersionId: 1,
+            versions: [
+              {
+                id: 1,
+                totalRevenue: leadObj.estimatedBudget,
+                cogs: Math.round(leadObj.estimatedBudget * 0.77),
+                grossProfit: Math.round(leadObj.estimatedBudget * 0.23),
+                marginPercent: 23.0,
+                items: [
+                  { code: 'VT-GEN-01', name: 'Gói thầu ' + leadObj.category, brand: 'MaxElectric / Schneider', unit: 'Gói', qty: 1, costPrice: Math.round(leadObj.estimatedBudget * 0.77), unitPrice: leadObj.estimatedBudget, discount: 0 }
+                ]
+              }
+            ]
+          };
+          projects.value.unshift(newProject);
+
+          // Add to Customers if not exists
+          if (!customers.value.some(c => c.taxCode === leadObj.taxCode)) {
+            customers.value.unshift({
+              id: 'C' + Date.now(),
+              code: 'KH-' + Math.floor(1000 + Math.random() * 9000),
+              name: leadObj.companyName,
+              taxCode: leadObj.taxCode,
+              address: leadObj.location,
+              scale: 'Dự án MKT mới',
+              creditLimit: 500000000,
+              currentDebt: 0,
+              totalContractValue: leadObj.estimatedBudget,
+              decisionMakers: {
+                ceo: { name: leadObj.contactName, phone: leadObj.phone, disc: 'D' },
+                purchasing: { name: 'Chưa rõ', phone: '', disc: 'C' },
+                technical: { name: 'Chưa rõ', phone: '', disc: 'S' },
+                site: { name: 'Chưa rõ', phone: '', disc: 'I' }
+              }
+            });
+          }
+        };
+
+        const createNewProject = () => {
+          const pCode = 'DA-2026-00' + (projects.value.length + 1);
+          const newP = {
+            id: 'P' + Date.now(),
+            code: pCode,
+            name: 'Thi công Tủ Phân Phối MSB Nhà Máy Mới',
+            customerName: 'Công ty Cổ phần Công Nghệ Mới B2B',
+            taxCode: '0109998877',
+            salesId: 'S1',
+            currentStage: 1,
+            deliveryShift: 'Ca Sáng (09:00 - 11:00)',
+            decisionMakers: {
+              ceo: { name: 'Nguyễn Văn Đức', phone: '0912.345.678' },
+              purchasing: { name: 'Trần Thu Hà', phone: '0912.888.777' },
+              technical: { name: 'Lê Minh Trí', phone: '0912.555.444' },
+              site: { name: 'Phạm Hùng', phone: '0912.111.222' }
+            },
+            activeVersionId: 1,
+            versions: [
+              {
+                id: 1,
+                totalRevenue: 500000000,
+                cogs: 385000000,
+                grossProfit: 115000000,
+                marginPercent: 23.0,
+                items: [
+                  { code: 'VT-NEW-01', name: 'Tủ MSB 1600A 3P sơn tĩnh điện', brand: 'MaxElectric', unit: 'Bộ', qty: 1, costPrice: 385000000, unitPrice: 500000000, discount: 0 }
+                ]
+              }
+            ]
+          };
+          projects.value.unshift(newP);
+          showToast('Tạo Dự Án Mới', `Đã tạo thành công dự án ${pCode}`);
+        };
+
+        // --- MASTER PROJECT COMMAND CENTER MODAL STATE ---
+        const showProjectModal = ref(false);
+        const currentProjectModal = ref(null);
+        const activeVersionModalId = ref(1);
+        const showDiffComparison = ref(false);
+
+        const openProjectModal = (projectObj, versionId = null) => {
+          currentProjectModal.value = JSON.parse(JSON.stringify(projectObj));
+          activeVersionModalId.value = versionId || currentProjectModal.value.activeVersionId;
+          showDiffComparison.value = false;
+          showProjectModal.value = true;
+        };
+
+        const currentModalVersion = computed(() => {
+          if (!currentProjectModal.value) return { items: [], totalRevenue: 0, cogs: 0, grossProfit: 0, marginPercent: 0 };
+          return currentProjectModal.value.versions.find(v => v.id === activeVersionModalId.value) || currentProjectModal.value.versions[0];
+        });
+
+        // Recalculate Row & Version totals real-time
+        const calculateLineTotal = (item) => {
+          const raw = (item.qty || 0) * (item.unitPrice || 0);
+          const disc = item.discount ? (raw * item.discount / 100) : 0;
+          return Math.max(0, raw - disc);
+        };
+
+        const recalculateModalVersionTotals = () => {
+          if (!currentModalVersion.value || !currentModalVersion.value.items) return;
+          let rev = 0;
+          let cogs = 0;
+          currentModalVersion.value.items.forEach(item => {
+            rev += calculateLineTotal(item);
+            cogs += (item.qty || 0) * (item.costPrice || 0);
+          });
+          currentModalVersion.value.totalRevenue = rev;
+          currentModalVersion.value.cogs = cogs;
+          currentModalVersion.value.grossProfit = rev - cogs;
+          currentModalVersion.value.marginPercent = rev > 0 ? Number(((rev - cogs) / rev * 100).toFixed(1)) : 0;
+        };
+
+        // Add / Remove BOM rows
+        const addBomRow = () => {
+          currentModalVersion.value.items.push({
+            code: 'VT-NEW-' + Math.floor(10 + Math.random() * 90),
+            name: 'Vật tư thiết bị điện bổ sung',
+            brand: 'Schneider',
+            unit: 'Cái',
+            qty: 1,
+            costPrice: 1000000,
+            unitPrice: 1300000,
+            discount: 0
+          });
+          recalculateModalVersionTotals();
+        };
+
+        const removeBomRow = (index) => {
+          currentModalVersion.value.items.splice(index, 1);
+          recalculateModalVersionTotals();
+        };
+
+        // Bulk price adjustments
+        const adjustBulkPrices = (percentDelta) => {
+          currentModalVersion.value.items.forEach(item => {
+            item.unitPrice = Math.round(item.unitPrice * (1 + percentDelta / 100));
+          });
+          recalculateModalVersionTotals();
+          showToast('Cập Nhật Giá Hàng Loạt', `Đã điều chỉnh ${percentDelta > 0 ? '+' : ''}${percentDelta}% giá bán cho Ver ${activeVersionModalId.value}`);
+        };
+
+        // Duplicate Version
+        const duplicateVersion = (projectObj, sourceVersion) => {
+          const newId = projectObj.versions.length + 1;
+          const newVer = JSON.parse(JSON.stringify(sourceVersion));
+          newVer.id = newId;
+          projectObj.versions.push(newVer);
+
+          if (showProjectModal.value && currentProjectModal.value.id === projectObj.id) {
+            currentProjectModal.value.versions.push(newVer);
+            activeVersionModalId.value = newId;
+          }
+          showToast('Nhân Bản Bản Vẽ BOM', `Đã tạo thành công Ver ${newId} dựa trên Ver ${sourceVersion.id}`);
+        };
+
+        const setAsActiveVersion = (projectObj, versionId) => {
+          projectObj.activeVersionId = versionId;
+          showToast('Đặt Bản Hiện Hành', `Ver ${versionId} đã trở thành phiên bản chốt hiện hành của dự án.`);
+        };
+
+        const deleteVersion = (projectObj, versionId) => {
+          if (versionId === projectObj.activeVersionId) {
+            showToast('Không Thể Xóa', 'Không thể xóa bản BOM đang là bản hiện hành!', 'fa-triangle-exclamation');
+            return;
+          }
+          projectObj.versions = projectObj.versions.filter(v => v.id !== versionId);
+          if (showProjectModal.value) {
+            currentProjectModal.value.versions = currentProjectModal.value.versions.filter(v => v.id !== versionId);
+            activeVersionModalId.value = currentProjectModal.value.activeVersionId;
+          }
+          showToast('Đã Xóa Phiên Bản', `Đã xóa Ver ${versionId}`);
+        };
+
+        // Deep Diff against Ver 1
+        const getVer1Revenue = (projectObj) => {
+          const v1 = projectObj.versions.find(v => v.id === 1);
+          return v1 ? v1.totalRevenue : 0;
+        };
+
+        const getDeltaRevenue = computed(() => {
+          if (!currentProjectModal.value) return 0;
+          const v1Rev = getVer1Revenue(currentProjectModal.value);
+          return currentModalVersion.value.totalRevenue - v1Rev;
+        });
+
+        // Save project modal changes back to main array
+        const saveProjectChanges = () => {
+          recalculateModalVersionTotals();
+          const targetIndex = projects.value.findIndex(p => p.id === currentProjectModal.value.id);
+          if (targetIndex !== -1) {
+            projects.value[targetIndex] = JSON.parse(JSON.stringify(currentProjectModal.value));
+          }
+          showProjectModal.value = false;
+          showToast('Lưu Dự Án Thành Công', `Đã cập nhật toàn bộ BOM và thông tin dự án ${currentProjectModal.value.code}`);
+        };
+
+        // --- MODULE 3: B2B CUSTOMERS & PLAYBOOK DATA ---
+        const customers = ref([
+          {
+            id: 'C101',
+            code: 'KH-8821',
+            name: 'Công ty Cổ phần Sữa TH True Milk',
+            taxCode: '2901234567',
+            address: 'KCN Nghĩa Đàn, Nghệ An',
+            scale: '45.000 m2 / 1.200 Công nhân',
+            creditLimit: 3000000000,
+            currentDebt: 445000000,
+            totalContractValue: 4850000000,
+            decisionMakers: {
+              ceo: { name: 'Phạm Hoàng', phone: '0989.111.222', disc: 'D' },
+              purchasing: { name: 'Nguyễn Thu Trang', phone: '0989.333.444', disc: 'C' },
+              technical: { name: 'Đỗ Tiến Dũng', phone: '0989.555.666', disc: 'S' },
+              site: { name: 'Vũ Quốc Huy', phone: '0989.777.888', disc: 'I' }
+            }
+          },
+          {
+            id: 'C102',
+            code: 'KH-5542',
+            name: 'Tập đoàn Dệt May Hòa Thọ',
+            taxCode: '0400123890',
+            address: '36 Ông Ích Đường, Cẩm Lệ, Đà Nẵng',
+            scale: '30.000 m2 / 800 Công nhân',
+            creditLimit: 2000000000,
+            currentDebt: 850000000,
+            totalContractValue: 3200000000,
+            decisionMakers: {
+              ceo: { name: 'Lê Thị Mai', phone: '0905.444.555', disc: 'D' },
+              purchasing: { name: 'Hoàng Văn Vinh', phone: '0905.111.333', disc: 'C' },
+              technical: { name: 'Bùi Anh Tuấn', phone: '0905.222.444', disc: 'S' },
+              site: { name: 'Đặng Ngọc Sơn', phone: '0905.555.777', disc: 'I' }
+            }
+          }
+        ]);
+
+        const showAddCustomerModal = ref(false);
+        const newCustomerForm = ref({ name: '', taxCode: '', address: '', scale: '', creditLimit: 1000000000, ceoName: '' });
+
+        const saveNewCustomer = () => {
+          if (!newCustomerForm.value.name || !newCustomerForm.value.taxCode) return;
+          const newC = {
+            id: 'C' + Date.now(),
+            code: 'KH-' + Math.floor(1000 + Math.random() * 9000),
+            name: newCustomerForm.value.name,
+            taxCode: newCustomerForm.value.taxCode,
+            address: newCustomerForm.value.address || 'KCN Yên Phong, Bắc Ninh',
+            scale: newCustomerForm.value.scale || 'Quy mô vừa',
+            creditLimit: newCustomerForm.value.creditLimit || 1000000000,
+            currentDebt: 0,
+            totalContractValue: 0,
+            decisionMakers: {
+              ceo: { name: newCustomerForm.value.ceoName || 'Chưa cập nhật', phone: '0912.000.111', disc: 'D' },
+              purchasing: { name: 'Chưa cập nhật', phone: '', disc: 'C' },
+              technical: { name: 'Chưa cập nhật', phone: '', disc: 'S' },
+              site: { name: 'Chưa cập nhật', phone: '', disc: 'I' }
+            }
+          };
+          customers.value.unshift(newC);
+          showAddCustomerModal.value = false;
+          showToast('Thêm KH B2B Thành Công', `Đã lưu hồ sơ doanh nghiệp ${newC.name}`);
+        };
+
+        // AI Playbook Modal State
+        const showAiPlaybookModal = ref(false);
+        const selectedCustomerForPlaybook = ref(null);
+
+        const playbookSteps = [
+          { title: 'Thấu cảm nỗi đau', desc: 'Tìm hiểu tổn thất chi phí khi nhà máy bị gián đoạn điện năng.' },
+          { title: 'Trình bày giải pháp', desc: 'Đưa giải pháp tủ MSB/ATS đạt chuẩn IEC 61439 chống cháy nổ.' },
+          { title: 'Chứng minh năng lực', desc: 'Gửi 5 Profile dự án đã thi công thành công cho tập đoàn lớn.' },
+          { title: 'Tối ưu ngân sách', desc: 'Cam kết tiến độ bàn giao trong 15 ngày & linh hoạt tiến độ thanh toán.' },
+          { title: 'Chốt hợp đồng', desc: 'Tặng kèm 01 năm bảo trì vệ sinh tủ điện định kỳ 6 tháng/lần.' }
+        ];
+
+        const openAiPlaybook = (customerObj) => {
+          selectedCustomerForPlaybook.value = customerObj;
+          showAiPlaybookModal.value = true;
+        };
+
+        // --- MODULE 4: SALES KPI REPORT DATA ---
+        const totalSummaryRevenue = computed(() => {
+          return salesList.value.reduce((acc, s) => acc + (kpiViewCriteria.value === 'month' ? s.monthlyRev : s.yearlyRev), 0);
+        });
+
+        const totalSummaryTarget = computed(() => {
+          return salesList.value.reduce((acc, s) => acc + (kpiViewCriteria.value === 'month' ? s.monthlyTarget : s.yearlyTarget), 0);
+        });
+
+        const totalSummaryGrossProfit = computed(() => {
+          return salesList.value.reduce((acc, s) => acc + (kpiViewCriteria.value === 'month' ? s.monthlyGrossProfit : s.yearlyGrossProfit), 0);
+        });
+
+        const totalSummaryMargin = computed(() => {
+          return totalSummaryRevenue.value > 0 ? ((totalSummaryGrossProfit.value / totalSummaryRevenue.value) * 100).toFixed(1) : 0;
+        });
+
+        const wonProjectsCount = computed(() => {
+          return salesList.value.reduce((acc, s) => acc + s.wonCount, 0);
+        });
+
+        const overallConversionRate = computed(() => {
+          return leads.value.length > 0 ? Math.round((wonProjectsCount.value / leads.value.length) * 100) : 0;
+        });
+
+        const avgRevenuePerLead = computed(() => {
+          return leads.value.length > 0 ? Math.round(totalSummaryRevenue.value / leads.value.length) : 0;
+        });
+
+        const sortedSalesKPI = computed(() => {
+          return [...salesList.value].sort((a, b) => {
+            const revA = kpiViewCriteria.value === 'month' ? a.monthlyRev : a.yearlyRev;
+            const revB = kpiViewCriteria.value === 'month' ? b.monthlyRev : b.yearlyRev;
+            return revB - revA;
+          });
+        });
+
+        const getSalesKpiPercent = (s) => {
+          const rev = kpiViewCriteria.value === 'month' ? s.monthlyRev : s.yearlyRev;
+          const tgt = kpiViewCriteria.value === 'month' ? s.monthlyTarget : s.yearlyTarget;
+          return tgt > 0 ? Math.round((rev / tgt) * 100) : 0;
+        };
+
+        const getSalesRevPerLead = (s) => {
+          const rev = kpiViewCriteria.value === 'month' ? s.monthlyRev : s.yearlyRev;
+          return s.assignedLeadsCount > 0 ? Math.round(rev / s.assignedLeadsCount) : 0;
+        };
+
+        // Sales 360 Inspector Modal
+        const showSales360Modal = ref(false);
+        const selectedSales360 = ref(null);
+        const monthlyHistory = ref([1200000000, 1400000000, 1100000000, 1600000000, 1850000000, 1900000000, 1750000000, 2100000000, 2200000000, 1950000000, 1850000000, 0]);
+
+        const openSales360Modal = (salesObj) => {
+          selectedSales360.value = salesObj;
+          showSales360Modal.value = true;
+        };
+
+        const getProjectsOfSales = (salesId) => {
+          return projects.value.filter(p => p.salesId === salesId);
+        };
+
+        const reassignProject = (projectObj, newSalesId) => {
+          if (!newSalesId) return;
+          const oldSales = salesList.value.find(s => s.id === projectObj.salesId);
+          const newSales = salesList.value.find(s => s.id === newSalesId);
+
+          if (oldSales && oldSales.currentLeads > 0) oldSales.currentLeads--;
+          if (newSales) newSales.currentLeads++;
+
+          projectObj.salesId = newSalesId;
+          showToast('Điều Chuyển Dự Án', `Đã chuyển giao dự án ${projectObj.code} sang cho ${getSalesName(newSalesId)}`);
+        };
+
+        // UTILITY FUNCTIONS
+        const formatVND = (num) => {
+          if (num === null || num === undefined || isNaN(num)) return '0 đ';
+          return new Intl.NumberFormat('vi-VN').format(num) + ' đ';
+        };
+
+        const getInitials = (nameStr) => {
+          if (!nameStr) return 'M';
+          const parts = nameStr.trim().split(' ');
+          if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+          return (parts[parts.length - 2][0] + parts[parts.length - 1][0]).toUpperCase();
+        };
+
+        const copyText = (text, label) => {
+          if (!text) return;
+          const textArea = document.createElement("textarea");
+          textArea.value = text;
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand('copy');
+            showToast('Đã Sao Chép', `Đã chép ${label || 'văn bản'}: "${text}"`, 'fa-copy');
+          } catch (err) {
+            console.error(err);
+          }
+          document.body.removeChild(textArea);
+        };
+
+        return {
+          activeTab,
+          globalSearch,
+          isCompactMode,
+          projectViewMode,
+          kpiViewCriteria,
+          toast,
+          showToast,
+          stages,
+          salesList,
+          getSalesName,
+          adjustCapacity,
+          leadFilter,
+          leads,
+          unassignedLeads,
+          unassignedLeadsCount,
+          assignedLeadsCount,
+          filteredLeads,
+          addSampleLead,
+          addFiveSampleLeads,
+          approveAiRouting,
+          approveAllAiLeads,
+          manualAssignLead,
+          showManualModal,
+          selectedLeadForModal,
+          modalPriority,
+          modalDirective,
+          openManualModal,
+          confirmManualAssign,
+          stageFilter,
+          projectSalesFilter,
+          projects,
+          getActiveVersion,
+          getStageName,
+          getProjectsInStage,
+          moveProjectStage,
+          filteredProjects,
+          createNewProject,
+          openProjectForLead: (leadObj) => {
+            const foundP = projects.value.find(p => p.taxCode === leadObj.taxCode);
+            if (foundP) {
+              activeTab.value = 'projects';
+              openProjectModal(foundP);
+            } else {
+              showToast('Thông báo', 'Chưa có dự án cho Lead này. Vui lòng duyệt giao trước.', 'fa-circle-info');
+            }
+          },
+          showProjectModal,
+          currentProjectModal,
+          activeVersionModalId,
+          showDiffComparison,
+          openProjectModal,
+          currentModalVersion,
+          calculateLineTotal,
+          addBomRow,
+          removeBomRow,
+          adjustBulkPrices,
+          duplicateVersion,
+          setAsActiveVersion,
+          deleteVersion,
+          getVer1Revenue,
+          getDeltaRevenue,
+          saveProjectChanges,
+          customers,
+          showAddCustomerModal,
+          newCustomerForm,
+          saveNewCustomer,
+          showAiPlaybookModal,
+          selectedCustomerForPlaybook,
+          playbookSteps,
+          openAiPlaybook,
+          totalSummaryRevenue,
+          totalSummaryTarget,
+          totalSummaryGrossProfit,
+          totalSummaryMargin,
+          wonProjectsCount,
+          overallConversionRate,
+          avgRevenuePerLead,
+          sortedSalesKPI,
+          getSalesKpiPercent,
+          getSalesRevPerLead,
+          showSales360Modal,
+          selectedSales360,
+          monthlyHistory,
+          openSales360Modal,
+          getProjectsOfSales,
+          reassignProject,
+          powerConfig,
+          powerAutomationLogs,
+          getSalesById,
+          getSalesPowerBreakdown,
+          getSalesPowerScore,
+          getSalesComputedTierLabel,
+          getSalesTierBadgeClass,
+          getSalesMaxLeadBudgetText,
+          checkAndRunAutoPromotions,
+          adjustBaseStat,
+          onManualStatChange,
+          simulateSalesGrowth,
+          resetPowerFormulaDefaults,
+          recalculateAllAiRoutingWithPower,
+          formatVND,
+          getInitials,
+          copyText
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
