@@ -308,7 +308,6 @@
             <div><strong>5 bước</strong><span>từ giá mua đến doanh thu</span></div>
             <div><strong>10 giây</strong><span>thấy lãi gộp từng dự án</span></div>
             <div><strong>2 ca</strong><span>lấy hàng, kho không ùn</span></div>
-            <a href="#tinh-chi-phi-kho">Tự tính hao hụt kho</a>
           </div>
         </section>
 
@@ -793,74 +792,6 @@
               </a>
             </li>
           </ul>
-        </section>
-
-        <section class="ms-loss-calculator" id="tinh-chi-phi-kho" aria-labelledby="ms-loss-calculator-title">
-          <div class="ms-loss-calculator-inner">
-            <div class="ms-loss-calculator-intro">
-              <span class="badge-tag">Công cụ miễn phí · Không cần đăng ký</span>
-              <h2 id="ms-loss-calculator-title">Ước tính chi phí hao hụt kho vật tư</h2>
-              <p>Nhập chi phí vật tư bình quân mỗi tháng và tỷ lệ hao hụt bạn ước tính từ số liệu kiểm kê. Kết quả giúp
-                bạn hình dung quy mô chênh lệch cần kiểm tra.</p>
-            </div>
-
-            <div class="ms-loss-calculator-panel">
-              <div class="ms-loss-calculator-fields">
-                <div class="ms-loss-field">
-                  <label for="ms-monthly-material-spend">Chi phí vật tư mỗi tháng (VNĐ)</label>
-                  <input id="ms-monthly-material-spend" type="number" min="0" step="1000000" inputmode="numeric"
-                    placeholder="Ví dụ: 500000000" oninput="updateWarehouseLossEstimate();">
-                </div>
-                <div class="ms-loss-field">
-                  <label for="ms-material-loss-rate">Tỷ lệ hao hụt ước tính (%)</label>
-                  <input id="ms-material-loss-rate" type="number" min="0" max="100" step="0.1" inputmode="decimal"
-                    placeholder="Ví dụ: 1.5" oninput="updateWarehouseLossEstimate();">
-                </div>
-              </div>
-
-              <div class="ms-loss-calculator-results" aria-live="polite" aria-atomic="true">
-                <p class="ms-loss-results-title">Ước tính theo số liệu bạn nhập</p>
-                <div class="ms-loss-results-grid">
-                  <div><span>Chi phí hao hụt / tháng</span><strong id="ms-loss-monthly-result">—</strong></div>
-                  <div><span>Chi phí hao hụt / năm</span><strong id="ms-loss-yearly-result">—</strong></div>
-                </div>
-                <p id="ms-loss-calculator-message" class="ms-loss-calculator-message">Nhập hai số liệu để xem ước tính.
-                </p>
-              </div>
-
-              <div class="ms-loss-calculator-footer">
-                <p>Dữ liệu chỉ được tính trên trình duyệt này. Ước tính dựa trên số liệu và tỷ lệ bạn nhập, không phải
-                  mức tiết kiệm cam kết.</p>
-                <button type="button" class="ms-loss-calculator-cta"
-                  onclick="openDemoModal('Khảo sát quy trình kho xưởng');">Cùng chuyên gia rà soát quy trình
-                  kho</button>
-              </div>
-            </div>
-
-            <div class="ms-loss-faq">
-              <h3>Câu hỏi thường gặp về quản lý kho vật tư</h3>
-              <details>
-                <summary>Cách tính chi phí hao hụt kho trong công cụ này là gì?</summary>
-                <p>Công cụ lấy chi phí vật tư mỗi tháng nhân với tỷ lệ hao hụt bạn nhập. Ước tính năm giả định mức chi
-                  và tỷ lệ tương tự trong 12 tháng; hãy đối chiếu với kết quả kiểm kê thực tế.</p>
-              </details>
-              <details>
-                <summary>Quản lý BOM theo dự án giúp kiểm soát vật tư như thế nào?</summary>
-                <p>BOM ghi định mức vật tư cho từng dự án. Khi đối chiếu với tồn kho, đội ngũ có thể nhận biết mã còn
-                  thiếu để chuẩn bị mua hàng và cấp phát theo tiến độ.</p>
-              </details>
-              <details>
-                <summary>Dùng MaxSoft có phải thay phần mềm kế toán không?</summary>
-                <p>Không. MaxSoft được giới thiệu để chạy song song với phần mềm kế toán hiện có; dữ liệu có thể xuất ra
-                  Excel theo quy trình của doanh nghiệp.</p>
-              </details>
-              <details>
-                <summary>MaxSoft có những gói dịch vụ nào?</summary>
-                <p>Có các gói Cơ bản, Đầy đủ và suất xưởng đầu. <a href="#bang-gia">Xem bảng giá và phạm vi từng gói</a>
-                  hoặc đăng ký tư vấn để chọn theo quy mô kho.</p>
-              </details>
-            </div>
-          </div>
         </section>
 
         <!-- SECTION 7: BẢNG GIÁ PHẦN MỀM KHO BÃI MAXSOFT -->
@@ -2248,54 +2179,6 @@
         }
       }
 
-      function updateWarehouseLossEstimate() {
-        var spendInput = document.getElementById('ms-monthly-material-spend');
-        var rateInput = document.getElementById('ms-material-loss-rate');
-        var monthlyResult = document.getElementById('ms-loss-monthly-result');
-        var yearlyResult = document.getElementById('ms-loss-yearly-result');
-        var message = document.getElementById('ms-loss-calculator-message');
-        if (!spendInput || !rateInput || !monthlyResult || !yearlyResult || !message) {
-          console.error('The warehouse loss calculator is missing required elements.');
-          return;
-        }
-
-        var spendText = spendInput.value.trim();
-        var rateText = rateInput.value.trim();
-        if (!spendText || !rateText) {
-          monthlyResult.textContent = '—';
-          yearlyResult.textContent = '—';
-          message.textContent = 'Nhập hai số liệu để xem ước tính.';
-          return;
-        }
-
-        var monthlySpend = Number(spendText);
-        var lossRate = Number(rateText);
-        if (!Number.isFinite(monthlySpend) || monthlySpend < 0 ||
-          !Number.isFinite(lossRate) || lossRate < 0 || lossRate > 100) {
-          monthlyResult.textContent = '—';
-          yearlyResult.textContent = '—';
-          message.textContent = 'Nhập chi phí không âm và tỷ lệ hao hụt từ 0 đến 100%.';
-          return;
-        }
-
-        var monthlyLoss = monthlySpend * lossRate / 100;
-        var yearlyLoss = monthlyLoss * 12;
-        if (!Number.isFinite(monthlyLoss) || !Number.isFinite(yearlyLoss)) {
-          monthlyResult.textContent = '—';
-          yearlyResult.textContent = '—';
-          message.textContent = 'Số liệu quá lớn để tính. Vui lòng kiểm tra lại.';
-          return;
-        }
-
-        var currency = new Intl.NumberFormat('vi-VN', {
-          style: 'currency',
-          currency: 'VND',
-          maximumFractionDigits: 0
-        });
-        monthlyResult.textContent = currency.format(monthlyLoss);
-        yearlyResult.textContent = currency.format(yearlyLoss);
-        message.textContent = 'Ước tính năm giả định mức chi và tỷ lệ hao hụt tương tự trong 12 tháng.';
-      }
     </script>
 
     <script>
