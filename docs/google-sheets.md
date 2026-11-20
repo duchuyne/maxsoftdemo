@@ -13,7 +13,7 @@ Mỗi khi có khách điền form, một email thông báo sẽ tự động g�
 - **Nút 2: 📊 MỞ DATA LEAD** (Màu xanh đậm) - Nhấp vào để mở trực tiếp bảng tính Google Sheet để xử lý.
 - **Nút phụ trợ: 💬 Chat Zalo** - Nhấp vào để mở nhanh cửa sổ chat Zalo với số điện thoại của khách.
 
-*Bạn cũng có thể cấu hình bổ sung thêm email bên ngoài trong file `google-apps-script.js` tại biến `NOTIFICATION_EMAILS` nếu muốn.*
+*Bạn cũng có thể cấu hình bổ sung thêm email bên ngoài trong file [`google-apps-script.js`](../tools/google-sheets/google-apps-script.js) tại biến `NOTIFICATION_EMAILS` nếu muốn.*
 
 ---
 
@@ -54,7 +54,7 @@ Hệ thống tracking đã được tích hợp sẵn trên Landing Page:
 2. Trên thanh menu, chọn: **Tiện ích mở rộng** *(Extensions)* ➔ **Apps Script**.
 
 ### BƯỚC 2: Cập nhật mã nguồn & Cấp quyền gửi Email
-1. Mở file [google-apps-script.js](file:///Users/sociutakuma123/Documents/MaxSoft/maxsoft/google-apps-script.js) trong dự án.
+1. Mở file [google-apps-script.js](../tools/google-sheets/google-apps-script.js) trong dự án.
 2. Sao chép (Copy) toàn bộ nội dung trong file.
 3. Dán đè vào ô soạn thảo mã nguồn của Apps Script.
 4. Bấm icon **Lưu** *(Save / Ctrl + S)*.
@@ -69,7 +69,7 @@ Hệ thống tracking đã được tích hợp sẵn trên Landing Page:
    - Mục **Ai có quyền truy cập** *(Who has access)*: **BẮT BUỘC CHỌN "Bất kỳ ai" (Anyone)**.
      > ⚠️ **LƯU Ý QUAN TRỌNG:** Nếu chọn *"Chỉ mình tôi"* hoặc *"Người trong tổ chức"*, Google sẽ chặn và trả về lỗi `403 Forbidden`, khiến website không thể gửi lead vào bảng tính!
    - Bấm **Triển khai** *(Deploy)*.
-2. URL Web App hiện tại đã được cấu hình tự động trong [index.html](file:///Users/sociutakuma123/Documents/MaxSoft/maxsoft/index.html#L1368):
+2. URL Web App hiện tại đã được cấu hình tự động trong [index.html](../index.html):
    ```javascript
    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzS-vOCp2jzfK3JPtL9TzuqbtBUecbRbfRarLe0qHLTbvl6Du3fA8t4ZKX2k0f6UXDL/exec';
    ```
