@@ -70,7 +70,7 @@ try {
     ]);
 } catch (Throwable $error) {
     error_log('MaxSoft demo registration failed: ' . $error->getMessage());
-    respond(500, false, 'Không thể lưu đăng ký lúc này. Vui lòng gọi hotline 0123456789.');
+    respond(500, false, 'Không thể lưu đăng ký lúc này. Vui lòng gọi hotline 0363253368.');
 }
 
 respond(201, true, 'Đăng ký thành công.');
