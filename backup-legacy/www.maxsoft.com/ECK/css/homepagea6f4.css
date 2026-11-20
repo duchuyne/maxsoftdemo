@@ -1,0 +1,2800 @@
+﻿body {
+  font-family: 'Arial','微软雅黑','黑体','Apple SD Gothic Neo','Gulim';
+}
+
+/*layout*/
+.page-homepage .header {
+  background-color: transparent;
+}
+.page-homepage .wrapper-title {
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #333;
+}
+.page-homepage .wrapper-title .wrapper-toolbar .pull-left .page-name {
+  font-size: 30px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar .pull-left .page-name:before {
+  display: none
+}
+.page-homepage .wrapper-title .wrapper-toolbar .pull-left .page-name:before {
+  display: none
+}
+.page-homepage .wrapper-title .wrapper-toolbar .pull-right {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+}
+.page-homepage.page .footer {
+  background: none;
+  border: none
+}
+.wrapper-sub-title {
+  font-size: 116.6666%;
+  font-weight: bold
+}
+
+/*form*/
+.form-control {
+  height: 31px;
+  border-color: #ddd;
+  box-shadow: none;
+  outline: none;
+  background-color: #fafafa;
+  padding-left: 5px;
+  -webkit-appearance: none
+}
+.input-group-addon {
+  background: none;
+  border: none;
+}
+
+/*validation*/
+td.has-error div.validation {
+  border-color: transparent
+}
+.has-error .form-radio,
+.has-error .form-checkbox,
+.has-error input[type=file],
+.has-error .btn-group-select > .btn {
+  color: #a94442;
+}
+.has-error .form-radio > input[type="radio"] + label:before,
+.has-error .form-checkbox > input[type="checkbox"] + label:before,
+.has-error .btn-group-select > .btn,
+.has-error .btn-group-select .select-arrow:before,
+.has-error .input-group-btn .btn,
+.page-homepage .has-error .btn-group.btn-group-select > .btn {
+  border-color: #a94442
+}
+.has-error .btn-group-select .select-arrow:before {
+  background-color: #a94442
+}
+
+/*select*/
+.page-homepage .btn-group.btn-group-select > .btn {
+  height: 31px;
+  border-color: #ddd
+}
+.page-homepage .btn-group.btn-group-select .select-arrow:before {
+  height: 31px
+}
+.page-homepage .btn-group.btn-group-select .select-arrow:after {
+  top: 14px
+}
+.page-homepage .btn-group.btn-group-select div.dropdown-menu {
+  padding: 10px !important;
+}
+.page-homepage .btn-group.btn-group-select div.dropdown-menu a {
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 6px
+}
+.page-homepage .btn-group.btn-group-select div.dropdown-menu.vn-dropdown-menu a:after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  margin-left: 5px;
+  background-color: #ccc;
+}
+.page-homepage .btn-group.btn-group-select div.dropdown-menu.vn-dropdown-menu a:last-child:after {
+  display: none;
+}
+
+/*btn*/
+.btn.btn-xl {
+  min-width: 200px
+}
+.input-group-btn .btn {
+  height: 31px;
+  border-color: #ddd
+}
+
+/*table*/
+.table:not(.table-condensed) > thead > tr > th,
+.table:not(.table-condensed) > tbody > tr > th,
+.table:not(.table-condensed) > tbody > tr > td {
+  padding: 8px 3px 8px 3px;
+  height: 46px;
+}
+.table:not(.table-condensed) > thead > tr > th,
+.table:not(.table-condensed) > tbody > tr > th {
+  padding-left: 20px;
+  padding-right: 10px;
+}
+.table > tbody > tr > th:first-child {
+  padding-left: 5px;
+}
+.col1 {
+  width: 140px
+}
+.col3 {
+  width: 140px
+}
+.table > tbody > tr > th span.user-help-mark {
+  visibility: visible
+}
+
+/* alert 레이어팝업 */
+.alert-panel-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #ddd;
+  z-index: 20;
+  display: none;
+}
+.alert-panel-overlay.alert-view {
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  -ms-display: flexbox; /* IE 10 */
+}
+.page-alert-form {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 360px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
+}
+.page-alert-form .logo {
+  height: 50px;
+  width: 400px;
+  background: url(../images/login/logoa89c.png?2017091201) 0 0 no-repeat;
+}
+.page-alert-form .btn {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 133.3333%;
+  font-weight: bold;
+  font-size: 16px;
+}
+.page-alert-form .copy {
+  width: 100%;
+  margin: 30px 0 20px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*panel ft, 회원가입*/
+.panel-group.signup .panel {
+  border-style: none;
+  box-shadow: none
+}
+.panel-group.signup .panel + .panel {
+  margin-top: 0
+}
+.panel-group.signup .panel-title:first-child {
+  border-top: none
+}
+.panel-group.signup .panel-title a {
+  font-size: 133.3333%;
+  color: #333;
+  padding: 15px 0 15px 10px;
+  display: block;
+  text-decoration: none;
+  background-color: #fafafa;
+  position: relative;
+  border-top: 1px solid #ddd;
+  font-weight: bold
+}
+.panel-group.signup .panel:first-child .panel-title a.collapsed {
+  border-top-color: #fff
+}
+.panel-group.signup .panel-title a {
+  border-top-color: #ddd
+}
+.panel-group.signup .panel-title a.collapsed {
+  background-color: #fff;
+}
+.panel-group.signup .panel:last-child .collapse.in {
+  border-bottom: 1px solid #ddd
+}
+.panel-group.signup .panel:last-child .panel-title a {
+  border-bottom: 1px solid #fff
+}
+.panel-group.signup .panel:last-child .panel-title a.collapsed {
+  border-bottom-color: #ddd
+}
+.panel-group.signup .panel-title a:before {
+  font-family: font-icon;
+  content: "\e936";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #eee;
+  color: #ccc;
+  text-align: center;
+  line-height: 32px;
+  margin-right: 10px
+}
+.panel-group.signup .panel-title a:after {
+  font-family: font-icon;
+  content: "\e90d";
+  display: inline-block;
+  color: #bbb;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -11px
+}
+.panel-group.signup .panel-title a.collapsed:after {
+  content: "\e90b";
+}
+.panel-group.signup .panel-title.complete a:before {
+  background-color: #a51f2a;
+  color: #fff
+}
+.panel-group.signup .panel-collapse {
+  padding-left: 20px;
+  padding-right: 20px
+}
+.panel-group.signup .panel-collapse .table {
+  margin-left: 10px
+}
+
+/*신규추가*/
+.panel-policy {
+  margin-top: 20px
+}
+.panel-policy > .panel-heading {
+  padding: 8px 10px;
+}
+.panel-policy > .panel-body {
+  padding: 10px;
+  line-height: 1.7;
+  overflow: auto
+}
+
+/*상담가능시간*/
+.available-call-time {
+  margin-top: 20px;
+  font-size: 116.6666%;
+  display: inline-block
+}
+.available-call-time:before,
+.phone-number:before {
+  font-family: fontAwesome;
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 5px
+}
+.phone-number:before {
+  font-size: 22px
+}
+.btn-group.link-group .available-call-time:hover + .dropdown-menu {
+  display: block
+}
+.btn-group.link-group .available-call-time + .dropdown-menu {
+  position: fixed;
+  top: 110px;
+  left: 50%;
+  width: 560px;
+  margin-left: -300px;
+  padding: 10px;
+}
+
+/* 바로가기 설치하기 팝업 */
+.panel-shortcut-install {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+  margin-top: -90px;
+  z-index: 10;
+  text-align: center;
+}
+.panel-shortcut-install.cms-complete {
+  margin-top: -107px;
+}
+.panel-shortcut-install .panel-heading {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 116.6666%
+}
+
+/* cms 추가 */
+.sign-sotation .wrapper-article {
+  margin-left: 0;
+  margin-right: 0;
+}
+.sign-sotation .wrapper-toolbar input[type='file'] {
+  display: inline-block;
+}
+
+/* 상담문의 callback 추가 */
+.contact-us-cs-box:before,
+.contact-us-cs-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.contact-us-body a:hover,
+.contact-us-body a:active {
+  text-decoration: none;
+}
+.contact-us-body table {
+  width: 100%;
+  table-layout: fixed;
+}
+.contact-us-body table tr th {
+  text-align: center;
+}
+.contact-us-body table .form-control {
+  background-color: #fff;
+}
+.contact-us-body .body-notice {
+  font-size: 16px;
+}
+.contact-us-body .body-notice:before {
+  content: "ㆍ";
+  margin-right: 3px;
+}
+.contact-us-body {
+  margin-top: 30px;
+}
+.contact-us-body .contact-us-table {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.contact-us-body .contact-us-table tbody tr th {
+  font-size: 16px;
+}
+.contact-us-body .contact-us-table tbody tr td .form-control {
+  width: 100%;
+  height: 35px;
+  box-sizing: border-box;
+}
+.contact-us-body .form-control:focus,
+.callback-question textarea:focus {
+  border-color: #66afe9 !important;
+  outline: 0 !important;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6) !important;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6) !important;
+}
+.contact-us-cs-box {
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+.contact-us-cs-box .contact-us-cs-calendar,
+.contact-us-cs-box .contact-us-cs-callback {
+  position: relative;
+  float: left;
+  width: 50%;
+  min-height: 370px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fbfbfb;
+}
+.contact-us-cs-box .contact-us-cs-calendar {
+  border-right: 1px solid #ccc;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-header {
+  text-align: center;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-header .calendar-month {
+  display: inline-block;
+  margin: 0 30px;
+  font-size: 28px;
+  line-height: 1;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-header .calendar-arrow {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  width: 13px;
+  height: 23px;
+  background: url(../images/homepage/icon-common-new640f.png?ver2018081401) no-repeat;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-header .calendar-arrow.prev {
+  background-position: -66px -213px;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-header .calendar-arrow.next {
+  background-position: -81px -213px;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body {
+  margin-top: 30px;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr th {
+  font-weight: bold;
+  height: 40px;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td a {
+  position: relative;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td.today a span,
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td a:hover span {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td.today a:after,
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td a:hover:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -18px;
+  margin-top: -18px;
+  width: 36px;
+  height: 36px;
+  background-color: #b8202c;
+  border-radius: 50%;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td.disabled a,
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td.disabled a:hover:after {
+  cursor: no-drop;
+  background-color: transparent;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td.disabled a span {
+  color: #ccc;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr th.holiday,
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td.holiday a,
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td.holiday a:hover span {
+  color: #ef4e4e;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td.holiday a {
+  cursor: no-drop;
+}
+.contact-us-cs-box .contact-us-cs-calendar .cs-calendar-body .table-calendar tr td.holiday a:hover:after {
+  background-color: transparent;
+}
+.contact-us-cs-box .contact-us-cs-callback .callback-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.contact-us-cs-box .contact-us-cs-callback ul {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding-left: 0;
+}
+.contact-us-cs-box .contact-us-cs-callback ul li {
+  display: inline-block;
+  width: 32%;
+  text-align: center;
+  box-sizing: border-box;
+}
+.contact-us-cs-box .contact-us-cs-callback ul li a {
+  display: block;
+  height: 30px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 16px;
+  color: #565c62;
+}
+.contact-us-cs-box .contact-us-cs-callback ul li:hover a,
+.contact-us-cs-box .contact-us-cs-callback ul li.active a {
+  color: #fff;
+  border-color: #b8202c;
+  background-color: #b8202c;
+}
+.contact-us-cs-box .contact-us-cs-callback ul li.disabled a,
+.contact-us-cs-box .contact-us-cs-callback ul li.disabled:hover a {
+  color: #b9bbbc;
+  border-color: #ccc;
+  background-color: #f6f6f6;
+  cursor: no-drop;
+}
+.callback-question {
+  margin-top: 10px;
+}
+.callback-question textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-color: #ddd;
+}
+.contact-us-cs-box .contact-us-cs-callback .call-back-apply {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: block;
+  height: 50px;
+  line-height: 45px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  background-color: #b8202c;
+  border: 1px solid #b8202c;
+  color: #fff;
+}
+.contact-us-cs-box .contact-us-cs-callback .call-back-apply:hover {
+  background-color: #fff;
+  color: #b8202c;
+  border-color: #b8202c;
+}
+
+/* 신청페이지 - new */
+.application-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1d78bb;
+}
+.application-form .application-form-table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.application-form .application-form-table .application-form-table-cell {
+  display: table-cell;
+  vertical-align: middle
+}
+.application-form .table tr th {
+  color: #fff;
+}
+.application-form .table-application-responsive col.application-col1 {
+  width: 100px;
+}
+.application-form .table-application-responsive col.application-col2 {
+  width: 178px;
+}
+.application-form .table-application-responsive col.application-col3 {
+  width: auto;
+}
+.application-form .table-application-responsive .form-control,
+.application-form .table-application-responsive .btn-group-select .btn,
+.application-form .table-application-responsive .btn-group-select .select-arrow:before {
+  height: 38px;
+}
+.application-form .table-application-responsive .btn-group-select .select-arrow:before {
+  background-color: #fff;
+}
+.application-form .table-application-responsive .btn-group-select:hover .select-arrow:before {
+  background-color: #fff;
+  border-color: #bbb;
+}
+.application-form .table-application-responsive .btn-group-select .select-arrow:after {
+  font-family: font-icon;
+  content: "\e90b";
+  top: 13px;
+  border: none;
+  color: #999;
+  left: 6px;
+}
+.application-form .table-application-responsive .btn-group-select .btn:focus ~ .select-arrow:after {
+  color: #fff;
+}
+.application-form .table-application-responsive textarea.form-control {
+  height: 110px;
+}
+.application-form .application-form-check-agree {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #005796;
+  text-align: right;
+}
+.application-form .application-form-check-agree .form-checkbox label {
+  color: #fff;
+}
+.application-form .application-form-check-agree .form-checkbox label span {
+  text-decoration: underline;
+}
+.application-form .application-form-btn .btn {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px 6px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f6b029;
+  border-color: transparent;
+  color: #000;
+}
+.application-form .application-form-btn + .application-form-btn .btn + .btn {
+  margin-left: 0;
+}
+
+/* 데모 */
+.application-form.demo .application-form-btn + .application-form-btn .btn {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+.application-form.demo .wrapper-application-modal {
+  margin-bottom: -115px;
+}
+.application-form .btn-group.btn-group-select div.dropdown-menu {
+  padding: 10px !important;
+}
+
+/* free-trial */
+.application-form.free-trial .application-infomation {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+}
+.application-form.free-trial .application-infomation span {
+  display: block;
+  margin-top: 20px;
+  font-size: 32px;
+}
+
+/* form color 제거 */
+.application-form .btn-group.btn-group-select:not(.disabled) .btn:focus + .select-arrow:before,
+.application-form .btn-group.btn-group-select:not(.disabled).open .select-arrow:before,
+.application-form .btn-group.btn-group-select:not(.disabled):hover .select-arrow:before,
+.application-form table.form-control-border-no > tbody > tr > td .btn-group.btn-group-select:not(.disabled).open .select-arrow:before,
+.application-form table.form-control-border-no > tbody > tr > td .btn-group.btn-group-select:not(.disabled):hover .select-arrow:before,
+.application-form .btn-group.btn-group-select:not(.disabled) .btn:focus,
+.application-form table.form-control-border-no > tbody > tr > td .btn-group.btn-group-select:not(.disabled).open .btn,
+.application-form table.form-control-border-no > tbody > tr > td .btn-group.btn-group-select:not(.disabled):hover .btn {
+  background-color: #fff;
+}
+.application-form .btn-group.btn-group-select:not(.disabled) .btn:focus ~ .select-arrow:after {
+  color: #999;
+}
+.application-form .dropdown-menu > .active > a {
+  background-color: transparent;
+  color: #333 !important
+}
+.application-form .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: #f5f5f5;
+}
+.application-form .dropdown-menu-checked-list > li.active > a:before {
+  color: #333;
+}
+.application-form .form-checkbox > input[type="checkbox"]:checked + label:before {
+  background-color: #909090;
+  border-color: #909090;
+}
+
+/* Eck 모달 팝업 */
+.wrapper-application-modal {
+  position: absolute;
+  bottom: 50%;
+  left: 2px;
+  right: 2px;
+  margin-bottom: -210px;
+  box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: none;
+}
+.wrapper-application-modal.wrapper-application-modal-email-inquiry {
+  max-width: 850px;
+  left: auto; 
+  bottom: auto; 
+  right: auto; 
+  margin-bottom: 0; 
+  top: 10px;
+}
+.wrapper-application-modal .panel-heading {
+  position: relative;
+  padding: 15px 15px 0;
+}
+.wrapper-application-modal .panel-heading .wrapper-application-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.wrapper-application-modal .panel-heading .wrapper-application-close:before {
+  font-family: font-icon;
+  content: "\e921";
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #666;
+  padding: 5px;
+}
+.wrapper-application-modal .panel-body .wrapper-text-article {
+  margin: 5px 10px;
+}
+
+/* 유료회원가입 & cms신청 */
+.wrapper-policy {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  line-height: 1.2 !important;
+}
+.wrapper-policy .tab-ui {
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
+.wrapper-policy .policy-title {
+  border-bottom: 1px solid #ccc;
+  background: #f7f7f7;
+  padding: 2px 10px;
+  font-weight: bold;
+}
+.wrapper-policy .policy-title:after {
+  display: block;
+  content: "";
+  clear: both;
+  visibility: hidden;
+}
+.wrapper-policy .policy-contents {
+  height: 130px;
+  padding: 10px;
+  background: #fff;
+  font-size: 12px;
+  overflow: auto;
+  line-height: 1.85;
+  display: none;
+}
+.wrapper-policy .policy-contents.active {
+  display: block;
+}
+.tabs-join {
+  margin-bottom: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: #f7f7f7;
+}
+.tabs-join.tab-ui > li:first-child {
+  margin-left: 4px;
+}
+.tabs-join.tab-ui > li {
+  border: none;
+  display: inline-block;
+  float: left;
+  margin: 4px 6px !important;
+  padding: 0;
+}
+.tabs-join.tab-ui > li > a {
+  padding: 0px 9px 0 3px;
+  border: none !important;
+  color: #999;
+}
+.tabs-join.tab-ui > li > a:hover,
+.tabs-join.tab-ui > li.active > a {
+  background: transparent !important;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+}
+.tabs-join > li.ui-tabs-active > a {
+  background: transparent !important;
+  color: #333;
+  font-weight: bold;
+}
+.page-homepage.page-homepage-joincms .wrapper-title {
+  border-bottom-width: 1px;
+  border-color: #bbb;
+}
+.page-homepage.page-homepage-joincms .wrapper-title .wrapper-toolbar .pull-left .page-name {
+  font-size: 24px;
+}
+.page-homepage.page-homepage-joincms .code-overlap {
+  display: none;
+}
+.page-homepage.page-homepage-joincms .wrapper-article {
+  margin: 10px 10px;
+}
+.page-homepage.page-homepage-joincms .wrapper-cms-terms {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #333;
+}
+
+/*th 예외처리*/
+body.th,
+body.th .form-control,
+body.th .btn,
+body.th .dropdown-menu,
+body.th .input-group-addon,
+body.th .popover,
+body.th .popover-title {
+  font-size: 14px;
+}
+
+/* 상담문의 MEDIA QUERY */
+@media all and (max-width: 980px) {
+  .contact-us-cs-box .contact-us-cs-callback ul li a {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 640px) {
+  .wrapper-contact-us hr {
+    margin: 20px 0;
+  }
+  .contact-us-body {
+    margin-top: 25px;
+  }
+}
+@media all and (max-width: 610px) {
+  .contact-us-body .body-notice {
+    font-size: 14px;
+  }
+  .contact-us-body .contact-us-table {
+    margin-top: 15px;
+    padding: 5px;
+  }
+  .contact-us-cs-box .contact-us-cs-calendar,
+  .contact-us-cs-box .contact-us-cs-callback {
+    float: none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    min-height: auto;
+  }
+  .contact-us-cs-box .contact-us-cs-calendar .cs-calendar-header .calendar-month {
+    font-size: 22px;
+  }
+  .contact-us-cs-box .contact-us-cs-calendar .cs-calendar-header .calendar-arrow {
+    top: 5px;
+  }
+  .contact-us-cs-box .contact-us-cs-callback {
+    padding-bottom: 70px;
+    border-top: 1px solid #ccc;
+    border-left: 0;
+  }
+  .contact-us-cs-box .contact-us-cs-callback .call-back-apply {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+  }
+}
+@media all and (max-width: 440px) {
+  .page-homepage .wrapper-title .wrapper-toolbar .pull-left .page-name {
+    font-size: 24px;
+  }
+}
+
+/* 신청페이지 MEDIA QUERY */
+@media all and (max-width: 380px) {
+  /*responsive - table : common*/
+  .table-application-responsive {
+    width: 100% !important;
+    min-width: 100% !important;
+    overflow: visible
+  }
+  .table-application-responsive > colgroup > col {
+    width: auto !important;
+  }
+  .table-application-responsive,
+  .table-application-responsive > thead,
+  .table-application-responsive > tbody,
+  .table-application-responsive > tbody > tr,
+  .table-application-responsive > tbody > tr > td {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    border: none;
+    word-break: break-all;
+    white-space: normal;
+  }
+  .table-application-responsive > thead > tr > th,
+  .table-application-responsive > tbody > tr > th,
+  .table-application-responsive > tbody > tr > td:empty {
+    display: none;
+  }
+  .table-application-responsive > tbody > tr > td {
+    min-height: 32px;
+    padding-left: 29% !important;
+    position: relative;
+    text-align: left !important;
+    display: inline-block
+  }
+  .table-application-responsive > tbody > tr > td:before {
+    width: 28%;
+    position: absolute;
+    left: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+  }
+  .table-application-responsive > tbody > tr > td[data-label="merge"]:before,
+  .table-application-responsive > tbody > tr > td[data-label="empty"]:before {
+    content: none !important;
+  }
+  .table-application-responsive > tbody > tr > td[data-label=""]:before {
+    content: ""
+  }
+  .table-application-responsive.table-form {
+    border-top: 1px solid #ccc
+  }
+  .table-application-responsive.table-form > tbody > tr > td {
+    border-bottom: 1px solid #ccc;
+  }
+  .table-application-responsive.table-form > tbody > tr > td:before {
+    content: attr(data-label);
+    top: 0;
+    height: 100%;
+    background-color: #f0f0f0;
+    border-right: 1px solid #ccc;
+    padding-left: 2px;
+    line-height: 31px;
+    color: #fff;
+  }
+  .table-application-responsive.table-form > tbody > tr > td {
+    display: block;
+    padding-left: 0 !important;
+    padding-top: 25px;
+  }
+  .table-application-responsive.table-form > tbody > tr > td:before {
+    top: 5px;
+    width: 100%;
+    height: auto;
+    background: none;
+    border-right: none;
+    font-size: 116.6666%;
+    line-height: normal;
+  }
+  .application-form .table-application-responsive textarea.form-control {
+    height: 60px;
+  }
+  .application-form .wrapper-toolbar {
+    position: static;
+  }
+  .application-form .wrapper-toolbar .btn {
+    padding: 10px 6px;
+    font-size: 16px;
+  }
+  .application-form.free-trial .application-infomation {
+    font-size: 18px;
+  }
+  .application-form.free-trial .application-infomation span {
+    font-size: 26px;
+  }
+  .wrapper-application-modal {
+    margin-bottom: -330px;
+  }
+}
+@media (min-width: 850px) {
+  .page-homepage {
+    width: 100%;
+  }
+  .page-homepage .header,
+  .page-homepage .contents,
+  .page-homepage .footer {
+    position: static;
+    width: 850px !important;
+    margin: 0 auto !important;
+  }
+  .page-homepage .header {
+  }
+  .page-homepage .contents {
+    padding: 5px;
+  }
+  .page-homepage .contents.full-width {
+    width:100% !important;
+  }
+}
+@media (max-width: 768px) {
+  .page-homepage .contents {
+    padding-left: 5px;
+    padding-right: 5px
+  }
+  .table-responsive.table-form > tbody > tr > td {
+    display: block;
+    padding-left: 0 !important;
+    padding-top: 25px;
+  }
+  .table-responsive.table-form > tbody > tr > td:before {
+    top: 5px;
+    width: 100%;
+    height: auto;
+    background: none;
+    border-right: none;
+    font-size: 116.6666%;
+    line-height: normal;
+  }
+  .btn-group.link-group .available-call-time + .dropdown-menu {
+    top: 65px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    margin-left: 0;
+  }
+  .wrapper-datepicker input[type="text"] {
+    width: 26px !important
+  }
+}
+@media (max-width: 540px) {
+  .page-homepage .wrapper-title .wrapper-toolbar .pull-right {
+    position: static;
+  }
+}
+
+/*********************************************/
+/* dev.30101 Contactus-tab / 191002 / 남진성 */
+/*********************************************/
+.page-homepage .header.full-width {
+  width: 100% !important;
+}
+.page-homepage .header.full-width .wrapper-title {
+  border-bottom: 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab {
+  margin: 0 0 0 0;
+  width: 100%;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left {
+  text-align: center;
+  width: 100%;
+  line-height: 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .page-name {
+  display: block;
+  font-size: 30px;
+  line-height: 1;
+  padding: 50px 0 0 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .page-sub-title {
+  display: block;
+  padding: 20px 0 20px 0;
+  line-height: 1.6;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list-bg {
+  background-color: #fafafa;
+  border-top: 1px #e8e8e8 solid;
+  border-bottom: 1px #e8e8e8 solid;
+  padding: 15px 0;
+  width: 100%;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  padding: 0 0 0 35px;
+  max-width: 850px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > li {
+  float: left;
+  width: 90px;
+  margin: 0 35px 0 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > li.hide {
+  display: none;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > li > span {
+  position: relative;
+  display: inline-block;
+  padding: 5px 0 0 0;
+  width: 100%;
+  line-height: 1.2;
+  word-break: break-all;
+  text-align: center;
+  font-weight: bold;
+  color: #7d7d7d;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .visit.selected > span {
+  font-weight: bold;
+  color: #c7313d;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .call.selected > span {
+  font-weight: bold;
+  color: #ea8400;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .email.selected > span {
+  font-weight: bold;
+  color: #efba00;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .skype.selected > span {
+  font-weight: bold;
+  color: #00aaf2;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .line.selected > span {
+  font-weight: bold;
+  color: #00c200;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .qq.selected > span {
+  font-weight: bold;
+  color: #eb8a2b;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .wechat.selected > span {
+  font-weight: bold;
+  color: #51c332;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .zalo.selected > span {
+  font-weight: bold;
+  color: #0180c7;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .whatsapp.selected > span {
+  font-weight: bold;
+  color: #25d366;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > li > a {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  background: url("../images/homepage/contactus-tab-pc20ab.png?ver=2019100801") no-repeat;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .visit > a {
+  background-position: 0 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .call > a {
+  background-position: -90px 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .email > a {
+  background-position: -180px 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .skype > a {
+  background-position: -270px 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .line > a {
+  background-position: -360px 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .qq > a {
+  background-position: -450px 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .wechat > a {
+  background-position: -540px 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .zalo > a {
+  background-position: -630px 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .whatsapp > a {
+  background-position: -720px 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .more > a {
+  background-position: -810px 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .visit.selected > a {
+  background-position: 0 -90px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .call.selected > a {
+  background-position: -90px -90px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .email.selected > a {
+  background-position: -180px -90px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .skype.selected > a {
+  background-position: -270px -90px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .line.selected > a {
+  background-position: -360px -90px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .qq.selected > a {
+  background-position: -450px -90px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .wechat.selected > a {
+  background-position: -540px -90px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .zalo.selected > a {
+  background-position: -630px -90px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .whatsapp.selected > a {
+  background-position: -720px -90px;
+}
+@media (max-width: 680px) {
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list {
+    padding: 0 0 0 30px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > li {
+    float: left;
+    width: 55px;
+    margin: 0 30px 0 0;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > li > div {
+    height: 55px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > li > div > span {
+    bottom: 5px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > li > a {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    background: url("../images/homepage/contactus-tab-mo20ab.png?ver=2019100801") no-repeat;
+    background-size: auto 110px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .visit > a {
+    background-position: 0 0;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .call > a {
+    background-position: -55px 0;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .email > a {
+    background-position: -110px 0;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .skype > a {
+    background-position: -165px 0;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .line > a {
+    background-position: -220px 0;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .qq > a {
+    background-position: -275px 0;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .wechat > a {
+    background-position: -330px 0;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .zalo > a {
+    background-position: -385px 0;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .whatsapp > a {
+    background-position: -440px 0;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .more > a {
+    background-position: -495px 0;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .visit.selected > a {
+    background-position: 0 -55px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .call.selected > a {
+    background-position: -55px -55px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .email.selected > a {
+    background-position: -110px -55px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .skype.selected > a {
+    background-position: -165px -55px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .line.selected > a {
+    background-position: -220px -55px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .qq.selected > a {
+    background-position: -275px -55px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .wechat.selected > a {
+    background-position: -330px -55px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .zalo.selected > a {
+    background-position: -385px -55px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > .whatsapp.selected > a {
+    background-position: -440px -55px;
+  }
+}
+@media (max-width: 475px) {
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list {
+    padding: 0 0 0 10px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > li {
+    margin: 0 10px 0 0;
+  }
+}
+@media (max-width: 355px) {
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list {
+    padding: 0 0 0 5px;
+  }
+  .page-homepage .wrapper-title .wrapper-toolbar.contactus-tab .pull-left .btn-tab-list > li {
+    margin: 10px 5px 0 0;
+  }
+}
+.contents.selected-app-line {
+  display: block;
+  margin: 0 auto !important;
+  padding: 0 15px 0 15px !important;
+  max-width: 360px;
+  text-align: center;
+}
+.contents.selected-app-line .line-id-title {
+  padding: 35px 0 0 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #00c100;
+}
+.contents.selected-app-line .line-id {
+  padding: 0 0 5px 0;
+  font-size: 22px;
+}
+.contents.selected-app-line .qr-img {
+  display: inline-block;
+  margin-bottom: 5px;
+  max-width: 40%;
+}
+.contents.selected-app-line .title {
+  padding: 5px 0 35px 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+.contents.selected-app-line .copy {
+  padding: 20px 0 10px 0;
+  border-top: 1px #ddd solid;
+}
+.contents.selected-app-line .copy li {
+  position: relative;
+  display: inline-block;
+  float: left;
+  padding: 0 5% 0 8px;
+  margin: 0 0 8px 0;
+  text-align: left;
+  font-weight: normal;
+  word-break: keep-all;
+  color: #777;
+}
+.contents.selected-app-line .copy li:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  width: 2px;
+  height: 2px;
+  background-color: #777;
+  border-radius: 100%;
+}
+.contents.selected-app-line .copy li:last-child {
+  margin: 0 0 20px 0;
+}
+
+/*****************************************************/
+/* Contact-Us 팝업 입력폼 줄이기 / 191018-01 / 남진성 */
+/*****************************************************/
+.contents.form-contact-us .table:not(.table-condensed) > thead > tr > th,
+.contents.form-contact-us .table:not(.table-condensed) > tbody > tr > th,
+.contents.form-contact-us .table:not(.table-condensed) > tbody > tr > td {
+  padding-right: 50px;
+}
+.contents.form-contact-us .table:not(.table-condensed) > thead > tr > th,
+.contents.form-contact-us .table:not(.table-condensed) > tbody > tr > th {
+  padding-left: 20px;
+  padding-right: 10px;
+  text-align: right;
+}
+.contents.form-contact-us #divAgree.pull-right {
+  padding-right: 50px;
+}
+@media (max-width:768px) {
+  .contents.form-contact-us .table:not(.table-condensed) > thead > tr > th,
+  .contents.form-contact-us .table:not(.table-condensed) > tbody > tr > th,
+  .contents.form-contact-us .table:not(.table-condensed) > tbody > tr > td {
+    padding-right: 3px;
+  }
+  .contents.form-contact-us #divAgree.pull-right {
+    padding-right: 0px;
+  }
+}
+
+/****************************************************************/
+/* dev.30687 TH FT 가입 완료 페이지 폰트 키우기 / 191021 / 남진성 */
+/****************************************************************/
+.contents.th-ft-join-complete.common-font-size {
+  font-size: 14px;
+}
+
+/*****************************************************/
+/* dev.34905 모바일 요청 레이어 팝업 / 200122 / 남진성 */
+/*****************************************************/
+.page-homepage .wrapper-title .wrapper-toolbar.mobile-request-layer-popup .pull-left {
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.mobile-request-layer-popup .pull-left > .page-icon {
+  width: 50px;
+  height: 50px;
+  margin: 30px auto 0px auto;
+  background: url("../images/homepage/mobile-request-layer-popup.png") no-repeat;
+  background-size: 250px auto;
+  background-position-y: 0px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.mobile-request-layer-popup .pull-left > .page-icon.icon-call {
+  background-position-x: 0px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.mobile-request-layer-popup .pull-left > .page-icon.icon-visit {
+  background-position-x: -50px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.mobile-request-layer-popup .pull-left > .page-icon.icon-ft {
+  background-position-x: -100px;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.mobile-request-layer-popup .pull-left > .page-name {
+  margin: 15px auto 0 auto;
+  font-size: 24px;
+  line-height: normal;
+}
+.page-homepage .wrapper-title .wrapper-toolbar.mobile-request-layer-popup .pull-left > .page-sub-title {
+  max-width: 850px;
+  margin: 20px auto 10px auto;
+  padding-bottom: 20px;
+  border-bottom: 1px #b8202c solid;
+  font-size: 14px;
+  line-height: 1.6;
+  display:block;
+}
+.contents .table.mobile-placeholder > tbody > tr > td > .form-control::placeholder {
+  color: #fafafa;
+}
+@media (max-width: 768px) {
+  .contents .table.mobile-placeholder > tbody > tr > td {
+    padding-top: 15px;
+  }
+  .contents .table.mobile-placeholder > tbody > tr > td > .form-control {
+    height: 40px;
+    font-size: 16px;
+  }
+  .contents .table.mobile-placeholder > tbody > tr > td > .form-control::placeholder {
+    font-size: 16px;
+    color: #999;
+  }
+}
+
+/*******************************************/
+/* dev.34905 모바일 X버튼 / 200212 / 남진성 */
+/*******************************************/
+.close-modal.mobile {
+  position:absolute;
+  display:block;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  z-index:99;
+  background: url(../images/homepage/mobile-close-modal.png) no-repeat center;
+}
+
+/**********************************************/
+/* dev.41181 집체교육 켈린더 / 200428 / 남진성 */
+/**********************************************/
+/* Month button */
+.page.education-calendar .wrapper-table-education-calendar-pc {
+  display: block;
+}
+.page.education-calendar .wrapper-table-education-calendar-mobile {
+  display: none;
+}
+.page.education-calendar .wrapper-button-calendar-month{
+  padding-bottom:20px;
+  text-align:center;
+}
+.page.education-calendar .wrapper-button-calendar-month > ul{
+  margin:0 auto;
+  display:inline-block;
+}
+.page.education-calendar .wrapper-button-calendar-month > ul > li{
+  float:left;
+  height:36px;
+}
+.page.education-calendar .wrapper-button-calendar-month > ul > li > button{
+  position:relative;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px #ccc solid;
+  background:none;
+  outline:none;
+}
+.page.education-calendar .wrapper-button-calendar-month > ul > li > button:hover{
+  background-color:#f4f4f4;
+}
+.page.education-calendar .wrapper-button-calendar-month > ul > li > .button-prev-month::before{
+  content:"";
+  display:block;
+  position:absolute;
+  left:14px;
+  top: 12px;
+  width:10px;
+  height:10px;
+  border-top:1px #333 solid;
+  border-left: 1px #333 solid;
+	transform: rotate( -45deg );
+}
+.page.education-calendar .wrapper-button-calendar-month > ul > li > .button-next-month::before{
+  content:"";
+  display:block;
+  position:absolute;
+  right:14px;
+  top: 12px;
+  width:10px;
+  height:10px;
+  border-top:1px #333 solid;
+  border-left: 1px #333 solid;
+	transform: rotate( 135deg );
+}
+.page.education-calendar .wrapper-button-calendar-month > ul > li:nth-child(2){
+  font-size:26px;
+  padding:0 20px;
+  padding-top:0px;
+}
+/* Table */
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar{
+  display:table;
+  width:100%;
+  border-collapse: collapse;
+  border:0;
+  border-spacing:0;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar tbody{
+  border:1px #ddd solid;
+  border-top:1px #333 solid !important;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar tr th:first-child,
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar tr td:first-child {
+  border-left: 0;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar tr th:last-child,
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar tr td:last-child {
+  border-right: 0;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar tr:last-child td {
+  border-bottom: 0;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar th,
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td {
+  display:table-cell;
+  border: 1px #ddd solid;
+  text-align:center;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar th {
+  border: 0;
+  height:25px;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td {
+  position:relative;
+  padding:25px 0 10px 0;
+  height:100px;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar tr:first-child td{
+  border-top:1px #333 solid;
+}
+/* Date */
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td.state-other-month-day{
+  background:#f9f9f9;
+  background-clip: padding-box;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td.today > .date{
+  color:#b8202c;
+  text-decoration:underline;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .date{
+  position:absolute;
+  right:5px;
+  top:5px;
+  font-weight:bold;
+}
+/* Schedule List */
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td.state-day-on > .list-education{
+  display:block;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td.state-other-month-day > .list-education,
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td.state-day-off > .list-education{
+  display:none;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education{
+  padding:0;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li{
+  position:relative;
+  margin-top:1px;
+  padding:5px 45px 5px 7px;
+  text-align:left;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li:first-child{
+  margin-top:0px;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li:before{
+  content:"";
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  width:3px;
+  height:100%;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-on{
+  background:rgba(184,32,44,0.08);
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-on:before{
+  background:rgba(184,32,44,0.3);
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-complete,
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-closed{
+  background:rgba(0,0,0,0.05);
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-complete:before,
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-closed:before{
+  background:rgba(0,0,0,0.2);
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-on > .button-complete,
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-on > .button-closed{
+  display:none;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-complete > .button-apply,
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-complete > .button-closed{
+  display:none;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-closed > .button-apply,
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li.state-apply-closed > .button-complete{
+  display:none;
+}
+/* apply button */
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li:first-child{
+  border-top:0px;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li > .button-apply{
+  display:block;
+  position:absolute;
+  top:50%;
+  right:5px;
+  margin-top:-11px;
+  padding:3px 0 1px 0;
+  width:35px;
+  text-align:center;
+  color:#fff;
+  font-weight:bold;
+  border-radius:2px;
+  background:#b8202c;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li > .button-apply:hover{
+  background:#95121c;
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li > .button-complete,
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li > .button-closed{
+  position:absolute;
+  top:50%;
+  right:5px;
+  margin-top:-11px;
+  padding:3px 0 1px 0;
+  width:35px;
+  text-align:center;
+  color:#666;
+  border-radius:2px;
+  background:rgba(0,0,0,0.08);
+}
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li > .button-complete:hover,
+.page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li > .button-closed:hover{
+  background:rgba(0,0,0,0.15);
+}
+@media(max-width:889px){
+  .page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li {
+    padding-right: 0px;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li > .button-apply,
+  .page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li > .button-complete,
+  .page.education-calendar .wrapper-table-education-calendar-pc > .table-education-calendar td > .list-education > li > .button-closed {
+    display: block;
+    position: relative;
+    top: 0;
+    margin: 0;
+    right: 0;
+    width:35px;
+    text-align:center;
+  }
+}
+@media(max-width:600px) {
+  /* Devie view */
+  .page.education-calendar .wrapper-table-education-calendar-pc {
+    display: none;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile {
+    display: block;
+  }
+  /* Title */
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .title-list-schedule,
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule {
+    padding: 0;
+    display:inline-block;
+    width:100%;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .title-list-schedule > li {
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px #333 solid;
+    padding-bottom: 5px;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .title-list-schedule > li:first-child {
+    width: 55%;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .title-list-schedule > li:last-child {
+    width: 45%;
+  }
+  /* List */
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule{
+    margin-bottom:20px;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li{
+    position:relative;
+    display:inline-block;
+    width:100%;
+    padding:20px 0;
+    border-bottom:1px #ddd solid;
+    font-size:14px;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li > .subject{
+    float:left;
+    width:55%;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li > .date{
+    float:left;
+    width:45%;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li > .button-apply {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -16px;
+    padding: 6px 0 4px 0;
+    width: 60px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 2px;
+    background: #b8202c;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li > .button-complete,
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li > .button-closed {
+    display:block;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -16px;
+    padding: 6px 0 4px 0;
+    width: 60px;
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.08);
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li.state-apply-on > .button-complete,
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li.state-apply-on > .button-closed {
+    display: none;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li.state-apply-complete > .button-apply,
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li.state-apply-complete > .button-closed {
+    display: none;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li.state-apply-closed > .button-apply,
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .list-schedule > li.state-apply-closed > .button-complete {
+    display: none;
+  }
+  /* Button more */
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .button-more{
+    width:100%;
+    padding:13px 0;
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+    border:none;
+    border-radius:3px;
+    background:#3d3d3d;
+    outline:none;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .button-more > span{
+    position:relative;
+  }
+  .page.education-calendar .wrapper-table-education-calendar-mobile > .button-more > span:before{
+    content:"";
+    display:block;
+    position:absolute;
+    top:2px;
+    right:-16px;
+    width:8px;
+    height:8px;
+    border-bottom:1px #fff solid;
+    border-left:1px #fff solid;
+    transform: rotate( -45deg );
+  }
+}
+
+/**************************************************/
+/* dev.41181 집체교육 켈린더 팝업 / 200601 / 남진성 */
+/**************************************************/
+/* List */
+.contents.education-calendar-popup {
+  margin:0 auto !important;
+  padding:0 15px 15px 15px !important;
+}
+.page.education-calendar-popup .contents .title{
+  line-height:1.6;
+  font-size:16px !important;
+  margin-top:15px;
+  font-weight:bold;
+}
+.page.education-calendar-popup .contents .title .emphasis{
+  font-size:14px;
+}
+.page.education-calendar-popup .list-summary {
+  margin:15px 0;
+  padding:0;
+}
+.page.education-calendar-popup .list-summary > li{
+  position:relative;
+  padding: 3px 0 3px 8px;
+}
+.page.education-calendar-popup .list-summary > li::before {
+  content:"•";
+  position:absolute;
+  left:0;
+}
+.page.education-calendar-popup .list-summary > li > a{
+  text-decoration:underline;
+}
+@media(max-width:700px){
+  .page.education-calendar-popup .contents .title{
+    font-size:16px !important;
+  }
+  .page.education-calendar-popup .contents .title .emphasis{
+    font-size:inherit;
+  }
+  .page.education-calendar-popup .list-summary {
+    margin:25px 0 15px 0;
+  }
+  .page.education-calendar-popup .list-summary > li {
+    font-size:16px;
+  }
+}
+/* List Education State */
+.page.education-calendar-popup .list-education-state{
+  border-top:1px #333 solid;
+  border-bottom:1px #ddd solid;
+  padding:0;
+  margin-bottom:15px;
+}
+.page.education-calendar-popup .list-education-state::before,
+.page.education-calendar-popup .list-education-state::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+.page.education-calendar-popup .list-education-state > li{
+  float:left;
+}
+.page.education-calendar-popup .list-education-state > li:nth-child(1){
+  width:30%;
+}
+.page.education-calendar-popup .list-education-state > li:nth-child(2){
+  width:50%;
+}
+.page.education-calendar-popup .list-education-state > li:nth-child(3){
+  width:20%;
+}
+.page.education-calendar-popup .list-education-state > li > .title {
+  padding:10px 0;
+  font-weight:bold;
+  border-bottom:1px #ddd solid;
+}
+.page.education-calendar-popup .list-education-state > li > .copy {
+  width:100%;
+  padding:10px 0;
+}
+@media(max-width:700px){
+  .page.education-calendar-popup .list-education-state{
+    margin-bottom:20px;
+    border-top:none;
+    border-bottom:none;
+  }
+  .page.education-calendar-popup .list-education-state > li{
+    font-size:16px;
+  }
+  .page.education-calendar-popup .list-education-state > li:nth-child(1),
+  .page.education-calendar-popup .list-education-state > li:nth-child(2),
+  .page.education-calendar-popup .list-education-state > li:nth-child(3) {
+    float: none;
+    width: 100%;
+  }
+  .page.education-calendar-popup .list-education-state > li > .title {
+    border-bottom:1px #ddd solid;
+    font-size:18px;
+    padding:7px 0;
+
+  }
+  .page.education-calendar-popup .list-education-state > li > .copy {
+    padding:15px 0;
+  }
+}
+/* Caption */
+.page.education-calendar-popup .panel > .panel-heading{
+  font-weight:bold;
+}
+@media(max-width:700px){
+  .page.education-calendar-popup .panel{
+    font-size:16px;
+  }
+}
+/* sub title */
+.page.education-calendar-popup .wrapper-applicant-information > .sub-title{
+  font-weight:bold;
+  font-size:16px;
+  padding-bottom:5px;
+  margin-top:25px;
+  border-bottom:1px #333 solid;
+}
+@media(max-width:700px){
+.page.education-calendar-popup .wrapper-applicant-information > .sub-title{
+    font-size:18px;
+    padding-bottom:10px;
+  }
+}
+/* List Applicant Information Input */
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input{
+  padding:0;
+  margin:0;
+  margin-bottom:25px;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input::before,
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul{
+  padding:0;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul::before,
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li{
+  float:left;
+  padding-right:5px;
+  position:relative;
+  padding:10px 5px 0px 0px;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(1){
+  width:15%;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(2){
+  width:15%;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(3){
+  width:20%;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(4){
+  width:20%;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(5){
+  width:20%;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(6){
+  width:10%;
+  text-align:center;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul.list-input > li:nth-child(6) > a{
+  margin-top:8px;
+  display: inline-block;
+  text-decoration:underline;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul.list-input > li:nth-child(6) > a.button-add{
+  display:none;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li:last-child > ul.list-input > li:nth-child(6) > a.button-add{
+  display:inline-block;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li.item-title > ul > li{
+  font-weight:bold;
+  border-bottom:1px #ddd solid;
+  padding:10px 0 8px 0;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li > input {
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.03);
+}
+.page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li > input:focus {
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  border:1px #b8202c solid;
+}
+@media(max-width:700px){
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > .item-title{
+    display:none;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li{
+    border-bottom:1px #ddd solid;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul{
+    padding:15px 0;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li{
+    padding:0 0 10px 0;
+    font-size:16px;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li > input{
+    font-size:16px;
+    height:40px;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(1),
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(2),
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(3),
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(4),
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(5),
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(6){
+    width:50%;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(2n+1){
+    padding-right:1%;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(2n){
+    padding-left:1%;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(5),
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(6) {
+    padding-bottom: 0;
+  }
+}
+@media(max-width:460px){
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(1),
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(2),
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(3),
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(4),
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(5),
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(6) {
+    width: 100%;
+    padding:0 0 10px 0;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(2n+1) {
+    padding-right: 0%;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(2n) {
+    padding-left: 0%;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .list-applicant-information-input > li > ul > li:nth-child(6) {
+    padding-bottom: 0;
+  }
+}
+/* Indivisual Information */
+.page.education-calendar-popup .wrapper-applicant-information > .panel-default::before,
+.page.education-calendar-popup .wrapper-applicant-information > .panel-default::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .panel-default > .panel-body > ul{
+  margin:10px 0;
+  padding-left:0;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .panel-default > .panel-body > ul > li{
+  position:relative;
+  padding-left:8px;
+}
+.page.education-calendar-popup .wrapper-applicant-information > .panel-default > .panel-body > ul > li::before{
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+@media(max-width:700px) {
+  .page.education-calendar-popup .wrapper-applicant-information > .panel-default{
+    font-size:16px;
+  }
+  .page.education-calendar-popup .wrapper-applicant-information > .panel-default > .panel-body > ul > li{
+    padding-left:10px;
+  }
+}
+
+/* Button */
+.page.education-calendar-popup .contents .wrapper-toolbar {
+  margin-bottom:25px;
+  }
+@media(max-width:889px) {
+  .page.education-calendar-popup .contents .wrapper-toolbar button {
+    font-size: 18px!important;
+  }
+}
+@media(max-width:480px) {
+  .page.education-calendar-popup .contents .wrapper-toolbar button {
+    min-width: 100%;
+    margin:0 0 10px 0;
+  }
+}
+
+/*****************************************************************/
+/* dev.41181 집체교육 켈린더 팝업 - 약도보기 팝업 / 200603 / 남진성 */
+/*****************************************************************/
+.page.education-calendar-popup-rough-map .header, 
+.page.education-calendar-popup-rough-map .contents, 
+.page.education-calendar-popup-rough-map .footer {
+  max-width: 640px !important;
+  margin: 0 auto!important;
+}
+.page.education-calendar-popup-rough-map .header .page-name{
+  display:block;
+  font-size:12px !important;
+}
+.page.education-calendar-popup-rough-map .contents{
+  margin-top: 0px !important;
+  padding:0;
+}
+.page.education-calendar-popup-rough-map .contents img{
+  width:100%;
+}
+@media(max-width:640px) {
+  .page.education-calendar-popup-rough-map .header .page-name {
+    font-size: 16px !important;
+  }
+}
+/*************************************************/
+/* A21_02680 상담문의 개인정보동의 팝업 / 20210408 */
+/*************************************************/
+.contact-us-cs-box .wrapper-application-modal{
+  left:20px;
+  right:20px;
+}
+
+/***********************************************/
+/* A21_03023 중국 홈페이지 Logo 변경 / 20210419 */
+/***********************************************/
+/*logo*/
+.page-login-form .contents .logo-cn {
+  height: 50px;
+  width: 400px;
+  background: url(../../vn/notfound.html?ver=2021041901) 0 0 no-repeat;
+  position: absolute;
+  top: 45px;
+  left: 10px
+}
+.page-login-form.userpay .contents .logo-cn {
+  background-position: 0 -50px
+}
+.page-login-form.cs .contents .logo-cn {
+  background-position: 0 -100px
+}
+.page-login-form.api .contents .logo-cn {
+  background-position: 0 -150px
+}
+.page-login-form.webmail .contents .logo-cn {
+  background-position: 0 -200px
+}
+@media all and (max-width: 640px) {
+  /*logo*/
+  .page-login-form .contents .logo-cn {
+    position: static;
+    margin-bottom: 20px;
+    height: 40px;
+    width: auto;
+    background-size: 300px 200px !important;
+    background: url(../../vn/notfound.html?ver=2021041901) 0 0 no-repeat;
+  }
+  .page-login-form.userpay .contents .logo-cn {
+    background-position: 0 -40px;
+  }
+  .page-login-form.cs .contents .logo-cn {
+    background-position: 0 -80px;
+  }
+  .page-login-form.api .contents .logo-cn {
+    background-position: 0 -120px;
+  }
+  .page-login-form.webmail .contents .logo-cn {
+    background-position: 0 -160px;
+  }
+}
+/* alert 레이어팝업 로고 */
+.page-alert-form .logo-cn {
+  height: 50px;
+  width: 400px;
+  background: url(../../vn/notfound.html?ver=2021041901) 0 0 no-repeat;
+}
+
+/**********************************************************************/
+/* A21_04315 조건 충족 시 신청화면 자동으로 띄워주기 / 20210608 / 남진성 */
+/**********************************************************************/
+.page-conditional-popup{
+  max-width:460px;
+  padding:0;
+  padding-bottom: 36px;
+  border-top:5px #b8202c solid;
+}
+/* Button Tab */
+.page-conditional-popup .wrapper-button-tab {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 20px 0;
+  background:#e9edf0;
+}
+.page-conditional-popup .wrapper-button-tab button {
+  display:inline-block;
+  width:112px;
+  min-width:112px;
+  height:86px;
+  background:#fff;
+  outline:0;
+  border:0;
+  border:5px #e9edf0 solid;
+  border-radius:12px;
+  margin-right:15px;
+  font-size:12px;
+  font-weight:bold;
+  color:#333;
+  transition:all 0.1s;
+}
+.page-conditional-popup .wrapper-button-tab button:hover {
+  border-radius:8px;
+  font-size:14px;
+  box-shadow:1px 2px 5px rgba(0,0,0,0.07);
+  border:1px #b8202c solid;
+}
+.page-conditional-popup .wrapper-button-tab button span{
+  position:relative;
+}
+.page-conditional-popup .wrapper-button-tab button:focus,
+.page-conditional-popup .wrapper-button-tab button:active{
+  padding:0;
+}
+.page-conditional-popup .wrapper-button-tab button:last-child {
+  margin-right:0;
+}
+.page-conditional-popup .wrapper-button-tab button::before {
+  content:"";
+  display:block;
+  width:26px;
+  height:26px;
+  margin:0 auto;
+  margin-top:5px;
+  margin-bottom:7px;
+  position:relative;
+  background: url(../images/homepage/conditional-modal863a.png?ver=2021060901) no-repeat;
+  background-size:80px auto;
+}
+.page-conditional-popup .wrapper-button-tab .button-tab-demo::before {
+  background-position:0 0px;
+}
+.page-conditional-popup .wrapper-button-tab .button-tab-visit::before {
+  background-position:-27px 0px;
+}
+.page-conditional-popup .wrapper-button-tab .button-tab-call::before {
+  background-position:-54px 0px;
+}
+.page-conditional-popup .wrapper-button-tab button.is-active {
+  background:#c6212e;
+  border:1px #c6212e solid;
+  color:#fff;
+  box-shadow:1px 2px 5px rgba(198,33,46,0.4);
+  font-size:14px;
+  border-radius:8px;
+}
+.page-conditional-popup .wrapper-button-tab button.is-active::before {
+  content:"";
+  display:block;
+  width:26px;
+  height:26px;
+  margin:0 auto;
+  margin-top:5px;
+  margin-bottom:7px;
+}
+.page-conditional-popup .wrapper-button-tab .button-tab-demo.is-active::before {
+  background-position:0 -27px;
+}
+.page-conditional-popup .wrapper-button-tab .button-tab-visit.is-active::before {
+  background-position:-27px -27px;
+}
+.page-conditional-popup .wrapper-button-tab .button-tab-call.is-active::before {
+  background-position:-54px -27px;
+}
+@media(max-width:420px){
+  .page-conditional-popup .wrapper-button-tab button {
+    width: 94px;
+    min-width: 94px;
+    height: 78px;
+  }
+}
+/* Form */
+.page-conditional-popup form h2{
+  position:relative;
+  padding: 24px 0;
+  margin:0;
+  font-size:20px;
+  font-weight:bold;
+  text-align:center;
+  line-height:1.4;
+  color:#000;
+}
+.page-conditional-popup form h2 br{
+  display:none;
+}
+.page-conditional-popup form h2::before{
+  content:"";
+  display:block;
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  -ms-transform:translateX(-50%);
+  width:68px;
+  height:2px;
+  background:#b8202c;
+}
+.page-conditional-popup form .list-input{
+  padding:30px 0;
+  padding-bottom:15px;
+  display:block;
+  max-width:360px;
+  margin:0 auto;
+}
+.page-conditional-popup form .list-input::before,
+.page-conditional-popup form .list-input::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+.page-conditional-popup form .list-input > li{
+  position:relative;
+  float:left;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:15px;
+}
+.page-conditional-popup form .list-input > li:last-child{
+  margin-bottom:0;
+}
+.page-conditional-popup form .list-input > li .title{
+  font-size:12px;
+  font-weight:bold;
+  color:#000;
+  width:20%;
+  text-align:right;
+  padding-right:12px;
+}
+.page-conditional-popup form .list-input > li .title br{
+  display:none;
+}
+.page-conditional-popup form .list-input > li .title .message{
+  display:none;
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  -ms-transform:translateY(-50%);
+  float:right;
+  font-size:11px;
+  font-weight:normal;
+  color:#b8202c;
+}
+.page-conditional-popup form .list-input > li .input-textbox{
+  width:80%;
+  height:40px;
+  font-size:12px;
+  padding:10px 12px;
+  border:0;
+  outline:0;
+  border-radius:5px;
+  background:#e9edf0;
+  border:1px #e9edf0 solid;
+  transition:all 0.2s;
+}
+.page-conditional-popup form .list-input > li .input-textbox:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #e9edf0 inset;
+  -webkit-text-fill-color: #000;
+}
+.page-conditional-popup form .list-input > li .input-textbox:-webkit-autofill:hover,
+.page-conditional-popup form .list-input > li .input-textbox:-webkit-autofill:focus,
+.page-conditional-popup form .list-input > li .input-textbox:-webkit-autofill:active,
+.page-conditional-popup form .list-input > li .input-textbox:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+}
+.page-conditional-popup form .list-input > li .input-textbox:focus{
+  border:1px #21588b solid;
+  background:#ecf0f3
+}
+.page-conditional-popup form .list-input > li .input-textbox.is-error{
+  border:1px #b8202c solid;
+}
+.page-conditional-popup form .list-input > li .input-textbox::-ms-clear,
+.page-conditional-popup form .list-input > li .input-textbox::-ms-reveal{
+	display:none;
+  width:0;
+  height:0;
+}
+.page-conditional-popup form .list-input > li .input-textbox::-webkit-search-decoration,
+.page-conditional-popup form .list-input > li .input-textbox::-webkit-search-cancel-button,
+.page-conditional-popup form .list-input > li .input-textbox::-webkit-search-results-button,
+.page-conditional-popup form .list-input > li .input-textbox::-webkit-search-results-decoration{
+	display:none;
+}
+@media(max-width:420px){
+  .page-conditional-popup form {
+    padding-left:15px;
+    padding-right:15px;
+  }
+  .page-conditional-popup form h2 br{
+    display:block;
+  }
+  .page-conditional-popup form .list-input > li .title br{
+    display:block;
+  }
+}
+/* input Select */
+.page-conditional-popup form .list-input > li .button-select{
+  width: 80%;
+  height:40px;
+  font-size: 12px;
+  padding:8px 12px;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  background: #e9edf0;
+  border:1px #e9edf0 solid;
+  text-align:left;
+  transition:all 0.2s;
+}
+.page-conditional-popup form .list-input > li .button-select:focus,
+.page-conditional-popup form .list-input > li .button-select:active{
+  border:1px #21588b solid;
+  padding:11px 12px;
+}
+.page-conditional-popup form .list-input > li .button-select span{
+  position:relative;
+}
+.page-conditional-popup form .list-input > li .button-select.is-active{
+  border:1px #21588b solid;
+}
+.page-conditional-popup form .list-input > li .button-select.is-error{
+  border:1px #b8202c solid !important;
+}
+.page-conditional-popup form .list-input > li .button-select.is-error + .select-arrow::before{
+  border-color:#b8202c !important;
+}
+.page-conditional-popup form .list-input > li .select-arrow{
+  width:40px;
+  height:40px;
+  position:absolute;
+  right:0;
+  top:0px;
+  cursor: pointer;
+}
+.page-conditional-popup form .list-input > li .button-select + .select-arrow::before{
+  content:"";
+  display:block;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-60%) rotate(-45deg) ;
+  width:8px;
+  height:8px;
+  border-bottom:2px #444 solid;
+  border-left:2px #444 solid;
+}
+.page-conditional-popup form .list-input > li .button-select.is-active + .select-arrow::before{
+  content:"";
+  display:block;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-20%) rotate(-45deg) ;
+  width:8px;
+  height:8px;
+  border-bottom:0;
+  border-left:0;
+  border-top:2px #21588b solid;
+  border-right:2px #21588b solid;
+}
+.page-conditional-popup form .list-input > li .dropdown-menu{
+  width:80%;
+  height:100px;
+  overflow-y:auto;
+  border-radius:5px;
+  margin-top:-1px;
+  border:1px #21588b solid;
+  right:0;
+  left:auto;
+}
+.page-conditional-popup form .list-input > li .dropdown-menu > .active > a,
+.page-conditional-popup form .list-input > li .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus{
+  background:#b8202c;
+}
+/* Agree */
+.page-conditional-popup form .wrapper-toolbar{
+  margin:0 auto;
+  max-width:360px;
+  text-align:right;
+}
+.page-conditional-popup form .wrapper-toolbar .check-desk-icon{
+  margin-bottom:7px;
+}
+.page-conditional-popup form .wrapper-toolbar .form-checkbox{
+  display:inline-block;
+  width:185px;
+  text-align:left;
+}
+.page-conditional-popup form .form-checkbox > input[type="checkbox"] + label:before {
+  background: #e3e9ec;
+  border: 1px solid #e3e9ec;
+}
+.page-conditional-popup form .form-checkbox.is-error > input[type="checkbox"] + label:before {
+  border:1px #b8202c solid;
+}
+.page-conditional-popup form .form-checkbox.is-error{
+  color:#b8202c;
+}
+.page-conditional-popup form .wrapper-toolbar .wrapper-application-modal{
+  text-align:left;
+}
+@media(max-width:420px){
+  .page-conditional-popup form .wrapper-toolbar .wrapper-application-modal{
+    position:fixed;
+    left:10px;
+    right:10px;
+    box-shadow: 1px 0px 10px rgba(0,0,0,0.5);
+    z-index: 10;
+    top:30px;
+    margin-bottom: auto  !important; 
+    bottom: 30px !important;
+    overflow-y:auto;
+  }
+}
+/* Submit */
+.page-conditional-popup form .wrapper-submit .submit-copy{
+  text-align:center;
+  font-size:12px;
+  padding:25px 0 15px;
+}
+.page-conditional-popup form .wrapper-submit .button-submit{
+  display:block;
+  margin:0 auto;
+  padding:10px;
+  width:100%;
+  max-width:360px;
+  border:0;
+  border-radius:8px;
+  outline:0;
+  background:#c6212e;
+  font-size:14px;
+  font-weight:bold;
+  color:#fff;
+}
+.page-conditional-popup form .wrapper-submit .button-submit:hover,
+.page-conditional-popup form .wrapper-submit .button-submit:focus{
+  background:#95121c;
+  padding:10px !important;
+}
+.page-conditional-popup form .wrapper-submit .button-submit:focus,
+.page-conditional-popup form .wrapper-submit .button-submit:active{
+  padding:12px;
+}
+.page-conditional-popup form .wrapper-submit .button-submit span{
+  position:relative;
+}
+/* Form Join */
+.page-conditional-popup form.join h2{
+  font-size:30px;
+}
+.page-conditional-popup form.join h2 span{
+  display:block;
+  font-size:16px;
+  margin-top:5px;
+}
+/****************************************************************/
+/* A21_09008 이카운트 약도 > 카카오맵 적용 요청 / 211213 / 남진성 */
+/****************************************************************/
+/*title*/
+.page.page-edu-map .header, 
+.page.page-edu-map .contents, 
+.page.page-edu-map .footer {
+  max-width: 640px !important;
+  margin: 0 auto!important;
+}
+.page.page-edu-map .header .page-name{
+  display:block;
+  font-size:12px !important;
+}
+.page.page-edu-map .contents{
+  margin-top: 0px !important;
+  padding:0;
+}
+.page.page-edu-map .contents img{
+  width:100%;
+}
+.page.page-edu-map .header .wrapper-title {
+  border: none;
+  border-bottom: 2px solid #333;
+}
+.page.page-edu-map .header .wrapper-title .wrapper-toolbar .pull-left .page-name {
+  padding-left: 10px;
+  font-size: 116.6666%
+}
+.page.page-edu-map .header .wrapper-title .wrapper-toolbar .pull-left .page-name:before {
+  display: none
+}
+@media(max-width:640px) {
+  .page.page-edu-map .header .page-name {
+    font-size: 16px !important;
+  }
+}
+/*map 상단*/
+.page.page-edu-map .map-kakao {
+  padding: 15px 10px;
+  line-height: 1.6;
+}
+.page.page-edu-map .map-kakao .is-emphasis-text {
+  color: #b8202c;
+  font-weight: bold;
+}
+.page.page-edu-map .map-kakao .title {
+  font-size: 133.3333%;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.page.page-edu-map .map-kakao .title.is-ways {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+.page.page-edu-map .map-kakao .list {
+  padding-left: 0;
+  list-style: none
+}
+.page.page-edu-map .map-kakao .list li {
+  padding: 5px 0;
+}
+.page.page-edu-map .map-kakao .list li .title-item {
+  font-weight: bold;
+}
+.page.page-edu-map .map-kakao .list.list-info {
+  margin-bottom: 15px;
+}
+.page.page-edu-map .map-kakao .list.list-info li {
+  display: flex;
+}
+.page.page-edu-map .map-kakao .list.list-info li .title-item {
+  flex: none;
+  width: 80px;
+}
+/*map 하단*/
+.page.page-edu-map .map-kakao .wrapper-location-detail .list {
+  border-top: 1px #000 solid;
+  padding-top: 7px;
+  margin-top: 6px
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail .title-list {
+  font-size: 116.6666%;
+  font-weight: bold
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail .list + .title-list {
+  margin-top: 15px;
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail .list li .title-item {
+  margin-bottom: 3px;
+}
+/*seoul*/
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list {
+  padding-left: 45px;
+  position: relative
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list:before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 12px;
+  line-height: 1;
+  border-radius: 2px;
+  background: #3cb44a;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%)
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list:after {
+  content: "2";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px #3cb44a solid;
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  background: #fff;
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  line-height:0;
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.namguro:before {
+  background: #697215
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.namguro:after {
+  content: "7";
+  border-color: #697215
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.godeok:before {
+	background: #8936e0
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.godeok:after {
+	content: "5";
+	border-color: #8936e0
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.amsa:before {
+  background: #e51e6e
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.amsa:after {
+  content: "8";
+  border-color: #e51e6e
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.bus:before,
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.walk:before {
+	content: unset;
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.bus:after,
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.walk:after {
+  content: "";
+  border: unset;
+  border-radius: unset;
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.bus:after {
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjM0NDMzQ0IiBkPSJNMTAuNjQyLDBjMC45MDUsMCwxLjgxMywwLDIuNzE4LDANCgljMC4wNzcsMC4wMSwwLjE1NCwwLjAyNCwwLjIzLDAuMDI5YzAuODMzLDAuMDU0LDEuNjY5LDAuMDgsMi40OTksMC4xNjVjMS4yNDYsMC4xMjYsMi40NjksMC4zNjUsMy42MDYsMC45MjMNCgljMC45MjYsMC40NTQsMS42NTksMS4xMDEsMi4wNjYsMi4wNzRjMC4yNjQsMC42MzEsMC4zNDUsMS4yOTMsMC4zNDUsMS45NjljMC4wMDIsNC4xMywwLDguMjYyLDAuMDAyLDEyLjM5Mw0KCWMwLDEuMDk4LTAuMzY1LDIuMDQzLTEuMTQ3LDIuODI0Yy0wLjA2NywwLjA2Ni0wLjEwOSwwLjE4OC0wLjEwOSwwLjI4NWMtMC4wMSwwLjY1Ni0wLjAwNSwxLjMxMy0wLjAwNiwxLjk2OQ0KCWMtMC4wMDEsMC41NjMtMC4yMjgsMC45OTQtMC43NDUsMS4yNWMtMC4wODksMC4wNDUtMC4xODEsMC4wOC0wLjI3MiwwLjExOWMtMC41NzgsMC0xLjE1NiwwLTEuNzM0LDANCgljLTAuODUzLTAuMzU5LTEuMDM4LTAuNjQxLTEuMDM4LTEuNThjMC0wLjMwOSwwLTAuNjE5LDAtMC45M2MtMy4zODYsMC02Ljc0MSwwLTEwLjExMSwwYzAsMC40MTYtMC4wMDEsMC44MTMsMC4wMDEsMS4yMTENCgljMC4wMDEsMC4zMTYtMC4wNjgsMC42MjUtMC4zMDIsMC44MzRDNi40MywyMy43MjcsNi4xNTQsMjMuODQ4LDUuOTA3LDI0Yy0wLjU3OCwwLTEuMTU2LDAtMS43MzQsMA0KCWMtMC44MTMtMC4yNzEtMS4wNjctMC44NjktMS4wMjMtMS42NzZjMC4wMy0wLjU1MywwLjAxMS0xLjEwNywwLjAwMS0xLjY2MmMtMC4wMDItMC4wOTgtMC4wNDMtMC4yMTktMC4xMS0wLjI4NQ0KCWMtMC43ODMtMC43ODEtMS4xNDgtMS43MjctMS4xNDgtMi44MjRjMC00LjEzMSwwLTguMjYyLDAuMDAxLTEyLjM5M2MwLTAuODA1LDAuMTE2LTEuNTg3LDAuNTA3LTIuMzA2DQoJYzAuNTYzLTEuMDM1LDEuNDg3LTEuNjE2LDIuNTUtMi4wMTRjMS4zLTAuNDg2LDIuNjYyLTAuNjUsNC4wMzQtMC43NDhDOS41MzUsMC4wNTMsMTAuMDg5LDAuMDMsMTAuNjQyLDB6IE00LjQzLDUuMDcNCgljMCwyLjEwMywwLDQuMTg1LDAsNi4yODFjNS4wNTQsMCwxMC4wOTQsMCwxNS4xNDIsMGMwLTIuMTAyLDAtNC4xODQsMC02LjI4MUMxNC41MjMsNS4wNyw5LjQ4OCw1LjA3LDQuNDMsNS4wN3ogTTYuMzA5LDE4Ljk0MQ0KCWMxLjA0MiwwLjAwNiwxLjg5NC0wLjg0LDEuODk3LTEuODgzQzguMjEsMTYuMDIsNy4zNjgsMTUuMTcsNi4zMjQsMTUuMTZjLTEuMDI5LTAuMDEyLTEuODkyLDAuODQ0LTEuOTAyLDEuODg1DQoJQzQuNDEsMTguMDcsNS4yNzEsMTguOTM4LDYuMzA5LDE4Ljk0MXogTTE3LjY5NCwxOC45NDFjMS4wMzgtMC4wMDYsMS44OTgtMC44NzMsMS44ODUtMS44OThjLTAuMDEzLTEuMDQzLTAuODc1LTEuODk1LTEuOTAzLTEuODgzDQoJYy0xLjA0NSwwLjAxMi0xLjg4NiwwLjg1OS0xLjg4LDEuOUMxNS44LDE4LjEwMiwxNi42NTIsMTguOTQ3LDE3LjY5NCwxOC45NDF6Ii8+DQo8L3N2Zz4NCg==");
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .title-list.walk:after {
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzcyNzI3MiIgZD0iTTUuODExLDIyLjEzOGMxLjMwOS0yLjI3NSwzLjMyOC01Ljc5LDQuNzYyLTguMjY5DQoJCQljLTAuMDI5LTAuMDUxLTAuMDYtMC4xMDItMC4wODktMC4xNTJjLTAuMjQ5LTAuNDMtMC4zNzctMC44OTItMC4zNjktMS4zOTVjMC4wMTItMC43MDIsMC4wMDQtMS40MDQsMC4wMDItMi4xMDcNCgkJCWMtMC4wMDEtMC4xMDEtMC4wMTgtMC4yMDItMC4wMjctMC4zMDNjLTAuMDMxLTAuMDA1LTAuMDYyLTAuMDEtMC4wOTMtMC4wMTRDOS45NCw5Ljk4NCw5Ljg4MiwxMC4wNyw5LjgzLDEwLjE1OQ0KCQkJYy0wLjQ0NiwwLjc2Ny0wLjg5MSwxLjUzNC0xLjMzNiwyLjMwMWMtMC4yMTEsMC4zNjItMC40MDgsMC43MzItMC42MzksMS4wODJjLTAuMjk4LDAuNDUyLTAuODg0LDAuNTctMS4zMTMsMC4yODkNCgkJCWMtMC40MzEtMC4yODItMC41NzgtMC44NTMtMC4zMjctMS4yODVDNy40NTUsMTAuNDAzLDguNzI5LDguMjgsOS45MTgsNi4xMWMwLjQzLTAuNzg1LDAuOTQzLTEuMDk3LDEuODMzLTEuMDQ5DQoJCQljMC44MTUsMC4wNDMsMS40MzMsMC4zNDcsMS43ODgsMC44ODFjMC4wMDQsMC4wMDQsMC4wMDksMC4wMDgsMC4wMTIsMC4wMTJjMC4wMDEsMC4wMDIsMC4wMDIsMC4wMDUsMC4wMDQsMC4wMDcNCgkJCWMwLjAwMiwwLjAwNCwwLjAwNCwwLjAwOSwwLjAwNywwLjAxM2MxLjA1LDEuODE2LDMuMTkyLDQuNzgyLDQuMjE4LDYuNjAxYzAuMTAxLDAuMTc4LDAuMTMsMC40MzksMC4wOTIsMC42NDQNCgkJCWMtMC4wODIsMC40MzgtMC40MDYsMC42OC0wLjgzMywwLjc1M2MtMC40MjIsMC4wNzMtMC43NDQtMC4xMTUtMC45NTYtMC40NzVjLTAuNC0wLjY3OC0xLjU0NC0yLjE0OS0yLjE5Ny0zLjExMQ0KCQkJYzAsMC43OTQsMCwxLjU4OCwwLDIuMzgzYzAsMC42MzQtMC4xMTksMS4zMDEsMC4wNCwxLjg5M2MwLjE2MSwwLjYwMSwwLjU5NywxLjEyOSwwLjkxNywxLjY4Nw0KCQkJYzEuMDk4LDEuOTA5LDIuMTk3LDMuODE2LDMuMjk3LDUuNzI1YzAuMTcsMC4yOTQsMC4yOTQsMC41OTUsMC4yMTMsMC45NDRjLTAuMTE1LDAuNDkyLTAuNTM0LDAuODc1LTEuMDYyLDAuOTY3DQoJCQljLTAuNDg2LDAuMDg0LTAuOTExLTAuMTM0LTEuMjA1LTAuNjM5Yy0xLjM3LTIuMzUyLTIuNzM3LTQuNzAzLTQuMTA0LTcuMDU0Yy0wLjY2NiwxLjE2Ny0xLjcyMywzLjAxNi0yLjE5OCwzLjgzNw0KCQkJYy0wLjYyLDEuMDY5LTEuMjM4LDIuMTQyLTEuODYyLDMuMjFjLTAuMzA0LDAuNTE5LTAuNzU3LDAuNzQxLTEuMjYyLDAuNjM2QzUuNzYzLDIzLjc4NSw1LjM1NSwyMi45MzEsNS44MTEsMjIuMTM4eiIvPg0KCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzcyNzI3MiIgZD0iTTEyLjEzNyw0LjM2M2MtMC44MSwwLjA4OS0xLjU4OC0wLjQwNC0xLjc3LTEuMTYxDQoJCQlDMTAuMjkyLDIuODg1LDEwLjMsMi41NDgsMTAuMjcsMi4yMmMwLjAxMS0wLjAwMSwwLjAyMS0wLjAwMSwwLjAzMS0wLjAwMmMwLTAuMjI0LTAuMDA4LTAuNDQ4LDAuMDAyLTAuNjcxDQoJCQljMC4wNC0wLjkwMiwwLjc1MS0xLjU1MywxLjY4My0xLjU0NmMwLjkxNywwLjAwNiwxLjYyLDAuNjU3LDEuNjUzLDEuNTQ2YzAuMDE2LDAuNDI4LDAuMDE0LDAuODU3LDAuMDAyLDEuMjg1DQoJCQlDMTMuNjE4LDMuNjc0LDEzLjAzMyw0LjI2NCwxMi4xMzcsNC4zNjN6Ii8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=");
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .list li {
+	display: flex
+}
+.page.page-edu-map .map-kakao .wrapper-location-detail.seoul .list li .title-item {
+  flex: none;
+  width: 80px;
+}
+
+/*******************************************************/
+/* ECK002M.aspx CMS Download Modal / 20220609 / 남진성 */
+/*******************************************************/
+.page-cms-download-modal .sign-sotation{
+  position:relative;
+}
+.page-cms-download-modal .wrapper-cms-download-modal.panel{
+  position: absolute;
+  bottom: 100%;
+  box-shadow: 1px 0px 10px rgba(0,0,0,0.5);
+  width: 100%;
+  z-index:10;
+  margin-bottom:10px;
+  display:none;
+}
+.page-cms-download-modal .wrapper-cms-download-modal .panel-heading {
+  padding-bottom:0;
+}
+.page-cms-download-modal .wrapper-cms-download-modal .panel-heading .title{
+  font-size: 18px;
+  font-weight: bold;
+}
+.page-cms-download-modal .wrapper-cms-download-modal .panel-heading .close {
+  opacity: 1
+}
+.page-cms-download-modal .wrapper-cms-download-modal .panel-heading .close::before{
+  font-family: font-icon;
+  content: "\e921";
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #666;
+  padding: 5px;
+  font-size:12px;
+}
+.page-cms-download-modal .wrapper-cms-download-modal .panel-body{
+  padding-top:5px;
+}
+.page-cms-download-modal .wrapper-cms-download-modal .panel-body .well{
+  margin-bottom:0;
+}
+.page-cms-download-modal .wrapper-cms-download-modal .wrapper-button{
+  padding:10px;
+  padding-top:0;
+}
+.page-cms-download-modal .wrapper-cms-download-modal .wrapper-button button:nth-child(n+2){
+  margin-left:5px;
+}

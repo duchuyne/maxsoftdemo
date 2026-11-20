@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<entry name="Anh" part="Customer Support" className="EC566">
+		<definition>Anh là người rung động trước những vẻ đẹp nhỏ bé và muốn nâng niu từng khoảnh khắc của cuộc sống.</definition>
+	</entry>
+	<entry name="Chi" part="Admin" className="EC487">
+		<definition>Cuộc sống chỉ có một lần nên hãy cứ làm những gì mình muốn!</definition>
+	</entry>
+	<entry name="Giang" part="Customer Support" className="EC488">
+		<definition>Châm ngôn mà Giang tâm đắc nhất là "Chỉ cần đủ kỷ luật và cố gắng, thử thách nào bạn cũng có thể chinh phục."</definition>
+	</entry>
+	<entry name="Ha Thanh" part="Sales" className="EC276">
+		<definition>"Work hard play hard". Thanh luôn làm hết sức chơi hết mình.</definition>
+	</entry>
+	<entry name="Hieu" part="Customer Support" className="EC521">
+		<definition>Tất cả mọi thứ - tích cực hay tiêu cực - đều bắt nguồn từ suy nghĩ của bạn. Vì cô ấy tôi luôn học cách tư duy tích cực và kiểm soát suy nghĩ của chính mình.</definition>
+	</entry>
+	<entry name="Huy" part="Sales" className="EC520">
+		<definition>Có một câu nói Huy rất ấn tượng là : " Be so good they can't ignore you " . Vì thế, Huy luôn cố gắng học hỏi và cải thiện nâng cao giá trị bản thân mỗi ngày.</definition>
+	</entry>
+	<entry name="Ngoc Thuy" part="Customer Support" className="EC302">
+		<definition>“Sự cố gắng không bao giờ phản bội bạn - Chỉ là bạn chưa thật sự cố gắng” Vì vậy Thúy luôn cố gắng học hỏi, trao dồi bản thân để có thể hoàn thành mọi thứ tốt nhất. </definition>
+	</entry>
+	<entry name="Nhu" part="Customer Support" className="EC597">
+		<definition>Như là người điềm tĩnh nhưng mạnh mẽ, coi trọng sự phát triển bền bỉ và tin rằng kết quả sẽ chứng minh năng lực của chính mình.</definition>
+	</entry>
+	<entry name="Nhung" part="Sales" className="EC114">
+		<definition>Nhung quan niệm rằng 'Có một thứ tài sản càng chia sẻ sẽ càng nhiều lên đó chính là kiến thức". Chính vì vậy cô luôn sẵn sàng học hỏi và chia sẻ mọi thứ xung quanh mình. Điều đó làm cô có cái nhìn khách quan về cuộc sống. Thay đổi suy nghĩ sẽ thay đổi cuộc sống.</definition>
+	</entry>
+	<entry name="Thuan" part="Customer Support" className="EC440">
+		<definition>Thuận là người thích tìm hiểu những điều mới mẻ. Yêu du lịch và các hoạt động thể thao.</definition>
+	</entry>
+	<entry name="Thuy Vy" part="Sales" className="EC456">
+		<definition>Là một người nhiệt huyết và thận trọng, phương châm sống của Thúy Vy là không ngừng phát triển bản thân. Sở thích của cô ấy là chơi cầu lông, du lịch và xem phim hoạt hình.</definition>
+	</entry>
+	<entry name="Uyen" part="Customer Support" className="EC598">
+		<definition>Uyên sống chậm rãi và chân thành, mỗi ngày đều học cách yêu thương bản thân nhiều hơn.</definition>
+	</entry>
+	<entry name="Yen" part="Sales" className="EC567">
+		<definition>Yen tin rằng điều quan trọng hơn hết là có dũng khí để bắt đầu chứ không phải là biết chính xác đích đến.</definition>
+	</entry>
+	<entry name="Cao nana" part="Sales" className="EC227">
+		<definition>Với tính cách năng động, Cao nana luôn nỗ lực để làm việc vui vẻ, sống tích cực và chăm chỉ mỗi ngày.</definition>
+	</entry>
+	<entry name="Chen zhigang" part="Admin" className="chenzhigang">
+		<definition>Chen zhigang vật và luôn cười. Anh tin rằng kiến thức và lối sống luôn kết nối với nhau.</definition>
+	</entry>
+	<entry name="Gao shunhui" part="Admin" className="gaoshunhui">
+		<definition>Gao shunhui thích theo đuổi một cuộc sống lành mạnh và sử dụng thời gian rảnh của anh để đọc sách tiểu thuyết. Anh tin rằng nơi nào có ý chí, nơi đó có thành công.</definition>
+	</entry>
+	<entry name="Guo shen" part="Customer Support" className="EC477">
+		<definition>Là người yêu cuộc sống và thích thử thách, Guo shen luôn tin rằng một ngày mới tốt đẹp hơn đang chờ đợi.</definition>
+	</entry>
+	<entry name="Hu qing" part="Customer Support" className="EC279">
+		<definition>Hu qing yêu cuộc sống, công việc, du lịch và muốn tận mắt cảm nhận thế giới.</definition>
+	</entry>
+	<entry name="Huang weixiang" part="Customer Support" className="EC568">
+		<definition>Huang Weixiang thích yên tĩnh đọc sách nhưng cũng thường vui vẻ nhảy múa đầy nhiệt huyết. Câu châm ngôn của Huang Weixiang là: "Đừng vội vàng, hãy gác lại những lo lắng mà sống!"</definition>
+	</entry>
+	<entry name="Jiang wenxian" part="Sales" className="EC569">
+		<definition>Jiang Wenxian là người luôn tích cực trong mọi việc, theo đuổi một cuộc sống tràn đầy năng lượng.</definition>
+	</entry>
+	<entry name="Jin Meishan" part="Customer Support" className="EC658">
+		<definition>Sống trọn vẹn từng ngày, làm việc hết mình.</definition>
+	</entry>
+	<entry name="Li wenyan" part="Sales" className="li-wenyan">
+		<definition>Chúng ta  hãy tận hưởng cuộc sống mỗi ngày và cùng cố gắng nào!</definition>
+	</entry>
+	<entry name="Wang yaping" part="Customer Support" className="minnie">
+		<definition>Wang yaping thích đi du dịch đây đó, bất cứ khi nào bạn gặp vấn đề với ERP hãy liên hệ ngay với cô ấy nhé!</definition>
+	</entry>
+	<entry name="Wu gaoxu" part="Customer Support" className="EC278">
+		<definition>Luôn lạc quan mỗi ngày, sở thích của Wu gaoxu là game và hoạt hình.</definition>
+	</entry>
+	<entry name="Xiao zeyu" part="Admin" className="EC242">
+		<definition>Xiao zeyu yêu công việc và thích đọc sách, thường tham gia thi chạy marathon hoặc chạy băng đồng vào cuối tuần.</definition>
+	</entry>
+	<entry name="Yang danhong" part="Customer Support" className="shrimp">
+		<definition>Yang danhong là người sở hữu quan niệm tính cực, cảm nhận tất cả mọi thứ xung quanh và nỗ lực nhận biết vẻ đẹp và màu sắc của cuộc sống này.</definition>
+	</entry>
+	<entry name="Zhao suzhen" part="Customer Support" className="zhao">
+		<definition>Zhao suzheng rất thích tụ tập cùng bạn bè. Sở thích của cô ấy là đọc sách dưới ánh nắng ban mai. </definition>
+	</entry>
+	<entry name="Alster" part="Sales" className="EC455">
+		<definition>Vào thời gian rảnh, Alster thường xem phim hoặc tập thể dục. Cô ấy cũng thường xuyên đi du lịch cùng bạn bè.</definition>
+	</entry>
+	<entry name="Amy" part="Customer Support" className="chen-naichen">
+		<definition>Chỉ duy nhất một lần nên hãy tận hưởng cuộc sống này!</definition>
+	</entry>
+	<entry name="Bella" part="Admin" className="EC655">
+		<definition>Hôm qua đã là quá khứ, ngày mai vẫn còn là điều bí ẩn, nhưng hôm nay là một món quà dành cho chúng ta.</definition>
+	</entry>
+	<entry name="Eric" part="Sales" className="eric">
+		<definition>Hãy chăm chỉ và thật sự chăm chỉ. Vận may sẽ đến tương đương với việc chăm chỉ đó.</definition>
+	</entry>
+	<entry name="Eunice" part="Customer Support" className="EC564">
+		<definition>Eunice hướng đến cuộc sống tập trung vào hiện tại và cảm nhận niềm vui ở mỗi khoảnh khắc. Cô ấy không hối tiếc về quá khứ đã qua, không lo lắng về tương lai chưa đến và sống trân trọng ngày hôm nay.</definition>
+	</entry>
+	<entry name="Gillian" part="Sales" className="EC588">
+		<definition>Gillian là người không ngần ngại theo đuổi điều mình thích, với tinh thần: nghỉ ngơi khi cần và làm hết mình khi đã bắt tay vào việc.</definition>
+	</entry>
+	<entry name="Irene" part="Customer Support" className="EC565">
+		<definition>Irene từng bước từng bước, luôn tưởng tượng về những khả năng và sống trọn vẹn mỗi ngày.</definition>
+	</entry>
+	<entry name="Jason" part="Sales" className="EC373">
+		<definition>Vào thời gian rảnh, Jason thường thích đến quán cafe, vừa xem phim vừa thưởng thức cà phê. Anh ấy cũng thích đi phượt và ngắm núi, ngắm biển cùng bạn bè.</definition>
+	</entry>
+	<entry name="Josh" part="Sales" className="josh">
+		<definition>Josh thích chơi bóng rổ và tập gym. Anh ấy lúc nào cũng kêu gọi ai muốn vận động cùng anh ấy thì hãy tham gia cùng.</definition>
+	</entry>
+	<entry name="Lance" part="Sales" className="EC296">
+		<definition>Sở thích của Lance là vận động, chơi bóng rổ và xem phim. Nếu bạn thích hoạt động ngoài trời thì hãy liên hệ Lance nhé!</definition>
+	</entry>
+	<entry name="Linda" part="Customer Support" className="EC657">
+		<definition>Làm việc chăm chỉ thì sẽ được ăn nhiều món ngon hơn.</definition>
+	</entry>
+	<entry name="Nuray" part="Customer Support" className="EC656">
+		<definition>Niềm vui khi lùi lại một bước khỏi dòng chảy của thế giới.</definition>
+	</entry>
+	<entry name="Sally" part="Customer Support" className="lin-chiahui">
+		<definition>Sally tin rằng nếu sống từng ngày thật vui vẻ thì cuộc sống sẽ trở nên hạnh phúc.</definition>
+	</entry>
+	<entry name="Sia" part="Customer Support" className="EC587">
+		<definition>Sia yêu mèo và thích đi du lịch, đồng thời rất đam mê khám phá nhiều quán cà phê khác nhau.</definition>
+	</entry>
+	<entry name="Susu" part="Customer Support" className="EC589">
+		<definition>Susu trân trọng những niềm vui nhỏ bé trong cuộc sống và luôn tìm cách đi theo con đường riêng của mình.</definition>
+	</entry>
+	<entry name="Amirul" part="Customer Support" className="EC479">
+		<definition>Amirul là người vô cùng đam mê công nghệ thông tin  và trò chơi điện tử.</definition>
+	</entry>
+	<entry name="Chan" part="Sales" className="EC646">
+		<definition>Chan cùng chú mèo của mình tạo nên những trải nghiệm mới, khám phá thế giới và tận hưởng từng khoảnh khắc phiêu lưu. Lấy cảm hứng từ thiên nhiên, Chan yêu nghệ thuật, trang điểm, du lịch và cầu lông.</definition>
+	</entry>
+	<entry name="Najwan" part="Sales" className="EC570">
+		<definition>Najwan là người có tính cách MBTI thuộc nhóm ISTJ, thường thưởng thức cà phê và chơi video game, đồng thời rất thích đi du lịch. Ngoài ra, anh ấy còn rất tự tin đến mức coi bản thân là người đa năng.</definition>
+	</entry>
+	<entry name="Anette" part="Training" className="anette">
+		<definition>Anette - một cô gái bình thường tự  nhận là người yêu thích màu tím, cô có nhiều sở thích như vẽ, đọc tiểu thuyết và truyện tranh và nghe nhạc. Gần đây, nấu ăn cũng được xem là một sở thích mới của cô.</definition>
+	</entry>
+	<entry name="Avisha " part="Customer Support" className="EC415">
+		<definition>Avisha nghĩ rằng việc tự công nhận bản thân mình quan trọng hơn sự công nhận của người khác.</definition>
+	</entry>
+	<entry name="Ayu" part="Admin" className="EC557">
+		<definition>Hãy sống là chính mình và giữ gìn vẻ đẹp chân thật của bản thân. Và luôn nhớ đến lòng biết ơn và hạnh phúc.</definition>
+	</entry>
+	<entry name="Ervan" part="Sales" className="EC556">
+		<definition>Khi bạn làm cho cuộc sống của người khác hạnh phúc hơn, chính là lúc bạn đang gieo những hạt giống phúc lành cho chính mình.</definition>
+	</entry>
+	<entry name="Frans" part="Customer Support" className="EC555">
+		<definition>Frans xem việc sống mỗi ngày một cách ý nghĩa là giá trị quan trọng nhất của mình.</definition>
+	</entry>
+	<entry name="Kurnia" part="Customer Support" className="kurnia">
+		<definition>Kurnia rất thích nấu ăn và đi du lịch cũng như gặp gỡ nhiều người mới. Cô ấy cho rằng nếu tin vào bản thân mình thì trên đời này không có gì là không thể cả.</definition>
+	</entry>
+	<entry name="Syauqi" part="Training" className="EC525">
+		<definition>Hãy trở thành những người có niềm đam mê mạnh mẽ như trái đất!</definition>
+	</entry>
+	<entry name="Cholatit" part="Sales" className="cholatit_2">
+		<definition>Cholatit rất thích đọc và viết văn. Anh ấy đang tích lũy việc đọc và viết văn, những đứa con của anh ấy cũng rất giúp ích cho việc tạo ra giá trị.</definition>
+	</entry>
+	<entry name="Isaraporn" part="Customer Support" className="EC560">
+		<definition>“Cố gắng hết mình thì sẽ không có gì phải hối tiếc!”</definition>
+	</entry>
+	<entry name="Kanpitcha" part="Customer Support" className="EC593">
+		<definition>Cho dù mưa có nặng hạt đến đâu, bầu trời rồi cũng sẽ trở nên quang đãng trở lại!</definition>
+	</entry>
+	<entry name="Kongpipob" part="Training" className="kongpipob">
+		<definition>Kongpipob thích đi đến những nơi có phong cảnh đẹp và chụp hình.</definition>
+	</entry>
+	<entry name="Kornrapat" part="Sales" className="EC409">
+		<definition>Kornrapat thích đi du lịch để nạp đầy năng lượng nhằm nâng cao hiệu suất trong công việc của mình.</definition>
+	</entry>
+	<entry name="Kunnapa" part="Training" className="EC337_2">
+		<definition>Kunnapa nói rằng xem phim, nghe nhạc và gặp gỡ bạn bè làm cô ấy vui vẻ và giải tỏa căng thẳng.</definition>
+	</entry>
+	<entry name="Natchalida" part="Sales" className="EC644">
+		<definition>Cuộc đời ngắn ngủi, hãy sống sao cho thật ý nghĩa.</definition>
+	</entry>
+	<entry name="Natitorn" part="Sales" className="EC225">
+		<definition>Natitorn rất thích mèo, anh ấy  làm việc vui vẻ bằng cách tưởng tượng là có những chú mèo ở văn phòng.</definition>
+	</entry>
+	<entry name="Nattakarn" part="Customer Support" className="EC478_2">
+		<definition>Là người thích nghe nhạc và chơi game, Nattakarn thường nạp năng lượng thông qua việc nghỉ ngơi hoặc ăn các món ăn ngon.</definition>
+	</entry>
+	<entry name="Nattasit" part="Customer Support" className="nattasit_2">
+		<definition>Hãy sống đừng phức tạp, cười thường xuyên và yêu mãnh liệt !!!</definition>
+	</entry>
+	<entry name="Papitchaya" part="Customer Support" className="EC591">
+		<definition>Papitchaya tin rằng chỉ cần trưởng thành 1% mỗi ngày, sau một năm sẽ tạo ra một sự thay đổi thật kỳ diệu.</definition>
+	</entry>
+	<entry name="Ronnachai" part="Admin" className="EC562">
+		<definition>Hãy cố lên nào. Cuối tuần đang đến gần!</definition>
+	</entry>
+	<entry name="Suwajjanee" part="Sales" className="EC645">
+		<definition>Thành công bắt đầu từ việc tin tưởng vào chính mình.</definition>
+	</entry>
+	<entry name="Thanakorn" part="Sales" className="EC561">
+		<definition>Thanakorn biết rằng không phải ngày nào cũng là một ngày tốt lành, nhưng anh ấy tin rằng thái độ tích cực cuối cùng sẽ biến mỗi ngày trở thành một ngày tốt đẹp.</definition>
+	</entry>
+	<entry name="Thanchanok" part="Training" className="EC183">
+		<definition>Thanchanok thích dành thời gian đi cà phê sau khi kết thúc công việc. </definition>
+	</entry>
+	<entry name="Thanyathon" part="Customer Support" className="EC590">
+		<definition>Thanyathon tin rằng mọi sự trưởng thành đều bắt đầu từ sự không thoải mái, và vì thế luôn nỗ lực sống hết mình mỗi ngày.</definition>
+	</entry>
+	<entry name="Wijittraporn" part="Customer Support" className="EC592">
+		<definition>Wijittraporn không thể tưởng tượng một thế giới thiếu vắng đồ ăn, và luôn mang đến niềm vui nhỏ cùng năng lượng tích cực mỗi ngày thông qua những món ngon.</definition>
+	</entry>
+	<entry name="Wimolsiri" part="Customer Support" className="EC406">
+		<definition>Khi Wimolsiri thấy mệt mỏi, cô ấy thường ngủ một giấc để có thêm sức mạnh tiếp tục cố gắng.</definition>
+	</entry>
+	<entry name="Belle" part="Admin" className="EC559">
+		<definition>Belle luôn trân trọng mọi mối duyên gặp gỡ vì chứa đựng ý nghĩa đặc biệt và thường cảm nhận được niềm vui từ những giai điệu âm nhạc hay cùng những câu chuyện ý nghĩa. Cô ấy cũng biết ơn những niềm hạnh phúc nhỏ bé nhưng lớn lao như một tách cà phê thơm ngon, mang lại sự ấm áp cho cuộc sống thường ngày.</definition>
+	</entry>
+	<entry name="Grace" part="Customer Support" className="EC642">
+		<definition>Grace lấp đầy tâm trí bằng những suy nghĩ tích cực, làm phong phú tâm hồn bằng những món ăn ngon và tạo thêm chiều sâu cho cuộc sống qua những mối nhân duyên tốt đẹp. Cô trân trọng cả những khoảnh khắc tĩnh lặng để suy ngẫm lẫn những trải nghiệm tràn đầy năng lượng, đồng thời xem mỗi hành trình được dẫn lối bởi sự tò mò và những người đã cùng đồng hành là những kỷ niệm quý giá, đáng nhớ mãi về sau.</definition>
+	</entry>
+	<entry name="Ian" part="Customer Support" className="EC522">
+		<definition>Ian là một Song Ngư, lặn sâu xuống đại dương để tìm cảm hứng. Anh ấy thích ghi lại vẻ đẹp của biển bằng sổ phác thảo và máy ảnh của mình rồi biến nó thành tác phẩm nghệ thuật. Anh ấy nói rằng tình yêu dành cho âm nhạc, thể thao và thiết kế gắn liền với biển đã làm phong phú thêm khả năng sáng tạo của anh ấy.</definition>
+	</entry>
+	<entry name="Joshua" part="Customer Support" className="EC524">
+		<definition>Joshua thích chơi bóng rổ và cầu lông, thích xem các bộ phim hài lãng mạn và phim y khoa như 'Friends' và 'Grey's Anatomy'. Anh ấy là người yêu thú cưng, có nhiều bạn lông xù và yêu thích âm nhạc.</definition>
+	</entry>
+	<entry name="Maica" part="Sales" className="EC523">
+		<definition>Maica trân trọng gia đình yêu thương và những thú cưng của mình, đồng thời coi mỗi ngày là một cơ hội mới cho những cuộc phiêu lưu thú vị và những kỷ niệm quý giá.</definition>
+	</entry>
+	<entry name="Marco" part="Customer Support" className="EC503">
+		<definition>Là người thích bơi lội và tiểu thuyết, Marco thích được ngâm mình trong nước hoặc chìm đắm trong những quyển sách.</definition>
+	</entry>
+	<entry name="Mark" part="Customer Support" className="EC558">
+		<definition>Mark thích đi du lịch và mục tiêu của anh ấy là thưởng thức các món ăn đa dạng trên khắp thế giới. Nhưng sau một ngày dài mệt mỏi, thứ anh ấy luôn quay về thưởng thức là món kwek-kwek quen thuộc và ngon miệng được bán trên đường phố Philippines.</definition>
+	</entry>
+	<entry name="Mary" part="Sales" className="EC596">
+		<definition>Mary yêu cả chó lẫn mèo, thích xem phim, thưởng thức những món ăn ngon và khám phá những vùng đất mới qua những chuyến du lịch. Cuộc sống của cô đầy ắp những trải nghiệm mới, những bữa ăn ngon và những khoảnh khắc ấm áp bên những người bạn bốn chân đáng yêu.</definition>
+	</entry>
+	<entry name="Roi" part="Customer Support" className="EC595">
+		<definition>Roi tìm thấy năng lượng khi lái xe máy và giữ được sự cân bằng tinh thần qua những trận bida đầy tập trung. Nhờ hai sở thích đó, Roi đã vượt qua rất nhiều thời điểm khó khăn trong cuộc sống mà không lung lay.</definition>
+	</entry>
+	<entry name="Roxanne" part="Sales" className="EC643">
+		<definition>Roxanne đặc biệt mềm lòng trước những chú chó và có niềm đam mê khác biệt dành cho ẩm thực. Cô xây dựng cuộc sống của mình dựa trên đức tin và mơ ước một ngày nào đó sẽ đi du lịch vòng quanh thế giới, khám phá những vùng đất mới vào ban ngày và thử những món ăn mới vào ban đêm.</definition>
+	</entry>
+	<entry name="Ah-Ram" part="Development" className="ah-ram">
+		<definition>Ah-Ram là thường xuyên xử lý các lỗi chương trình và đưa ra giải pháp. Chúng tôi khá chắc chắn rằng lỗi của chương trình cũng sợ cô ấy.</definition>
+	</entry>
+	<entry name="Ah-Yeong" part="Development" className="EC267">
+		<definition>Ah-Yeong sẽ chạy nhảy tung tăng khi phấn khích, cô ấy thích tán gẫu và chơi đùa với bạn bè. Cô ấy cũng rất xem trọng việc dành thời gian ở một mình khi viết nhật ký.</definition>
+	</entry>
+	<entry name="Beom-Ju" part="Security" className="EC125">
+		<definition>Beom-Ju là người có tính cách cẩn thận và siêng năng, đang đảm nhiệm công việc về bảo an của Ecount trong môi trường IT biến đổi nhanh chóng. Anh ấy thích ra ngoài lái xe vào cuối tuần và nếu có cơ hội, một trong những mục tiêu của anh ấy là chạy bộ trên những con đường dài của Mỹ. </definition>
+	</entry>
+	<entry name="Bok-Sub" part="Director of Development" className="bok-sub">
+		<definition>Mặc dù ông đã được sinh ra trên một hòn đảo, Bok -Sub không phải là một fan hâm mộ của hải sản. Anh ấy thích đi dạo với vợ và đàn  một vài giai điệu trên cây đàn guitar cổ điển của mình bất cứ khi nào anh ấy có một cơ hội.</definition>
+	</entry>
+	<entry name="Bong-Min" part="Development Design" className="EC625">
+		<definition>Choi Bongmin yêu thích chạy bộ và duy trì việc chạy đều đặn để giữ nhịp sống trong tuần. Sau khi đổ mồ hôi tập luyện, anh thường tự thưởng cho mình món thịt ba chỉ nướng. Anh là người luôn cân bằng giữa sức khỏe và niềm vui trong cuộc sống.</definition>
+	</entry>
+	<entry name="Bo-Ram" part="Customer Support" className="bo-ram">
+		<definition>Bo-Ram thích Sherlock Holmes và đó là lý do cô ấy ước mơ được đi đến London. Cô ấy rất giỏi lắng nghe người khác và thích tạo bất ngờ cho bạn bè cô ấy</definition>
+	</entry>
+	<entry name="Byeong-Gon" part="Director of Operations" className="byeong-gon">
+		<definition>Byeong-Gon,mang quan điểm sống là 'Hãy sống thật vui vẻ',anh ấy thích tham gia hoạt động sôi nổi như cắm trại, đạp xe đạp, chơi golf v.v.Giấc mơ của anh ấy là chơi golf giữ 80 gậy chuẩn và vượt cao bằng xe đạp trên độ cao 3m.</definition>
+	</entry>
+	<entry name="Byeong-Yeol" part="Marketing" className="EC443">
+		<definition>Byeong-Yeol luôn tìm kiếm những công việc đầy hứng thú mỗi ngày, anh ấy thích một cuộc sống vừa hài hước nhưng lại vừa nghiêm túc. Sở thích dạo gần đây của anh ấy là chăm sóc cây trồng.</definition>
+	</entry>
+	<entry name="Byong-Yong" part="Development" className="byung-yong">
+		<definition>Byung-Yong là 1 chàng trai hăng hái và sôi nổi, có một nụ cười tươi. Anh mơ ước 1 thân hình đẹp vì vậy anh thường xuyên đến phòng Gym sau giờ làm.</definition>
+	</entry>
+	<entry name="Byung-Gak" part="Development" className="byung-gak">
+		<definition>Byung-Gak là một chàng trai của những con số. Anh ấy thích thú với các con số. Ông giải quyết mọi vấn đề với những con số. Đã có một thời gian, anh rất thích nghe nhạc, nhưng bây giờ anh học  tiếng Anh và nghe băng tiếng Anh, và những câu chuyện về những con số.</definition>
+	</entry>
+	<entry name="Byung-Kwon" part="Training" className="byung-kwon">
+		<definition>Cho dù nhiều tuổi nhưng Byung-Kwon mang tâm trí tò mò như đứa trẻ, mơ ước của anh ấy là sống với sở thích. Và muốn thử sức với những môn thể thao mạo hiểm như nhảy dù, chạy xe đạp leo núi, leo núi nhân tạo. </definition>
+	</entry>
+	<entry name="Chan" part="DQM" className="EC284">
+		<definition>Chan thích các môn thể thao năng động, cứ một hoặc hai tuần anh ấy lại đá bóng với bạn bè một lần. Anh ấy cũng thích du lịch nên sau khi hết dịch covid anh ấy sẽ du lịch các nước mà đã không thể đi.</definition>
+	</entry>
+	<entry name="Chan-Byeol" part="DQM" className="EC640">
+		<definition>Kim Chan-Byeol yêu mèo và thường xem các video YouTube về quan sát mèo. Khi căng thẳng, cô thường chơi với đồ chơi Squishy để thư giãn. Gần đây, cô đặc biệt quan tâm đến nội thất và đang say mê niềm vui trang trí không gian sống.</definition>
+	</entry>
+	<entry name="Chang-Kyu" part="Customer Support" className="EC364">
+		<definition>Chang-Kyu rất thích giao tiếp với mọi người và thích chạy bộ tại công viên. Anh thường hay đi đến các điểm du lịch mới, thưởng thức rượu cùng những món ăn ngon.</definition>
+	</entry>
+	<entry name="Chang-Min" part="System Management" className="EC631">
+		<definition>Son Changmin là quản trị viên hệ thống Linux luôn mơ về việc tự động hóa mọi công việc lặp đi lặp lại bằng các script. Bình thường anh cũng thích dành thời gian “thiền định” bằng cách nhìn vào màn hình console Linux.</definition>
+	</entry>
+	<entry name="Chang-Mo" part="Development" className="chang-mo">
+		<definition>Chang-Mo là một trong những thành viên của nhóm hỗ trợ khách hàng và nhiệm vụ của anh ấy là đảm bảo khách hàng không gặp bất cứ vấn đề gì. Anh ấy cũng là người hay đưa ra những cuộc thảo luận sôi nổi trong nhóm.</definition>
+	</entry>
+	<entry name="Chang-Woo" part="Sales" className="EC404">
+		<definition>Chang Woo thích chơi với mọi người xung quanh đến mức tưởng mình là Pororo của kiếp trước. Anh ấy thích gặp gỡ bạn bẻm chơi game, bóng đá và uống rượu.</definition>
+	</entry>
+	<entry name="Chan-Ok" part="QA" className="chan-ok">
+		<definition>Chan-Ok đã không chỉ giúp tăng doanh số trung bình  của bộ phận bán hàng , mà còn tăng chiều cao trung bình của công ty! Anh ấy là nhân viên cao nhất của chúng tôi!</definition>
+	</entry>
+	<entry name="Cheol-Won" part="Development" className="cheolwon">
+		<definition>Tôi đang nỗ lực sống với những quan niệm tích cực và đang có giấc mơ đến lúc nào đó sẽ đi du lịch thế giới. Để giải tỏa căng thẳng tôi gặp gỡ những người bạn hoặc đọc sách khi rãnh rỗi, tận hưởng sự tự do.</definition>
+	</entry>
+	<entry name="Chi-Hyun" part="DPO" className="EC497">
+		<definition>Chi-Hyun thích các trò chơi dưới nước. Sở thích của anh ấy là bơi lội, lướt ván. Anh ấy muốn được chất ván lên xe vào những ngày đẹp trời, đến thám hiểm những vùng sông và biển đẹp.</definition>
+	</entry>
+	<entry name="Chi-Min" part="Development" className="chi-min">
+		<definition>Chi-Min là thành viên của Nhóm Hỗ trợ khách hàng và một người yêu âm nhạc. Nếu bạn không bắt gặp anh ta đeo tai nghe, anh ta có thể đang đeo tai nghe vô hình.</definition>
+	</entry>
+	<entry name="Chul-Hwan" part="Development" className="EC619">
+		<definition>Ha Chulhwan yêu cà phê đến mức tự tạo cho mình một “home café” ngay tại nhà. Sưu tầm những loại cà phê có hương thơm đặc biệt chính là sở thích của anh.</definition>
+	</entry>
+	<entry name="Chul-Min" part="Development" className="chul-min">
+		<definition>Chul -Min là 1 người bạn của sự yêu thích. Ông chỉ dường như không thể nói không! Ông luôn luôn đảm bảo công việc được xử lý đúng cách và là chàng trai khá là có trách nhiệm.</definition>
+	</entry>
+	<entry name="Crispin" part="Development" className="crispin">
+		<definition>Seung-Yang đã sống khoảng 10 năm ở Hàn quốc, có cảm giác tiếng Hàn vẫn còn thiếu nhưng mà rất thích hội thoại bằng tiếng Hàn. Giấc mơ của anh ấy là mong muốn trong cuộc sống sẽ không có gì hối hận.</definition>
+	</entry>
+	<entry name="Dae-Geun" part="Training" className="dae-geun">
+		<definition>Gần đây Dae Geun có sở thích đi xe đạp, cô thích đạp xe tới sông Hàn vào cuối tuần. Đi xe đạp vừa có thể ngắm cảnh, vừa tăng cường thể lực. Mục tiêu của anh ấy là có thể du lịch khắp cả nước bằng xe đạp.</definition>
+	</entry>
+	<entry name="Dae-Gwan" part="Development" className="dae-gwan">
+		<definition>Dae-Gwan là một người đam mê lập trình đến nỗi trong khi ngủ anh ấy cũng mơ đến công việc.</definition>
+	</entry>
+	<entry name="Dae-Ho" part="Development" className="dae-ho">
+		<definition>Mặc dù Dae-Ho nhiều lúc trông có vẻ hơi lạnh lùng, nhưng anh ấy thật sự khá quyến rũ.</definition>
+	</entry>
+	<entry name="Dae-In" part="Training" className="daein">
+		<definition>Tôi thích thú với bóng đá đủ nhận lấy chứng nhận về trọng tài bóng đá. Thêm nữa, nếu có thời gian rỗi, tôi đi du lịch. Đứng trước bãi biển yên tĩnh tại nơi nghỉ mát thì tôi rất thích làm 1 ly bia.
+</definition>
+	</entry>
+	<entry name="Da-Eun" part="Customer Support" className="EC188">
+		<definition>Với tính cách hoạt bát, Da-Eun rất thích đi du lịch nên cô ấy luôn phân vân sẽ đi đâu vào mỗi cuối tuần. Cô ấy thích đi chơi với mọi người và uống rượu cùng nhau nên nếu bất cứ lúc nào bạn muốn tìm một người để uống rượu thì cô ấy luôn sẵn lòng.</definition>
+	</entry>
+	<entry name="Dae-Yub" part="Development Design" className="dae-yub">
+		<definition>Anh thích chơi nhạc nhiều, anh cũng hay có những buổi biểu diễn trên đường phố.</definition>
+	</entry>
+	<entry name="Da-Hun" part="Development" className="EC626">
+		<definition>Kang Dahun luôn dồn trọn đam mê vào từng trận đấu khi mùa bóng chày đến. Ngoài bóng chày, anh còn có nhiều sở thích khác như cà phê, guitar… nên được xem là “người giàu sở thích”. Gần đây anh còn bắt đầu say mê nấu ăn và đi tìm các quán ăn ngon.</definition>
+	</entry>
+	<entry name="Da-Yeon" part="DAM" className="EC637">
+		<definition>Lee Da-Yeon tận hưởng cuộc sống với nhiều sở thích đa dạng như âm nhạc, phim ảnh, thể thao và du lịch. Cô vừa thích nghỉ ngơi tại nhà, vừa yêu thích việc tích lũy nhiều trải nghiệm thông qua các hoạt động khác nhau. Trong số đó, niềm hạnh phúc lớn nhất của cô chính là khoảng thời gian được ở bên những người thân yêu.</definition>
+	</entry>
+	<entry name="Da-Yeong" part="Customer Support" className="EC474">
+		<definition>Là người thích cà phê và nướng bánh, Da-yeong thích ra ngoài chơi thay vì chỉ ở nhà vào mỗi cuối tuần.</definition>
+	</entry>
+	<entry name="Da-Yong" part="Development Design" className="EC553">
+		<definition>Lee Da-yong, người bị cuốn hút bởi những bộ phim, phim truyền hình và truyện tranh hay, có ước mơ sáng tác một tác phẩm của riêng mình, mang lại cảm hứng sâu sắc cho người khác giống như những tác phẩm đã từng truyền cảm hứng cho anh ấy.</definition>
+	</entry>
+	<entry name="Do-Hyung" part="Development" className="EC544">
+		<definition>Kim Do-hyung, người thích các hoạt động văn hóa, thường ghé thăm các buổi triển lãm vào cuối tuần hoặc tận hưởng thời gian thư thái tại quán cà phê để cảm nhận niềm vui trong cuộc sống.</definition>
+	</entry>
+	<entry name="Dong-Chun" part="Customer Support" className="dong-chun">
+		<definition>Niềm đam mê của Dong-Chun là vẽ và thiết kế các tính năng trong chương trình đã thực sự làm cho anh ta là một tài sản của nhóm. Sau khi học chuyên ngành triết học và lịch sử, anh vẫn quan tâm trong việc đi đến những nơi độc đáo trên thế giới với một bản đồ.</definition>
+	</entry>
+	<entry name="Dong-Geon" part="Development" className="EC354">
+		<definition>Dong-Geon rất hay xem Nexflix vào buổi tối. Anh còn thích chơi game hoặc vừa uống rượu vừa trò chuyện cùng người thân. Anh ấy mơ ước sẽ tổ chức được một bữa tiệc tại nhà cùng với những người quen biết.</definition>
+	</entry>
+	<entry name="Dong-Ho" part="Training" className="EC129">
+		<definition>Dong-Ho đã bắt đầu nấu ăn vì thấy vui khi nhìn mọi người ăn ngon miệng những món mà anh ấy nấu. Anh ấy chơi bóng đá vì yêu thích đội MU. Anh ấy muốn sau này sẽ mở Izakaya và tận hưởng quãng đời còn lại cùng với gia đình và bạn bè.  </definition>
+	</entry>
+	<entry name="Dong-Hwan" part="Admin" className="dong-hwan2">
+		<definition>Nhìn có vẻ điềm đạm nhưng có nhiều thú vui ẩn chứa bên trong tâm hồn của Dong-Hwan. Dong-Hwan rất thích hát hò và các hoạt động thể thao như bóng rổ, đạp xe đạp. Mỗi ngày anh ấy đều thư giãn với 1 ly Americano đá và luôn sống hết mình với quan điểm của mình rằng "Tôi của ngày mai nhất định phải trưởng thành hơn tôi của ngày hôm nay".</definition>
+	</entry>
+	<entry name="Dong-Hwan" part="DPO" className="EC635">
+		<definition>Yang Dong-Hwan là người coi trọng một cơ thể khỏe mạnh và đặc biệt yêu thích các môn thể thao như tập gym, bóng rổ và cầu lông. Không chỉ vậy, từ nhỏ anh đã rèn luyện kỹ năng chơi clarinet đến mức từng có ý định theo đuổi chuyên ngành này. Dù ít luyện tập hơn sau khi trưởng thành, giờ đây anh đang có ý định bắt đầu chơi nhạc trở lại.</definition>
+	</entry>
+	<entry name="Dong-Hyeon" part="Development" className="EC615">
+		<definition>Lee Donghyeon, người yêu thích nấu ăn, cho rằng niềm hạnh phúc lớn nhất của mình là khi người khác thưởng thức món ăn do anh nấu và thấy ngon. Ước mơ của anh là phát triển một signature course mang phong cách riêng.</definition>
+	</entry>
+	<entry name="Dong-Hyuk" part="Development" className="dong-hyuk">
+		<definition>Là một người nhiệt huyết và thích kết giao bạn bè, Dong Hyuk thích ra ngoài khám phá hơn là ở trong nhà. Anh ấy thích thể thao đặc biệt là bóng đá và bơi lội.</definition>
+	</entry>
+	<entry name="Dong-Hyun" part="Customer Support" className="dong-hyun">
+		<definition>Khi Dong-Hyun không làm việc đào tạo khách hàng, ông là người trầm tĩnh. Chúng tôi không thực sự chắc chắn những gì ông suy nghĩ về khi ông ngồi thiền, nhưng chúng ta giả định đó là Ecount.</definition>
+	</entry>
+	<entry name="Dong-Hyun" part="Development" className="EC650">
+		<definition>Kim Dong-Hyun, chàng trai lên Seoul lập nghiệp, đang lần lượt thử những sở thích mà trước đây chưa từng có dịp trải nghiệm. Nghe nói dạo này anh say mê việc đi khắp các buổi hòa nhạc để tìm ra những bản nhạc mới.</definition>
+	</entry>
+	<entry name="Dong-Woo" part="Development" className="EC632">
+		<definition>Jung Dong Woo là người trở nên nghiêm túc hơn ai hết khi đứng trước món ăn ngon, và cũng là người bình yên nhất khi ở nhà. Châm ngôn sống của anh là ăn ngon và nghỉ ngơi thật tốt.</definition>
+	</entry>
+	<entry name="Doo-Hwan" part="DS" className="doo-hwan">
+		<definition>Doo-Hwan thích chơi game và robot, bên ngoài thì thích bơi, shopping, leo núi.Anh ấy muốn trở thành chuyên gia DBA số 1 trong nước và rất vui khi đạt được bước khởi đầu từ công ty Ecount.</definition>
+	</entry>
+	<entry name="Doo-Sik" part="Development" className="doo-sik">
+		<definition>Doo-Sik là nhà phát triển, rất thích lập trình uống café tại quán. Đồng thời, sau khi cùng vận động với những người bạn thì đúng như thói quen của nhà phát triển, thích thưởng thức một ly bia mát lạnh.</definition>
+	</entry>
+	<entry name="Eden" part="Admin" className="EC536">
+		<definition>Yoon Eden, người luôn coi trọng sức khỏe thể chất và tinh thần, là một người tìm kiếm niềm vui và năng lượng trong cuộc sống thông qua nhiều sở thích khác nhau.</definition>
+	</entry>
+	<entry name="Eun" part="Customer Support" className="EC511">
+		<definition>Kim Eun là người yêu thích Pilates và cầu lông, cô ấy thích nạp lại năng lượng thông qua các bài tập đổ nhiều mồ hôi.</definition>
+	</entry>
+	<entry name="Eun-A" part="Customer Support" className="eun-a">
+		<definition>Eun-A yêu thích tất cả các thể loại phim và thích chơi các game nhóm với mọi người.</definition>
+	</entry>
+	<entry name="Eun-Bi" part="Marketing" className="EC624">
+		<definition>Cho Eunbi thích nấu ăn và tận hưởng thời gian tự tay chuẩn bị món ăn cho mình. Trong thời gian rảnh cô thường tập thể dục hoặc xem phim để tận hưởng những khoảnh khắc thư giãn trong ngày. Chính từ những điều nhỏ bé ấy mà cô tìm thấy niềm vui trong cuộc sống.</definition>
+	</entry>
+	<entry name="Eun-Chong" part="Development" className="eun-chong">
+		<definition>Eun-Chong là người sở hữu quan điểm tích cực, luôn luôn đi tìm sự hạnh phúc. Anh ấy chơi ghita là sở thích, mỗi ngày đều vui vẻ và tự do như là con châu chấu.</definition>
+	</entry>
+	<entry name="Eun-Gyo" part="Development Design" className="EC538">
+		<definition>Lee Eun-gyo, người theo đuổi một cuộc sống lành mạnh và thích đọc sách ở những nơi yên tĩnh, gần đây bắt đầu quan tâm đến tài chính cá nhân. Cô đang đọc các sách về chứng khoán và đấu giá để tìm hiểu các phương pháp đầu tư mới.</definition>
+	</entry>
+	<entry name="Eun-Hye" part="DQM" className="EC634">
+		<definition>Park Eun-Hye yêu thích những cuộc trò chuyện thoải mái cùng những người thân thiết. Khi ở một mình, cô thích đọc tiểu thuyết hoặc thong thả đi du lịch.</definition>
+	</entry>
+	<entry name="Eun-Hyun" part="Development" className="eun-hyun">
+		<definition>Là một fan hâm mộ bóng chày cuồng nhiệt, Eun-Hyun luôn luôn vui vẻ và tràn đầy năng lượng cả trong công việc và trong khán đài.</definition>
+	</entry>
+	<entry name="Eun-Ji" part="Development" className="EC349">
+		<definition>Là một fan cứng đến mức phải đi xem series Marvel tại rạp rất nhiều lần , Eun-Ji mơ ước một ngày được đi đến Mavel Station tại Disneyland.</definition>
+	</entry>
+	<entry name="Eun-Jo " part="Development" className="eun-jo ">
+		<definition>Eun-Jo thích những chú chó và café, vào thời gian rỗi anh ấy đọc sách hoặc đi xem bóng chày. Mục tiêu của cô ấy là trãi qua mỗi ngày thật có ích không hối hận.</definition>
+	</entry>
+	<entry name="Eun-Kyung" part="Development" className="eun-kyung">
+		<definition>Eun-Kyung - đã sống ở Trung Quốc từ năm bốn tuổi và đến Hàn Quốc sau khi tốt nghiệp đại học, cô thích ca hát và xem bóng chày. Cô luôn cố gắng sống để hiểu cho người khác hết mức có thể với tinh thần luôn đặt mình vào vị trí người khác.</definition>
+	</entry>
+	<entry name="Eun-Saem" part="Development" className="EC606">
+		<definition>Jo Eunsaem trân trọng những niềm vui nhỏ bé trong cuộc sống. Với cô, một cuộc sống có game, đồ ăn ngon và mèo đã là một cuộc sống đủ đầy và hạnh phúc.</definition>
+	</entry>
+	<entry name="Gi-Peum" part="Training" className="EC362">
+		<definition>Là người luôn cảm thấy hạnh phúc khi ăn các món ăn ngon, Gi-Peum luôn nỗ lực kiếm nhiều tiền để có thể được thưởng thức các món ngon thường xuyên hơn nữa.</definition>
+	</entry>
+	<entry name="Gi-Su" part="Development" className="gi-su">
+		<definition>Được sinh ra ở Mexico đã làm cho Gi-Su trở nên thú vị, nhưng bây giờ chúng tôi biết được anh ta đã chơi piano trong được 8 năm. Có ai muốn tham gia vào buổi hòa nhạc trong phòng ăn trưa không?</definition>
+	</entry>
+	<entry name="Gook-Han" part="Development" className="gook-han">
+		<definition>Gook-Han có một cái nhìn rất tích cực về cuộc sống. Anh ấy thích đi chơi với bạn bè và gặp gỡ những người bạn mới. Khi không làm việc, anh ấy thích tập thể dục.</definition>
+	</entry>
+	<entry name="Gyeong-Hui" part="QA" className="EC222">
+		<definition>Gyeong-Hui thích vận động và ngủ sau giờ làm việc, đi uống rượu và đến những quán cà phê xinh đẹp vào cuối tuần. Cô ấy thích du lịch nước ngoài, nhưng không thể đi du lịch thường xuyên từ khi có Corona nên cô ấy rất buồn.</definition>
+	</entry>
+	<entry name="Gyu-Hyuk" part="Development" className="EC352">
+		<definition>Gyu-Hyuk thích tập thể dục và đi dạo. Vào ngày nghỉ, anh ấy thường học lập trình hoặc uống rượu cùng bạn bè. Gyu-Hyuk thường xả stress bằng cách đi dạo  hoặc nghe nhạc.</definition>
+	</entry>
+	<entry name="Hae-Dam" part="Development" className="EC464">
+		<definition>Hae-Dam tin rằng việc biết chính là sức mạnh. Anh ấy thường dành thời gian cuối tuần cùng chú mèo của mình.</definition>
+	</entry>
+	<entry name="Hae-Na" part="Training" className="hae-na">
+		<definition>Park HyeNa thích đi du lịch và trải nghiệm thử thách mới,có giấc mơ đi du lịch khắp nơi trên thế giới.</definition>
+	</entry>
+	<entry name="Hae-Yoon" part="Sales" className="hae-yoon">
+		<definition>Suy nghĩ tích cực luôn mang đến kết quả tốt đẹp! Hae-Yoon tin rằng mọi thứ sẽ ổn thôi, do đó cô ấy luôn sống hết mình.</definition>
+	</entry>
+	<entry name="Ha-Kyong" part="Development" className="EC651">
+		<definition>Cái gì cũng nên thử một lần! Mục tiêu cuộc sống của Lee Ha-Kyong là có được thật nhiều trải nghiệm.
+Nghe nói cứ đến mùa đông là cô lại đi trượt ván tuyết, và còn học tiếng Tây Ban Nha như một sở thích.</definition>
+	</entry>
+	<entry name="Ha-Na" part="Customer Support" className="EC461">
+		<definition>Là một người quyết đoán, Ha-Na thường từ bỏ ngay các việc cô muốn làm khi thấy nó không được thực hiện nhanh chóng. Cô ấy thích thử làm tất cả mọi thứ.</definition>
+	</entry>
+	<entry name="Han-Bi" part="Customer Support" className="han-bi">
+		<definition>Han-Bi là người có tiếng cười rất độc đáo, cô ấy thích leo núi và marathon. Ngoài ra cô ấy còn yêu thích các môn thể thao khác.</definition>
+	</entry>
+	<entry name="Han-Bin" part="Development" className="EC531">
+		<definition>Han-Bin thích bánh mì và các món tráng miệng, và một khi đã bắt đầu ăn thì anh ấy sẽ ăn không ngừng. Lý do anh ấy thích tập thể dục có lẽ là để ăn uống tốt hơn.</definition>
+	</entry>
+	<entry name="Han-Jo" part="Development" className="EC347">
+		<definition>Han-Jo rất thích du lịch nên mục tiêu của anh ấy là có thể ghé thăm tất cả các nơi trên toàn quốc mỗi khi có thời gian rảnh. Anh ấy còn trưng bày hình ảnh của các danh lam thắng cảnh của mỗi điểm du lịch tại nhà.</definition>
+	</entry>
+	<entry name="Han-Lim" part="Customer Support" className="EC551">
+		<definition>Kim Han-lim, người thích xem bóng chày và khám phá ẩm thực, trân trọng từng khoảnh khắc trong cuộc sống và mơ ước có một cuộc sống ấm áp bên những người thân yêu.</definition>
+	</entry>
+	<entry name="Ha-Nuel" part="Training" className="ha-nuel">
+		<definition>Ha-Nuel có một tâm hồn trong xanh và mênh mông như bầu trời vậy. Anh ấy thích cắm trại và câu cá và ước mơ sau này của anh là sẽ cùng người mình yêu thương đi vòng quanh đất nước.</definition>
+	</entry>
+	<entry name="Han-Yee" part="Customer Support" className="EC602">
+		<definition>Hanyee Lee yêu thích du lịch, đọc sách và nấu ăn. Sau mỗi chuyến khám phá không gian mới, cô thường ghi lại hành trình của mình trên bản đồ. Cô cũng ấp ủ ước mơ một ngày nào đó sẽ thực hiện chuyến du hành ẩm thực để khám phá các quán ăn ngon trên khắp thế giới.</definition>
+	</entry>
+	<entry name="Ha-Young" part="Customer Support" className="ha-young">
+		<definition>Bạn có thể đoán được cô ấy bao nhiêu tuổi không? Mọi người đểu ngạc nhiên khi cô ấy nói tuổi thật của cô ấy. Cô ấy trông khá trẻ! Cô ấy điều hành như thế nào? Hãy đến và hỏi cô ấy!</definition>
+	</entry>
+	<entry name="Hee-Je" part="Development" className="EC529">
+		<definition>Hee-Je thích chơi ở nhà, thường đến nhà bạn bè ngay cả vào cuối tuần. Ước mơ của anh ấy là lấp đầy ngôi nhà của mình bằng những thứ anh ấy tự làm.</definition>
+	</entry>
+	<entry name="Hee-Soo" part="Security" className="EC512">
+		<definition>Lật sách giấy, đi xem phim ngẫu hứng và đan len bằng sợi mềm là những sở thích giúp Hee-Soo thoát khỏi cuộc sống bận rộn thường ngày. Gần đây cô ấy bắt đầu quan tâm đến việc du lịch và thiền định.</definition>
+	</entry>
+	<entry name="Hee-Su" part="DBA" className="EC575">
+		<definition>Hee-su thích đọc tiểu thuyết trinh thám và tưởng tượng ra các sự kiện trong đầu, còn thường ngày thì tận hưởng thời gian thư giãn bằng cách bật YouTube và chơi game.</definition>
+	</entry>
+	<entry name="Hee-Suk" part="Customer Support" className="hee-suk">
+		<definition>Hee-Suk làm việc cho  bên bán hàng của công ty chúng tôi, chủ yếu là để cho khách hàng biết chúng tôi có khá nhiều chi nhánh. Cô ấy vừa mới bắt đầu lái xe vì thế cô ấy thực sự thích công việc đi gặp gỡ khách hàng.</definition>
+	</entry>
+	<entry name="Heon-Young" part="Training" className="heon-young">
+		<definition>Heon-Young thích đá banh và Body-weigh training. Anh ấy không có cảm giác khó chịu ở những chỗ gặp gỡ nhiều người mới, trò chuyện với những người tốt và thích YOLO Life.</definition>
+	</entry>
+	<entry name="Heung-Mo" part="Development" className="heung-mo">
+		<definition>Heung-Mo là hỗ trợ kỹ thuật của chúng tôi phụ trách về phần điện thoại di động và khuôn khổ của công ty. Khi không tìm ra cách để tối ưu hóa hệ thống, anh ấy sẽ nghe bộ sưu tập âm nhạc yêu thích của mình.</definition>
+	</entry>
+	<entry name="Hong-Tae" part="Development" className="hong-tae">
+		<definition>Hong-Tae là một người lạc quan một cách tự  nhiên. Khi anh ấy không ở nơi làm việc giúp bộ phận bán hàng, ông rất thích chơi bóng chày và bóng đá.</definition>
+	</entry>
+	<entry name="Hoon-Sik" part="Customer Support" className="hoon-sik">
+		<definition>Hoon-Sik thích tìm hiểu về cách để khởi chạy phần thuế của kinh doanh của chúng tôi bởi vì nó chắc chắn là một trong những nhiệm vụ phức tạp nhất trong văn phòng.</definition>
+	</entry>
+	<entry name="Ho-Sung" part="Development" className="EC463">
+		<definition>Là người thích câu cá và nấu ăn, Ho-Sung thích tự câu cá và làm các món ăn. Anh ấy nói rằng vì có dao chuyên dụng nên chưa tự mình sơ chế được các món hải sản.</definition>
+	</entry>
+	<entry name="Hui-Seong" part="Customer Support" className="EC623">
+		<definition>Yoon Hui Seong, người xem tteokbokki là món ăn yêu thích nhất, đã bị cuốn hút sâu sắc bởi Na Uy - nơi anh từng đến trong tuần trăng mật. Anh thích Na Uy đến mức đôi khi nghĩ rằng kiếp trước mình có lẽ là một ngư dân Na Uy. Ước mơ giản dị nhưng nghiêm túc của anh là một ngày nào đó mở quán bán món tteokbokki yêu thích tại Na Uy.</definition>
+	</entry>
+	<entry name="Hwaun-Hee" part="Customer Support" className="hwaun-hee">
+		<definition>Chuyên môn trong lĩnh vực IT và Nhân sự, Hwaun-Hee muốn sống 1 cuộc sống như Steve Jobs bằng cách đặt tất cả nổ lực vào công việc.</definition>
+	</entry>
+	<entry name="Hye-Been" part="Customer Support" className="hye-been">
+		<definition>Hye Been thích được ở nhà, ngày thường cô dành thời gian chơi với chú chó của mình và cuối  tuần cô thích đọc sách, uống bia, tận hưởng thời gian rảnh của riêng mình.</definition>
+	</entry>
+	<entry name="Hye-Ji" part="DAM" className="EC636">
+		<definition>Yang Hye-Ji, người yêu thích một cuộc sống đơn giản và bình yên, thích dành cả ngày nằm dài trên giường và chơi game.</definition>
+	</entry>
+	<entry name="Hye-Min" part="Customer Support" className="hye-min">
+		<definition>Hye-Min thích những kinh nghiệm mới mẻ thông qua du lịch, gặp gỡ với mọi người.Vào thời gian rỗi thì thích thưởng thức việc đọc sách và xem phim điện ảnh, xả stress bằng việc ăn nhiều đồ ăn ngon.</definition>
+	</entry>
+	<entry name="Hyeok-Jun" part="Development" className="EC312">
+		<definition>Hyeok-Jun là một người yêu động vật, đặc biệt là mèo. Anh ấy ước rằng một lúc nào đó sẽ thuyết phục được gia đình để nuôi hai bé mèo.</definition>
+	</entry>
+	<entry name="Hyeon-Ju" part="Development" className="EC603">
+		<definition>Lee Hyeonju trân trọng những khoảnh khắc chia sẻ cảm xúc sau khi đọc sách, đồng thời yêu thích những buổi dạo bộ cùng âm nhạc. Thỉnh thoảng, cô chạy bộ và đặt mục tiêu hoàn thành cự ly bán marathon trong tương lai.</definition>
+	</entry>
+	<entry name="Hye-Ran" part="Development" className="hye-ran_1">
+		<definition>Lee HyeRan sống rất quý trọng, tiết kiệm tất cả nhân duyên, cô ấy đang nỗ lực thường xuyên để trở thành người ấm áp.</definition>
+	</entry>
+	<entry name="Hye-Ri" part="Development" className="EC448">
+		<definition>Với mơ ước trở thành người giàu, Hye-Ri muốn được đi khắp nơi trên thế giới và tải nghiệm nhiều thứ.</definition>
+	</entry>
+	<entry name="Hye-Seok" part="Development Design" className="hye-seok">
+		<definition>Hye-Seok tự hào khi làm việc IT cho văn phòng tại Hàn Quốc và làm việc để trở thành nhà cung cấp giải pháp công nghệ tốt nhất.</definition>
+	</entry>
+	<entry name="Hye-Won" part="Development Design" className="EC620">
+		<definition>Kim Hyewon yêu thích du lịch và phim ảnh, và vì quá mê đồ ăn ngon nên cô đã cao gần tới 2 mét.</definition>
+	</entry>
+	<entry name="Hyo-Jin" part="Customer Support" className="EC475">
+		<definition>Là người thích chơi một mình ở nhà và đi du lịch, Hyo-Jin luôn háo hức cho các chuyến du lịch đến các nơi mới. Cô ấy ao ước được du lịch khắp thế giới, trải nghiệm văn hóa và mở rộng thế giới của riêng mình.</definition>
+	</entry>
+	<entry name="Hyo-Jung" part="Customer Support" className="hyo-jung">
+		<definition>Hyo-Jung thích dành thời gian cho cún cưng và nghe nhạc. Cô ấy sẽ chết mất nếu cuộc đời này không còn tiếng nhạc nữa.</definition>
+	</entry>
+	<entry name="Hyo-Jung" part="Customer Support" className="EC104">
+		<definition>Hyo-Jung - thích chơi Board game, cô nói rằng chiến thắng những trò chơi khó giúp cô giảm bớt căng thẳng. Cô ấy cũng thích chơi bowling và chạy. Cô mong muốn được chơi game cùng mọi người vào lần tới.</definition>
+	</entry>
+	<entry name="Hyoun-Chul" part="Development Design" className="EC162">
+		<definition>Hyoun-Chul yêu thích thử thách với những điều mới lạ và khó khăn, anh ấy cảm thấy thích thú khi leo lên đến đỉnh núi vào một ngày đẹp trời hoặc công phá những board game phức tạp. </definition>
+	</entry>
+	<entry name="Hyuk-Joo" part="DS" className="EC432">
+		<definition>Hyuk-Joo là người thích chơi game, anh ấy thường chơi bóng rổ vào mỗi thứ sáu sau khi đi làm về. Vào những ngày còn lại, anh ấy thường hay chơi game hoặc nghỉ ngơi.</definition>
+	</entry>
+	<entry name="Hyuk-Rae" part="Development" className="hyuk-rae">
+		<definition>Hyuk-Rae đã từng là một  thành viên đội Hỗ trợ khách hàng, nhưng bây giờ ông đang nằm trong đội Phát triển. Ông dành thời gian, tích cực phát triển các chức năng và các tính năng mà khách hàng của chúng tôi cần và yêu thích. Khi ra khỏi khu vực phát triển, anh ta thư giãn hoặc đọc sách.</definition>
+	</entry>
+	<entry name="Hyun" part="Development" className="EC527">
+		<definition>Hyun là một lập trình viên, đang cố gắng xây dựng những thói quen tốt cho 'stack' của mình. Anh ấy biết ơn những cuộc gặp gỡ và giảng dạy sẽ nhận được tại ECOUNT và anh ấy đang học tập chăm chỉ.</definition>
+	</entry>
+	<entry name="Hyung-Jae" part="Training" className="hyung-jae">
+		<definition>Hyeong-Je muốn được làm việc lâu dài tại Ecount. Trong thời gian rảnh, anh ấy muốn đi uống rượu với bạn bè.</definition>
+	</entry>
+	<entry name="Hyung-Jun" part="Development" className="hyung-jun">
+		<definition>Hyung-Jun thích các thử thách lớn. Anh tìm kiếm cơ hội để thử thách bản thân bên cạnh những người bạn. Anh thích phim và nghe nhạc.</definition>
+	</entry>
+	<entry name="Hyun-Gyung" part="Customer Support" className="hyun-gyung">
+		<definition>Luôn theo đuổi sự phát triển và đạt được thành tựu trong các bài tập khó, Hyun-Gyung đã tự thử thách mình với múa cột. Mục tiêu mới "toanh" của cô ấy là có thể thành công trong việc duỗi chân thẳng 180 độ.</definition>
+	</entry>
+	<entry name="Hyun-Jik" part="Development Design" className="EC320">
+		<definition>Chỉ thay một chữ trong từ 'Change' thì sẽ thành 'Chance'. Hyun-Jik tin rằng sự thay đổi sẽ mang đến cơ hội mới. Anh ấy thích xả stress bằng cách tập gym và hòa mình với mọi người hơn là ở một mình.</definition>
+	</entry>
+	<entry name="Hyun-Ju" part="Customer Support" className="EC471">
+		<definition>Hyun-Ju thường thưởng thức Nexflix cùng rượu sau một ngày dài, cô ấy còn luôn chuẩn bị cho chuyến du lịch cùng với những đứa trẻ vào mỗi cuối tuần.</definition>
+	</entry>
+	<entry name="Hyun-Oh" part="Development" className="EC469">
+		<definition>Tuy là người hướng nội nhưng Hyun-Oh rất thích dành thời gian cùng bạn bè. Anh ấy thường đi ra ngoài thay vì chỉ ở nhà.</definition>
+	</entry>
+	<entry name="Hyun-Seo" part="Development" className="EC614">
+		<definition>Park Hyunseo cho biết vào mùa đông anh thích xem bóng rổ Mỹ và trượt tuyết, còn mùa hè thì thường theo dõi series bóng chày Hàn Quốc. Một ngày nào đó anh muốn thực hiện chuyến du lịch Bắc Mỹ: trượt tuyết ở Canada và xem NBA cùng MLB tại Mỹ.</definition>
+	</entry>
+	<entry name="Hyun-Sik" part="Customer Support" className="EC482">
+		<definition>Hyun-Sik thích bóng rổ và du lịch trong nước. Anh ấy thích chơi bóng rổ cùng mọi người ở sân bóng hoặc uống rượu cùng bạn bè.</definition>
+	</entry>
+	<entry name="Hyun-Woo" part="Development" className="EC262">
+		<definition>Hyun-Woo là người hâm mộ Tolkien yêu thích Chúa tể những chiếc nhẫn, nếu được tái sinh, anh ấy muốn được là Aragorn- vua của Gondor- một người hoàn hảo. Anh ấy là người theo chủ nghĩa hoàn hảo nhưng lại không hoàn hảo, nên muốn trở nên hoàn hảo như Aragon.</definition>
+	</entry>
+	<entry name="Hyun-Woo" part="DBA" className="EC641">
+		<definition>Kim Hyun-Woo là một người tò mò và giàu tinh thần phiêu lưu, luôn muốn tự mình trải nghiệm bất cứ điều gì khiến anh cảm thấy hứng thú. Trong cuộc sống thường ngày, anh tìm thấy sự thư thái khi tập trung lắp ráp và tự tay tạo ra nhiều thứ khác nhau.</definition>
+	</entry>
+	<entry name="Hyun-Wook" part="Development" className="EC315">
+		<definition>Hyun-Wook được sinh ra tại một ngôi làng nhỏ ở Đức. Mục tiêu của anh ấy là đến thăm lại ngôi làng thanh bình vẫn còn đọng lại trong ký ức. Anh ấy làm việc chăm chỉ mỗi ngày để đạt được ước mơ đó.</definition>
+	</entry>
+	<entry name="Il-Hyeon" part="DAM" className="EC168">
+		<definition>Xem trọng bạn bè nên Il-Hyeon thích vui chơi và vun đắp kỷ niệm cùng bạn bè. Anh ấy cũng muốn có thật nhiều bạn và tạo ra những kỷ niệm đẹp cùng nhau tại ECOUNT nữa.</definition>
+	</entry>
+	<entry name="In-Chul" part="Design" className="in-chul">
+		<definition>Trong - Chul là một trong những người  thiết kế sáng tạo nhất của chúng tôi. Anh đã từng chơi guitar trong một ban nhạc nhưng bây giờ anh thích đi dạo với người vợ yêu quý của mình hơn.</definition>
+	</entry>
+	<entry name="In-Kuk" part="Development" className="in-kuk">
+		<definition>Jeong InKuk là người thích kết giao với nhiều người, vào mùa hè anh ấy thích đi xem bóng chày, vào mùa đông thích chơi trượt ván tuyết.</definition>
+	</entry>
+	<entry name="In-Kwon" part="Training" className="in-kwon">
+		<definition>In-Kwon thích sự thử thách và kinh nghiệm,anh ấy vừa thích thưởng thức âm nhạc hoặc đi câu cá,vừa để xả stress.</definition>
+	</entry>
+	<entry name="I-Soo" part="Development" className="EC608">
+		<definition>Hong Isoo yêu thích lái xe và du lịch, đặc biệt là những chuyến lái xe đêm dọc theo sông Hàn. Trong tim cô luôn ấp ủ ước mơ được chu du khắp thế giới.</definition>
+	</entry>
+	<entry name="Jae-Bin" part="Development" className="jae-bin">
+		<definition>Jae-Bin có thể đánh bại điểm số của hầu hết mọi người trong môn bowling. Cha mẹ anh ấy từng sở hữu một trung tâm bowling. Đây rõ ràng là một lợi thế. Tuy nhiên, anh ấy thực sự thích gặp gỡ những người bạn mới.</definition>
+	</entry>
+	<entry name="Jae-Guk" part="Development" className="jae-guk">
+		<definition>Jae-Guk rất thích nước, từ nhỏ anh ấy đã học bơi và duy trì như hoạt động đời sống của anh. Tuy nhiên ninềm vui thích của anh ấy lại thích ăn bánh hơn. Mơ ước của anh ấy là tìm những tiệm bánh ngon trên khắp thế giới.</definition>
+	</entry>
+	<entry name="Jae-Hee" part="Development" className="EC420">
+		<definition>Ước mơ của Jae-Hee là đi một vòng thế giới và kết bạn. Để thực hiện giấc mơ đó, anh ấy hôm nay cũng đang chăm chỉ học tiếng Anh.</definition>
+	</entry>
+	<entry name="Jae-Yeon" part="Marketing" className="jae-yeon">
+		<definition>Jae-Yeon thích đọc sách trong những ngày mưa và xem phim Nhật bản vào buối tối. Anh ta cũng là một fan của phi hành gia và hi vọng sẽ được du lịch vào vũ trụ một ngày nào đó.</definition>
+	</entry>
+	<entry name="Jae-Young" part="Development" className="EC618">
+		<definition>Choi Jaeyoung yêu thích game, tiểu thuyết, phim ảnh và truyện tranh, đồng thời cũng chăm sóc sức khỏe bằng cách tập gym và chạy marathon. Khi rảnh rỗi anh thường gặp gỡ bạn bè hoặc đi du lịch. Nhờ có nhiều sở thích đa dạng nên anh có thể dễ dàng trò chuyện thoải mái với bất kỳ ai.</definition>
+	</entry>
+	<entry name="Jee-Wan" part="Marketing" className="EC128">
+		<definition>Jee-Wan thích du lịch, nên cô ấy thích ngắm những cảnh đẹp và thưởng thức món ăn ngon tại những vùng đất mới. Ấn tượng sâu sắc với cảnh hoàng hôn được ngắm tại boong-ke ở Barcelona nên cô ấy rất muốn quay lại đây lần nữa.</definition>
+	</entry>
+	<entry name="Jeong-Hee" part="Development" className="EC219">
+		<definition>Jeong-Hee thích du lịch đường phố và chụp ảnh, cô ấy muốn lưu giữ thật đẹp dáng vẻ tự nhiên của mọi người.</definition>
+	</entry>
+	<entry name="Jeong-Hun" part="Customer Support" className="EC203">
+		<definition>Jeong-Hun thích bơi và du lịch ẩm thực, ước mơ của cô ấy là du lịch vòng quanh thế giới. Phương châm của cô ấy là làm những thứ yêu thích để sống hạnh phúc mà không hối hận dù chỉ một ngày.</definition>
+	</entry>
+	<entry name="Jeong-Hun" part="Development" className="EC526">
+		<definition>Jeong-Hun yêu thích các bài hát của Taylor Swift và nâng những vật nặng, anh ấy muốn xem buổi biểu diễn của Taylor Swift vào một ngày nào đó.</definition>
+	</entry>
+	<entry name="Jeong-Hun " part="Training" className="jeong-hun">
+		<definition>24 giờ là quá ngắn đối với Jeong-Hun, người luôn cảm thấy hạnh phúc và tò mò về mọi điều trên thế giới này. Anh ấy thích chụp hình nên anh ấy đi du lịch khắp Seoul. Anh còn tham gia câu lạc bộ bóng rổ, ban nhạc và thậm chí gần đây anh đã tham gia vào dàn nhạc và biểu diễn đàn viola.</definition>
+	</entry>
+	<entry name="Jeong-Hyeon" part="Training" className="EC385">
+		<definition>Là một người thích tập thể thao và chơi game, Jeong Hyeon mơ ước được chơi thử tất cả các trò chơi trên thể giới.</definition>
+	</entry>
+	<entry name="Jeong-Suk" part="Customer Support" className="EC472">
+		<definition>Jeong-Suk thích các môn thể dục vận động nhiều như spinning. Nhưng vì là một ISFP, cô ấy thường dành thời gian ở nhà để lấy lại năng lượng. Tuy thích việc nằm một chỗ nhưng cô ấy lại rất chăm chỉ mỗi khi tập thể dục.</definition>
+	</entry>
+	<entry name="Jeong-Won" part="QA" className="EC486">
+		<definition>Là người thích mọi thứ ngon và tuyệt vời, ước mơ của Jeong-Won là được đi đến tất cả các nhà hàng ngon trên thế giới. Bạn có muốn cùng đi food tour với cô ấy không?</definition>
+	</entry>
+	<entry name="Jeong-Woo" part="Training" className="EC368">
+		<definition>Jeong-Woo rất thích đi bộ, ước mơ của anh ấy là được du lịch Thụy Sĩ cùng gia đình thân yêu của mình. Anh ấy đang nỗ lực chăm chỉ mỗi ngày để thực hiện ước mơ đó.</definition>
+	</entry>
+	<entry name="Ji-Eun" part="Customer Support" className="EC505">
+		<definition>Ji-Eun đang nuôi 3 bé mèo là Latte, Malang, và Kongtteok. Cô ấy thích mèo đến mức chỉ mặc quần áo có hình mèo.</definition>
+	</entry>
+	<entry name="Ji-Eun" part="Customer Support" className="EC395">
+		<definition>Ji Eun muốn sống một cuộc sống muôn màu muôn vẻ và thích những trải nghiệm mới. Cô ấy thích thưởng thức nhiều loại hình văn hóa đa dạng như concert, kịch, nhạc kịch, triển lãm, lễ hội, bóng chuyền.</definition>
+	</entry>
+	<entry name="Ji-Hee" part="Development" className="EC418">
+		<definition>Ji-Hee thích đi dạo ven sông vào những ngày nắng đẹp. Phương châm sống của cô ấy là 'Học, ghi lại và thử thách!'. Cô ấy thích du lịch toàn thế giới và ăn thử tất cả các loại món tráng miệng.</definition>
+	</entry>
+	<entry name="Ji-Hun" part="Sales" className="EC359">
+		<definition>Là người thích du lịch, điểm đến tiếp theo Ji-Hun mơ ước là Paris. Anh ước mơ được cùng người mình yêu ngồi trước tháp Eiffel, tận hưởng chai rượu vang yêu thích cùng bánh macaron.</definition>
+	</entry>
+	<entry name="Ji-Hyun" part="Training" className="ji-hyun">
+		<definition>JiHyun chơi bóng tìm lại sự phấn khởi ở câu lạc bộ Footsan mỗi tuần thứ 7. Luyện tập chăm chỉ để chiến thắng ở giải nghiệp dư nhưng mà cứ gặp những tình huống oái ăm.</definition>
+	</entry>
+	<entry name="Ji-Hyun" part="Development" className="EC653">
+		<definition>Song Ji-Hyun thích trà matcha, mèo và leo núi, đồng thời mang trong mình giấc mơ lớn là thử hết mọi sản phẩm matcha. Nghe nói khi trời đẹp, cô thích đến những nơi mới để tìm kiếm món ăn ngon.</definition>
+	</entry>
+	<entry name="Jin" part="Customer Support" className="EC346">
+		<definition>Yu-Jin cảm thấy hạnh phúc khi có thể cùng với những người mình yêu thương trải qua những ngày tháng yên bình. Cô ấy còn thích được tìm kiếm những điều lý thú mới khi lần đầu ghé thăm các địa điểm du lịch khác nhau.</definition>
+	</entry>
+	<entry name="Jin-Bae" part="System Management" className="jin-bae">
+		<definition>Với sở thích du lịch và bóng đá, Jin-Bae  mơ ước được đến châu Âu để trực tiếp xem trận chung kết giải vô địch.</definition>
+	</entry>
+	<entry name="Jin-Byung" part="Development" className="jin-byung">
+		<definition>Jin-Byung là một kỹ sư của chúng tôi, anh ấy yêu những thử thách, nghe nhạc và chơi bóng đá.</definition>
+	</entry>
+	<entry name="Jin-Heung" part="Customer Support" className="EC343">
+		<definition>Jin-Heung đã từng là vận động viên bơi lội trong một thời gian dài, anh ấy vẫn luôn rèn luyện cơ thể thông qua việc tập thể dục thường xuyên.</definition>
+	</entry>
+	<entry name="Jin-Hwa" part="Customer Support" className="EC172">
+		<definition>Jin-Hwa có tính cách hai cực đối lập, khi tập trung giữ tâm trạng hào hứng, thậm chí nhà tắm cô ấy cũng không đi nhưng khi ủ rũ thì cô ấy nằm cả ngày. Cô ấy ghét sự nhàm chán nên luôn thích khuấy động tinh thần. Hôm nay, cô ấy cũng đang nỗ lực để giữ mình luôn ở tông đồ-rê-mi-fa-son. </definition>
+	</entry>
+	<entry name="Jin-Kyeong" part="Development" className="EC572">
+		<definition>Jin-kyeong thích nhất là matcha và yêu thích ở nhà, cảm thấy rất hạnh phúc khi xem các bộ phim khoa học viễn tưởng hoặc hoạt hình cùng với món ăn do chính mình nấu.</definition>
+	</entry>
+	<entry name="Jin-Kyung" part="Development" className="EC158">
+		<definition>Jin-Kyung có tính cách hoạt bát, thích đi chơi với mọi người. Vào cuối tuần, thỉnh thoảng cô ấy đi leo núi cùng với chú cún của mình, cô ấy cảm thấy sung sướng mỗi khi leo lên đến đỉnh núi.</definition>
+	</entry>
+	<entry name="Jin-Min" part="Admin" className="EC263">
+		<definition>Jin-Min thích xem bóng chày, đặc biệt thích Kia Tigers. Sở thích gần đây là xem mukbang nên vào ngày nghỉ, anh ấy thích uống rượu và xem nhật ký du lịch beakban của Huh Young-Man.</definition>
+	</entry>
+	<entry name="Jin-Sil" part="Development" className="EC582">
+		<definition>Những câu chuyện mới mang lại cho Jin-sil cảm giác háo hức như đang bắt đầu một cuộc phiêu lưu. Cô ấy thích trải nghiệm gián tiếp những điều không thể làm được trong đời thực thông qua truyện tranh, tiểu thuyết và trò chơi, và yêu thích việc tự do tưởng tượng trong thế giới đó.</definition>
+	</entry>
+	<entry name="Jin-Sol" part="Development" className="jin-sol">
+		<definition>Moon Jin-Sol thích bia và gặp gỡ mọi người và yêu biển, café, quán ăn ngon. Anh ấy có giấc mơ  xây dựng khách sạn nhỏ nhìn ra biển. Sẽ cố gắng để đạt được giấc mơ này ở Ecount!</definition>
+	</entry>
+	<entry name="Jin-Sung" part="Design" className="jin-sung">
+		<definition>Jin-Sung thích phát triển,tuy đã thử nhiều loại như hát, piano hay tập gym nhưng cũng không thấy tiến triển lắm. Thỉnh thoảng thích lặng lẽ một mình,tuy trông có vẻ cô đơn nhưng đó lại là một trong phương pháp giải tỏa stress của anh ấy.</definition>
+	</entry>
+	<entry name="Jin-Young" part="Training" className="jin-young_2">
+		<definition>Khi Jin -Young thì không làm việc về quản lý đào tạo khách hàng, cô ấy  đi du lịch với chồng và viết về nó trong blog của mình. Muốn xem những gì trong cuộc phiêu lưu cô ấy? Tới blog.daum.net/aldebaran.</definition>
+	</entry>
+	<entry name="Jin-Young" part="Development" className="jin-young_3">
+		<definition>Jin-Young thích trong lúc làm việc vừa thưởng thức café vừa nghe nhạc,thường xuyên nỗ lực để có kết quả tốt dù có ai thấy hay không.</definition>
+	</entry>
+	<entry name="Ji-Seok" part="DBA" className="EC639">
+		<definition>Ahn Ji-Seok là một người yêu bóng đá và thường thích xem các trận đấu vào những ngày nghỉ. Những buổi đi dạo cùng chú cún đáng yêu cũng là một khoảng thời gian thư giãn đặc biệt đối với anh.</definition>
+	</entry>
+	<entry name="Ji-Su" part="Training" className="EC329">
+		<definition>Ji-Su quan tâm nhiều đến mọi người, và cảm thấy thích thú khi có những cuộc trò chuyện nhỏ hay đọc sách. Ước mơ của cô ấy là tạo ra một không gian được lấp đầy bởi những cuộc trò chuyện và sách nằm giữa thiên nhiên rừng rậm.</definition>
+	</entry>
+	<entry name="Ji-Won" part="DPO" className="EC638">
+		<definition>Yi Ji-Won yêu thích cả thư pháp lẫn leo núi và tận hưởng một cuộc sống cân bằng giữa những phút giây tĩnh lặng và tràn đầy năng lượng. Ước mơ của cô là một ngày nào đó có thể viết thư pháp giữa núi rừng trong tiếng chim hót. Thật tuyệt vời!</definition>
+	</entry>
+	<entry name="Ji-Yi" part="Development Design" className="EC622">
+		<definition>Shin Jiyi thích bơi biển dưới ánh nắng rực rỡ và tham gia các lễ hội, vì vậy mùa hè khiến cô hạnh phúc hơn nhiều so với mùa đông. Khi mùa đông đến, cô thường ở nhà xem phim với mèo hoặc nấu ăn và chờ mùa xuân quay lại.</definition>
+	</entry>
+	<entry name="Jong-Bin" part="Development" className="EC424">
+		<definition>Jong-Bin thích các món ăn ngon, anh có thể ăn sạch mọi thứ ngay chỉ vừa khi bắt đầu ăn.</definition>
+	</entry>
+	<entry name="Jong-Bok" part="Development" className="jong-bok">
+		<definition>Jong Book thích chụp hình, cô ấy đang cố gắng trong công việc và không được quên quyết tâm của phút ban đầu.</definition>
+	</entry>
+	<entry name="Jong-Guk" part="Development" className="jong-guk">
+		<definition>Những ngày còn trẻ, Jong-Guk cảm thấy vui với công việc và những người bạn đồng nghiệp. Nhưng bây giờ anh ấy tìm thấy niềm vui lớn của mình là được làm cha và dành thời gian cho gia đình. Trở thành người đàn ông của gia đình thực sự là một điều vinh quang!</definition>
+	</entry>
+	<entry name="Jong-Ha" part="Customer Support" className="EC539">
+		<definition>Lee Jong-ha, người có nhiều sở thích như bóng đá, du lịch và nấu ăn, cảm thấy hứng thú với những thử thách mới và không ngừng tích lũy kinh nghiệm. Anh ấy có ước mơ một ngày nào đó sẽ đeo ba lô đi khắp thế giới, tìm kiếm con đường riêng của mình và mở một nhà hàng Hàn Quốc ở nơi mà anh yêu thích.</definition>
+	</entry>
+	<entry name="Jong-Ho" part="Sales" className="jong-ho">
+		<definition>JongHo thích rượu và con người, hôm nay cũng đang tìm một người bạn cùng đi. Ai muốn trở thành bạn anh ấy thì hãy liên lạc với anh ấy bất cứ khi nào nhé.</definition>
+	</entry>
+	<entry name="Jong-Hyeong" part="Admin" className="jong-hyeong">
+		<definition>Jang Jong-Hyeong đã thử làm ở nhiều lĩnh vực và kế toán là việc anh tìm đến cuối cùng. Kế toán thì khó nhưng mà cũng có cái vui riêng khi biết đào sâu. Nếu hỏi anh ấy về kế toán là có thể tuôn trào bất cứ lúc nào. </definition>
+	</entry>
+	<entry name="Jong-Hyun" part="Development" className="EC389">
+		<definition>Jong Hyun thích đi nhiều nơi và luôn hoạt bát vào buổi sáng mỗi khi đi du lịch. Anh ấy luôn rèn luyện sức khỏe và quản lý chế độ ăn uống để có thể thoải mái đi du lịch vào cả lúc đã lớn tuổi. Anh ấy ước mơ được một lần tham gia vào giải đấu senior tennis.</definition>
+	</entry>
+	<entry name="Jong-In" part="Development" className="jong-in">
+		<definition>Jong-In tin rằng anh có một trái tìm đầm ấm cho dù tay và chân anh đang lạnh. Anh ấy thích trò chuyện khi đi dạo, xem phim và trượt băng trong nhà.</definition>
+	</entry>
+	<entry name="Jong-Mun" part="Development" className="jong-mun">
+		<definition>Jong-Mun - hiện là cha của hai đứa trẻ, anh đang học lại toán và tiếng Anh một lần nữa để giúp con mình học hiểu quả hơn. Anh thích bộ truyện tranh Slam Dunk và  tham gia các cuộc thi bóng rổ đường phố. Anh nói rằng ngày thường mình là một người khá im lặng, song cùng với rượu thì mọi người có thể trở nên thân thiết với anh một cách dễ dàng.</definition>
+	</entry>
+	<entry name="Joon-Ho" part="Development" className="joon-ho">
+		<definition>Joon-Ho yêu đảo Jeju,anh ấy thường mơ đi đảo Jeju. Đi du lịch đảo Jeju như là nguồn năng lượng loại bỏ stress và mệt mỏi. Để sạc lại nguồn năng lượng, mỗi năm nhất định anh ấy phải đi đảo Jeju.</definition>
+	</entry>
+	<entry name="Joon-Seok" part="Development" className="EC581">
+		<definition>Joon-seok là người thích vận động, chơi nhiều môn thể thao như bóng đá, golf, tennis nhưng thường xuyên nhất là futsal. Mặc dù kỹ năng chưa tiến bộ nhanh như mong muốn, anh ấy vẫn kiên trì luyện tập và tham gia các lớp học. Mục tiêu của Joon-seok là một ngày nào đó sẽ thành lập đội để tham gia giải futsal.</definition>
+	</entry>
+	<entry name="Ju-Been" part="Sales" className="EC396">
+		<definition>Là người thích tập thể dục, Ju Been thường chơi bóng đá hoặc đạp xe vào thời gian rảnh. Mục tiêu của anh ấy là đạp xe vòng quanh đất nước trước khi 30 tuổi.</definition>
+	</entry>
+	<entry name="Ju-Hyeon" part="Development" className="EC542">
+		<definition>Park Ju-hyeon, một người yêu mèo, coi những khoảnh khắc được ngủ trưa cùng chú mèo Xiêm tên Dari là sự thư giãn tuyệt vời nhất trên đời.</definition>
+	</entry>
+	<entry name="Ju-Hyun" part="Customer Support" className="ju-hyun">
+		<definition>Là một thành viên của bộ phận đào tạo, Ju-Hyun quản lý tất cả các tài liệu đào tạo, bao gồm cả hướng dẫn sử dụng trực tuyến và video.</definition>
+	</entry>
+	<entry name="Jun-Bong" part="Development" className="EC530">
+		<definition>Jun-Bong có nhiều sở thích, dành ngày nghỉ để thực hiện nhiều hoạt động khác nhau như xem phim, diễn kịch, chơi game, đi dạo và nghe nhạc. Vì thế anh cảm thấy những ngày nghỉ lễ có vẻ ngắn ngủi.</definition>
+	</entry>
+	<entry name="Jung-Hwan" part="Customer Support" className="jung-hwan">
+		<definition>Jung-Hwan là một người lạc quan với một giác quan nghệ thật được đánh giá cao. Anh thích đi du lịch trong thời gian rảnh rỗi của mình.</definition>
+	</entry>
+	<entry name="Jung-Jae" part="Development" className="EC480">
+		<definition>Ước mơ của Jung-Jae là được nuôi những đứa trẻ cùng với các chú chó trong nhà. Đề xuất Youtube của anh ấy dạo gần đây toàn là các nội dung về chó. Chỉ có điều anh ấy còn đang độc thân.</definition>
+	</entry>
+	<entry name="Jung-Min" part="Development" className="jung-min">
+		<definition>Jung-Min thích gặp gỡ mọi người và thích du lịch,môn thể thao năng động.Anh ấy bất kỳ lúc nào cũng ấp  ủ giấc mơ muốn khám phá đại lục Châu Phi. </definition>
+	</entry>
+	<entry name="Jung-Min" part="Development" className="EC356">
+		<definition>Jung-Min luôn háo hức chờ đợi những lễ hội ngoài trời tổ chức vào mỗi mùa xuân, hạ, thu hàng năm. Là người rất thích bầu không khí và thời tiết tại các lễ hội, anh ấy luôn mơ ước được đi đến các lễ hội nước ngoài như Coachella, Summer Sonic.</definition>
+	</entry>
+	<entry name="Jung-Su" part="Development" className="EC384">
+		<definition>Là người thích leo núi, Jung Su thường leo núi mỗi tháng một lần và chụp ảnh. Anh ấy xem lợi ích của việc leo núi là để rèn luyện thể chất, đồng thời còn giúp giải tỏa căng thẳng.</definition>
+	</entry>
+	<entry name="Jung-Woo" part="Development" className="EC616">
+		<definition>Lim Jungwoo đang kiên trì tập gym với mục tiêu xây dựng một cơ thể khỏe mạnh. Trong thời gian rảnh, anh thường thư giãn bằng cách xem truyện tranh hoặc phim.</definition>
+	</entry>
+	<entry name="Jung-Yoon" part="QA" className="EC442">
+		<definition>Tính cách của Jung-Yoon vừa hướng nội, vừa hướng ngoại. Cô ấy thích được ngủ trưa ở nhà cùng hai chú mèo của mình. Gần đây, cô ấy có một sở thích mới là leo núi thể thao.</definition>
+	</entry>
+	<entry name="Jun-Hee" part="Development" className="EC599">
+		<definition>Lee Junhee, người yêu mùa xuân hơn bất cứ ai, thích dành thời gian nghe nhạc và đọc sách.</definition>
+	</entry>
+	<entry name="Jun-Hyuk" part="Training" className="EC123">
+		<definition>Jun-Hyuk thích đi chơi cùng mọi người và dành thời thời gian chơi bóng đá kiểu Mỹ vào cuối tuần. Anh ấy muốn một ngày nào đó sẽ đi du lịch Mỹ và xem Super Bowl.</definition>
+	</entry>
+	<entry name="Jun-Kwon" part="Development" className="EC417">
+		<definition>Jun-Kwon rất thích chơi sáo quạt và game offline. Tuy lầ người hướng nội nhưng anh thích trau dồi nhiều kiến thức lặt vặt và thi đấu.</definition>
+	</entry>
+	<entry name="Jun-Young" part="Development" className="jun-young">
+		<definition>Jun-Young có mục tiêu chơi 3 môn phối hợp, sau khi hoàn thành được mục tiêu, cô ấy sẽ thay đổi hình profile.</definition>
+	</entry>
+	<entry name="Ju-Won" part="Development" className="EC549">
+		<definition>Hwang Ju-won, người yêu thích giấc ngủ, phim truyền hình và bánh financier, đang nuôi ước mơ sở hữu một ngôi nhà của riêng mình. Cô ấy mong chờ đến ngày có thể thư giãn và ngủ trưa trong căn nhà ấm cúng của mình.</definition>
+	</entry>
+	<entry name="Ju-Young" part="Development" className="ju-young">
+		<definition>Ju-Young thích xem phim, đọc sách, dắt chó đi dạo, ăn món ăn yêu thích vào cuối tuần. Nếu làm được tất cả việc đó thì đó là một tuần tuyệt vời vì thế chúng tôi luôn ủng hộ nó.</definition>
+	</entry>
+	<entry name="Ka-Hee" part="Development" className="ka-hee">
+		<definition>Ka-Hee cảm thấy thích việc cô ấy không biết nhiều về Café nhưng đã nếm thử tất cả các loại Café trên thế giới. Cô cũng thích uống Café lạnh vào mùa đông.</definition>
+	</entry>
+	<entry name="Kang-Min" part="Development" className="EC550">
+		<definition>Na Kang-min, người yêu thích thể thao và những con phố yên tĩnh, đang sống với mục tiêu chinh phục các địa điểm trekking nổi tiếng trên thế giới.</definition>
+	</entry>
+	<entry name="Ki-Jin" part="Development" className="ki-jin">
+		<definition>Ki-Jin thích tiếng mưa ngoài cửa sổ,khi mưa rơi cảm giác như tâm trạng cô ấy đang được vui chơi đùa nghịch, hôm nay cô ấy cũng đang làm việc rất chăm chỉ.</definition>
+	</entry>
+	<entry name="Ki-Woong" part="Development" className="EC348">
+		<definition>Ki-Woong thích các loại hình thể thao sôi nổi, cùng nhiều thể loại phim ảnh và âm nhạc. Gần đây, anh ấy đang tận hưởng những ngày tràn đầy năng lượng bằng việc tập luyện tennis.</definition>
+	</entry>
+	<entry name="Kwang-Jin" part="Training" className="kwang-jin">
+		<definition>Mặc dù ông theo học chuyên ngành hoạt hình, nhưng anh ta đã quyết định ERP là con đường để đi. Ông vẫn có thể cảm thấy giống như một người mới nhưng anh ấy chắc chắn làm theo cách của mình để trở thành một chuyên gia ERP.</definition>
+	</entry>
+	<entry name="Kwon-Min" part="Development" className="EC466">
+		<definition>Là người từng sống tại Busan, Kwon-Min đã rất nỗ lực để thích nghi với cuộc sống ở Seoul. Anh ấy thích du lịch một mình và nghe tiếng củi lửa,  Kwon-Min thường bật tiếng củi lửa để nghe mỗi khi thấy khó ngủ.</definition>
+	</entry>
+	<entry name="Kyeong-Ik" part="Development" className="EC316">
+		<definition>Kyeong-Ik muốn sống một cuộc sống tươi sáng. Giống như cái tên của anh ấy, Kyeong-Ik luôn sống tích cực và thêm ánh sáng mỗi ngày vào cuộc sống.</definition>
+	</entry>
+	<entry name="Kyu-Jong " part="System Management" className="kyujong">
+		<definition>Kyu-Jong là người rất thích giải tỏa bằng việc đi du lịch, anh ấy nỗ lực luôn luôn tìm niềm vui bình yên trong lòng. Anh ấy duy trì tính an toàn của hệ thống và đang ấp ủ giấc mơ là người quản lý hệ thống đầy trách nhiệm. </definition>
+	</entry>
+	<entry name="Kyung-Min" part="Development" className="EC351">
+		<definition>Kyung-Min thích tập thể dục hoặc ca hát trong thời gian rảnh. Anh ấy luôn tin rằng khi làm bất cứ việc gì, nếu cứ kiên trì sẽ thấy được thành quả của sự nỗ lực.</definition>
+	</entry>
+	<entry name="Mi-Jin" part="Development" className="mi-jin">
+		<definition>Mi-jin đòi hỏi thức ăn ngon, hơn 10 giờ của giấc ngủ, và phim với một chút điên rồ. Tại sao? Bởi vì nó làm mới cố ấy.</definition>
+	</entry>
+	<entry name="Min-Gyeong" part="Development" className="EC419">
+		<definition>Là người thích khoa học, Min-Gyeong thích xem phim và đọc các tiểu thuyết viễn tưởng vào thời gian rảnh. Cô ấy cũng thích Nintendo game nên những ngày bị stress hoặc mệt mỏi, cô ấy sẽ chơi The Legend of Zelda hoặc Animal Crossing.</definition>
+	</entry>
+	<entry name="Min-Ho" part="Sales" className="EC446">
+		<definition>Min-Ho thích bóng đá và các món tráng miệng ngon. Anh ấy thường đi cafe và xem các trận bóng đá quốc tế.</definition>
+	</entry>
+	<entry name="Min-Hyuk " part="DBA" className="EC173">
+		<definition>Min-Hyuk thích du lịch và gặp gỡ mọi người, anh ấy cũng thích uống cà phê Americano lúc rảnh rỗi và uống bia sau giờ làm.</definition>
+	</entry>
+	<entry name="Min-Hyung" part="Development" className="EC514">
+		<definition>Min-Hyung muốn trở thành một người mà ai cũng có thể thoải mái đến gần, anh ấy thích chơi những trò chơi như 'Dark Souls' vào những ngày nghỉ của mình. Ngoài ra, anh ấy hay xả stress bằng cách đạp xe và hóng gió.</definition>
+	</entry>
+	<entry name="Min-Jae" part="DS" className="EC496">
+		<definition>Min-Jae thích đi du lịch và đến xem các trận đấu vào mỗi mùa giải. Anh ấy thích các môn thể thao như bóng đá, bóng chày, golf, trượt nước. Ước mơ của anh ấy là được cùng bạn bè xem thi đấu bóng đá ở Châu Âu.</definition>
+	</entry>
+	<entry name="Min-Ji" part="Development" className="EC611">
+		<definition>Kim Minji rất thích khám phá các quán ăn ngon và quán cà phê, nên đã lưu rất nhiều địa điểm muốn ghé thăm trên Naver Maps.</definition>
+	</entry>
+	<entry name="Min-Ji" part="DS" className="EC210">
+		<definition>Min-Ji thích du lịch, một trong những những việc phải làm của cô ấy là tham quan tất cả Disneyland trên toàn thế giới. Cô ấy thích biển xanh và bầu trời trong xanh, mục tiêu của cô ấy là tự lái xe và đi ngắm biển trong năm nay.</definition>
+	</entry>
+	<entry name="Min-Ji" part="Development" className="EC467">
+		<definition>Min-Ji thích nằm trên chiếc giường được sưởi ấm bằng thảm điện. Tuy ít khi ra ngoài, nhưng cô ấy luôn hào hứng tham gia vào các buổi tập bóng chuyền 2 lần mỗi tuần. Liệu cô ấy có thể thực hiện một cú spike đẹp mắt?</definition>
+	</entry>
+	<entry name="Min-Jong" part="Sales" className="min-jong">
+		<definition>Chuyên nghành của Min-Jong trong trường đại học là kế toán và quản lý thuế. Khi không làm việc với những con số, anh ấy thường xem phim và chương trình thể thao.</definition>
+	</entry>
+	<entry name="Min-Ju" part="Development" className="EC617">
+		<definition>Choi Minju yêu thích nhạc rock và mơ về một cuộc sống sau giờ làm sẽ luyện tập chơi bass. Cô đang chăm chỉ luyện tập với hy vọng một ngày nào đó sẽ được đứng trên sân khấu lần đầu tiên.</definition>
+	</entry>
+	<entry name="Min-Ju" part="Development" className="EC310">
+		<definition>Min-Ju thích chơi ghi-ta hoặc chơi piano vào thời gian rảnh. Cô ấy muốn an hưởng tuổi già ở một nơi có không khí trong lành và nước sạch sau khi về hưu.</definition>
+	</entry>
+	<entry name="Min-Ju" part="Customer Support" className="min-ju">
+		<definition>Min-Ju  thích du lịch và uống rượu với mọi người hợp với mình. Để phát triển sở thích bản thân, gần đây cô đang tham gia nhiều lớp học một ngày khác nhau.</definition>
+	</entry>
+	<entry name="Min-Ju" part="Development" className="EC350">
+		<definition>Min-Ju thích thưởng thức những món ăn ngon trong khi xem bóng chày hoặc chương trình giải trí tại nhà. Cô ấy thường chơi board game và escape room cùng bạn bè trong những ngày nghỉ.</definition>
+	</entry>
+	<entry name="Min-Jun" part="Development" className="EC554">
+		<definition>Kim Min-Jun, người thích đạp xe, mơ ước được rong ruổi trên chiếc xe đạp đến nhiều nơi khác nhau. Khi có những suy nghĩ phức tạp, anh ấy thường đi dạo một mình để sắp xếp lại tâm trí.</definition>
+	</entry>
+	<entry name="Min-Jung" part="Training" className="min-jung_1">
+		<definition>Min Jung là một trong những nhân viên năng động nhất của chúng tôi! Chúng tôi không chắc làm sao cô ấy có năng lượng để làm việc chăm chỉ như vậy và cô ấy cũng là một người mẹ tuyệt vời nhưng chúng tôi vui mừng cô ấy ở trong nhóm của chúng tôi!</definition>
+	</entry>
+	<entry name="Min-Sang" part="Training" className="EC609">
+		<definition>Công thức hạnh phúc của Hwang Minsang rất đơn giản: chỉ cần được trò chuyện cùng mọi người và thưởng thức một ly bia cũng đủ mang lại niềm vui lớn. Anh dễ dàng kết bạn với cả những người xa lạ và xem việc trò chuyện là nguồn năng lượng tích cực trong cuộc sống.</definition>
+	</entry>
+	<entry name="Min-Soo" part="Admin" className="min-soo">
+		<definition>Min-Soo thích chơi boxing và yêu game Battle Ground. Anh ấy đã có ước mơ làm đạo diễn điện ảnh, ở tương lai, anh ấy muốn chơi game trong rạp hát chỉ một mình </definition>
+	</entry>
+	<entry name="Min-Sung" part="Training" className="min-sung">
+		<definition>Jang Min-Seong là người thu hút bởi chiếc răng khểnh và ngấn mắt nhỏ, không bao giờ ngồi một chỗ và luôn cố gắng phát triển không ngừng. Thỉnh thoảng là người mơ những điều khác lạ so với hiện thực nhưng đó có thể gọi là dừng việc sống trong mơ. </definition>
+	</entry>
+	<entry name="Mi-So" part="Customer Support" className="mi-so">
+		<definition>Sin-Mi thích cà phê, tiểu thuyết lãng mạn, và thích chia sẻ tinh thần năng nổ của cô ấy với mọi người</definition>
+	</entry>
+	<entry name="Mi-Suk" part="Sales" className="mi-suk">
+		<definition>Mi-Suk là một ngôi sao của nhóm phát triển kế hoạch. Làm thế nào để cô ấy làm điều đó? Chúng tôi nghe bí mật đó là từ các chuyến đi mua sắm giảm stress cuối tuần.</definition>
+	</entry>
+	<entry name="Mi-Sun" part="Admin" className="mi-sun">
+		<definition>Mi-Sun thích gặp gỡ mọi người và tràn đầy năng lượng tươi sáng, cô thích Trung Quốc và tiếng Trung nên cô đã du lịch đến nhiều thành phố ở Trung Quốc. Ngoài ra, vào cuối tuần cô cũng thích khám phá những nhà hàng ngon và dành thời gian thư giãn.</definition>
+	</entry>
+	<entry name="Moo-Hyeon" part="Development" className="EC630">
+		<definition>Yoo Moohyeon yêu thích climbing và tìm thấy nguồn năng lượng cho cuộc sống từ cảm giác thành tựu khi chinh phục các tuyến leo khác nhau. Anh muốn cùng nhiều người hơn nữa giải những tuyến leo thú vị.</definition>
+	</entry>
+	<entry name="Moon" part="Director of Service Support" className="su-suk">
+		<definition>Mr Moon thích những người yêu quý Ecount, chúng ta hãy sống một cách chính trực nhất có thể.</definition>
+	</entry>
+	<entry name="Myeong-Joon" part="Customer Support" className="EC214">
+		<definition>Người đàn ông đầy đam mê - Myeong-Joon thích bóng đá đến mức yêu bóng đá và chơi bóng đá mỗi tuần. Không chỉ bóng đá, anh ấy còn thích bóng chày nữa. Anh ấy thích tất cả trò chơi liên quan đến bóng, đến nỗi mọi người có suy nghĩ là kiếp trước anh ấy có phải là một chú chó con không nữa.</definition>
+	</entry>
+	<entry name="Myung-Jin" part="Development Design" className="EC492">
+		<definition>Là người không tiếc tiền cho việc ăn uống, Myung-Jin còn rất thích Cross-Fit. Cô ấy có thể nhảy dây đôi 100 cái và mục tiêu là mức tạ 500 lbs.</definition>
+	</entry>
+	<entry name="Myung-Sik" part="Development" className="myung-sik">
+		<definition>Myung-Sik  luôn luôn tập trung vào việc đảm bảo chúng tôi đã có những chương trình tốt nhất có thể. Khi anh ấy không bận rộn làm nhiệm vụ phát triển, anh ta ra ngoài thư giãn hay đi dạo.</definition>
+	</entry>
+	<entry name="Myung-Su" part="Development" className="myung-su">
+		<definition>Myung-Su mong muốn sẽ được đến tất cả các nhà hàng được liệt kê trong hướng dẫn của Michelin.</definition>
+	</entry>
+	<entry name="Na-Hyun" part="Development" className="EC146">
+		<definition>Na-Hyun thích ghi lại cuộc sống thường ngày bằng những tấm hình và video. Cô ấy muốn lái xe đi dọc bờ biển Đông và chụp lại những tấm hình tuyệt tác. </definition>
+	</entry>
+	<entry name="Nam-Hoon" part="Development" className="nam-hoon">
+		<definition>Nam-Hoon làm việc để giúp chúng tôi cải tiến thiết kế và phát triển chương trình. Anh ấy luôn có cái nhìn tích cực về cuộc sống. Khi anh ấy không làm việc, bạn có thể gặp anh ấy ở phòng gym.</definition>
+	</entry>
+	<entry name="Nam-Uk" part="System Management" className="EC573">
+		<definition>Nam-uk là người tràn đầy năng lượng, bắt đầu ngày mới bằng việc tập thể dục buổi sáng. Khi có chuyện băn khoăn, anh ấy thường đi dạo trong khu phố yên tĩnh để sắp xếp lại suy nghĩ, và trong thời gian rảnh thì chơi game cùng bạn bè hoặc dành thời gian một mình.</definition>
+	</entry>
+	<entry name="Oh-Min" part="System Management" className="EC498">
+		<definition>Là người thích ở nhà vào ngày nghỉ, Oh-Min sở hữu tính tình lạc quan đến mức câu cửa miệng của anh ấy là 'Vậy càng tốt!'</definition>
+	</entry>
+	<entry name="Pil-Kyu" part="DPO" className="EC491">
+		<definition>Pil-Kyu có nhiều sở thích như làm bánh, viết thư pháp, hát Anh cảm thấy vui mỗi lần tập trung vào một sở thích nào đó.</definition>
+	</entry>
+	<entry name="Pu-Reum" part="Training" className="EC547">
+		<definition>Kim Pu-reum tin rằng phẩm chất cao quý của con người được sinh ra từ carbohydrate.</definition>
+	</entry>
+	<entry name="Ru-Lee" part="Development" className="ru-lee">
+		<definition>Là một người yêu thích các thể loại nhạc cổ điển, Ru-lee đã từng trình diễn violin trong ban nhạc. Cô ấy muốn trở thành một người đạt đến độ hài hòa tuyệt vời nhất với các thành viên trong ban nhạc.</definition>
+	</entry>
+	<entry name="Ryung-Joo" part="Customer Support" className="ryung-joo">
+		<definition>Ryung-Joo yêu thích du lịch, khám phá các quán ăn ngon, mục tiêu của cô là chinh phục tất cả các quán ăn ngon trên toàn thế giới.</definition>
+	</entry>
+	<entry name="Sang-Chan" part="Development" className="EC649">
+		<definition>Park Sang-Chan thích chơi game và xem phim. Ngày nghỉ, anh chơi đủ loại game cùng bạn bè, hoặc hòa làm một với chiếc giường và bơi lội trong Netflix.</definition>
+	</entry>
+	<entry name="Sang-Duk" part="Development" className="sang-duk">
+		<definition>Sang-Duk giám sát quy hoạch và phát triển của chúng tôi. Trong thời gian rảnh của mình, anh ấy yêu trượt tuyết và chụp ảnh. Bạn thường sẽ tìm thấy anh ta với một máy ảnh đi theo sau.</definition>
+	</entry>
+	<entry name="Sang-Eun" part="Development" className="EC422">
+		<definition>Sang-Eun thích du lịch và mục tiêu của cô ấy là đến tham quan 3 thác nước lớn của thế giới.</definition>
+	</entry>
+	<entry name="Sang-Hoon" part="Development Design" className="EC481">
+		<definition>Sang-Hoon thích du lịch và nấu ăn. Anh ấy bị mê hoặc bởi cảnh vật miền đông Châu Âu mà mình đã từng ghé thăm nên một ngày nào đó, anh muốn được mở nhà hàng ở một ngôi làng nhỏ tại đây.</definition>
+	</entry>
+	<entry name="Sang-Hyeon" part="Development" className="EC355">
+		<definition>Sang-Hyeon thích gặp gỡ nhiều người và thích công việc lập trình. Anh còn thích xe du lịch và cắm trại. Anh muốn được cùng người bạn đời và thú cưng của mình đi du lịch nhiều nơi trên chiếc xe du lịch.</definition>
+	</entry>
+	<entry name="Sang-Hyoung" part="Development" className="sang-hyoung">
+		<definition>Sở thích của Sang-Hyoung là xem nhạc kịch, anh ấy ước được thưởng thức vở nhạc kịch 42nd Street tại New York vào một ngày đẹp trời nào đó. Anh ấy nói rằng khi xem buổi công diễn, anh cảm thấy thật vui sướng không thể nào diễn tả mà chỉ có thể cảm nhận được tại một không gian đặc biệt gọi là sân khấu.</definition>
+	</entry>
+	<entry name="Sang-Min" part="Customer Support" className="EC220">
+		<definition>Sang-Min có mục tiêu là sống để không phải hối hận và theo đuổi những trải nghiệm mới, anh ấy thích đi du lịch nên mục tiêu sẽ là đến tất cả những địa danh nổi tiếng trong nước, sau đó đi các khu vực trên thế giới.</definition>
+	</entry>
+	<entry name="Sang-Min" part="Training" className="EC363">
+		<definition>Ngoài sở thích thưởng thức phong cảnh tại những địa điểm mới, Sang-Min còn thường hay đọc sách khi rảnh rỗi. Anh ấy muốn viết sách dựa trên những trải nghiệm của bản thân mình.</definition>
+	</entry>
+	<entry name="Sang-Soo" part="Development" className="sang-soo">
+		<definition>Sang-Soo đam mê du lịch nhưng vẫn chưa bao giờ đặt chân ra khỏi nơi anh hiện sinh sống.</definition>
+	</entry>
+	<entry name="Sang-Woong" part="Development" className="EC465">
+		<definition>Là người yêu thiên nhiên và động vật, Sang-Woong rất thích cắm trại. Anh ấy ước được một lần được cắm trại tại Amazon.</definition>
+	</entry>
+	<entry name="Se-Eun" part="Customer Support" className="EC552">
+		<definition>Park Se-eun, người thấy thế giới tràn ngập những điều thú vị, là một "tín đồ của sở thích." Cô đặc biệt hạnh phúc khi ở bên thú cưng của mình. Gần đây, cô ấy đã bắt đầu tập lái xe để có thể đi cắm trại trên ô tô cùng chú chó cưng.</definition>
+	</entry>
+	<entry name="Se-Hui" part="Training" className="EC647">
+		<definition>Park Se-Hui luôn trân trọng những khoảng thời gian được cười nói và vui vẻ cùng mọi người, không ngần ngại thử những sở thích mới và tận hưởng đủ loại trải nghiệm. Nghe nói vào ngày nghỉ, anh thích ghi strike ở sân bowling hoặc rèn kỹ năng từng cú một ở sân tập golf.</definition>
+	</entry>
+	<entry name="Seo-Hyun" part="Customer Support" className="EC387">
+		<definition>Là người yêu thích bóng chày và là fan của đội bóng Hanwha Eagles, Seo Hyun thường giải stress bằng cách đi xem bóng chày vào mỗi mùa xuân. Seo Hyun còn thường dành thời gian trò chuyện cùng gia đình hoặc vui đùa với bạn bè.</definition>
+	</entry>
+	<entry name="Seo-Hyun" part="Development" className="EC468">
+		<definition>Là người thích chơi game vào thời gian rảnh, Seo-Hyun thích chơi Assassin's Creed sau giờ làm.</definition>
+	</entry>
+	<entry name="Seok-Hyeon" part="Development" className="EC372">
+		<definition>Seok-Hyeon rất thích dành thời gian cuối tuần để thưởng thức các bộ phim. Thể loại anh ấy thích là Noir.</definition>
+	</entry>
+	<entry name="Seon-Deok" part="DBA" className="EC179">
+		<definition>Seon-Deok thích những việc năng động như gặp gỡ bạn bè hoặc đi bộ, du lịch, trải nghiệm, nhưng cũng cần thời gian ở một mình. Anh ấy thích khoảng thời gian nạp lại năng lượng để sắp xếp lại một ngày trong khi nghe nhạc.</definition>
+	</entry>
+	<entry name="Seong-Ho" part="Sales" className="EC452">
+		<definition>Seong-Ho là người thích động vật và luôn mong chờ cơ hội được thành công.</definition>
+	</entry>
+	<entry name="Seul-Gi" part="Customer Support" className="seulgi">
+		<definition>Lee Seul-Gi thích những món ăn và đi du lịch, nếu vừa đi vòng quanh thế giới vừa có thể thưởng thức ẩm thực ở mỗi nước là giấc mơ của  tôi.</definition>
+	</entry>
+	<entry name="Seung-Beom" part="DAM" className="seung-beom">
+		<definition>Seung-Beom - tự nhận mình là 'người sống khép kín', anh ấy thích đọc tiểu thuyết, chơi game và nấu ăn. Anh ấy cũng thích ca hát nên thường tìm niềm vui bằng việc ghé qua phòng karaoke - dùng đồng xu trên đường đi làm về.</definition>
+	</entry>
+	<entry name="Seung-Boo" part="Development" className="EC528">
+		<definition>Seung-Boo yêu thích mì lạnh Pyeong-yang, anh ấy cho biết danh sách việc cần làm của anh ấy là ghé thăm tất cả các nhà hàng mì lạnh Pyeong-yang ngon.</definition>
+	</entry>
+	<entry name="Seung-Hee" part="Development" className="EC148">
+		<definition>Seung-Hee thích bầu không khí yên bình và thích trầm ngâm, vì vậy mà cô ấy thích nhạc Jazz, những bài hát mừng Giáng sinh và cả cà phê nữa.</definition>
+	</entry>
+	<entry name="Seung-Hyeon" part="Development" className="EC629">
+		<definition>Choi Seunghyeon, người nghiêm túc trong việc học tiếng Nhật, là một lập trình viên lãng mạn mơ về chuyến du hành đến sao Hỏa trong tương lai. “Elon Musk fighting!” Anh thậm chí còn thích tưởng tượng về ngày được chơi một ván League of Legends cùng người bạn ngoài hành tinh. Với niềm tin rằng công nghệ giúp cuộc sống con người thuận tiện hơn, anh đang phát triển dịch vụ ECOUNT.</definition>
+	</entry>
+	<entry name="Seung-Hyun" part="Development" className="EC309">
+		<definition>Seung-Hyun thường sẽ im lặng lúc mới gặp nhưng nếu trở nên thân thiết thì sẽ rất hài hước. Anh ấy thích ở nhà chơi game hoặc vẽ tranh và thích cà phê latte nhất trong các loại thức uống.</definition>
+	</entry>
+	<entry name="Seung-Hyun" part="Development" className="EC515">
+		<definition>Seung-Hyun cảm thấy ổn định trong cuộc sống hàng ngày đơn giản và lặp đi lặp lại, anh ấy thích thích những điều nhỏ nhặt. Anh ấy cảm thấy vô cùng hạnh phúc khi tận hưởng thời gian rảnh rỗi thông qua những cuộc trò chuyện nhỏ, những bữa ăn và những chuyến đi dạo.</definition>
+	</entry>
+	<entry name="Seung-Jun" part="Development" className="EC545">
+		<definition>Kim Seung-jun, người đã sống ở Jeju suốt 20 năm nhưng lại là một "chàng trai thích ở nhà," bất ngờ nhận ra rằng mình vẫn chưa khám phá hết hòn đảo này. Gần đây, anh ấy đặt ra mục tiêu đi du lịch nhiều nơi hơn, bao gồm cả quê hương Jeju của mình.</definition>
+	</entry>
+	<entry name="Seung-Kwan" part="Marketing" className="seung-kwan">
+		<definition>Seung-Kwan thích đi chơi với bạn bè. Anh ấy thích tham gia các hoạt động giao lưu con người. Khi nào bạn muốn đi chơi, hãy gọi anh ấy.</definition>
+	</entry>
+	<entry name="Seung-Won" part="Development" className="EC259">
+		<definition>Seung-Won yêu thích tập thể dục đến mức nếu không tập thể dục mỗi ngày thì sẽ cảm thấy khó chịu. Trong một khoảng thời gian dài không thể đến phòng tập gym nên cuối cùng anh ấy đã làm một phòng tập gym tại nhà. Sau khi trở về nhà và vận động, đó là khoảng thời gian mà tâm trạng tốt nhất trong ngày. Ước mơ của anh ấy là trong tương lai tạo một phòng gym để có thể tập cùng với bạn bè và người quen. Sẵn sàng chào đón những ai muốn tập cùng!</definition>
+	</entry>
+	<entry name="Seung-Yong" part="Development" className="seung-yong">
+		<definition>Seung-Yong là một loại người bình tĩnh và nhạy cảm, người xử lý kế hoạch phát triển của chúng tôi. Anh ấy yêu thích nghe nhạc và thiền định. Nếu anh ấy không làm một trong những việc đó, anh ta đang tìm ra ý tưởng phát triển mới.</definition>
+	</entry>
+	<entry name="Shin-Ho" part="Training" className="shin-ho">
+		<definition>Shin-Ho thích thể thao như Điền kinh, leo núi và chơi bóng đá. Anh mơ ước 1 ngày sẽ nào đó sẽ tham gia trong đội tuyển sau khi thông thạo kỹ năng bơi lội</definition>
+	</entry>
+	<entry name="Shin-Rae" part="CEO" className="shin-rae">
+		<definition>Như Giám đốc điều hành của chúng tôi, Shin-Rae luôn luôn làm việc để dự đoán nhu cầu của khách hàng và tìm ra cách để cải thiện hệ thống. Khi không đưa ra được giải pháp cho công việc hiệu quả hơn, anh ta mang giày và đi ra ngoài chạy bộ.</definition>
+	</entry>
+	<entry name="So-Eun" part="Development" className="EC601">
+		<definition>Yêu thích những trải nghiệm và việc học hỏi điều mới, Bae Soeun đã thử qua hơn 10 môn thể thao khác nhau và ghé thăm 8 điểm đến du lịch. Gần đây, cô đang khám phá nhiều tính năng của ECOUNT và tận hưởng niềm vui trong quá trình học tập.</definition>
+	</entry>
+	<entry name="So-Hyun" part="Development" className="EC533">
+		<definition>So-Hyun dành phần lớn thời gian để nằm ở nhà nhưng bất cứ khi nào cô ấy cũng có thể chạy ra ngoài để ăn những món ăn ngon cùng bạn bè. Cô ấy hạnh phúc nhất khi được ăn những món ăn ngon và món tráng miệng. Cô ấy thích món thịt heo cốt lết chiên xù và thích đến những quán ăn ngon có món đó.</definition>
+	</entry>
+	<entry name="So-Jeong" part="DPO" className="EC288">
+		<definition>So-Jeong rất thích nước hoa, cô ấy ước mơ rằng sẽ sưu tập được tất cả các loại nước hoa nổi tiếng trên thế giới. Cảm xúc khác nhau tùy theo mùi hương, nên cô ấy dùng mùi hương yêu thích để thay đổi tâm trạng. </definition>
+	</entry>
+	<entry name="So-Jeong" part="Customer Support" className="EC341">
+		<definition>So-Jeong thích ở nhà, vì cô ấy rất cần thời gian một mình để nạp năng lượng cho bản thân. Cho dù ở một mình, cô ấy cũng không cảm thấy chán mà rất giỏi trong việc tự tạo ra điều tích cực. Cô ấy muốn mọi người nhớ đến mình là một người tích cực và thoải mái.</definition>
+	</entry>
+	<entry name="Sol-Hyang" part="Marketing" className="EC621">
+		<definition>Solhyang Park có những sở thích khá năng động như đạp xe dọc sông Hàn vào ngày nghỉ hoặc đến xưởng làm gốm. Cô cũng yêu biển và thích lặn scuba. Ước mơ của cô là một ngày nào đó có thể khám phá các đại dương trên khắp thế giới và gặp cá voi lưng gù tại Tonga.</definition>
+	</entry>
+	<entry name="Song-Hee" part="Development" className="EC357">
+		<definition>Là một người thích thử những cái mới, Song-Hee thích du lịch và bánh mì. Mục tiêu của cô ấy là đi du lịch nhiều nơi và thử nhiều loại bánh mì mới.</definition>
+	</entry>
+	<entry name="Soo-Hee" part="Training" className="soo-hee">
+		<definition>Soo-Hee là cựu binh trong nhóm, nhưng với 6 năm kinh nghiệm, cô ấy đã sẵn sàng vươn lên dẫn đầu. Cô là người có kinh nghiệm nhất trong nhóm!</definition>
+	</entry>
+	<entry name="Soo-Kyeong" part="Development" className="EC543">
+		<definition>Heo Soo-kyeong thích đạp xe spinning, đổ mồ hôi và tận hưởng cảm giác sảng khoái khi đón cơn gió mát. Cô ấy cũng là người luôn mạnh mẽ tiến về phía trước để đạt được mục tiêu, giống như khi tập luyện spinning.</definition>
+	</entry>
+	<entry name="Soo-Min" part="Development" className="soo-min">
+		<definition>Soo-min vì "cuồng" màu vàng nên cô ấy đặc biệt yêu mến những chú gà con. Cô ấy thích đi chơi cùng bạn bè nhưng cô ấy nghĩ rằng việc nấu ăn ngon ở nhà, uống rượu một mình và dành thời gian một mình cũng rất quan trọng.</definition>
+	</entry>
+	<entry name="Soon-Hye" part="Customer Support" className="EC506">
+		<definition>Sau khi khám phá ra sức hấp dẫn của những cuốn tiểu thuyết dài tập, ước mơ của Soon-Hye là được du lịch đến Iceland và gặp những chú cá voi ở vùng biển có cực quang.</definition>
+	</entry>
+	<entry name="Soo-Yang" part="Development" className="EC613">
+		<definition>Park Sooyang, người yêu thích nước và biển, luôn muốn thử thách bản thân với những điều mới mẻ. Tuy nhiên vào cuối tuần, thay vì đến những nơi đông người, cô thích ở nhà xem những bộ phim còn đang xem dở trên Netflix.</definition>
+	</entry>
+	<entry name="Su-In" part="Training" className="su-in">
+		<definition>Yoon Su-In với tính cách năng động, thông thường thích chơi trượt ván tuyết và đi du lịch, có nhiều chuyện nói do nét riêng trong tính cách là hướng ngoại. Biết đâu, khi đi qua lại thấy tôi đang dần dần gây ồn ào thì vui lòng kéo tôi đi.</definition>
+	</entry>
+	<entry name="Su-Jin" part="Customer Support" className="EC216">
+		<definition>Su-Jin có mơ ước du lịch vòng quanh thế giới, cô ấy nói rằng mình phải uống một ly cà phê mỗi ngày. Nếu như cố gái ấy có vẻ mệt mỏi thì hãy nói cô ấy uống cà phê nhé.</definition>
+	</entry>
+	<entry name="Su-Jin" part="DAM" className="EC633">
+		<definition>Kim Su-Jin, người yêu thích nghe nhạc Giáng sinh đến mức có thể nghe suốt bốn mùa, thích nhất là được nghỉ ngơi tại nhà, nấu ăn, làm bánh quy, chơi Nintendo hoặc đan len.</definition>
+	</entry>
+	<entry name="Sung-Bum" part="Development" className="sung-bum">
+		<definition>Sau khi tốt nghiệp ở đại học YeaSul, Sung-Bum có nhiều kinh nghiệm trong lĩnh vực làm phim ở nhiều công ty khác nhau. Anh ấy thích làm những video HD trong khi đi du lịch và gần đây anh ấy đã làm việc với Episode.pe.kr một blog về phim và video. Những bộ phim ngắn của anh ấy được lọt vào vòng chung kết của một liên hoan phim trước đó và hiện tại anh ấy vẫn còn yêu thích làm phim. Anh ấy muốn làm một bài sản phẩm quảng cáo cho Ecount trong tương lai.</definition>
+	</entry>
+	<entry name="Sung-Bum" part="Development" className="sung-bum_2">
+		<definition>Anh ấy thích chơi bida, game máy tính, và đi du lịch. Nếu anh ta thích điều gì, anh ta sẽ chinh phục nó.</definition>
+	</entry>
+	<entry name="Sung-Chul" part="Development" className="EC321">
+		<definition>Sung-Chul tận hưởng cuộc sống một cách tích cực, thích bơi và chơi board game. Anh ấy thích mời bạn bè thưởng thức đồ ăn ngon cùng đồ uống nhẹ.</definition>
+	</entry>
+	<entry name="Sung-Gil" part="Development" className="sung-gil">
+		<definition>Là một nhà phát triển ứng dụng di động, Sung-Gil đang hướng chúng tôi đến một nền tảng ERP mới. Anh ấy vui vì những điều đang chờ ở phía trước và chúng tôi cũng vậy!</definition>
+	</entry>
+	<entry name="Sung-Han" part="Development" className="EC516">
+		<definition>Sung-Han nói rằng chạy bộ là sở thích của anh ấy, thực ra anh ấy rất hiếm khi chạy kể từ khi đi làm công ty. Anh ấy đang quyết tâm để chạy bộ thường xuyên trở lại.</definition>
+	</entry>
+	<entry name="Sung-Hee" part="Customer Support" className="sung-hee">
+		<definition>Bây giờ là khoảnh khắc tuyệt nhất của tôi! Tôi Gwonsung hee luôn tận hưởng những gì hiện tại đang có.</definition>
+	</entry>
+	<entry name="Sung-Ho" part="Development" className="EC648">
+		<definition>Jung Sung-Ho luôn ghi nhớ trong lòng phương châm ‘Biết đến đâu, thấy đến đó’. Anh đang sống cùng hai chú thằn lằn: Janggun-i đáng tin cậy và Brûlée có màu sắc rất đẹp.</definition>
+	</entry>
+	<entry name="Sung-Hwa" part="Development" className="sung-hwa">
+		<definition>Sung-Hwa làm việc trong bộ phận tiếp thị Web. Mặc dù ông phải đi hơn 2 giờ để đến nơi làm việc, nhưng một khi anh ấy ở đây, không có gì có thể ngăn chặn anh ta!</definition>
+	</entry>
+	<entry name="Sung-Jun" part="Development" className="sung-jun">
+		<definition>Sung-Jun thích cảm giác cơ bắp căng lên sau những trận bóng đá. Anh ấy bắt đầu yêu Ecount như là yêu bóng đá vậy.</definition>
+	</entry>
+	<entry name="Sung-Sil" part="Customer Support" className="sung-sil">
+		<definition>Sung-Sil nói rằng tuổi 20 cần làm việc thật chăm chỉ, để tới năm 30 tuổi cô ấy có thể đi du lịch châu Âu. Cô ấy là người rất vui vẻ và thân thiện, muốn trở thành bạn với mọi người. Ngoài ra cô ấy cũng là người rất có trách nhiệm.</definition>
+	</entry>
+	<entry name="Sung-Yeol" part="Customer Support" className="sung-yeol">
+		<definition>Sung Yeol luôn luôn vui vẻ, đối với tất cả mọi người anh luôn nhẹ nhàng và thân thiện.</definition>
+	</entry>
+	<entry name="Sun-Mi" part="Customer Support" className="EC431">
+		<definition>Sun-Mi là người thích giao lưu, thích khám phá các quán ăn ngon. Cô ấy luôn mong muốn hạnh phúc bằng tinh thần lạc quan.</definition>
+	</entry>
+	<entry name="Sun-Woong" part="Development" className="sun-woong">
+		<definition>Sun-Woong là một trong những người giàu năng lượng nhất, năng động, và nhìn chung là người vui vẻ của chúng tôi. Anh thích làm mọi người vui cả trong và ngoài văn phòng.</definition>
+	</entry>
+	<entry name="Su-Yeon" part="Customer Support" className="EC426">
+		<definition>Su-Yeon luôn chăm sóc những người xung quanh nên thường được khen là người hòa đồng. Cô ấy thích dành thời gian cho gia  đình và đi du lịch vào cuối tuần.</definition>
+	</entry>
+	<entry name="Tae-Ho" part="DBA" className="EC177">
+		<definition>Tae-Ho thích xem phim và du lịch, anh ấy mơ ước được đến Universal Studios Hollywood tại LA.</definition>
+	</entry>
+	<entry name="Tae-Hyung" part="Development Design" className="tae-hyung">
+		<definition>Tae- Hyung ban đầu tham gia với chúng tôi như một nhân viên bán thời gian, nhưng bây giờ mà anh ấy đã làm với  bằng cấp  quản trị kinh doanh của mình, ông ấy trở thành một phần của chúng tôi.</definition>
+	</entry>
+	<entry name="Tae-Kyung" part="Development Design" className="tae-kyung">
+		<definition>Tae Kyung là một tài sản quí trong Nhóm phát triển. Ông đã đến thăm bãi biển Wikiki vài lần trước đây, và không ngừng mơ ước sẽ trở lại.</definition>
+	</entry>
+	<entry name="Tae-Seop" part="Development" className="EC513">
+		<definition>Tae-Seop là người thích sắp xếp mọi thứ, thích game PC. Anh ấy thường ngủ rất nhiều và có biệt danh là “Snorlax”.</definition>
+	</entry>
+	<entry name="Tae-Wan" part="Training" className="tae-wan">
+		<definition>Hyo Tae-Wan là người năng động và thích cùng với nhiều người  tham gia các hoạt động thể thao như trượt tuyết, quần vợt, đá cầu, v.v</definition>
+	</entry>
+	<entry name="Tae-Won" part="Development" className="EC151">
+		<definition>Vì yêu thích âm nhạc và game nên Tae-Won thường giải tỏa căng thẳng bằng việc chơi board game, xem các buổi công diễn và đến các lễ hội. Anh ấy ước mơ được đến những lễ hội nổi tiếng trên toàn thế giới. Anh ấy đang cảm thấy hạnh phúc, hứng thú vì tìm được công việc phù hợp và muốn trở thành một lập trình viên được nể trọng vào một ngày nào đó.</definition>
+	</entry>
+	<entry name="Tae-Yi" part="Customer Support" className="EC509">
+		<definition>Tae-Yi là một người thích dành thời gian ở nhà, thích những bộ phim thuộc thể loại kinh dị hoặc ly kỳ. Cô ấy cũng quan tâm đến việc bảo vệ môi trường và cảm thấy mình đạt được thành quả khi thực hiện những hành động nhỏ như tái chế và sử dụng các sản phẩm thân thiện với môi trường.</definition>
+	</entry>
+	<entry name="Tu Anh" part="Development" className="tuanh">
+		<definition>Giấc mơ của Tú Anh-người mà thích đi du lịch và đọc sách- là đi tham quan tất cả thư viện nổi tiếng trên thế giới.</definition>
+	</entry>
+	<entry name="Weon-Seok" part="Training" className="weon-seok">
+		<definition>Thời gian hạnh phúc nhất của Weon-Seok là khi ở bên cạnh những đứa trẻ.Anh ấy luôn nhận được sức mạnh từ những đứa trẻ,anh ấy muốn là người lớn đáng tin cậy có thể bảo vệ những đứa bé.</definition>
+	</entry>
+	<entry name="Won-Hee" part="DQM" className="won-hee">
+		<definition>Won-Hee -một người  yêu sách, cô mơ ước một ngày khám phá năm châu.</definition>
+	</entry>
+	<entry name="Woo-Hyun" part="Development" className="EC605">
+		<definition>Jo Woohyun luôn nhớ những chú mèo ở nhà bố mẹ. Cô đang từng ngày chờ đợi khoảnh khắc được gặp lại chúng và hôm nay cũng chăm chỉ làm việc để “kiếm tiền mua pate cho mèo”.</definition>
+	</entry>
+	<entry name="Woo-Je" part="Development" className="EC199">
+		<definition>Woo-Je có tính cách nhút nhát nhưng tinh tế, và thích chơi board game cùng những người tốt.</definition>
+	</entry>
+	<entry name="Woo-Ri" part="Customer Support" className="EC430">
+		<definition>Woo-Ri thích đi du lịch và thưởng thức các bộ phim và các buổi trình diễn, cô ấy thích các buổi biểu diễn ngoài trời vào mùa xuân và mùa thu.</definition>
+	</entry>
+	<entry name="Woo-Sol" part="DS" className="EC495">
+		<definition>Là người thích vận động,  Woo-Sol thường chơi cầu lông, leo núi mỗi khi rảnh. Cô ấy còn muốn thử thách mình với sky diving.</definition>
+	</entry>
+	<entry name="Woo-Yeol" part="Development" className="EC313">
+		<definition>Woo-Yeol thích mùa đông và vận động, anh ấy thích trượt tuyết và thể thao mạo hiểm. Mục tiêu của anh ấy là nhảy dù ở Thụy Sĩ, nếu có đủ khả năng thì anh ấy sẽ nuôi chú cún giống Border Collie và dắt đi dạo cùng.</definition>
+	</entry>
+	<entry name="Yang-Ho" part="Training" className="yang-ho">
+		<definition>Yang-Ho rất thích câu nói "Ngày trẻ nhất trong cuộc đời là ngày hôm nay", anh ấy thích chạy xe đạp, đang ấp ủ kế hoạch chinh phục lãnh thổ.Xem cảnh đẹp và đang chờ đợi đến ngày sôi nổi đó.</definition>
+	</entry>
+	<entry name="Ye-Dam" part="Training" className="EC269">
+		<definition>Ye-Dam thích được lớn lên ở vùng thảo nguyên Trung Á để cưỡi ngựa. Cô ấy có ước mơ cưỡi ngựa qua khắp mọi miền đất nước khi được thống nhất.</definition>
+	</entry>
+	<entry name="Ye-Ji" part="Development Design" className="EC189">
+		<definition>Ye-Ji thích rượu ngon và những lễ hội thú vị, gần đây cô ấy quan tâm đến whisky nên mỗi khi có cơ hội cô ấy sẽ nếm thử một chút. Cô ấy muốn đi tour thăm quan xưởng cất rượu whisky vào một ngày nào đó.</definition>
+	</entry>
+	<entry name="Ye-Jin" part="Development Design" className="ye-jin">
+		<definition>Ye-Jin - người thích trò chuyện với mọi người cũng như các hoạt động thể chất, vào thời gian rảnh cô thường chơi thể thao và tham gia các câu lạc bộ khiêu vũ để giảm bớt căng thẳng.</definition>
+	</entry>
+	<entry name="Ye-Jin" part="Customer Support" className="ye-jin_1">
+		<definition>Những điều mới mẻ xung quanh bao giờ cũng là điều hấp dẫn và thách thức Ye-jin. Cô ấy sống không mệt mỏi với sở thích du lịch và leo núi. Ye-jin có kinh nghiệm tuyệt vời khi leo vách núi và cô ấy ước có thể hoàn thành đường đua lớn thứ 3 thế giới đến cả Milford Soundtrack và Inca Trail.</definition>
+	</entry>
+	<entry name="Ye-Na" part="Development" className="EC612">
+		<definition>Kim Yena, người có tên thuần tiếng Hàn, đang nuôi ba chú chó và tìm thấy niềm vui trong cuộc sống hằng ngày bằng cách chia sẻ ảnh các chú chó với gia đình mỗi ngày. Ngoài ra, cô đặt mục tiêu có thể đi du lịch nước ngoài khoảng một tuần, nên hiện đang tập thể dục để rèn luyện thể lực.</definition>
+	</entry>
+	<entry name="Ye-Rim" part="Development" className="ye-rim">
+		<definition>Thích nghe những bản nhạc xưa cũ một thời đã qua cùng mọi người, nấu nướng là sở thích của Ye-rim. Cô ấy cũng thích đi cắm trại cùng những người mình yêu thương.</definition>
+	</entry>
+	<entry name="Ye-Rin" part="Customer Support" className="EC462">
+		<definition>Ye-Rin là một homeperson chính hiệu. Cô ấy thích đi dạo cùng thú cưng và xem nhiều thể loại phim.</definition>
+	</entry>
+	<entry name="Ye-Seul" part="Development" className="EC416">
+		<definition>Ye-Seul thích tạo ra những kỷ niệm đẹp cho người khác. Vì vậy cô ấy thường chụp ảnh cho các du khách khi đi du lịch.</definition>
+	</entry>
+	<entry name="Yo-Han" part="Development" className="yo-han">
+		<definition>Yo-Han thích đạp xe và game board. Nếu ngày nào đó đẹp trời thì anh ấy có thể nằm trong công việc, ngắm nhìn cảnh và ngủ ngon.</definition>
+	</entry>
+	<entry name="Yong-Hee" part="Development" className="yong-hee">
+		<definition>Học chuyên nghành lịch sử nhưng bây giờ Yong-Hee muốn sống cuộc sống của một lập trình viên. Do đó, anh ấy đang tiếp tục học tập và cố gắng hết mình làm việc. Hãy chờ xem Yong Hee của tương lai.</definition>
+	</entry>
+	<entry name="Yong-Hwan" part="Development" className="yong-hwan">
+		<definition>Yong-Hwan là người sống có mục tiêu và luôn làm việc để đạt được mục tiêu. Anh ấy thích chụp hình những chuyến đi của mình và mơ ước có thể đi du lịch toàn thế giới và chụp hình dọc đường đi.</definition>
+	</entry>
+	<entry name="Yong-Hyeok" part="DQM" className="EC577">
+		<definition>Yong-hyeok là người có tính cách nhiệt huyết, khi đã đam mê điều gì thì sẽ tìm hiểu và tập trung đến cùng. Anh ấy chỉ chọn một trò chơi để thưởng thức và tận hưởng trọn vẹn sức hấp dẫn của nó, đồng thời đã kiên trì cổ vũ cho một đội bóng đá suốt thời gian dài. Sự kiên định này cũng thể hiện trong cuộc sống hàng ngày: bóng đá là nguồn năng lượng lớn nhất và là sở thích của anh ấy, và gần đây đang mở rộng giới hạn bản thân bằng cách leo núi vào mỗi cuối tuần với mục tiêu hoàn thành “100 ngọn núi nổi tiếng của Hàn Quốc.”</definition>
+	</entry>
+	<entry name="Yong-Seok" part="Development" className="yong-seok">
+		<definition>Yong-Seok yêu âm nhạc, tập thể hình, chơi bóng đá, và ca hát. Anh ta học chuyên ngành Kế toán, Thuế do đó anh muốn trở thành 1 chuyên viên trong Ecount.</definition>
+	</entry>
+	<entry name="Yong-Sung" part="Development" className="yong-sung">
+		<definition>Yong- Sung yêu thích nghe nhạc và đi du lịch. Anh ấy cũng nói Trung Quốc khá tốt. Như anh ấy mong muốn, hiện tại anh ấy đang làm việc tại văn phòng của Ecount tại Trung Quốc.</definition>
+	</entry>
+	<entry name="Yong-Tak" part="Development" className="EC137">
+		<definition>Yong-Tak yêu thích những món ăn ngon, anh ấy ước mơ rằng một ngày nào đó sẽ đi khám phá những quán ăn ngon ở khắp nơi trên đất nước.</definition>
+	</entry>
+	<entry name="Yoon-Hee" part="Customer Support" className="yoon-hee">
+		<definition>Yoon-Hee yêu các chuyến phượt, bất kể khi nào cô ấy mệt mỏi, cô ấy thích ngắm nhìn những bức ảnh cô ấy đã chụp.</definition>
+	</entry>
+	<entry name="Yoo-Sang" part="Development" className="EC652">
+		<definition>Eom Yoo-Sang thích các môn thể thao mạo hiểm, mỗi mùa đông anh đều lên Gangwon-do để trượt ván tuyết. Nghe nói anh thấy buồn vì mùa đông ngày càng ngắn lại do hiện tượng nóng lên toàn cầu. Mùa đông ơi, đừng đi!</definition>
+	</entry>
+	<entry name="Young-Ho" part="Sales" className="EC654">
+		<definition>Seo Young-Ho thích lái xe cùng âm nhạc, những ngày trời đẹp anh sẽ đi chạy bộ hoặc chơi bắt bóng với bạn bè.
+
+Vì thích trải nghiệm những nơi mới, anh từng một mình đeo ba lô đi du lịch khắp thế giới trong 3 tháng.
+
+Chạy, ném và lên đường, anh không ngừng tìm thấy những niềm vui mới.</definition>
+	</entry>
+	<entry name="Young-Min" part="Development" className="EC610">
+		<definition>Kang Youngmin là người luôn tìm kiếm “dopamine” từ những trải nghiệm mới. Ước mơ của anh là rời bỏ tình trạng có bằng lái nhưng ít khi lái xe, thực hiện chuyến du lịch vòng quanh cả nước và gặp gỡ nhiều người. Anh cũng nói rằng muốn mua xe Tesla.</definition>
+	</entry>
+	<entry name="Young-Mo" part="Development" className="EC423">
+		<definition>Là người thích ở nhà, Young-Mo thường xem phim hoặc chơi game cùng bạn bè vào thời gian rảnh. Anh ấy mơ ước được ra khỏi nhà và du lịch thế giới, vũ trụ.</definition>
+	</entry>
+	<entry name="Young-Woo" part="Sales" className="EC600">
+		<definition>Kim Young Woo là người yêu thích giao lưu, hòa đồng với mọi người. Anh tìm thấy nguồn năng lượng tích cực khi cùng nhau thưởng thức những bữa ăn ngon và dành thời gian vận động, chơi thể thao.</definition>
+	</entry>
+	<entry name="Yu-Jin" part="Customer Support" className="EC110">
+		<definition>Yu-Jin - cảm thấy hạnh phúc khi nuôi thú cưng, cô cho biết mục tiêu của mình là đi du lịch đến 10 địa điểm trước khi chú cún đang sống cùng cô tròn 10 tuổi.</definition>
+	</entry>
+	<entry name="Yu-Jin" part="Customer Support" className="EC537">
+		<definition>Kim Yu-Jin dành thời gian nghe nhạc và đọc sách. Cô ấy yêu thích âm nhạc, thường tìm kiếm những ca khúc mới để thưởng thức và thích chơi trống. Ngoài ra, cô cũng thích xem các buổi biểu diễn trực tiếp và thường đến các sân khấu vào cuối tuần để trải nghiệm những màn trình diễn đa dạng của các nghệ sĩ.</definition>
+	</entry>
+	<entry name="Yu-Lim" part="Customer Support" className="EC265">
+		<definition>Yu-Lim là một người nghiêm túc trong việc ăn uống, mục tiêu của cô ấy là ăn những món ăn ngon tốt sức khỏe cho đến khi chết. Cô ấy có kế hoạch sau này làm một blog các quán ăn ngon đúc kết trải nghiệm trực tiếp ăn thử món ăn.</definition>
+	</entry>
+	<entry name="Yun-Hwa" part="Customer Support" className="yun-hwa">
+		<definition>Yun-Hwa thích đi du lịch và tìm thấy hạnh phúc khi khám phá ra những điểm tham quan được ẩn giấu. Cô nạp lại năng lượng cho bản thân bằng niềm hạnh phúc và sự thư giãn từ mỗi chuyến du lịch mang lại.</definition>
+	</entry>
+	<entry name="Yun-Ji" part="Marketing" className="EC546">
+		<definition>Oh Yun-ji, người đang cố gắng hết mình để thực hiện ước mơ sở hữu một ngôi nhà, thường dành thời gian tận hưởng các hoạt động trong nhà như nấu ăn và trang trí nhà cửa.</definition>
+	</entry>
+	<entry name="Yu-Rim" part="Development" className="EC160">
+		<definition>Yu-Rim muốn giống như Vitamin trở thành sức mạnh và cổ vũ mọi người xung quanh, cô ấy  tìm thấy những hạnh phúc nhỏ bé trong cuộc sống thường nhật với nhiều hoạt động sở thích đa dạng như đọc sách, ca hát, vận động, du lịch.</definition>
+	</entry>
+</entries>

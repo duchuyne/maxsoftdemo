@@ -1,0 +1,322 @@
+﻿/*--------------------------------------------------
+2. Font Color
+--------------------------------------------------*/
+a.text-light{
+  color:#ffd7da            
+}
+.text-primary-inverse{color: #fff !important;background-color:#A51F2A}
+a.text-primary-inverse:hover{color: #fff !important;background-color:#A51F2A}
+/*--------------------------------------------------
+4 Labeling
+--------------------------------------------------*/
+.label-primary.label-light{
+  background-color:#f6d7d1;
+}
+/*--------------------------------------------------
+4-1 Label Group
+--------------------------------------------------*/
+.label-group:hover .label-primary + ul{
+  border-color:#A51F2A
+}
+/*////////////////////////////////
+///    Button Module    
+///////////////////////////////*/
+/*--------------------------------------------------
+light
+--------------------------------------------------*/
+.btn-primary.btn-light{
+  background-color:#f6d7d1;
+	border-color: #d23c49;
+}
+.btn-primary.btn-light:hover{
+  background-color:#e4bab2;
+	border-color: #d23c49;
+}
+/*--------------------------------------------------
+inverse
+--------------------------------------------------*/
+.btn-primary.btn-inverse{
+  color: #A51F2A;
+}
+/*//////////////////////////////
+///    Form Module    
+/////////////////////////////*/
+/*--------------------------------------------------
+custom checkbox : Main checkbox
+--------------------------------------------------*/
+.form-checkbox > input[type="checkbox"]:checked + label:before { 
+  background: #ddd;
+  border-color:#ddd;
+}
+.form-checkbox.form-checkbox-sub {
+  margin-left: 10px;
+}
+.form-checkbox.form-checkbox-sub > input[type="checkbox"] + label:before {
+  font-family: FontAwesome;
+  content:"\f00c";
+  background: transparent;
+  border-color:transparent;
+  color:#ddd
+}
+.form-checkbox.form-checkbox-sub > input[type="checkbox"]:checked + label:before { 
+  color: #000
+}
+/*--------------------------------------------------
+custom checkbox : Main radio
+--------------------------------------------------*/
+.form-radio > input[type="radio"]:checked + label:before {
+  border-color: #A51F2A;
+}
+.form-radio > input[type="radio"]:checked + label:after {
+  background: #A51F2A;
+}
+/*--------------------------------------------------
+Tags Input
+--------------------------------------------------*/
+.tags-input .tag.label-primary{
+  color: #A51F2A;
+}
+/*--------------------------------------------------
+flipswitch
+--------------------------------------------------*/
+.flipswitch-inner:before {
+	background-color: #A51F2A;
+}
+/*--------------------------------------------------
+custom checkbox : squared-fill
+--------------------------------------------------*/
+.checkbox-squared-fill label {
+  border-color: #A51F2A;
+}
+.checkbox-squared-fill label:after {
+  background: #A51F2A;
+}
+/*--------------------------------------------------
+custom checkbox : rounded-check
+--------------------------------------------------*/
+.checkbox-rounded-check input[type=checkbox]:checked + label{
+  background-color:#A51F2A;
+  border-color:#A51F2A;
+}
+/*--------------------------------------------------
+custom checkbox : numbered
+--------------------------------------------------*/
+.checkbox-numbered.active{
+  background-color:#A51F2A;
+}
+/*////////////////////////////
+///    Tab Module    
+///////////////////////////*/
+.nav-tabs{
+	border-bottom-color:#A51F2A;
+}
+.nav-tabs > li{
+	border-bottom-color:#A51F2A
+}
+.nav-tabs > li > a{
+  border-bottom-color:#A51F2A;
+}
+.nav-tabs > li > a:hover,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.split > a:first-child:hover ~ a{
+  color: #A51F2A;
+  border-color: #A51F2A;
+}
+/*///////////////////////////////
+///    Score Box Module    
+//////////////////////////////*/
+.score-box.score-box-primary .score-box-heading {
+  color: #A51F2A;
+}
+.score-box.score-box-primary .score-box-body {
+  background-color: #A51F2A;
+}
+/*///////////////////////////////
+///    Panel Module    
+//////////////////////////////*/
+.panel-inverse.panel-primary {
+	border-top-color:#A51F2A
+}
+.panel-inverse.panel-primary > .panel-heading {
+	color:#A51F2A
+}
+/*//////////////////////////////////////
+///    Datepicker Module    
+/////////////////////////////////////*/
+.datepicker-header,
+.datepicker table td.selected {
+	background:#A51F2A;
+}
+/*//////////////////////////////////////
+///    Thumbnail Module
+////////////////////////////////////*/
+.thumbnail:hover,
+.thumbnail.active {
+  border-color: #A51F2A;
+}
+/*////////////////////////////////
+///    Add-in Module    
+////////////////////////////////*/
+/*--------------------------------------------------
+Notification
+--------------------------------------------------*/
+.notification{
+  border-color:#A51F2A;
+}
+.notification-icon{
+  background-color:#A51F2A
+}
+.notification-heading{
+	color:#A51F2A;
+}
+/*--------------------------------------------------
+step progress
+--------------------------------------------------*/
+.step-progress li.active {
+  background-color: #A51F2A;
+}
+.step-progress li.active:after {
+  border-left-color: #A51F2A;
+}
+/*--------------------------------------------------
+circle progress(전자세금계산서 진행단계)
+--------------------------------------------------*/
+.wrapper-circle-progress li.active:after{
+  border-top-color:#A51F2A
+}
+.wrapper-circle-progress li.active{
+  background-color:#A51F2A
+}
+/*--------------------------------------------------
+양식설정
+--------------------------------------------------*/
+.template-setup .nav-pills{
+	border-bottom-color:#A51F2A
+}
+/*////////////////////////////////////////////
+///    Messenger
+////////////////////////////////////////////*/
+.messenger-list-header{
+  background-color:#A51F2A
+}
+.messenger-list-contents .chatroom.special .panel-collapse .chatroom-all .chatroom-bookmark:after,
+.messenger-list-contents .chatroom.special .panel-collapse .chatroom-robot .chatroom-bookmark:after {
+  color: #A51F2A;
+}
+.messenger-list-contents .chatroom .chatroom-all .chatroom-bookmark:after,
+.messenger-list-contents .chatroom .chatroom-robot .chatroom-bookmark:after{
+  color:#A51F2A
+}
+/*////////////////////////////////////////////
+///    Web Mail
+////////////////////////////////////////////*/
+.mail-global-nav{
+	background: #A51F2A;
+}
+/*////////////////////////////////////////////
+///    Customer Support
+////////////////////////////////////////////*/
+.customer-support-qm {
+	background-color:#A51F2A;
+}
+.page-customer-support .customer-support-main-cs-number {
+	background-color:#A51F2A;
+}
+/*////////////////////////////////////////////
+new navigation
+////////////////////////////////////////////*/
+.quick-menu > .qm-maxsoft-search > .input-group > input.form-control{
+  border-color:#A51F2A
+}
+/*myinfo*/
+.wrapper-qm-myinfo .multiple-logins li.active{
+  border-left-color:#A51F2A;
+}
+/*--------------------------------------------------
+type1
+--------------------------------------------------*/
+.navigation-type1 .nav .section-1 li.on a{
+  background-color:#A51F2A
+}
+.navigation-type1 .nav .section-2 {
+  background-color: #A51F2A;
+}
+.navigation-type1 .nav .section-3 ul li.on {
+  border-left-color : #A51F2A;
+}
+.navigation-type1 .nav .section-3 ul li li.on > a,
+.navigation-type1 .nav .section-3 ul li li > a:hover {
+  background-color: #ffe7e9;
+}
+/*--------------------------------------------------
+type2
+--------------------------------------------------*/
+.navigation-type2 .nav .section-1 .section-title,
+.navigation-type2 .nav .section-2 .section-title {
+	background-color:#A51F2A;
+}
+.navigation-type2 .nav .section-1 ul li.on a,
+.navigation-type2 .nav .section-2 ul li.on a,
+.navigation-type2 .nav .section-1 > ul li > a:hover,
+.navigation-type2 .nav .section-2 > ul li > a:hover {
+	background-color:#ffe7e9;
+}
+.navigation-type2 .nav .section-3 > ul > li.on {
+  border-left-color : #A51F2A;
+}
+.navigation-type2 .nav .section-3 > ul > li.on > a {
+  color:#A51F2A;
+}
+.navigation-type2 .nav .section-3 ul li li.on > a,
+.navigation-type2 .nav .section-3 ul li li > a:hover {
+  background-color: #ffe7e9
+}
+/*--------------------------------------------------
+type3
+--------------------------------------------------*/
+.navigation-type3 .nav .section-1 > .section-title {
+	background-color:#A51F2A;
+}
+.navigation-type3 .nav .section-1 > ul > li.on > a {
+	background-color:#ffe7e9;
+}
+.navigation-type3 .nav .section-2 > ul > li:hover > a,
+.navigation-type3 .nav .section-2 > ul > li.on > a {
+	background-color: #A51F2A;
+}
+.navigation-type3 .nav .section-3 ul {
+	border-color:#A51F2A;
+}
+.navigation-type3 .nav .section-3 li.on > a,
+.navigation-type3 .nav .section-3 li:hover > a {
+	background-color:#ffe7e9;
+}
+/*--------------------------------------------------
+type4
+--------------------------------------------------*/
+.navigation-type4 .wrapper-global-nav > .toggle-nav{
+  background-color: #A51F2A;
+}
+.navigation-type4 .global-nav {
+	background-color:#A51F2A;
+}
+
+@media all and (max-width: 768px) {
+  .wrapper-global-nav > .toggle-nav {
+    background-color: #A51F2A;
+  }
+}
+
+/*////////////////////////////////////////////
+SMS
+////////////////////////////////////////////*/
+.preview-mobile-body .mobile-header > .wrapper-toolbar > .input-group > .input-group-addon{
+  background-color: #A51F2A; 
+  border-color:#A51F2A; 
+}
+
+.preview-mobile-body .mobile-header > .wrapper-toolbar > .input-group > .form-control{
+  border-color:#A51F2A;
+}
